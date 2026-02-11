@@ -1,0 +1,53 @@
+name: PR Quality Gate
+
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize, reopened]
+
+jobs:
+  pr-quality:
+    name: PR Quality Check
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: PR Size Check
+        run: |
+          ADDITIONS=$(git diff --stat origin/main...HEAD | tail -1 | awk '{print $4}')
+          DELETIONS=$(git diff --stat origin/main...HEAD | tail -1 | awk '{print $6}')
+          TOTAL=$((${ADDITIONS:-0} + ${DELETIONS:-0}))
+          
+          echo "📊 PR Stats: +${ADDITIONS:-0} / -${DELETIONS:-0} (${TOTAL} total changes)"
+          
+          if [ "$TOTAL" -gt 500 ]; then
+            echo "⚠️ Large PR detected (${TOTAL} lines). Consider splitting into smaller PRs."
+          fi
+
+      - name: Check for TODO/FIXME
+        run: |
+          TODOS=$(git diff origin/main...HEAD | grep "^+" | grep -iE "TODO|FIXME|HACK|XXX" | wc -l)
+          if [ "$TODOS" -gt 0 ]; then
+            echo "📋 Found ${TODOS} new TODO/FIXME comments:"
+            git diff origin/main...HEAD | grep "^+" | grep -iE "TODO|FIXME|HACK|XXX"
+          fi
+
+      - name: Check for secrets in diff
+        run: |
+          SECRETS=$(git diff origin/main...HEAD | grep "^+" | grep -iE "(api[_-]?key|secret|password|token|credential)\s*[:=]\s*['\"][^'\"]{8,}['\"]" | wc -l)
+          if [ "$SECRETS" -gt 0 ]; then
+            echo "🚨 POTENTIAL SECRETS IN PR! Review immediately!"
+            exit 1
+          fi
+          echo "✓ No secrets detected in changes"
+
+      - name: File Type Analysis
+        run: |
+          echo "📁 Changed files by type:"
+          git diff --name-only origin/main...HEAD | sed 's/.*\.//' | sort | uniq -c | sort -rn
