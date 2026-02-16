@@ -5,10 +5,13 @@
  * - checkout.session.completed → Create Order + Ledger Entry
  * - charge.refunded → Process Refund (negative Ledger Entry)
  *
- * PFLICHT:
+ * PRODUCTION HARDENING:
  * - Signatur validieren (STRIPE_WEBHOOK_SECRET)
  * - balance_transaction expandieren für exakte Stripe Fee
- * - Idempotent arbeiten (stripe_checkout_session_id UNIQUE)
+ * - Idempotent auf SESSION- und EVENT-Level
+ * - Refund-Idempotenz via stripeRefundId
+ * - Variant-ID aus Price Metadata (nicht Product!)
+ * - Event-ID Logging bei Erfolg + Fehler
  * - Fehlerhafte Events loggen, nicht verschlucken
  */
 
@@ -19,7 +22,7 @@ import { createOrder } from '@/lib/orders/create-order';
 import { processRefund } from '@/lib/orders/refund';
 import { dispatchFulfillmentOrders } from '@/lib/producers';
 import { db } from '@/lib/db/drizzle';
-import { orders, auditLog } from '@/lib/db/schema';
+import { orders, financialLedger, auditLog } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 
 // ─── Webhook Handler ───────────────────────────
@@ -47,26 +50,28 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
   }
 
+  console.log(`[Stripe Webhook] Received event: ${event.type} (${event.id})`);
+
   // ─── Route Events ────────────────────────────
   try {
     switch (event.type) {
       case 'checkout.session.completed':
-        await handleCheckoutComplete(event.data.object as Stripe.Checkout.Session);
+        await handleCheckoutComplete(event.data.object as Stripe.Checkout.Session, event.id);
         break;
 
       case 'charge.refunded':
-        await handleChargeRefunded(event.data.object as Stripe.Charge);
+        await handleChargeRefunded(event.data.object as Stripe.Charge, event.id);
         break;
 
       default:
         // Log unhandled events but return 200 (Stripe won't retry)
-        console.log(`[Stripe Webhook] Unhandled event type: ${event.type}`);
+        console.log(`[Stripe Webhook] Unhandled event type: ${event.type} — acknowledging`);
     }
 
     return NextResponse.json({ received: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : 'Unknown error';
-    console.error(`[Stripe Webhook] Error processing ${event.type}: ${message}`);
+    console.error(`[Stripe Webhook] Error processing ${event.type} (${event.id}): ${message}`);
 
     // Log error to audit_log for visibility
     try {
@@ -92,8 +97,8 @@ export async function POST(request: NextRequest) {
 
 // ─── Event Handlers ────────────────────────────
 
-async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
-  console.log(`[Stripe Webhook] checkout.session.completed: ${session.id}`);
+async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId: string) {
+  console.log(`[Stripe Webhook] checkout.session.completed: ${session.id} (event: ${eventId})`);
 
   // Idempotency check — if order already exists for this session, skip
   const existing = await db.query.orders.findFirst({
@@ -101,7 +106,7 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
   });
 
   if (existing) {
-    console.log(`[Stripe Webhook] Order already exists for session ${session.id} — skipping`);
+    console.log(`[Stripe Webhook] Order already exists for session ${session.id} — idempotent skip`);
     return;
   }
 
@@ -127,21 +132,37 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
   });
 
   // Build cart items from line items metadata
+  // IMPORTANT: aigg_variant_id lives in Price metadata (not Product metadata).
+  // Product metadata has aigg_product_id. Price metadata has aigg_variant_id + sku.
   const items: Array<{ variantId: number; quantity: number }> = [];
   for (const item of lineItems.data) {
-    const product = item.price?.product;
-    if (!product || typeof product === 'string' || product.deleted) continue;
-
-    const variantId = (product as Stripe.Product).metadata?.aigg_variant_id;
-    if (!variantId) {
-      console.warn(`[Stripe Webhook] Line item missing aigg_variant_id metadata: ${item.id}`);
+    // First try: Price metadata (set when using stored Stripe Price IDs)
+    const priceVariantId = item.price?.metadata?.aigg_variant_id;
+    if (priceVariantId) {
+      items.push({
+        variantId: parseInt(priceVariantId, 10),
+        quantity: item.quantity ?? 1,
+      });
       continue;
     }
 
-    items.push({
-      variantId: parseInt(variantId, 10),
-      quantity: item.quantity ?? 1,
-    });
+    // Second try: Product metadata (set when using inline price_data fallback)
+    const product = item.price?.product;
+    if (product && typeof product !== 'string' && !product.deleted) {
+      const productVariantId = (product as Stripe.Product).metadata?.aigg_variant_id;
+      if (productVariantId) {
+        items.push({
+          variantId: parseInt(productVariantId, 10),
+          quantity: item.quantity ?? 1,
+        });
+        continue;
+      }
+    }
+
+    // Neither source had variant ID — log and skip
+    console.warn(
+      `[Stripe Webhook] Line item missing aigg_variant_id in both price and product metadata: ${item.id}`
+    );
   }
 
   if (items.length === 0) {
@@ -179,7 +200,8 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
   });
 
   console.log(
-    `[Stripe Webhook] Order created: ${result.orderNumber} (${result.fulfillmentOrderIds.length} fulfillment orders)`
+    `[Stripe Webhook] Order created: ${result.orderNumber} ` +
+    `(${result.fulfillmentOrderIds.length} fulfillment orders, ledger: ${result.ledgerId}, event: ${eventId})`
   );
 
   // ─── Dispatch to Producers (non-blocking) ──────
@@ -207,8 +229,8 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session) {
   }
 }
 
-async function handleChargeRefunded(charge: Stripe.Charge) {
-  console.log(`[Stripe Webhook] charge.refunded: ${charge.id}`);
+async function handleChargeRefunded(charge: Stripe.Charge, eventId: string) {
+  console.log(`[Stripe Webhook] charge.refunded: ${charge.id} (event: ${eventId})`);
 
   // Find the order by payment_intent
   if (!charge.payment_intent || typeof charge.payment_intent !== 'string') {
@@ -234,15 +256,40 @@ async function handleChargeRefunded(charge: Stripe.Charge) {
   // Get the latest refund from the charge
   const latestRefund = charge.refunds?.data?.[0];
 
+  if (!latestRefund) {
+    throw new Error(`No refund data on charge ${charge.id}`);
+  }
+
+  // ─── Refund Idempotency ────────────────────────
+  // Check if we already processed this specific Stripe refund.
+  // Without this, Stripe retries would create duplicate negative ledger entries.
+  if (latestRefund.id) {
+    const existingRefundEntry = await db.query.financialLedger.findFirst({
+      where: (fl, { and, eq, like }) =>
+        and(
+          eq(fl.orderId, order.id),
+          like(fl.notes, `%${latestRefund.id}%`)
+        ),
+    });
+
+    if (existingRefundEntry) {
+      console.log(
+        `[Stripe Webhook] Refund ${latestRefund.id} already processed for order ${order.orderNumber} — idempotent skip`
+      );
+      return;
+    }
+  }
+
   const result = await processRefund({
     orderId: order.id,
-    refundAmountCents: latestRefund?.amount ?? totalRefundedCents,
-    stripeRefundId: latestRefund?.id,
-    reason: latestRefund?.reason ?? 'Stripe refund',
+    refundAmountCents: latestRefund.amount ?? totalRefundedCents,
+    stripeRefundId: latestRefund.id,
+    reason: latestRefund.reason ?? 'Stripe refund',
     performedBy: 'stripe',
   });
 
   console.log(
-    `[Stripe Webhook] Refund processed: ${result.entryType} for order ${order.orderNumber}`
+    `[Stripe Webhook] Refund processed: ${result.entryType} for order ${order.orderNumber} ` +
+    `(refund: ${latestRefund.id}, event: ${eventId})`
   );
 }
