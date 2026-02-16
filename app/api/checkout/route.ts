@@ -53,9 +53,19 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Build Stripe line items
+    // Build Stripe line items — use stored price IDs when available, fall back to price_data
     const lineItems = items.map((item) => {
       const variant = variants.find((v) => v.id === item.variantId)!;
+
+      // Prefer stored Stripe Price ID (faster, consistent Stripe Dashboard)
+      if (variant.stripePriceId) {
+        return {
+          price: variant.stripePriceId,
+          quantity: item.quantity,
+        };
+      }
+
+      // Fallback: inline price_data
       return {
         price_data: {
           currency: 'eur',

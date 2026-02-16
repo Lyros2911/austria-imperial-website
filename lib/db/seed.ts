@@ -30,12 +30,12 @@ async function seed() {
     .insert(products)
     .values({
       slug: 'steirisches-kuerbiskernoel',
-      nameDe: 'Steirisches Kuerbiskernoel g.g.A.',
+      nameDe: 'Steirisches Kürbiskernöl g.g.A.',
       nameEn: 'Styrian Pumpkin Seed Oil PGI',
       descriptionDe:
-        'Premium kaltgepresstes Kuerbiskernoel aus 100% steirischen Kuerbiskernen. ' +
-        'Geschuetzte geographische Angabe (g.g.A.) — EU-zertifizierte Herkunft. ' +
-        'Intensives, nussiges Aroma. Perfekt fuer Salate, Suppen und Desserts.',
+        'Premium kaltgepresstes Kürbiskernöl aus 100% steirischen Kürbiskernen. ' +
+        'Geschützte geographische Angabe (g.g.A.) — EU-zertifizierte Herkunft. ' +
+        'Intensives, nussiges Aroma. Perfekt für Salate, Suppen und Desserts.',
       descriptionEn:
         'Premium cold-pressed pumpkin seed oil from 100% Styrian pumpkin seeds. ' +
         'Protected Geographical Indication (PGI) — EU-certified origin. ' +
@@ -53,7 +53,7 @@ async function seed() {
       nameEn: 'Styrian Horseradish',
       descriptionDe:
         'Frisch geriebener steirischer Kren aus traditionellem Anbau. ' +
-        'Scharfer, wuerziger Geschmack — ein Klassiker der oesterreichischen Kueche.',
+        'Scharfer, würziger Geschmack — ein Klassiker der österreichischen Küche.',
       descriptionEn:
         'Freshly grated Styrian horseradish from traditional cultivation. ' +
         'Sharp, spicy flavor — a classic of Austrian cuisine.',
@@ -149,7 +149,7 @@ async function seed() {
 
     // Create Stripe products
     const stripeKernoel = await stripe.products.create({
-      name: 'Steirisches Kuerbiskernoel g.g.A.',
+      name: 'Steirisches Kürbiskernöl g.g.A.',
       description: 'Premium cold-pressed Styrian pumpkin seed oil (PGI)',
       metadata: { aigg_product_id: String(kernoel.id) },
     });
