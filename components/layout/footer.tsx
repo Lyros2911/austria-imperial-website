@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export function Footer() {
   return (
@@ -7,9 +8,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Brand */}
           <div>
-            <h3 className="text-gold font-[var(--font-heading)] text-xl font-semibold mb-4">
-              Austria Imperial
-            </h3>
+            <Image
+              src="/images/logo.png"
+              alt="Austria Imperial Green Gold"
+              width={140}
+              height={140}
+              className="w-[140px] h-auto mb-4"
+            />
             <p className="text-muted text-sm leading-relaxed max-w-xs">
               Authentische österreichische Spezialitäten direkt vom Erzeuger.
               Steirisches Kürbiskernöl g.g.A. und feiner Kren.

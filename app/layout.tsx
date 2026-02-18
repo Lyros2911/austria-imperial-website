@@ -24,6 +24,18 @@ export const metadata: Metadata = {
   },
   description:
     'Premium Steirisches Kürbiskernöl g.g.A. und Steirischer Kren — authentische österreichische Spezialitäten direkt vom Erzeuger.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: 'Austria Imperial — Green Gold',
+    description:
+      'Premium Steirisches Kürbiskernöl g.g.A. und Steirischer Kren — authentische österreichische Spezialitäten direkt vom Erzeuger.',
+    images: [{ url: '/images/logo.png', width: 512, height: 512, alt: 'Austria Imperial Green Gold' }],
+    locale: 'de_AT',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({

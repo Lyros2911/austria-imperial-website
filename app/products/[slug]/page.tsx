@@ -2,6 +2,7 @@ import { db } from '@/lib/db/drizzle';
 import { products, productVariants } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import type { Metadata } from 'next';
 import { AddToCartSection } from '@/components/products/add-to-cart';
 
@@ -44,23 +45,28 @@ export default async function ProductDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Image area */}
           <div className="relative aspect-square rounded-lg overflow-hidden">
-            <div
-              className={`absolute inset-0 ${
-                isKernoel
-                  ? 'bg-gradient-to-br from-[#1a1a0e] via-[#1e2a10] to-[#0d0c09]'
-                  : 'bg-gradient-to-br from-[#1a1510] via-[#1c1810] to-[#0d0c09]'
-              }`}
-            />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div
-                className={`w-48 h-48 rounded-full blur-[80px] opacity-20 ${
-                  isKernoel ? 'bg-green' : 'bg-gold-dark'
-                }`}
+            {isKernoel ? (
+              <Image
+                src="/images/kernoel-flaschen.jpg"
+                alt={product.nameDe}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
               />
-            </div>
+            ) : (
+              <Image
+                src="/images/kren-produkte.jpg"
+                alt={product.nameDe}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            )}
             {/* g.g.A. badge for Kernöl */}
             {isKernoel && (
-              <div className="absolute top-6 left-6">
+              <div className="absolute top-6 left-6 z-10">
                 <span className="text-gold/80 text-[10px] tracking-[0.3em] uppercase bg-[var(--aigg-black)]/60 backdrop-blur-sm px-4 py-1.5 rounded-full border border-border-gold">
                   g.g.A. Zertifiziert
                 </span>

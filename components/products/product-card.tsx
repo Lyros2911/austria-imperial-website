@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { formatEurCents } from '@/lib/utils';
 import type { Product, ProductVariant } from '@/lib/db/schema';
 
@@ -15,25 +16,27 @@ export function ProductCard({ product }: ProductCardProps) {
       href={`/products/${product.slug}`}
       className="group relative bg-surface border border-border hover:border-border-gold rounded-lg overflow-hidden transition-all duration-500 hover:shadow-[0_0_40px_rgba(197,165,90,0.06)]"
     >
-      {/* Image area (placeholder gradient) */}
+      {/* Image area */}
       <div className="relative h-64 overflow-hidden">
-        <div
-          className={`absolute inset-0 ${
-            isKernoel
-              ? 'bg-gradient-to-br from-[#1a1a0e] via-[#1e2a10] to-[#0d0c09]'
-              : 'bg-gradient-to-br from-[#1a1510] via-[#1c1810] to-[#0d0c09]'
-          }`}
-        />
-        {/* Decorative accent */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className={`w-32 h-32 rounded-full blur-3xl opacity-20 ${
-              isKernoel ? 'bg-green' : 'bg-gold-dark'
-            }`}
+        {isKernoel ? (
+          <Image
+            src="/images/kernoel-flaschen.jpg"
+            alt={product.nameDe}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </div>
+        ) : (
+          <Image
+            src="/images/kren-produkte.jpg"
+            alt={product.nameDe}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        )}
         {/* Category badge */}
-        <div className="absolute top-4 left-4">
+        <div className="absolute top-4 left-4 z-10">
           <span className="text-gold/60 text-[10px] tracking-[0.3em] uppercase bg-[var(--aigg-black)]/60 backdrop-blur-sm px-3 py-1 rounded-full border border-border-gold">
             {isKernoel ? 'Kürbiskernöl' : 'Kren'}
           </span>

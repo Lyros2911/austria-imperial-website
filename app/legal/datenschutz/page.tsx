@@ -40,11 +40,11 @@ export default function DatenschutzPage() {
             <p>
               <strong className="text-cream">Auryx AI LLC</strong>
               <br />
-              1712 Pioneer Avenue, Suite 500
+              30 N Gould St Ste N
               <br />
-              Cheyenne, WY 82001, USA
+              Sheridan, WY 82801, USA
               <br />
-              E-Mail: info@austria-imperial.com
+              E-Mail: info@austriaimperial.com
             </p>
             <p>
               Verantwortliche Stelle ist die natürliche oder juristische Person, die allein

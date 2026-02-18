@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div className="space-y-8">
             <ContactBlock
               title="E-Mail"
-              content="info@austria-imperial.com"
+              content="info@austriaimperial.com"
               detail="Wir antworten in der Regel innerhalb von 24 Stunden."
             />
             <ContactBlock
@@ -39,7 +39,7 @@ export default function ContactPage() {
             <ContactBlock
               title="Betreiber"
               content="Auryx AI LLC"
-              detail="1712 Pioneer Avenue, Suite 500, Cheyenne, WY 82001, USA"
+              detail="30 N Gould St Ste N, Sheridan, WY 82801, USA"
             />
           </div>
 

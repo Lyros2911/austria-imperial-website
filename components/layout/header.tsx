@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { useCart } from '@/components/cart/cart-context';
 import { CartDrawer } from '@/components/cart/cart-drawer';
@@ -15,13 +16,15 @@ export function Header() {
       <header className="fixed top-0 left-0 right-0 z-40 bg-[var(--aigg-black)]/90 backdrop-blur-md border-b border-border-gold">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <span className="text-gold text-2xl font-[var(--font-heading)] font-semibold tracking-wide">
-              Austria Imperial
-            </span>
-            <span className="text-muted text-xs tracking-[0.3em] uppercase hidden sm:block">
-              Green Gold
-            </span>
+          <Link href="/" className="flex items-center group">
+            <Image
+              src="/images/logo-header.png"
+              alt="Austria Imperial Green Gold"
+              width={160}
+              height={48}
+              className="h-12 w-auto object-contain"
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}

@@ -21,9 +21,9 @@ export default function ImpressumPage() {
               Betreiber der Marke Austria Imperial — Green Gold
             </p>
             <p>
-              1712 Pioneer Avenue, Suite 500
+              30 N Gould St Ste N
               <br />
-              Cheyenne, WY 82001
+              Sheridan, WY 82801
               <br />
               United States of America
             </p>
@@ -31,14 +31,18 @@ export default function ImpressumPage() {
 
           <Section title="Kontakt">
             <p>
-              E-Mail: info@austria-imperial.com
+              E-Mail: info@austriaimperial.com
               <br />
-              Web: www.austria-imperial.com
+              Web: www.austriaimperial.com
             </p>
           </Section>
 
           <Section title="Vertretungsberechtigter">
-            <p>Gottfried Hammerl, Managing Member</p>
+            <p>
+              Gottfried Hammerl, Managing Member
+              <br />
+              Peter Kräcksammer, Managing Member
+            </p>
           </Section>
 
           <Section title="Umsatzsteuer-Identifikationsnummer">

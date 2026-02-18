@@ -32,7 +32,7 @@ export default function WiderrufPage() {
             <p className="text-cream/80">
               Auryx AI LLC
               <br />
-              E-Mail: info@austria-imperial.com
+              E-Mail: info@austriaimperial.com
             </p>
             <p>
               Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung
@@ -105,7 +105,7 @@ export default function WiderrufPage() {
               Formular aus und senden Sie es zurück:
             </p>
             <div className="mt-3 p-4 border border-border-gold rounded bg-surface text-muted/80 text-xs">
-              <p>An: Auryx AI LLC, info@austria-imperial.com</p>
+              <p>An: Auryx AI LLC, info@austriaimperial.com</p>
               <p className="mt-2">
                 Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen
                 Vertrag über den Kauf der folgenden Waren:
