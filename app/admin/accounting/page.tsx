@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { db } from '@/lib/db/drizzle';
 import { financialLedger } from '@/lib/db/schema';
 import { sql, gte, lte, and } from 'drizzle-orm';
