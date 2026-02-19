@@ -13,6 +13,13 @@ WWW_AT="www.austriaimperial.at"
 
 cd "$APP_DIR"
 
+# Load env vars
+if [ -f /root/.env.aigg ]; then
+  set -a
+  source /root/.env.aigg
+  set +a
+fi
+
 echo "==> Build Docker image: $IMAGE"
 docker build -t "$IMAGE" .
 
@@ -33,6 +40,7 @@ docker run -d \
   -e RESEND_API_KEY="${RESEND_API_KEY}" \
   -e AUTH_SECRET="${AUTH_SECRET:-}" \
   -e N8N_ORDER_WEBHOOK_URL="${N8N_ORDER_WEBHOOK_URL:-}" \
+  -e CRON_SECRET="${CRON_SECRET:-}" \
   \
   -l traefik.enable=true \
   \
