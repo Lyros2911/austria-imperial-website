@@ -21,6 +21,7 @@ import { stripe, getStripeFeeCents } from '@/lib/payments/stripe';
 import { createOrder } from '@/lib/orders/create-order';
 import { processRefund } from '@/lib/orders/refund';
 import { dispatchFulfillmentOrders } from '@/lib/producers';
+import { sendOrderConfirmation, sendOrderNotification } from '@/lib/email/order-confirmation';
 import { db } from '@/lib/db/drizzle';
 import { orders, financialLedger, auditLog } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -226,6 +227,59 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
         performedBy: 'system',
       });
     } catch { /* don't mask original error */ }
+  }
+
+  // ─── Send Order Emails (non-blocking) ──────────
+  // Confirmation to customer + notification to shop owner.
+  // Failures are logged but don't affect the webhook response.
+  try {
+    // Build email data from session + result
+    const emailItems = lineItems.data.map((li) => {
+      const product = li.price?.product;
+      const productName = (product && typeof product !== 'string' && !product.deleted)
+        ? (product as Stripe.Product).name
+        : 'Produkt';
+      return {
+        productName,
+        variantName: li.description ?? '',
+        quantity: li.quantity ?? 1,
+        unitPriceCents: li.price?.unit_amount ?? 0,
+      };
+    });
+
+    // subtotalCents and totalCents are calculated inside createOrder,
+    // recalculate for the email
+    const emailSubtotal = emailItems.reduce((sum, i) => sum + (i.unitPriceCents * i.quantity), 0);
+    const emailTotal = emailSubtotal + shippingCostCents;
+
+    const emailData = {
+      orderNumber: result.orderNumber,
+      customerEmail: customerDetails.email ?? '',
+      customerName: shipping.name ?? customerDetails.name ?? 'Kunde',
+      items: emailItems,
+      subtotalCents: emailSubtotal,
+      shippingCents: shippingCostCents,
+      totalCents: emailTotal,
+      shipping: {
+        name: shipping.name ?? '',
+        street: shipping.address.line1 ?? '',
+        street2: shipping.address.line2 ?? undefined,
+        city: shipping.address.city ?? '',
+        postalCode: shipping.address.postal_code ?? '',
+        country: shipping.address.country ?? 'AT',
+      },
+    };
+
+    if (emailData.customerEmail) {
+      await Promise.allSettled([
+        sendOrderConfirmation(emailData),
+        sendOrderNotification(emailData),
+      ]);
+      console.log(`[Stripe Webhook] Order emails sent for ${result.orderNumber}`);
+    }
+  } catch (emailErr) {
+    const errMsg = emailErr instanceof Error ? emailErr.message : 'Unknown email error';
+    console.error(`[Stripe Webhook] Order email failed (non-critical): ${errMsg}`);
   }
 }
 

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import ContactFormClient from './contact-form';
 
 export const metadata: Metadata = {
   title: 'Kontakt',
@@ -43,50 +44,8 @@ export default function ContactPage() {
             />
           </div>
 
-          {/* Contact Form */}
-          <div className="p-6 border border-border-gold rounded bg-surface">
-            <h2 className="font-[var(--font-heading)] text-xl text-cream mb-6">
-              Nachricht senden
-            </h2>
-            <form className="space-y-4">
-              <FormField label="Name" type="text" name="name" placeholder="Ihr Name" />
-              <FormField label="E-Mail" type="email" name="email" placeholder="ihre@email.com" />
-              <div>
-                <label className="block text-cream/80 text-sm mb-1">Betreff</label>
-                <select
-                  name="subject"
-                  className="w-full bg-[var(--aigg-black)] border border-border-gold text-cream/80 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-gold transition-colors"
-                >
-                  <option value="general">Allgemeine Anfrage</option>
-                  <option value="order">Frage zu einer Bestellung</option>
-                  <option value="b2b">Geschäftskunde / B2B</option>
-                  <option value="press">Presse / Kooperation</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-cream/80 text-sm mb-1">Nachricht</label>
-                <textarea
-                  name="message"
-                  rows={5}
-                  placeholder="Ihre Nachricht..."
-                  className="w-full bg-[var(--aigg-black)] border border-border-gold text-cream/80 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-gold transition-colors resize-none"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-gold hover:bg-gold-light text-[var(--aigg-black)] font-semibold text-sm tracking-wide px-6 py-3 rounded transition-all duration-300"
-              >
-                Nachricht senden
-              </button>
-              <p className="text-muted/60 text-xs text-center">
-                Mit dem Absenden stimmen Sie unserer{' '}
-                <a href="/legal/datenschutz" className="text-gold/60 hover:text-gold transition-colors">
-                  Datenschutzerklärung
-                </a>{' '}
-                zu.
-              </p>
-            </form>
-          </div>
+          {/* Contact Form (Client Component) */}
+          <ContactFormClient />
         </div>
       </div>
     </div>
@@ -99,30 +58,6 @@ function ContactBlock({ title, content, detail }: { title: string; content: stri
       <h3 className="text-cream/60 text-xs tracking-[0.2em] uppercase mb-1">{title}</h3>
       <p className="text-cream font-[var(--font-heading)] text-lg">{content}</p>
       <p className="text-muted text-sm mt-1">{detail}</p>
-    </div>
-  );
-}
-
-function FormField({
-  label,
-  type,
-  name,
-  placeholder,
-}: {
-  label: string;
-  type: string;
-  name: string;
-  placeholder: string;
-}) {
-  return (
-    <div>
-      <label className="block text-cream/80 text-sm mb-1">{label}</label>
-      <input
-        type={type}
-        name={name}
-        placeholder={placeholder}
-        className="w-full bg-[var(--aigg-black)] border border-border-gold text-cream/80 text-sm rounded px-3 py-2.5 focus:outline-none focus:border-gold transition-colors"
-      />
     </div>
   );
 }

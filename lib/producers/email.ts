@@ -1,16 +1,17 @@
 /**
- * Producer Email — Structured Fallback Order Notification
+ * Producer Email — Structured Order Notification
  *
  * Sendet eine formatierte Bestellmail an den Produzenten.
  * Kein Rich-HTML — reiner Text, strukturiert, druckbar.
  *
- * Verwendet Nodemailer falls konfiguriert, sonst console.log als Dry-Run.
+ * Verwendet Resend als E-Mail-Provider.
+ * Fallback: console.log als Dry-Run wenn RESEND_API_KEY nicht gesetzt.
  *
- * ENV:
- * SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM
+ * ENV: RESEND_API_KEY
  */
 
 import type { ProducerOrderPayload, ProducerName, ProducerEmailData } from './types';
+import { sendEmail, AIGG_FROM_EMAIL } from '@/lib/email/resend';
 
 /**
  * Build the order email body (plain text).
@@ -97,13 +98,13 @@ export function buildOrderEmail(
 }
 
 /**
- * Actually send the email via SMTP (or dry-run to console).
+ * Send the producer email via Resend.
+ *
+ * Falls back to console.log dry-run if RESEND_API_KEY is not set.
  */
 export async function sendProducerEmail(emailData: ProducerEmailData): Promise<boolean> {
-  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, SMTP_FROM } = process.env;
-
-  // Check if SMTP is configured
-  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+  // Check if Resend is configured
+  if (!process.env.RESEND_API_KEY) {
     // DRY RUN — log to console for development
     console.log(`\n[Producer Email — DRY RUN] ══════════════════`);
     console.log(`  To:      ${emailData.to}`);
@@ -114,32 +115,11 @@ export async function sendProducerEmail(emailData: ProducerEmailData): Promise<b
     return true; // Treat dry-run as success
   }
 
-  // Real SMTP send
-  try {
-    const nodemailer = await import('nodemailer');
-
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: parseInt(SMTP_PORT || '587'),
-      secure: (SMTP_PORT || '587') === '465',
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
-    });
-
-    await transporter.sendMail({
-      from: SMTP_FROM || SMTP_USER,
-      to: emailData.to,
-      subject: emailData.subject,
-      text: emailData.body,
-    });
-
-    console.log(`[Producer Email] Sent to ${emailData.to}: ${emailData.subject}`);
-    return true;
-  } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown SMTP error';
-    console.error(`[Producer Email] Failed to send to ${emailData.to}: ${message}`);
-    return false;
-  }
+  // Real send via Resend
+  return sendEmail({
+    from: AIGG_FROM_EMAIL,
+    to: emailData.to,
+    subject: emailData.subject,
+    text: emailData.body,
+  });
 }
