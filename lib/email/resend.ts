@@ -15,7 +15,14 @@
 
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Lazy init — only created on first use, not at import time (build-safe).
+let _resend: Resend | null = null;
+function getResend(): Resend {
+  if (!_resend) {
+    _resend = new Resend(process.env.RESEND_API_KEY);
+  }
+  return _resend;
+}
 
 export const AIGG_FROM_EMAIL = 'Austria Imperial <noreply@austriaimperial.com>';
 export const AIGG_NOTIFICATION_EMAIL = 'info@austriaimperial.com';
@@ -37,7 +44,7 @@ interface SendEmailParams {
  */
 export async function sendEmail(params: SendEmailParams): Promise<boolean> {
   try {
-    const { error } = await resend.emails.send({
+    const { error } = await getResend().emails.send({
       from: params.from ?? AIGG_FROM_EMAIL,
       to: params.to,
       replyTo: params.replyTo,
