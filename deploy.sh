@@ -56,7 +56,7 @@ docker run -d \
   -l "traefik.http.routers.aigg-at.tls=true" \
   -l "traefik.http.routers.aigg-at.tls.certresolver=$CERTRESOLVER" \
   -l "traefik.http.routers.aigg-at.middlewares=aigg-at-redirect" \
-  -l "traefik.http.middlewares.aigg-at-redirect.redirectregex.regex=^https://austriaimperial\\.at/(.*)" \
+  -l "traefik.http.middlewares.aigg-at-redirect.redirectregex.regex=^https://(?:www\\.)?austriaimperial\\.at/(.*)" \
   -l "traefik.http.middlewares.aigg-at-redirect.redirectregex.replacement=https://austriaimperial.com/\${1}" \
   -l "traefik.http.middlewares.aigg-at-redirect.redirectregex.permanent=true" \
   \

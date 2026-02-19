@@ -347,7 +347,21 @@ export const monthlyReports = pgTable('monthly_reports', {
 });
 
 // ============================================================
-// 12. ADMIN USERS
+// 12. STRIPE WEBHOOK EVENTS (Idempotenz-Garantie)
+//
+// Speichert jede verarbeitete Stripe Event-ID.
+// Verhindert doppelte Verarbeitung selbst bei Retry.
+// ============================================================
+
+export const stripeWebhookEvents = pgTable('stripe_webhook_events', {
+  id: serial('id').primaryKey(),
+  stripeEventId: varchar('stripe_event_id', { length: 100 }).notNull().unique(),
+  eventType: varchar('event_type', { length: 100 }).notNull(),
+  processedAt: timestamp('processed_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// 13. ADMIN USERS
 // ============================================================
 
 export const adminUsers = pgTable('admin_users', {
@@ -451,4 +465,5 @@ export type FinancialLedgerEntry = typeof financialLedger.$inferSelect;
 export type NewFinancialLedgerEntry = typeof financialLedger.$inferInsert;
 export type AuditLogEntry = typeof auditLog.$inferSelect;
 export type MonthlyReport = typeof monthlyReports.$inferSelect;
+export type StripeWebhookEvent = typeof stripeWebhookEvents.$inferSelect;
 export type AdminUser = typeof adminUsers.$inferSelect;

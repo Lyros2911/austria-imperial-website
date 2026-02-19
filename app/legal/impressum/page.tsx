@@ -40,8 +40,6 @@ export default function ImpressumPage() {
           <Section title="Vertretungsberechtigter">
             <p>
               Gottfried Hammerl, Managing Member
-              <br />
-              Peter Kräcksammer, Managing Member
             </p>
           </Section>
 

@@ -23,7 +23,7 @@ import { processRefund } from '@/lib/orders/refund';
 import { dispatchFulfillmentOrders } from '@/lib/producers';
 import { sendOrderConfirmation, sendOrderNotification } from '@/lib/email/order-confirmation';
 import { db } from '@/lib/db/drizzle';
-import { orders, financialLedger, auditLog } from '@/lib/db/schema';
+import { orders, financialLedger, auditLog, stripeWebhookEvents } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 
 // ─── Webhook Handler ───────────────────────────
@@ -53,6 +53,18 @@ export async function POST(request: NextRequest) {
 
   console.log(`[Stripe Webhook] Received event: ${event.type} (${event.id})`);
 
+  // ─── Event-ID Deduplication ────────────────────
+  // Absolute guarantee: even if session/refund-level checks fail,
+  // no Stripe event is ever processed twice.
+  const existingEvent = await db.query.stripeWebhookEvents.findFirst({
+    where: eq(stripeWebhookEvents.stripeEventId, event.id),
+  });
+
+  if (existingEvent) {
+    console.log(`[Stripe Webhook] Event ${event.id} already processed — skipping`);
+    return NextResponse.json({ received: true, deduplicated: true });
+  }
+
   // ─── Route Events ────────────────────────────
   try {
     switch (event.type) {
@@ -68,6 +80,12 @@ export async function POST(request: NextRequest) {
         // Log unhandled events but return 200 (Stripe won't retry)
         console.log(`[Stripe Webhook] Unhandled event type: ${event.type} — acknowledging`);
     }
+
+    // Record this event as processed (dedup for future retries)
+    await db.insert(stripeWebhookEvents).values({
+      stripeEventId: event.id,
+      eventType: event.type,
+    });
 
     return NextResponse.json({ received: true });
   } catch (err) {
