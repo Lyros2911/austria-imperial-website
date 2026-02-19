@@ -25,11 +25,13 @@ docker run -d \
   --name "$CONTAINER" \
   --restart unless-stopped \
   --network "$NETWORK" \
+  -e POSTGRES_URL="${POSTGRES_URL}" \
   -e AIRTABLE_TOKEN="${AIRTABLE_TOKEN}" \
   -e STRIPE_SECRET_KEY="${STRIPE_SECRET_KEY}" \
   -e STRIPE_WEBHOOK_SECRET="${STRIPE_WEBHOOK_SECRET:-}" \
   -e NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="${NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY:-}" \
   -e RESEND_API_KEY="${RESEND_API_KEY}" \
+  -e AUTH_SECRET="${AUTH_SECRET:-}" \
   -e N8N_ORDER_WEBHOOK_URL="${N8N_ORDER_WEBHOOK_URL:-}" \
   \
   -l traefik.enable=true \
