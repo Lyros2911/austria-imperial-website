@@ -86,7 +86,7 @@ austria-imperial-website/
 |   |-- favicon.ico
 |
 |-- public/                # Statische Assets
-|   |-- file.svg, globe.svg, next.svg, vercel.svg, window.svg
+|   |-- file.svg, globe.svg, next.svg, window.svg
 |
 |-- .github/
 |   |-- workflows/
@@ -161,8 +161,8 @@ Docker: Multi-stage Dockerfile mit Node 20-alpine.
 - [ ] Impressum + Datenschutz
 
 ### Technik
-- [ ] Hosting/Deployment entscheiden
-- [ ] Domain konfigurieren
+- [x] Hosting: VPS (Docker + Traefik) auf 145.223.80.78
+- [x] Domain: austriaimperial.com + .at → VPS
 - [ ] Mehrsprachigkeit
 - [ ] SEO-Optimierung
 
