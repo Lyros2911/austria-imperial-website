@@ -20,6 +20,9 @@ export async function POST(request: NextRequest) {
   if (!session) {
     return NextResponse.json({ error: 'Nicht autorisiert' }, { status: 401 });
   }
+  if (session.role !== 'admin') {
+    return NextResponse.json({ error: 'Keine Berechtigung' }, { status: 403 });
+  }
 
   try {
     const body = await request.json();

@@ -44,6 +44,7 @@ export default function ReportsPage() {
   const [genYear, setGenYear] = useState(new Date().getFullYear());
   const [genMonth, setGenMonth] = useState(new Date().getMonth() + 1);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const fetchReports = useCallback(async () => {
     try {
@@ -61,6 +62,11 @@ export default function ReportsPage() {
 
   useEffect(() => {
     fetchReports();
+    // Check admin role
+    fetch('/api/admin/session')
+      .then((r) => r.json())
+      .then((d) => setIsAdmin(d.role === 'admin'))
+      .catch(() => {});
   }, [fetchReports]);
 
   const handleGenerate = async () => {
@@ -120,7 +126,8 @@ export default function ReportsPage() {
         </p>
       </div>
 
-      {/* Generate Form */}
+      {/* Generate Form — nur für Admins */}
+      {isAdmin && (
       <div className="bg-[#0e0e0e] border border-white/[0.06] rounded-xl p-6 mb-6">
         <h3 className="text-cream text-sm font-medium mb-4">Neuen Report generieren</h3>
         <div className="flex flex-wrap gap-3 items-end">
@@ -194,6 +201,7 @@ export default function ReportsPage() {
           Bei Neugenerierung wird der vorherige Report archiviert (nie gelöscht). Der neue Report bekommt einen neuen SHA256-Hash.
         </p>
       </div>
+      )}
 
       {/* Reports List */}
       <div className="bg-[#0e0e0e] border border-white/[0.06] rounded-xl overflow-hidden">

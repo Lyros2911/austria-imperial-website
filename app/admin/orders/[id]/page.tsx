@@ -5,6 +5,7 @@ import { orders, financialLedger } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { notFound } from 'next/navigation';
 import { formatEurCents } from '@/lib/utils';
+import { getAdminSession } from '@/lib/auth/admin';
 import Link from 'next/link';
 import {
   ArrowLeft,
@@ -114,6 +115,9 @@ export default async function OrderDetailPage({
 
   const order = await getOrderDetail(orderId);
   if (!order) notFound();
+
+  const session = await getAdminSession();
+  const isAdmin = session?.role === 'admin';
 
   return (
     <div>
@@ -299,32 +303,36 @@ export default async function OrderDetailPage({
                   </p>
                 )}
 
-                {/* Admin Actions */}
-                <div className="mt-2 flex items-center gap-3">
-                  <RetryButton
-                    fulfillmentOrder={{
-                      id: fo.id,
-                      producer: fo.producer,
-                      status: fo.status,
-                      trackingNumber: fo.trackingNumber,
-                      trackingUrl: fo.trackingUrl,
-                      retryCount: fo.retryCount,
-                      lastError: fo.lastError,
-                    }}
-                  />
-                </div>
+                {/* Admin Actions — nur für admin-Rolle sichtbar */}
+                {isAdmin && (
+                  <>
+                    <div className="mt-2 flex items-center gap-3">
+                      <RetryButton
+                        fulfillmentOrder={{
+                          id: fo.id,
+                          producer: fo.producer,
+                          status: fo.status,
+                          trackingNumber: fo.trackingNumber,
+                          trackingUrl: fo.trackingUrl,
+                          retryCount: fo.retryCount,
+                          lastError: fo.lastError,
+                        }}
+                      />
+                    </div>
 
-                <StatusUpdateForm
-                  fulfillmentOrder={{
-                    id: fo.id,
-                    producer: fo.producer,
-                    status: fo.status,
-                    trackingNumber: fo.trackingNumber,
-                    trackingUrl: fo.trackingUrl,
-                    retryCount: fo.retryCount,
-                    lastError: fo.lastError,
-                  }}
-                />
+                    <StatusUpdateForm
+                      fulfillmentOrder={{
+                        id: fo.id,
+                        producer: fo.producer,
+                        status: fo.status,
+                        trackingNumber: fo.trackingNumber,
+                        trackingUrl: fo.trackingUrl,
+                        retryCount: fo.retryCount,
+                        lastError: fo.lastError,
+                      }}
+                    />
+                  </>
+                )}
               </div>
             ))}
           </div>

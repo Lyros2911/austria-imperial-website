@@ -103,6 +103,20 @@ export async function adminLogin(
   return { success: true };
 }
 
+// ─── Role Helpers ─────────────────────────────
+
+export type AdminRole = 'admin' | 'viewer';
+
+/**
+ * Prüft ob der aktuelle User admin-Rechte hat (Schreibzugriff).
+ * Gibt die Session zurück wenn admin, sonst null.
+ */
+export async function requireAdmin(): Promise<AdminPayload | null> {
+  const session = await getAdminSession();
+  if (!session || session.role !== 'admin') return null;
+  return session;
+}
+
 // ─── Admin Seed Helper ─────────────────────────
 
 export async function hashPassword(password: string): Promise<string> {

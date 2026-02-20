@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic';
 
 import { db } from '@/lib/db/drizzle';
 import { orders } from '@/lib/db/schema';
-import { desc, eq, sql, and, gte, lte } from 'drizzle-orm';
+import { desc, eq, sql, and, gte, lte, or, ilike } from 'drizzle-orm';
 import { formatEurCents } from '@/lib/utils';
 import Link from 'next/link';
 import { ShoppingCart, Search, Filter } from 'lucide-react';
@@ -12,6 +12,7 @@ interface SearchParams {
   page?: string;
   from?: string;
   to?: string;
+  email?: string;
 }
 
 const PAGE_SIZE = 20;
@@ -68,6 +69,10 @@ async function getOrders(params: SearchParams) {
     const toDate = new Date(params.to);
     toDate.setHours(23, 59, 59, 999);
     conditions.push(lte(orders.createdAt, toDate));
+  }
+
+  if (params.email) {
+    conditions.push(ilike(orders.guestEmail, params.email));
   }
 
   const where = conditions.length > 0 ? and(...conditions) : undefined;

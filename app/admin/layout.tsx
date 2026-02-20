@@ -13,6 +13,8 @@ import {
   ChevronRight,
   Menu,
   X,
+  Users,
+  Shield,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -23,11 +25,19 @@ interface NavItem {
   children?: { label: string; href: string }[];
 }
 
-const navigation: NavItem[] = [
-  { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
-  { label: 'Bestellungen', href: '/admin/orders', icon: ShoppingCart },
-  { label: 'Fulfillment', href: '/admin/fulfillment', icon: Truck },
-  {
+function buildNavigation(role: string): NavItem[] {
+  const nav: NavItem[] = [
+    { label: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { label: 'Bestellungen', href: '/admin/orders', icon: ShoppingCart },
+    { label: 'Kunden', href: '/admin/customers', icon: Users },
+  ];
+
+  // Fulfillment nur für Admins (enthält Write-Aktionen)
+  if (role === 'admin') {
+    nav.push({ label: 'Fulfillment', href: '/admin/fulfillment', icon: Truck });
+  }
+
+  nav.push({
     label: 'Accounting',
     href: '/admin/accounting',
     icon: BarChart3,
@@ -36,14 +46,23 @@ const navigation: NavItem[] = [
       { label: 'Ledger', href: '/admin/accounting/ledger' },
       { label: 'Reports', href: '/admin/accounting/reports' },
     ],
-  },
-];
+  });
+
+  // Benutzerverwaltung nur für Admins
+  if (role === 'admin') {
+    nav.push({ label: 'Benutzer', href: '/admin/users', icon: Shield });
+  }
+
+  return nav;
+}
 
 function AdminSidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
   const router = useRouter();
   const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
   const [adminName, setAdminName] = useState<string>('');
+  const [adminRole, setAdminRole] = useState<string>('');
+  const navigation = buildNavigation(adminRole);
 
   useEffect(() => {
     // Auto-expand groups based on current path
@@ -58,7 +77,10 @@ function AdminSidebar({ onClose }: { onClose?: () => void }) {
     // Fetch admin session
     fetch('/api/admin/session')
       .then((r) => r.json())
-      .then((d) => setAdminName(d.name || d.email || ''))
+      .then((d) => {
+        setAdminName(d.name || d.email || '');
+        setAdminRole(d.role || '');
+      })
       .catch(() => {});
   }, [pathname]);
 
@@ -174,7 +196,9 @@ function AdminSidebar({ onClose }: { onClose?: () => void }) {
         {adminName && (
           <div className="px-3">
             <p className="text-cream text-xs font-medium truncate">{adminName}</p>
-            <p className="text-muted/50 text-[10px]">Administrator</p>
+            <p className="text-muted/50 text-[10px]">
+              {adminRole === 'admin' ? 'Administrator' : 'Betrachter'}
+            </p>
           </div>
         )}
         <button
