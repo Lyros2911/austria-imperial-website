@@ -39,6 +39,7 @@ export function Footer() {
               <FooterLink href="/legal/datenschutz">Datenschutz</FooterLink>
               <FooterLink href="/legal/agb">AGB</FooterLink>
               <FooterLink href="/legal/widerruf">Widerrufsbelehrung</FooterLink>
+              <FooterLink href="/admin/login">Admin</FooterLink>
             </nav>
           </div>
         </div>
