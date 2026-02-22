@@ -6,7 +6,7 @@
  * 2. Email Fallback: Sends structured order email to KIENDLER_EMAIL
  *
  * Kiendler handles:
- * - Steirisches Kürbiskernöl g.g.A. (200ml, 250ml, 500ml)
+ * - Steirisches Kürbiskernöl g.g.A. (250ml, 500ml) — Premium Design Flaschen
  * - Packaging + Versand from their facility
  */
 

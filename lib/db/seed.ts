@@ -74,18 +74,9 @@ async function seed() {
     .values([
       {
         productId: kernoel.id,
-        sku: 'KOL-200',
-        nameDe: '200ml',
-        nameEn: '200ml',
-        sizeMl: 200,
-        priceCents: 1490, // EUR 14,90
-        weightGrams: 280,
-      },
-      {
-        productId: kernoel.id,
         sku: 'KOL-250',
-        nameDe: '250ml',
-        nameEn: '250ml',
+        nameDe: '250ml Premium',
+        nameEn: '250ml Premium',
         sizeMl: 250,
         priceCents: 1790, // EUR 17,90
         weightGrams: 340,
@@ -93,8 +84,8 @@ async function seed() {
       {
         productId: kernoel.id,
         sku: 'KOL-500',
-        nameDe: '500ml',
-        nameEn: '500ml',
+        nameDe: '500ml Premium',
+        nameEn: '500ml Premium',
         sizeMl: 500,
         priceCents: 2990, // EUR 29,90
         weightGrams: 620,

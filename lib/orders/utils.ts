@@ -25,10 +25,9 @@ export function generateOrderNumber(): string {
  * TODO: In Phase 6 aus Konfigurationstabelle laden.
  */
 export const PRODUCER_COSTS: Record<string, number> = {
-  // Kiendler — Kernöl
-  'KOL-200': 650,  // €6.50 — Kiendler Stückpreis 200ml
-  'KOL-250': 750,  // €7.50 — Kiendler Stückpreis 250ml
-  'KOL-500': 1350, // €13.50 — Kiendler Stückpreis 500ml
+  // Kiendler — Kernöl (Premium Design Flaschen)
+  'KOL-250': 540,  // €5.40 — Kiendler Premium Design Flasche 250ml
+  'KOL-500': 930,  // €9.30 — Kiendler Premium Design Flasche 500ml
   // Hernach — Kren
   'KRN-100': 190,  // €1.90 — Hernach Stückpreis 100g
   'KRN-200': 290,  // €2.90 — Hernach Stückpreis 200g
