@@ -25,7 +25,7 @@ function getResend(): Resend {
 }
 
 export const AIGG_FROM_EMAIL = 'Austria Imperial <noreply@austriaimperial.com>';
-export const AIGG_NOTIFICATION_EMAIL = 'info@austriaimperial.com';
+export const AIGG_NOTIFICATION_EMAIL = 'office@austriaimperial.com';
 
 interface SendEmailParams {
   from?: string;

@@ -41,6 +41,9 @@ docker run -d \
   -e AUTH_SECRET="${AUTH_SECRET:-}" \
   -e N8N_ORDER_WEBHOOK_URL="${N8N_ORDER_WEBHOOK_URL:-}" \
   -e CRON_SECRET="${CRON_SECRET:-}" \
+  -e BASE_URL="${BASE_URL:-https://austriaimperial.com}" \
+  -e KIENDLER_EMAIL="${KIENDLER_EMAIL:-}" \
+  -e HERNACH_EMAIL="${HERNACH_EMAIL:-}" \
   \
   -l traefik.enable=true \
   \
