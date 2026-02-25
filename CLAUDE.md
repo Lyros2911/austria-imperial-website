@@ -2,7 +2,7 @@
 
 > **LIES DAS KOMPLETT BEVOR DU IRGENDETWAS AENDERST.**
 
-## Status: PRODUKTIV (v1.0 — 2026-02-25)
+## Status: PRODUKTIV (v1.2 — 2026-02-25)
 
 Dieses Projekt ist **LIVE** unter https://austriaimperial.com
 Echte Kunden bestellen hier. Jede Aenderung kann Bestellungen brechen.
@@ -33,6 +33,9 @@ lib/airtable/sync.ts               → Airtable Live-Tracking
 lib/airtable/client.ts             → Airtable API Client
 lib/airtable/config.ts             → Airtable Tabellennamen + Base-ID
 lib/airtable/types.ts              → Airtable Feldnamen (muessen mit Airtable uebereinstimmen!)
+lib/attribution.ts                 → UTM Cookie Capture + Parsing
+lib/orders/commission.ts           → Partner Commission Engine
+lib/payments/connect.ts            → Stripe Connect Integration
 lib/db/schema.ts                   → PostgreSQL Schema (Neon DB)
 lib/db/drizzle.ts                  → Datenbankverbindung
 lib/email/order-confirmation.ts    → Kunden- und Office-Emails
@@ -52,15 +55,45 @@ deploy.sh                          → Docker Deploy mit ENV-Variablen
 ## ARCHITEKTUR-UEBERBLICK
 
 ```
+Content-Link mit UTM-Parametern (utm_campaign=auryx_engine)
+  └→ AttributionCapture (Client Component) → Cookie (30 Tage)
+      └→ Checkout API liest Cookie → Stripe Session Metadata
+          └→ Stripe Connect (nur bei commission > 0, NICHT fuer AIGG)
+              └→ Stripe Zahlung
+
 Stripe Zahlung
   └→ Webhook (route.ts)
-      ├→ createOrder() → PostgreSQL (Orders + Fulfillment + Ledger)
-      ├→ syncOrderToAirtable() → "Austria Imperial Bestellungen"
+      ├→ createOrder() → PostgreSQL (Orders + Fulfillment + Ledger + Attribution)
+      ├→ calculateAndStoreCommission() → partner_commissions (waived fuer AIGG)
+      │    └→ syncCommissionToAirtable() → "Partner Revenue"
+      ├→ syncOrderToAirtable() → "Austria Imperial Bestellungen" (+ Quelle, UTM)
       ├→ syncFulfillmentToAirtable() → "Shop Kuerbiskernoel" / "Shop Kren"
       ├→ dispatchFulfillmentOrders() → Email an Kiendler/Hernach
       │    └→ updateFulfillmentInAirtable() + logCommunicationToAirtable()
-      └→ sendOrderConfirmation/Notification → Kunden + Office Emails
-           └→ logCommunicationToAirtable()
+      ├→ sendOrderConfirmation/Notification → Kunden + Office Emails
+      │    └→ logCommunicationToAirtable()
+      └→ handlePaymentIntentSucceeded() → markCommissionPaid() (Stripe Connect)
+```
+
+## STRIPE CONNECT (Revenue Share)
+
+```
+AIGG (aktuell):
+  commission_percent = 0, is_platform_owner = true
+  → Kein Stripe Connect, normaler Checkout
+  → Commissions mit Status "waived"
+
+Zukuenftige Auryx-Kunden:
+  commission_percent = 10
+  → Stripe Connected Account
+  → application_fee_amount = 10% vom Gesamtbetrag
+  → Automatische Auszahlung via Stripe
+  → Commission Status: pending → paid
+
+Konfiguration:
+  ENV: PARTNER_CODE=aigg (default)
+  DB: partner_config Tabelle
+  Code: lib/payments/connect.ts
 ```
 
 ## PRODUCER-ROUTING

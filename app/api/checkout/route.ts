@@ -13,6 +13,7 @@ import { productVariants } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 import { ATTRIBUTION_COOKIE, parseAttributionCookie } from '@/lib/attribution';
+import { getConnectConfig, buildConnectCheckoutParams } from '@/lib/payments/connect';
 
 const checkoutSchema = z.object({
   items: z
@@ -94,6 +95,33 @@ export async function POST(request: NextRequest) {
       attrMatch ? decodeURIComponent(attrMatch[1]) : undefined
     );
 
+    // ─── Stripe Connect: Check if this shop has a connected account ───
+    // AIGG: commission=0, no connected account → connectConfig = null → normal checkout
+    // Future clients: commission=10%, connected account → application_fee_amount
+    const connectConfig = await getConnectConfig();
+
+    // Calculate total for Connect fee (if applicable)
+    let connectParams: Record<string, unknown> = {};
+    if (connectConfig) {
+      const totalCents = items.reduce((sum, item) => {
+        const variant = variants.find((v) => v.id === item.variantId)!;
+        return sum + variant.priceCents * item.quantity;
+      }, 0);
+
+      const params = buildConnectCheckoutParams(totalCents, connectConfig);
+      connectParams = {
+        payment_intent_data: {
+          application_fee_amount: params.applicationFeeAmount,
+          transfer_data: params.transferData,
+        },
+      };
+
+      console.log(
+        `[Checkout API] Stripe Connect active: ${connectConfig.partnerName} ` +
+        `(${connectConfig.commissionPercent}% = ${params.applicationFeeAmount} cents fee)`
+      );
+    }
+
     // Create Stripe Checkout Session (mode: 'payment' — one-time)
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -117,7 +145,9 @@ export async function POST(request: NextRequest) {
         utm_content: attribution?.utm_content || '',
         referrer: attribution?.referrer || '',
       },
-    });
+      // Stripe Connect: application_fee + transfer_data (only if connected account exists)
+      ...connectParams,
+    } as Parameters<typeof stripe.checkout.sessions.create>[0]);
 
     return NextResponse.json({ url: session.url });
   } catch (err) {

@@ -33,6 +33,7 @@ import {
 } from '@/lib/airtable/sync';
 import { COMM_TYPE } from '@/lib/airtable/types';
 import { calculateAndStoreCommission, getPartnerFromAttribution } from '@/lib/orders/commission';
+import { markCommissionPaid } from '@/lib/payments/connect';
 
 // ─── Webhook Handler ───────────────────────────
 
@@ -82,6 +83,10 @@ export async function POST(request: NextRequest) {
 
       case 'charge.refunded':
         await handleChargeRefunded(event.data.object as Stripe.Charge, event.id);
+        break;
+
+      case 'payment_intent.succeeded':
+        await handlePaymentIntentSucceeded(event.data.object as Stripe.PaymentIntent, event.id);
         break;
 
       default:
@@ -541,4 +546,63 @@ async function handleChargeRefunded(charge: Stripe.Charge, eventId: string) {
     `[Stripe Webhook] Refund processed: ${result.entryType} for order ${order.orderNumber} ` +
     `(refund: ${latestRefund.id}, event: ${eventId})`
   );
+}
+
+// ─── Stripe Connect: Track Transfer after Payment Success ───
+
+async function handlePaymentIntentSucceeded(
+  paymentIntent: Stripe.PaymentIntent,
+  eventId: string
+) {
+  console.log(`[Stripe Webhook] payment_intent.succeeded: ${paymentIntent.id} (event: ${eventId})`);
+
+  // Check if this PaymentIntent has a transfer (Stripe Connect)
+  const transferId = paymentIntent.transfer_data?.destination
+    ? paymentIntent.latest_charge
+    : null;
+
+  // Also check for application_fee — indicates Auryx revenue share
+  if (!paymentIntent.application_fee_amount || paymentIntent.application_fee_amount === 0) {
+    // No Connect fee → no transfer tracking needed (normal payment or AIGG)
+    return;
+  }
+
+  // Find the order for this PaymentIntent
+  const order = await db.query.orders.findFirst({
+    where: (o, { eq }) => eq(o.stripePaymentIntentId, paymentIntent.id),
+  });
+
+  if (!order) {
+    // PaymentIntent might not be from our shop (Stripe sends all events)
+    console.log(`[Stripe Webhook] No order for PI ${paymentIntent.id} — not our payment`);
+    return;
+  }
+
+  // Extract transfer ID from the charge
+  let stripeTransferId = '';
+  if (paymentIntent.latest_charge && typeof paymentIntent.latest_charge === 'string') {
+    // The transfer is associated with the charge, retrieve it
+    try {
+      const charge = await stripe.charges.retrieve(paymentIntent.latest_charge);
+      if (charge.transfer && typeof charge.transfer === 'string') {
+        stripeTransferId = charge.transfer;
+      }
+    } catch {
+      // Transfer retrieval failed — log but continue
+      console.warn(`[Stripe Webhook] Could not retrieve transfer for charge ${paymentIntent.latest_charge}`);
+    }
+  }
+
+  // Mark commission as paid
+  const result = await markCommissionPaid(
+    order.id,
+    stripeTransferId || `pi_${paymentIntent.id}`
+  );
+
+  if (result) {
+    console.log(
+      `[Stripe Webhook] Connect transfer tracked for order ${order.orderNumber} ` +
+      `(fee: ${paymentIntent.application_fee_amount} cents, transfer: ${stripeTransferId || 'pending'}, event: ${eventId})`
+    );
+  }
 }
