@@ -56,6 +56,18 @@ export interface ShopKommunikationFields {
   Details?: string;
 }
 
+export interface PartnerRevenueFields {
+  Bestellnummer: string; // Primary
+  Partner: string;
+  Bestellsumme: number; // EUR (not cents)
+  'Commission %': number;
+  'Commission EUR': number; // EUR (not cents)
+  Quelle: string;
+  Kampagne: string;
+  Status: string; // "Ausstehend" | "Ausgezahlt" | "Entfallen"
+  Datum: string; // ISO 8601
+}
+
 // ============================================================
 // STATUS LABEL MAPPINGS (DB enum → German Airtable label)
 // ============================================================
@@ -84,6 +96,12 @@ export const FULFILLMENT_STATUS_LABELS: Record<string, string> = {
 export const PRODUCER_LABELS: Record<string, string> = {
   kiendler: 'Kiendler',
   hernach: 'Hernach',
+};
+
+export const COMMISSION_STATUS_LABELS: Record<string, string> = {
+  pending: 'Ausstehend',
+  paid: 'Ausgezahlt',
+  waived: 'Entfallen',
 };
 
 export const COMM_TYPE = {

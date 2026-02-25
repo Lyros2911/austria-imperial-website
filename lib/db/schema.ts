@@ -20,6 +20,8 @@ import {
   jsonb,
   uuid,
   pgEnum,
+  decimal,
+  uniqueIndex,
 } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
@@ -73,6 +75,12 @@ export const reportStatusEnum = pgEnum('report_status', [
 export const addressTypeEnum = pgEnum('address_type', [
   'shipping',
   'billing',
+]);
+
+export const commissionStatusEnum = pgEnum('commission_status', [
+  'pending',
+  'paid',
+  'waived',
 ]);
 
 // ============================================================
@@ -385,6 +393,54 @@ export const adminUsers = pgTable('admin_users', {
 });
 
 // ============================================================
+// 14. PARTNER CONFIG (Auryx Revenue Share)
+//
+// Jeder Auryx-Kunde = 1 Partner-Config.
+// AIGG = Sonderfall: commission_percent = 0, is_platform_owner = true.
+// Zukuenftige Kunden: commission_percent = 10 (10% auf Content-attributed Umsatz).
+// ============================================================
+
+export const partnerConfig = pgTable('partner_config', {
+  id: serial('id').primaryKey(),
+  partnerCode: varchar('partner_code', { length: 50 }).notNull().unique(),
+  partnerName: varchar('partner_name', { length: 200 }).notNull(),
+  commissionPercent: decimal('commission_percent', { precision: 5, scale: 2 }).notNull().default('10.00'),
+  stripeConnectedAccountId: varchar('stripe_connected_account_id', { length: 100 }),
+  isPlatformOwner: boolean('is_platform_owner').notNull().default(false),
+  active: boolean('active').notNull().default(true),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// 15. PARTNER COMMISSIONS (Revenue Share pro Bestellung)
+//
+// APPEND-ONLY analog zu financial_ledger.
+// Status: pending → paid (via Stripe Connect Transfer) oder waived (AIGG).
+// ============================================================
+
+export const partnerCommissions = pgTable('partner_commissions', {
+  id: serial('id').primaryKey(),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  orderId: integer('order_id')
+    .notNull()
+    .references(() => orders.id),
+  orderNumber: varchar('order_number', { length: 30 }).notNull(),
+  orderTotalCents: integer('order_total_cents').notNull(),
+  commissionPercent: decimal('commission_percent', { precision: 5, scale: 2 }).notNull(),
+  commissionCents: integer('commission_cents').notNull(),
+  attributionSource: varchar('attribution_source', { length: 100 }),
+  utmCampaign: varchar('utm_campaign', { length: 100 }),
+  status: commissionStatusEnum('status').notNull().default('pending'),
+  stripeTransferId: varchar('stripe_transfer_id', { length: 100 }),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  paidAt: timestamp('paid_at'),
+  notes: text('notes'),
+});
+
+// ============================================================
 // RELATIONS
 // ============================================================
 
@@ -419,6 +475,7 @@ export const ordersRelations = relations(orders, ({ one, many }) => ({
   items: many(orderItems),
   fulfillmentOrders: many(fulfillmentOrders),
   ledgerEntries: many(financialLedger),
+  commissions: many(partnerCommissions),
 }));
 
 export const orderItemsRelations = relations(orderItems, ({ one }) => ({
@@ -454,6 +511,21 @@ export const financialLedgerRelations = relations(financialLedger, ({ one }) => 
   }),
 }));
 
+export const partnerConfigRelations = relations(partnerConfig, ({ many }) => ({
+  commissions: many(partnerCommissions),
+}));
+
+export const partnerCommissionsRelations = relations(partnerCommissions, ({ one }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerCommissions.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
+  order: one(orders, {
+    fields: [partnerCommissions.orderId],
+    references: [orders.id],
+  }),
+}));
+
 // ============================================================
 // TYPE EXPORTS
 // ============================================================
@@ -476,3 +548,7 @@ export type AuditLogEntry = typeof auditLog.$inferSelect;
 export type MonthlyReport = typeof monthlyReports.$inferSelect;
 export type StripeWebhookEvent = typeof stripeWebhookEvents.$inferSelect;
 export type AdminUser = typeof adminUsers.$inferSelect;
+export type PartnerConfig = typeof partnerConfig.$inferSelect;
+export type NewPartnerConfig = typeof partnerConfig.$inferInsert;
+export type PartnerCommission = typeof partnerCommissions.$inferSelect;
+export type NewPartnerCommission = typeof partnerCommissions.$inferInsert;

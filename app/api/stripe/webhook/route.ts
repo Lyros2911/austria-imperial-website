@@ -29,8 +29,10 @@ import {
   syncOrderToAirtable,
   syncFulfillmentToAirtable,
   logCommunicationToAirtable,
+  syncCommissionToAirtable,
 } from '@/lib/airtable/sync';
 import { COMM_TYPE } from '@/lib/airtable/types';
+import { calculateAndStoreCommission, getPartnerFromAttribution } from '@/lib/orders/commission';
 
 // ─── Webhook Handler ───────────────────────────
 
@@ -268,6 +270,52 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
     `[Stripe Webhook] Order created: ${result.orderNumber} ` +
     `(${result.fulfillmentOrderIds.length} fulfillment orders, ledger: ${result.ledgerId}, event: ${eventId})`
   );
+
+  // ─── Partner Commission berechnen (non-blocking) ──────
+  try {
+    const partnerCode = getPartnerFromAttribution(
+      attribution.attributionSource,
+      attribution.utmCampaign
+    );
+
+    if (partnerCode) {
+      const emailSubtotalForCommission = lineItems.data.reduce(
+        (sum, li) => sum + ((li.price?.unit_amount ?? 0) * (li.quantity ?? 1)),
+        0
+      );
+      const orderTotalForCommission = emailSubtotalForCommission + shippingCostCents;
+
+      const commissionResult = await calculateAndStoreCommission({
+        orderId: result.orderId,
+        orderNumber: result.orderNumber,
+        orderTotalCents: orderTotalForCommission,
+        attributionSource: attribution.attributionSource,
+        utmCampaign: attribution.utmCampaign,
+        partnerCode,
+      });
+
+      // Sync commission to Airtable "Partner Revenue"
+      if (commissionResult) {
+        await syncCommissionToAirtable({
+          orderNumber: result.orderNumber,
+          partnerName: partnerCode === 'aigg' ? 'Austria Imperial Green Gold' : partnerCode,
+          orderTotalCents: orderTotalForCommission,
+          commissionPercent: commissionResult.commissionPercent,
+          commissionCents: commissionResult.commissionCents,
+          attributionSource: attribution.attributionSource,
+          utmCampaign: attribution.utmCampaign,
+          status: commissionResult.status,
+        });
+      }
+    } else {
+      console.log(
+        `[Stripe Webhook] No partner attribution for ${result.orderNumber} — no commission`
+      );
+    }
+  } catch (commissionErr) {
+    const errMsg = commissionErr instanceof Error ? commissionErr.message : 'Unknown error';
+    console.error(`[Stripe Webhook] Commission calculation failed (non-critical): ${errMsg}`);
+  }
 
   // ─── Build email item data (shared by Airtable + Email) ──────
   const emailItems = lineItems.data.map((li) => {

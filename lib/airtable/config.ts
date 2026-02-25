@@ -25,6 +25,7 @@ export const TABLES = {
   SHOP_KUERBISKERNOEL: 'Shop Kürbiskernöl',
   SHOP_KREN: 'Shop Kren',
   SHOP_KOMMUNIKATION: 'Shop Kommunikation',
+  PARTNER_REVENUE: 'Partner Revenue',
 } as const;
 
 /** Map DB producer enum → Airtable table name */

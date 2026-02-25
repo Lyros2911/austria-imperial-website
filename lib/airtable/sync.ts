@@ -12,10 +12,12 @@ import {
   type ShopBestellungenFields,
   type ShopProductFields,
   type ShopKommunikationFields,
+  type PartnerRevenueFields,
   ORDER_STATUS_LABELS,
   FULFILLMENT_STATUS_LABELS,
   PRODUCER_LABELS,
   COMM_STATUS,
+  COMMISSION_STATUS_LABELS,
 } from './types';
 
 // ============================================================
@@ -384,5 +386,65 @@ export async function updateOrderStatusInAirtable(
   } catch (err) {
     const msg = err instanceof Error ? err.message : 'Unknown error';
     console.error(`[Airtable] updateOrderStatusInAirtable failed: ${msg}`);
+  }
+}
+
+// ============================================================
+// 6. SYNC PARTNER COMMISSION (Revenue Tracking)
+// ============================================================
+
+export interface SyncCommissionInput {
+  orderNumber: string;
+  partnerName: string;
+  orderTotalCents: number;
+  commissionPercent: number;
+  commissionCents: number;
+  attributionSource: string;
+  utmCampaign?: string;
+  status: string; // 'pending' | 'paid' | 'waived'
+}
+
+/**
+ * Sync a partner commission to Airtable "Partner Revenue".
+ * Idempotent: upserts by Bestellnummer.
+ */
+export async function syncCommissionToAirtable(
+  input: SyncCommissionInput,
+): Promise<string | null> {
+  if (!isAirtableEnabled()) return null;
+
+  try {
+    const fields: Partial<PartnerRevenueFields> = {
+      Bestellnummer: input.orderNumber,
+      Partner: input.partnerName,
+      Bestellsumme: centsToEur(input.orderTotalCents),
+      'Commission %': input.commissionPercent,
+      'Commission EUR': centsToEur(input.commissionCents),
+      Quelle: input.attributionSource || 'direct',
+      Kampagne: input.utmCampaign || '',
+      Status: COMMISSION_STATUS_LABELS[input.status] || input.status,
+      Datum: new Date().toISOString(),
+    };
+
+    const result = await upsertByFormula<PartnerRevenueFields>(
+      TABLES.PARTNER_REVENUE,
+      `{Bestellnummer} = "${input.orderNumber}"`,
+      fields,
+    );
+
+    if (result.success && result.data) {
+      console.log(
+        `[Airtable] Commission synced: ${input.orderNumber} → ${input.partnerName} ` +
+        `(${input.commissionPercent}% = €${centsToEur(input.commissionCents).toFixed(2)}, ${input.status})`,
+      );
+      return result.data.id;
+    }
+
+    console.error(`[Airtable] Commission sync failed: ${result.error}`);
+    return null;
+  } catch (err) {
+    const msg = err instanceof Error ? err.message : 'Unknown error';
+    console.error(`[Airtable] syncCommissionToAirtable failed: ${msg}`);
+    return null;
   }
 }
