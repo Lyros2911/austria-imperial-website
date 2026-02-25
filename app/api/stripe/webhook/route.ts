@@ -220,6 +220,21 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
   // Calculate shipping cost (from session's shipping_cost or total_details)
   const shippingCostCents = session.shipping_cost?.amount_total ?? 0;
 
+  // ─── Attribution aus Session Metadata extrahieren ────────────
+  const attribution = {
+    attributionSource: session.metadata?.source || 'direct',
+    utmSource: session.metadata?.utm_source || undefined,
+    utmMedium: session.metadata?.utm_medium || undefined,
+    utmCampaign: session.metadata?.utm_campaign || undefined,
+    utmContent: session.metadata?.utm_content || undefined,
+    referrerUrl: session.metadata?.referrer || undefined,
+  };
+
+  console.log(
+    `[Stripe Webhook] Attribution for ${session.id}: source=${attribution.attributionSource}, ` +
+    `utm_campaign=${attribution.utmCampaign || 'none'}`
+  );
+
   // Create the order atomically
   const result = await createOrder({
     guestEmail: customerDetails.email ?? undefined,
@@ -245,6 +260,8 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
     shippingCostCents,
     paymentFeeCents,
     locale: session.locale ?? 'de',
+    // Attribution tracking
+    ...attribution,
   });
 
   console.log(
@@ -291,6 +308,10 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
         country: shipping.address.country ?? 'AT',
       },
       status: 'paid',
+      // Attribution tracking
+      attributionSource: attribution.attributionSource,
+      utmSource: attribution.utmSource,
+      utmCampaign: attribution.utmCampaign,
     });
 
     // 2) Sync fulfillment orders (one per producer → separate product tables)

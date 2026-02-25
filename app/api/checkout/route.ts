@@ -12,6 +12,7 @@ import { db } from '@/lib/db/drizzle';
 import { productVariants } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
+import { ATTRIBUTION_COOKIE, parseAttributionCookie } from '@/lib/attribution';
 
 const checkoutSchema = z.object({
   items: z
@@ -86,6 +87,13 @@ export async function POST(request: NextRequest) {
 
     const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 
+    // ─── Attribution aus Cookie lesen ────────────────
+    const cookieHeader = request.headers.get('cookie') || '';
+    const attrMatch = cookieHeader.match(new RegExp(`${ATTRIBUTION_COOKIE}=([^;]+)`));
+    const attribution = parseAttributionCookie(
+      attrMatch ? decodeURIComponent(attrMatch[1]) : undefined
+    );
+
     // Create Stripe Checkout Session (mode: 'payment' — one-time)
     const session = await stripe.checkout.sessions.create({
       mode: 'payment',
@@ -102,7 +110,12 @@ export async function POST(request: NextRequest) {
       cancel_url: `${baseUrl}/checkout`,
       locale: 'de',
       metadata: {
-        source: 'aigg_website',
+        source: attribution?.source || 'direct',
+        utm_source: attribution?.utm_source || '',
+        utm_medium: attribution?.utm_medium || '',
+        utm_campaign: attribution?.utm_campaign || '',
+        utm_content: attribution?.utm_content || '',
+        referrer: attribution?.referrer || '',
       },
     });
 

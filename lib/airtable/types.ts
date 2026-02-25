@@ -21,6 +21,10 @@ export interface ShopBestellungenFields {
   'Shop Kren'?: string[]; // Linked record IDs
   'Shop Kommunikation'?: string[]; // Linked record IDs
   'DB Order ID': number;
+  // Attribution tracking
+  Quelle?: string; // "instagram", "youtube", "direct"
+  'UTM Source'?: string;
+  'UTM Campaign'?: string;
 }
 
 export interface ShopProductFields {

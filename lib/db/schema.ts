@@ -195,6 +195,15 @@ export const orders = pgTable('orders', {
 
   locale: varchar('locale', { length: 10 }).notNull().default('de'),
   notes: text('notes'),
+
+  // Attribution tracking — woher kam die Bestellung?
+  attributionSource: varchar('attribution_source', { length: 50 }).default('direct'),
+  utmSource: varchar('utm_source', { length: 100 }),
+  utmMedium: varchar('utm_medium', { length: 100 }),
+  utmCampaign: varchar('utm_campaign', { length: 100 }),
+  utmContent: varchar('utm_content', { length: 255 }),
+  referrerUrl: varchar('referrer_url', { length: 500 }),
+
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 });

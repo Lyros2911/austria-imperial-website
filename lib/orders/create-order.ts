@@ -64,6 +64,13 @@ export interface CreateOrderInput {
   paymentFeeCents: number; // from Stripe balance_transaction
   locale?: string;
   notes?: string;
+  // Attribution tracking — woher kam die Bestellung?
+  attributionSource?: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmContent?: string;
+  referrerUrl?: string;
 }
 
 export interface CreateOrderResult {
@@ -158,6 +165,13 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         totalCents,
         locale: input.locale ?? 'de',
         notes: input.notes ?? null,
+        // Attribution tracking
+        attributionSource: input.attributionSource ?? 'direct',
+        utmSource: input.utmSource ?? null,
+        utmMedium: input.utmMedium ?? null,
+        utmCampaign: input.utmCampaign ?? null,
+        utmContent: input.utmContent ?? null,
+        referrerUrl: input.referrerUrl ?? null,
       })
       .returning({ id: orders.id });
 

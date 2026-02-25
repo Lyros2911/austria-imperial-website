@@ -70,6 +70,10 @@ export interface SyncOrderInput {
     country?: string;
   };
   status: string;
+  // Attribution tracking
+  attributionSource?: string;
+  utmSource?: string;
+  utmCampaign?: string;
 }
 
 /**
@@ -97,6 +101,10 @@ export async function syncOrderToAirtable(
       Lieferadresse: formatAddress(input.shipping),
       Bestelldatum: new Date().toISOString(),
       'DB Order ID': input.orderId,
+      // Attribution tracking
+      Quelle: input.attributionSource || 'direct',
+      'UTM Source': input.utmSource || '',
+      'UTM Campaign': input.utmCampaign || '',
     };
 
     const result = await upsertByFormula<ShopBestellungenFields>(
