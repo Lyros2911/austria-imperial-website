@@ -3,10 +3,11 @@
  *
  * Berechnet und speichert Commissions fuer Auryx-Partner.
  *
- * REGELN:
+ * REGELN (Stand: Strukturvereinbarung 26.02.2026):
  * 1. Commission wird NUR berechnet wenn die Bestellung "attributed" ist
  *    (utm_campaign enthält 'auryx_engine' oder attribution_source != 'direct').
- * 2. AIGG: commission_percent = 0 → Status 'waived' (Gottfried ist Eigentümer beider Firmen).
+ * 2. AIGG: commission_percent = 10 → Auryx erhält 10% D2C-Nettoumsatz als Technologiepartner.
+ *    (Vertraglich geregelt: Auryx AI LLC = offizieller Technologiepartner der AIGG GmbH)
  * 3. Zukünftige Kunden: commission_percent = 10 → Status 'pending' → 'paid' via Stripe Connect.
  * 4. partner_commissions ist APPEND-ONLY analog zu financial_ledger.
  * 5. Idempotent: Unique constraint auf (partner_config_id, order_id).
@@ -41,8 +42,8 @@ export interface CommissionResult {
  *
  * - Loads partner config by partnerCode
  * - Calculates commission: orderTotal * (commissionPercent / 100)
- * - If commission_percent = 0 → status 'waived'
- * - If commission_percent > 0 → status 'pending'
+ * - If commission_percent = 0 → status 'waived' (nur für explizit befreite Partner)
+ * - If commission_percent > 0 → status 'pending' (AIGG = 10%, externe Partner = 10%)
  * - Inserts into partner_commissions
  * - Returns commission details
  *
@@ -106,8 +107,8 @@ export async function calculateAndStoreCommission(
       status,
       notes:
         status === 'waived'
-          ? `Commission waived — ${partner.partnerName} is platform owner`
-          : undefined,
+          ? `Commission waived — ${partner.partnerName} explicitly exempt`
+          : `Auryx 10% D2C — Technologiepartner-Vergütung (Strukturvereinbarung 26.02.2026)`,
     })
     .returning({ id: partnerCommissions.id });
 
@@ -146,7 +147,8 @@ export async function calculateAndStoreCommission(
  * Determine the partner code from order attribution data.
  *
  * Logic:
- * - If utm_campaign contains 'auryx_engine' → 'aigg' (for AIGG shop)
+ * - If utm_campaign contains 'auryx_engine' → 'aigg' (Auryx Content-Engine → AIGG Shop)
+ *   Auryx erhält 10% D2C-Nettoumsatz als Technologiepartner (Strukturvereinbarung 26.02.2026)
  * - Future: different shops will have different partner codes
  *
  * Returns null if no partner attribution found (direct sales).

@@ -1,3 +1,9 @@
+// TODO [NACH GmbH-REGISTRIERUNG]:
+// Verantwortliche Stelle: Auryx AI LLC → Austria Imperial Green Gold GmbH
+// Geschäftsführer: Gottfried Hammerl & Peter Kräcksammer (Gesamtvertretung)
+// Adresse: [GmbH-Adresse nach Registrierung]
+// Strukturvereinbarung: 26.02.2026
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

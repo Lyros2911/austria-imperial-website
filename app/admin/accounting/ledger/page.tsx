@@ -170,11 +170,14 @@ export default async function LedgerPage({
                     <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5">
                       Gewinn
                     </th>
+                    <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5 hidden xl:table-cell">
+                      Auryx
+                    </th>
                     <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5">
                       Peter
                     </th>
                     <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5">
-                      AIGG
+                      Gottfried
                     </th>
                   </tr>
                 </thead>
@@ -224,6 +227,9 @@ export default async function LedgerPage({
                           isRefund ? 'text-red-400' : 'text-emerald-400'
                         }`}>
                           {formatEurCents(entry.grossProfitCents)}
+                        </td>
+                        <td className={`px-4 py-2.5 text-right font-mono hidden xl:table-cell ${rowClass || 'text-blue-400'}`}>
+                          {formatEurCents((entry as any).auryxShareCents ?? 0)}
                         </td>
                         <td className={`px-4 py-2.5 text-right font-mono ${rowClass || 'text-gold'}`}>
                           {formatEurCents(entry.peterShareCents)}

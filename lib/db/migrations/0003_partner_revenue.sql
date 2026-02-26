@@ -50,6 +50,7 @@ CREATE INDEX idx_partner_commissions_status ON partner_commissions (status);
 CREATE UNIQUE INDEX idx_partner_commissions_unique ON partner_commissions (partner_config_id, order_id);
 
 -- ─── AIGG als ersten Partner anlegen ───────────
--- AIGG = Gottfrieds eigene Marke, 0% Commission (Eigentümer = Auryx-Eigentümer)
+-- HISTORISCH: Ursprünglich 0% — wurde in 0004_auryx_revenue_share.sql auf 10% geändert
+-- (Strukturvereinbarung 26.02.2026: Auryx = Technologiepartner mit 10% D2C-Nettoumsatz)
 INSERT INTO partner_config (partner_code, partner_name, commission_percent, is_platform_owner, active)
 VALUES ('aigg', 'Austria Imperial Green Gold', 0.00, true, true);

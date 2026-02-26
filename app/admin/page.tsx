@@ -86,6 +86,7 @@ async function getDashboardData() {
     db
       .select({
         grossProfit: sql<number>`COALESCE(SUM(gross_profit_cents), 0)::int`,
+        auryxShare: sql<number>`COALESCE(SUM(auryx_share_cents), 0)::int`,
         peterShare: sql<number>`COALESCE(SUM(peter_share_cents), 0)::int`,
         aiggShare: sql<number>`COALESCE(SUM(aigg_share_cents), 0)::int`,
       })
@@ -113,6 +114,7 @@ async function getDashboardData() {
     monthOrders: monthOrdersResult[0]?.count ?? 0,
     monthRevenue: monthRevenueResult[0]?.total ?? 0,
     monthGrossProfit: monthProfitResult[0]?.grossProfit ?? 0,
+    monthAuryxShare: monthProfitResult[0]?.auryxShare ?? 0,
     monthPeterShare: monthProfitResult[0]?.peterShare ?? 0,
     monthAiggShare: monthProfitResult[0]?.aiggShare ?? 0,
     pendingFulfillment: pendingFulfillmentResult[0]?.count ?? 0,
@@ -167,19 +169,27 @@ export default async function AdminDashboard() {
       {/* Profit Split Visualization */}
       {data.monthGrossProfit > 0 && (
         <div className="bg-[#0e0e0e] border border-white/[0.06] rounded-xl p-6 mb-8">
-          <h3 className="text-sm text-muted tracking-wider uppercase mb-4">Gewinnverteilung {monthName}</h3>
-          <div className="flex gap-3 h-8 rounded-lg overflow-hidden">
+          <h3 className="text-sm text-muted tracking-wider uppercase mb-4">Revenue-Waterfall {monthName}</h3>
+          <div className="flex gap-1.5 h-8 rounded-lg overflow-hidden">
+            {data.monthAuryxShare > 0 && (
+              <div
+                className="bg-blue-500/80 rounded-l-lg flex items-center justify-center text-[10px] font-semibold text-white"
+                style={{ width: `${Math.max(10, (data.monthAuryxShare / data.monthGrossProfit) * 100)}%` }}
+              >
+                Auryx 10% · {formatEurCents(data.monthAuryxShare)}
+              </div>
+            )}
             <div
-              className="bg-gold/80 rounded-l-lg flex items-center justify-center text-[10px] font-semibold text-black"
-              style={{ width: '50%' }}
+              className={`bg-gold/80 ${data.monthAuryxShare <= 0 ? 'rounded-l-lg' : ''} flex items-center justify-center text-[10px] font-semibold text-black`}
+              style={{ width: `${Math.max(20, (data.monthPeterShare / data.monthGrossProfit) * 100)}%` }}
             >
-              Peter 50% · {formatEurCents(data.monthPeterShare)}
+              Peter · {formatEurCents(data.monthPeterShare)}
             </div>
             <div
               className="bg-emerald-600/80 rounded-r-lg flex items-center justify-center text-[10px] font-semibold text-white"
-              style={{ width: '50%' }}
+              style={{ width: `${Math.max(20, (data.monthAiggShare / data.monthGrossProfit) * 100)}%` }}
             >
-              AIGG 50% · {formatEurCents(data.monthAiggShare)}
+              Gottfried · {formatEurCents(data.monthAiggShare)}
             </div>
           </div>
         </div>

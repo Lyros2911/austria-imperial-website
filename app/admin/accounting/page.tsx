@@ -33,6 +33,7 @@ async function getAccountingData(year: number, month: number) {
       paymentFee: sql<number>`COALESCE(SUM(payment_fee_cents), 0)::int`,
       customs: sql<number>`COALESCE(SUM(customs_cents), 0)::int`,
       grossProfit: sql<number>`COALESCE(SUM(gross_profit_cents), 0)::int`,
+      auryxShare: sql<number>`COALESCE(SUM(auryx_share_cents), 0)::int`,
       peterShare: sql<number>`COALESCE(SUM(peter_share_cents), 0)::int`,
       aiggShare: sql<number>`COALESCE(SUM(aigg_share_cents), 0)::int`,
       count: sql<number>`count(*)::int`,
@@ -53,6 +54,7 @@ async function getAccountingData(year: number, month: number) {
     .select({
       revenue: sql<number>`COALESCE(SUM(revenue_cents), 0)::int`,
       grossProfit: sql<number>`COALESCE(SUM(gross_profit_cents), 0)::int`,
+      auryxShare: sql<number>`COALESCE(SUM(auryx_share_cents), 0)::int`,
       peterShare: sql<number>`COALESCE(SUM(peter_share_cents), 0)::int`,
       aiggShare: sql<number>`COALESCE(SUM(aigg_share_cents), 0)::int`,
     })
@@ -156,7 +158,7 @@ export default async function AccountingPage({
           accent="gold"
         />
         <KpiCard
-          label="AIGG (50%)"
+          label="Gottfried (50%)"
           value={formatEurCents(m.aiggShare)}
           icon={Building}
           accent="green"
@@ -183,8 +185,9 @@ export default async function AccountingPage({
             <div className="border-t border-gold/20 my-2" />
             <CostRow label="Bruttogewinn" value={m.grossProfit} bold accent="gold" />
             <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label="→ Peter 50%" value={m.peterShare} accent="gold" />
-            <CostRow label="→ AIGG 50%" value={m.aiggShare} accent="emerald" />
+            <CostRow label="→ Auryx AI (10% D2C)" value={m.auryxShare} accent="cream" />
+            <CostRow label="→ Peter (50% Rest)" value={m.peterShare} accent="gold" />
+            <CostRow label="→ Gottfried (50% Rest)" value={m.aiggShare} accent="emerald" />
           </div>
 
           <div className="mt-4 pt-3 border-t border-white/[0.04]">
@@ -203,8 +206,9 @@ export default async function AccountingPage({
             <CostRow label="Gesamtumsatz YTD" value={ytd.revenue} bold accent="cream" />
             <CostRow label="Bruttogewinn YTD" value={ytd.grossProfit} bold accent="gold" />
             <div className="border-t border-white/[0.06] my-2" />
+            <CostRow label="Auryx AI YTD" value={ytd.auryxShare} accent="cream" />
             <CostRow label="Peter YTD" value={ytd.peterShare} accent="gold" />
-            <CostRow label="AIGG YTD" value={ytd.aiggShare} accent="emerald" />
+            <CostRow label="Gottfried YTD" value={ytd.aiggShare} accent="emerald" />
           </div>
 
           <div className="mt-8 flex gap-3">

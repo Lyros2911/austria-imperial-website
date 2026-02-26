@@ -1,3 +1,12 @@
+// TODO [NACH GmbH-REGISTRIERUNG]:
+// Aktuell steht "Auryx AI LLC" als Betreiber. Nach Eintragung der AIGG GmbH ersetzen durch:
+// - Firma: Austria Imperial Green Gold GmbH
+// - Sitz: [GmbH-Adresse nach Registrierung]
+// - Geschäftsführer: Gottfried Hammerl & Peter Kräcksammer (Gesamtvertretung)
+// - FN: [Firmenbuchnummer]
+// - UID: [Umsatzsteuer-ID nach Anmeldung]
+// Strukturvereinbarung: 26.02.2026
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

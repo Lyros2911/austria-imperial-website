@@ -55,8 +55,9 @@ export async function GET(request: NextRequest) {
     'Payment Fee (EUR)',
     'Customs (EUR)',
     'Gross Profit (EUR)',
-    'Peter Share (EUR)',
-    'AIGG Share (EUR)',
+    'Auryx 10% D2C (EUR)',
+    'Peter 50% (EUR)',
+    'Gottfried 50% (EUR)',
     'Notes',
   ].join(',');
 
@@ -73,6 +74,7 @@ export async function GET(request: NextRequest) {
       (e.paymentFeeCents / 100).toFixed(2),
       (e.customsCents / 100).toFixed(2),
       (e.grossProfitCents / 100).toFixed(2),
+      (((e as any).auryxShareCents ?? 0) / 100).toFixed(2),
       (e.peterShareCents / 100).toFixed(2),
       (e.aiggShareCents / 100).toFixed(2),
       `"${(e.notes || '').replace(/"/g, '""')}"`,

@@ -27,6 +27,7 @@ export interface ReportData {
   totalShippingCostCents: number;
   totalPaymentFeeCents: number;
   totalGrossProfitCents: number;
+  totalAuryxCents: number;
   totalPeterCents: number;
   totalAiggCents: number;
   ledgerEntriesCount: number;
@@ -44,6 +45,7 @@ interface LedgerEntry {
   paymentFeeCents: number;
   customsCents: number;
   grossProfitCents: number;
+  auryxShareCents: number;
   peterShareCents: number;
   aiggShareCents: number;
   notes: string | null;
@@ -75,6 +77,7 @@ export async function aggregateMonthlyData(
   let totalShipping = 0;
   let totalPaymentFee = 0;
   let totalGrossProfit = 0;
+  let totalAuryx = 0;
   let totalPeter = 0;
   let totalAigg = 0;
 
@@ -84,6 +87,7 @@ export async function aggregateMonthlyData(
     totalShipping += e.shippingCostCents;
     totalPaymentFee += e.paymentFeeCents;
     totalGrossProfit += e.grossProfitCents;
+    totalAuryx += (e as any).auryxShareCents ?? 0;
     totalPeter += e.peterShareCents;
     totalAigg += e.aiggShareCents;
   }
@@ -98,6 +102,7 @@ export async function aggregateMonthlyData(
     totalShippingCostCents: totalShipping,
     totalPaymentFeeCents: totalPaymentFee,
     totalGrossProfitCents: totalGrossProfit,
+    totalAuryxCents: totalAuryx,
     totalPeterCents: totalPeter,
     totalAiggCents: totalAigg,
     ledgerEntriesCount: entries.length,
@@ -139,8 +144,9 @@ export function generateDetailedCSV(data: ReportData): string {
     'Payment Fee (EUR)',
     'Customs (EUR)',
     'Gross Profit (EUR)',
-    'Peter Share (EUR)',
-    'AIGG Share (EUR)',
+    'Auryx 10% D2C (EUR)',
+    'Peter 50% (EUR)',
+    'Gottfried 50% (EUR)',
     'Notes',
   ].join(',');
 
@@ -156,6 +162,7 @@ export function generateDetailedCSV(data: ReportData): string {
       (e.paymentFeeCents / 100).toFixed(2),
       (e.customsCents / 100).toFixed(2),
       (e.grossProfitCents / 100).toFixed(2),
+      ((e.auryxShareCents ?? 0) / 100).toFixed(2),
       (e.peterShareCents / 100).toFixed(2),
       (e.aiggShareCents / 100).toFixed(2),
       `"${(e.notes || '').replace(/"/g, '""')}"`,
@@ -174,6 +181,7 @@ export function generateDetailedCSV(data: ReportData): string {
     (data.totalPaymentFeeCents / 100).toFixed(2),
     '',
     (data.totalGrossProfitCents / 100).toFixed(2),
+    (data.totalAuryxCents / 100).toFixed(2),
     (data.totalPeterCents / 100).toFixed(2),
     (data.totalAiggCents / 100).toFixed(2),
     '',
@@ -204,9 +212,10 @@ export function generateSummaryCSV(data: ReportData, hash: string, generatedAt: 
     `Total Payment Fees,${(data.totalPaymentFeeCents / 100).toFixed(2)}`,
     `Total Gross Profit,${(data.totalGrossProfitCents / 100).toFixed(2)}`,
     '',
-    'Profit Split,Amount (EUR)',
-    `Peter (50%),${(data.totalPeterCents / 100).toFixed(2)}`,
-    `AIGG (50%),${(data.totalAiggCents / 100).toFixed(2)}`,
+    'Revenue Waterfall,Amount (EUR)',
+    `Auryx AI (10% D2C),${(data.totalAuryxCents / 100).toFixed(2)}`,
+    `Peter (50% Restgewinn),${(data.totalPeterCents / 100).toFixed(2)}`,
+    `Gottfried (50% Restgewinn),${(data.totalAiggCents / 100).toFixed(2)}`,
     '',
     `Ledger Entries,${data.ledgerEntriesCount}`,
     `Report Hash (SHA256),${hash}`,
@@ -279,6 +288,7 @@ export async function generateMonthlyReport(
       totalShippingCostCents: data.totalShippingCostCents,
       totalPaymentFeeCents: data.totalPaymentFeeCents,
       totalGrossProfitCents: data.totalGrossProfitCents,
+      totalAuryxCents: data.totalAuryxCents,
       totalPeterCents: data.totalPeterCents,
       totalAiggCents: data.totalAiggCents,
       ledgerEntriesCount: data.ledgerEntriesCount,

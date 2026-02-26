@@ -105,7 +105,9 @@ export async function processRefund(input: RefundInput): Promise<RefundResult> {
   };
 
   const grossProfitCents = calculateGrossProfit(refundCosts);
-  const split = calculateProfitSplit(grossProfitCents);
+  // D2C-Nettoumsatz (negativ bei Refund)
+  const d2cNetRevenueCents = refundCosts.revenueCents - refundCosts.paymentFeeCents;
+  const split = calculateProfitSplit(grossProfitCents, d2cNetRevenueCents);
 
   const entryType = isFullRefund ? 'full_refund' : 'partial_refund';
 
@@ -124,6 +126,7 @@ export async function processRefund(input: RefundInput): Promise<RefundResult> {
         paymentFeeCents: refundCosts.paymentFeeCents,
         customsCents: refundCosts.customsCents,
         grossProfitCents: split.grossProfitCents,
+        auryxShareCents: split.auryxShareCents,
         peterShareCents: split.peterShareCents,
         aiggShareCents: split.aiggShareCents,
         notes: [
@@ -156,6 +159,7 @@ export async function processRefund(input: RefundInput): Promise<RefundResult> {
         refundAmountCents: input.refundAmountCents,
         stripeRefundId: input.stripeRefundId,
         grossProfitImpact: split.grossProfitCents,
+        auryxShareImpact: split.auryxShareCents,
         peterShareImpact: split.peterShareCents,
         aiggShareImpact: split.aiggShareCents,
       },

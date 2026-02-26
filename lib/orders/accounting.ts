@@ -1,13 +1,17 @@
 /**
  * AIGG Accounting Engine
  *
- * VERBINDLICHE REGELN (aus Beteiligungsarchitektur):
+ * VERBINDLICHE REGELN (Strukturvereinbarung 26.02.2026, unterschrieben):
  * 1. Alle Beträge in EUR Cents (Integer-Arithmetik).
  * 2. Bruttogewinn = Revenue - ProducerCost - Packaging - Shipping - PaymentFee - Customs.
- * 3. Peter = 50% vom Bruttogewinn. AIGG = 50% vom Bruttogewinn.
- * 4. NICHT abziehbar vor Peters Anteil: Marketing, AURYX Retainer, Fixkosten, Hosting, Ads.
- * 5. financial_ledger ist APPEND-ONLY. Keine Updates, keine Deletes.
- * 6. Refunds erzeugen NEGATIVE Einträge im aktuellen Monat (kein Rückwirken).
+ * 3. Auryx AI: 10% vom D2C-Nettoumsatz (= Revenue nach Abzug Payment Fees) als Technologiepartner.
+ * 4. Peter = 50% vom Restgewinn (Bruttogewinn - Auryx-Anteil). Gottfried = 50% vom Restgewinn.
+ * 5. NICHT abziehbar vor der Gewinnverteilung: Marketing, Fixkosten, Hosting, Ads.
+ * 6. financial_ledger ist APPEND-ONLY. Keine Updates, keine Deletes.
+ * 7. Refunds erzeugen NEGATIVE Einträge im aktuellen Monat (kein Rückwirken).
+ *
+ * Revenue-Waterfall:
+ *   Revenue → Vorleistungen → Laufende Kosten → Auryx 10% D2C → Peter 10% Export → Rest 50/50
  */
 
 import { db } from '@/lib/db/drizzle';
@@ -27,8 +31,9 @@ export interface CostBreakdown {
 
 export interface ProfitSplit {
   grossProfitCents: number;
-  peterShareCents: number;
-  aiggShareCents: number;
+  auryxShareCents: number;    // 10% D2C-Nettoumsatz (Technologiepartner)
+  peterShareCents: number;    // 50% vom Restgewinn (nach Auryx-Abzug)
+  aiggShareCents: number;     // 50% vom Restgewinn = Gottfrieds Anteil
 }
 
 export interface LedgerEntryInput {
@@ -60,17 +65,37 @@ export function calculateGrossProfit(costs: CostBreakdown): number {
 }
 
 /**
- * Calculate the 50/50 profit split between Peter and AIGG.
+ * Revenue-Waterfall nach Strukturvereinbarung 26.02.2026:
  *
- * Bei ungeradem Cent: AIGG bekommt den Restcent (Math.floor für Peter).
- * Beispiel: grossProfit = 101 → Peter = 50, AIGG = 51
+ * 1. Bruttogewinn berechnen (Revenue - alle Produktkosten)
+ * 2. Auryx AI: 10% vom D2C-Nettoumsatz (Revenue - Payment Fees)
+ * 3. Restgewinn = Bruttogewinn - Auryx-Anteil
+ * 4. Peter = 50% vom Restgewinn, Gottfried (AIGG) = 50% vom Restgewinn
+ *
+ * Bei ungeradem Cent: AIGG/Gottfried bekommt den Restcent (Math.floor für Peter).
+ *
+ * @param grossProfitCents - Bruttogewinn nach Abzug aller Produktkosten
+ * @param d2cNetRevenueCents - D2C-Nettoumsatz (Revenue - Payment Fees) für Auryx 10%
  */
-export function calculateProfitSplit(grossProfitCents: number): ProfitSplit {
-  const peterShareCents = Math.floor(grossProfitCents / 2);
-  const aiggShareCents = grossProfitCents - peterShareCents;
+export function calculateProfitSplit(
+  grossProfitCents: number,
+  d2cNetRevenueCents?: number,
+): ProfitSplit {
+  // Auryx 10% vom D2C-Nettoumsatz (nur wenn D2C-Umsatz übergeben wird)
+  const auryxShareCents = d2cNetRevenueCents
+    ? Math.round(d2cNetRevenueCents * 0.10)
+    : 0;
+
+  // Restgewinn nach Auryx-Abzug
+  const remainingProfitCents = Math.max(0, grossProfitCents - auryxShareCents);
+
+  // 50/50 Split des Rests
+  const peterShareCents = Math.floor(remainingProfitCents / 2);
+  const aiggShareCents = remainingProfitCents - peterShareCents;
 
   return {
     grossProfitCents,
+    auryxShareCents,
     peterShareCents,
     aiggShareCents,
   };
@@ -89,7 +114,10 @@ export async function createLedgerEntry(
   input: LedgerEntryInput
 ): Promise<{ ledgerId: number; split: ProfitSplit }> {
   const grossProfitCents = calculateGrossProfit(input.costs);
-  const split = calculateProfitSplit(grossProfitCents);
+
+  // D2C-Nettoumsatz = Revenue - Payment Fees (Basis für Auryx 10%)
+  const d2cNetRevenueCents = input.costs.revenueCents - input.costs.paymentFeeCents;
+  const split = calculateProfitSplit(grossProfitCents, d2cNetRevenueCents);
 
   const entry: NewFinancialLedgerEntry = {
     orderId: input.orderId,
@@ -101,6 +129,7 @@ export async function createLedgerEntry(
     paymentFeeCents: input.costs.paymentFeeCents,
     customsCents: input.costs.customsCents,
     grossProfitCents: split.grossProfitCents,
+    auryxShareCents: split.auryxShareCents,
     peterShareCents: split.peterShareCents,
     aiggShareCents: split.aiggShareCents,
     notes: input.notes,

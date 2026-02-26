@@ -354,8 +354,9 @@ export default async function OrderDetailPage({
                   <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Umsatz</th>
                   <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Kosten</th>
                   <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Gewinn</th>
+                  <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Auryx</th>
                   <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Peter</th>
-                  <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">AIGG</th>
+                  <th className="text-right text-[10px] text-muted uppercase px-5 py-2.5">Gottfried</th>
                   <th className="text-left text-[10px] text-muted uppercase px-5 py-2.5">Datum</th>
                 </tr>
               </thead>
@@ -386,6 +387,9 @@ export default async function OrderDetailPage({
                       </td>
                       <td className={`px-5 py-3 text-right text-xs font-medium ${isRefund ? 'text-red-400' : 'text-emerald-400'}`}>
                         {formatEurCents(entry.grossProfitCents)}
+                      </td>
+                      <td className={`px-5 py-3 text-right text-xs ${isRefund ? 'text-red-400' : 'text-blue-400'}`}>
+                        {formatEurCents((entry as any).auryxShareCents ?? 0)}
                       </td>
                       <td className={`px-5 py-3 text-right text-xs ${isRefund ? 'text-red-400' : 'text-gold'}`}>
                         {formatEurCents(entry.peterShareCents)}

@@ -1,3 +1,8 @@
+// TODO [NACH GmbH-REGISTRIERUNG]:
+// "Auryx AI LLC" → "Austria Imperial Green Gold GmbH"
+// Adresse: [GmbH-Adresse nach Registrierung]
+// Strukturvereinbarung: 26.02.2026
+
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {

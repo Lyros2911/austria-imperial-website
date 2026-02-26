@@ -278,11 +278,14 @@ export const fulfillmentEvents = pgTable('fulfillment_events', {
 // Reporting basiert AUSSCHLIESSLICH auf dieser Tabelle.
 // Keine Updates, keine Deletes. Nur INSERT.
 //
-// Bruttogewinn = revenue - producer_cost - packaging - shipping - payment_fee - customs
-// Peter = 50% * Bruttogewinn
-// AIGG = 50% * Bruttogewinn
+// Revenue-Waterfall (Strukturvereinbarung 26.02.2026):
+//   Bruttogewinn = revenue - producer_cost - packaging - shipping - payment_fee - customs
+//   Auryx AI = 10% vom D2C-Nettoumsatz (revenue - payment_fee)
+//   Restgewinn = Bruttogewinn - Auryx-Anteil
+//   Peter = 50% vom Restgewinn
+//   Gottfried (AIGG) = 50% vom Restgewinn
 //
-// NICHT abziehbar vor Peters Anteil: Marketing, AURYX Retainer, Fixkosten, Hosting, Ads
+// NICHT abziehbar vor der Gewinnverteilung: Marketing, Fixkosten, Hosting, Ads
 // ============================================================
 
 export const financialLedger = pgTable('financial_ledger', {
@@ -302,9 +305,11 @@ export const financialLedger = pgTable('financial_ledger', {
 
   // Computed: revenue - all costs
   grossProfitCents: integer('gross_profit_cents').notNull(),
-  // Computed: 50% of grossProfit
+  // Computed: 10% of D2C net revenue (revenue - payment_fee) — Auryx Technologiepartner
+  auryxShareCents: integer('auryx_share_cents').notNull().default(0),
+  // Computed: 50% of (grossProfit - auryxShare)
   peterShareCents: integer('peter_share_cents').notNull(),
-  // Computed: 50% of grossProfit
+  // Computed: 50% of (grossProfit - auryxShare) — Gottfrieds Anteil
   aiggShareCents: integer('aigg_share_cents').notNull(),
 
   notes: text('notes'),
@@ -348,6 +353,7 @@ export const monthlyReports = pgTable('monthly_reports', {
   totalShippingCostCents: integer('total_shipping_cost_cents').notNull(),
   totalPaymentFeeCents: integer('total_payment_fee_cents').notNull(),
   totalGrossProfitCents: integer('total_gross_profit_cents').notNull(),
+  totalAuryxCents: integer('total_auryx_cents').notNull().default(0),
   totalPeterCents: integer('total_peter_cents').notNull(),
   totalAiggCents: integer('total_aigg_cents').notNull(),
 
@@ -396,7 +402,7 @@ export const adminUsers = pgTable('admin_users', {
 // 14. PARTNER CONFIG (Auryx Revenue Share)
 //
 // Jeder Auryx-Kunde = 1 Partner-Config.
-// AIGG = Sonderfall: commission_percent = 0, is_platform_owner = true.
+// AIGG: commission_percent = 10 (Auryx = Technologiepartner, 10% D2C-Nettoumsatz).
 // Zukuenftige Kunden: commission_percent = 10 (10% auf Content-attributed Umsatz).
 // ============================================================
 
@@ -416,7 +422,7 @@ export const partnerConfig = pgTable('partner_config', {
 // 15. PARTNER COMMISSIONS (Revenue Share pro Bestellung)
 //
 // APPEND-ONLY analog zu financial_ledger.
-// Status: pending → paid (via Stripe Connect Transfer) oder waived (AIGG).
+// Status: pending → paid (via Stripe Connect Transfer) oder waived (nur explizit befreite Partner).
 // ============================================================
 
 export const partnerCommissions = pgTable('partner_commissions', {

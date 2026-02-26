@@ -225,7 +225,9 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
     // So we inline the insert here for atomicity
     const { calculateGrossProfit, calculateProfitSplit } = await import('./accounting');
     const grossProfitCents = calculateGrossProfit(costs);
-    const split = calculateProfitSplit(grossProfitCents);
+    // D2C-Nettoumsatz = Revenue - Payment Fees (Basis für Auryx 10%)
+    const d2cNetRevenueCents = costs.revenueCents - costs.paymentFeeCents;
+    const split = calculateProfitSplit(grossProfitCents, d2cNetRevenueCents);
 
     const [ledger] = await tx
       .insert((await import('@/lib/db/schema')).financialLedger)
@@ -239,6 +241,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         paymentFeeCents: costs.paymentFeeCents,
         customsCents: costs.customsCents,
         grossProfitCents: split.grossProfitCents,
+        auryxShareCents: split.auryxShareCents,
         peterShareCents: split.peterShareCents,
         aiggShareCents: split.aiggShareCents,
         notes: `Order ${orderNumber}`,
