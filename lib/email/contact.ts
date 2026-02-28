@@ -5,7 +5,7 @@
  * 2. Confirmation → der Absender (Bestätigung dass wir die Anfrage erhalten haben)
  */
 
-import { sendEmail, AIGG_FROM_EMAIL, AIGG_NOTIFICATION_EMAIL } from './resend';
+import { sendEmail, AIGG_FROM_EMAIL, AIGG_NOTIFICATION_EMAILS } from './resend';
 
 export interface ContactFormData {
   name: string;
@@ -28,7 +28,7 @@ export async function sendContactNotification(data: ContactFormData): Promise<bo
   const subjectLabel = SUBJECT_LABELS[data.subject] ?? data.subject;
 
   return sendEmail({
-    to: AIGG_NOTIFICATION_EMAIL,
+    to: AIGG_NOTIFICATION_EMAILS,
     replyTo: data.email,
     subject: `[AIGG Kontakt] ${subjectLabel} — ${data.name}`,
     text: [

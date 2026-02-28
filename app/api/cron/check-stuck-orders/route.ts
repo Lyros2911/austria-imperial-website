@@ -17,7 +17,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/db/drizzle';
 import { fulfillmentOrders, orders } from '@/lib/db/schema';
 import { eq, and, or, lt } from 'drizzle-orm';
-import { sendEmail, AIGG_NOTIFICATION_EMAIL } from '@/lib/email/resend';
+import { sendEmail, AIGG_NOTIFICATION_EMAILS } from '@/lib/email/resend';
 
 const CRON_SECRET = process.env.CRON_SECRET;
 
@@ -98,7 +98,7 @@ export async function GET(request: NextRequest) {
   const body = lines.join('\n');
 
   await sendEmail({
-    to: AIGG_NOTIFICATION_EMAIL,
+    to: AIGG_NOTIFICATION_EMAILS,
     subject: `⚠️ ${stuckOrders.length} Stuck Order(s) — Austria Imperial`,
     text: body,
   });

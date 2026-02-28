@@ -27,9 +27,18 @@ function getResend(): Resend {
 export const AIGG_FROM_EMAIL = 'Austria Imperial <noreply@austriaimperial.com>';
 export const AIGG_NOTIFICATION_EMAIL = 'office@austriaimperial.com';
 
+/**
+ * Alle internen Benachrichtigungsempfänger.
+ * Gottfried (office@) + Peter (Protonmail) bekommen beide alle System-Mails.
+ */
+export const AIGG_NOTIFICATION_EMAILS: string[] = [
+  'office@austriaimperial.com',
+  'pet.kra@protonmail.com',
+];
+
 interface SendEmailParams {
   from?: string;
-  to: string;
+  to: string | string[];
   replyTo?: string;
   subject: string;
   text: string;

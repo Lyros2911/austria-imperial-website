@@ -7,7 +7,7 @@
  * Aufgerufen im Stripe Webhook nach createOrder().
  */
 
-import { sendEmail, AIGG_FROM_EMAIL, AIGG_NOTIFICATION_EMAIL } from './resend';
+import { sendEmail, AIGG_FROM_EMAIL, AIGG_NOTIFICATION_EMAILS } from './resend';
 
 export interface OrderConfirmationData {
   orderNumber: string;
@@ -48,7 +48,7 @@ export async function sendOrderConfirmation(data: OrderConfirmationData): Promis
  */
 export async function sendOrderNotification(data: OrderConfirmationData): Promise<boolean> {
   return sendEmail({
-    to: AIGG_NOTIFICATION_EMAIL,
+    to: AIGG_NOTIFICATION_EMAILS,
     subject: `[AIGG] Neue Bestellung ${data.orderNumber} — ${formatCents(data.totalCents)}`,
     text: buildOrderNotificationText(data),
   });
