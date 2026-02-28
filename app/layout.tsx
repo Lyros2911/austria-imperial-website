@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
-import { ShopShell } from '@/components/layout/shop-shell';
 import { AttributionCapture } from '@/components/attribution-capture';
 
 const playfair = Playfair_Display({
@@ -51,7 +50,7 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <AttributionCapture />
         </Suspense>
-        <ShopShell>{children}</ShopShell>
+        {children}
       </body>
     </html>
   );

@@ -1,0 +1,935 @@
+{
+  "meta": {
+    "titleDefault": "Austria Imperial — Green Gold",
+    "titleTemplate": "%s | Austria Imperial",
+    "description": "Premium Styrian Pumpkin Seed Oil PGI and Styrian Horseradish — authentic Austrian specialties direct from the producer.",
+    "products": {
+      "title": "Products",
+      "description": "Styrian Pumpkin Seed Oil PGI, Styrian Horseradish and natural animal nutrition — our premium specialties."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "The story behind Austria Imperial — authentic Styrian specialties."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact Austria Imperial — Green Gold. We look forward to hearing from you."
+    },
+    "agb": {
+      "title": "Terms and Conditions",
+      "description": "Terms and Conditions of Austria Imperial — Green Gold."
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "description": "Privacy Policy of Austria Imperial — Green Gold."
+    },
+    "impressum": {
+      "title": "Legal Notice",
+      "description": "Legal notice and provider information of Austria Imperial — Green Gold."
+    },
+    "widerruf": {
+      "title": "Cancellation Policy",
+      "description": "Cancellation Policy of Austria Imperial — Green Gold."
+    }
+  },
+
+  "nav": {
+    "products": "Products",
+    "about": "About Us",
+    "contact": "Contact",
+    "openCart": "Open cart",
+    "menu": "Menu"
+  },
+
+  "hero": {
+    "tagline": "Styrian Specialties for Generations",
+    "heading1": "Green Gold",
+    "heading2": "from Styria",
+    "subheading": "Authentic Styrian Pumpkin Seed Oil PGI and fine Styrian Horseradish — direct from our producers to you.",
+    "ctaProducts": "Discover Products",
+    "ctaStory": "Our Story",
+    "imageAlt": "Styrian Pumpkin Seed Oil PGI — Austria Imperial Green Gold"
+  },
+
+  "home": {
+    "specialties": "Our Specialties",
+    "premiumProducts": "Premium Products",
+    "trust": {
+      "ggaCertified": {
+        "title": "PGI Certified",
+        "description": "Protected Geographical Indication — guaranteed origin from Styria."
+      },
+      "directProducer": {
+        "title": "Direct from the Producer",
+        "description": "No middlemen. From the oil mill and horseradish farm directly to you."
+      },
+      "securePayment": {
+        "title": "Secure Payment",
+        "description": "Encrypted payment via Stripe. Visa, Mastercard, SEPA and more."
+      }
+    }
+  },
+
+  "products": {
+    "collection": "Collection",
+    "title": "Our Products",
+    "subtitle": "Carefully selected Austrian specialties — crafted by traditional producers in Styria.",
+    "forHumans": "For People",
+    "forHumansDesc": "Premium food from Styria — pumpkin seed oil with PGI protection and naturally pungent horseradish.",
+    "forAnimals": "For Animals",
+    "forAnimalsDesc": "Natural dietary supplements from Styrian horseradish — pelletized for horses and camels.",
+    "from": "from",
+    "comingSoon": "Coming Soon",
+    "categories": {
+      "kernoel": "Pumpkin Seed Oil",
+      "kren": "Horseradish",
+      "tiernahrung": "Animal Nutrition"
+    }
+  },
+
+  "productDetail": {
+    "categories": {
+      "kernoel": "Styrian Pumpkin Seed Oil",
+      "kren": "Styrian Horseradish",
+      "tiernahrung": "Natural Animal Nutrition"
+    },
+    "ggaBadge": "PGI Certified",
+    "comingSoon": {
+      "title": "Coming Soon",
+      "description": "Prices and ordering options will be published shortly. Contact us for pre-orders or further information."
+    },
+    "origin": "Origin",
+    "originValue": "Styria, Austria",
+    "producer": "Producer",
+    "certification": "Certification",
+    "certificationValue": "PGI (Protected Geographical Indication)",
+    "targetAudience": "Target Audience",
+    "horses": "Horses",
+    "camels": "Camels",
+    "shipping": "Shipping",
+    "shippingValue": "Within 3–5 business days",
+    "producers": {
+      "kiendler": "Kiendler Family",
+      "hernach": "Hernach Farm"
+    }
+  },
+
+  "addToCart": {
+    "selectSize": "Select size",
+    "inclVat": "incl. VAT",
+    "addToCart": "Add to Cart",
+    "added": "Added"
+  },
+
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue shopping →",
+    "subtotal": "Subtotal",
+    "shippingNote": "Shipping costs will be calculated at checkout.",
+    "checkout": "Checkout"
+  },
+
+  "checkout": {
+    "emptyCart": "Your cart is empty",
+    "backToProducts": "Back to products",
+    "continueShopping": "Continue shopping",
+    "orderSummary": "Order Summary",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "shippingNote": "Calculated in the next step",
+    "total": "Total",
+    "payWithStripe": "Pay securely with Stripe",
+    "redirecting": "Redirecting...",
+    "stripeRedirect": "You will be redirected to Stripe to complete your payment securely.",
+    "checkoutFailed": "Checkout failed",
+    "genericError": "An error occurred"
+  },
+
+  "checkoutSuccess": {
+    "thankYou": "Thank You!",
+    "orderPlaced": "Your order has been placed successfully. You will receive a confirmation email with all details shortly.",
+    "orderRef": "Order reference:",
+    "whatsNext": "What happens next?",
+    "step1": "Your order will be forwarded to our producers.",
+    "step2": "You will receive a shipping notification with tracking number.",
+    "step3": "Delivery within 3–5 business days.",
+    "discoverMore": "Discover more products",
+    "loading": "Loading..."
+  },
+
+  "about": {
+    "tagline": "Our Story",
+    "heading": "Green Gold from Styria",
+    "story": {
+      "p1": "Styria is one of Europe's most fascinating gourmet regions. Gentle hills, fertile soils and a mild climate create ideal conditions for products of exceptional quality.",
+      "p2": "Austria Imperial — Green Gold brings this tradition directly to you: Styrian Pumpkin Seed Oil with Protected Geographical Indication (PGI) and hand-selected horseradish from traditional cultivation."
+    },
+    "kernoel": {
+      "title": "The Pumpkin Seed Oil",
+      "p1": "Our pumpkin seed oil comes from the Kiendler oil mill in southern Styria. Here, Styrian pumpkin seeds have been cold-pressed according to traditional methods for generations. The result: a deep green oil with an intense, nutty aroma — the \"green gold\" of Styria.",
+      "p2": "The EU-protected designation PGI (Protected Geographical Indication) guarantees that only oil from Styria may bear this name. Every bottle is a piece of authentic Austrian culinary culture."
+    },
+    "kren": {
+      "title": "The Horseradish",
+      "p1": "Styrian horseradish from the Hernach family is grown using proven methods and freshly processed. Its sharp spice and full-bodied aroma make it an indispensable companion of Austrian cuisine — whether with boiled beef, on a charcuterie board, or as a refinement for sauces."
+    },
+    "values": {
+      "title": "What We Stand For",
+      "directProducer": {
+        "title": "Direct from the Producer",
+        "text": "No middlemen. Our products come directly from the producers to you."
+      },
+      "authenticOrigin": {
+        "title": "Authentic Origin",
+        "text": "EU-certified quality. Every product is traceable back to the producer."
+      },
+      "traditionModern": {
+        "title": "Tradition Meets Modernity",
+        "text": "Time-honoured craftsmanship, packaged for today."
+      }
+    }
+  },
+
+  "contact": {
+    "tagline": "Contact",
+    "heading": "Get in Touch",
+    "subtitle": "Questions about our products, bulk orders or collaborations? We look forward to your message.",
+    "email": {
+      "title": "Email",
+      "content": "info@austriaimperial.com",
+      "detail": "We typically respond within 24 hours."
+    },
+    "b2b": {
+      "title": "For Business Customers",
+      "content": "B2B inquiries welcome",
+      "detail": "Restaurants, delicatessens and retailers — contact us for individual offers and conditions."
+    },
+    "operator": {
+      "title": "Operator",
+      "content": "Auryx AI LLC",
+      "detail": "30 N Gould St Ste N, Sheridan, WY 82801, USA"
+    },
+    "form": {
+      "title": "Send a Message",
+      "name": "Name",
+      "namePlaceholder": "Your name",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "subject": "Subject",
+      "subjectGeneral": "General inquiry",
+      "subjectOrder": "Question about an order",
+      "subjectB2b": "Business customer / B2B",
+      "subjectPress": "Press / Collaboration",
+      "message": "Message",
+      "messagePlaceholder": "Your message...",
+      "submit": "Send message",
+      "sending": "Sending...",
+      "success": {
+        "title": "Message sent!",
+        "text": "Thank you for your message. We will get back to you within 24 hours.",
+        "sendAnother": "Send another message"
+      },
+      "error": "Something went wrong. Please try again or write to us directly at info@austriaimperial.com",
+      "privacyConsent": "By submitting, you agree to our <link>Privacy Policy</link>."
+    }
+  },
+
+  "footer": {
+    "description": "Authentic Austrian specialties direct from the producer. Styrian Pumpkin Seed Oil PGI and fine horseradish.",
+    "navigation": "Navigation",
+    "legal": "Legal",
+    "impressum": "Legal Notice",
+    "datenschutz": "Privacy Policy",
+    "agb": "Terms & Conditions",
+    "widerruf": "Cancellation Policy",
+    "admin": "Admin",
+    "copyright": "© {year} Austria Imperial — Green Gold. All rights reserved.",
+    "poweredBy": "Powered by"
+  },
+
+  "agb": {
+    "title": "Terms and Conditions",
+    "s1": {
+      "title": "§ 1 Scope of Application",
+      "p1": "These General Terms and Conditions (GTC) apply to all orders placed through the online shop of Austria Imperial — Green Gold (operated by Auryx AI LLC, hereinafter referred to as \"Provider\").",
+      "p2": "The GTC apply in the version valid at the time of the order. Deviating terms of the customer are not recognised unless the Provider expressly agrees to their validity in writing."
+    },
+    "s2": {
+      "title": "§ 2 Conclusion of Contract",
+      "p1": "The presentation of products in the online shop does not constitute a legally binding offer, but an invitation to place an order.",
+      "p2": "By clicking the order button, you place a binding order for the goods contained in the shopping cart. Confirmation of receipt of the order is sent immediately after submission by email (order confirmation).",
+      "p3": "The purchase contract is concluded when the goods are handed over to the shipping service provider."
+    },
+    "s3": {
+      "title": "§ 3 Prices and Shipping Costs",
+      "p1": "All stated prices are final prices and include the statutory value added tax where applicable. In addition, shipping costs apply, which are clearly displayed before completing the order."
+    },
+    "s4": {
+      "title": "§ 4 Payment",
+      "p1": "Payment is processed through the payment service provider Stripe. The following payment methods are available: credit card (Visa, Mastercard), SEPA direct debit and other payment methods offered by Stripe.",
+      "p2": "The invoice amount is charged upon receipt of the order."
+    },
+    "s5": {
+      "title": "§ 5 Delivery",
+      "p1": "Delivery is made directly by our producers to the delivery address specified by the customer. For orders with products from different producers, delivery may be made in multiple packages.",
+      "p2": "The delivery time is usually 3–7 business days within the EU. For deliveries outside the EU, longer delivery times and additional customs duties may apply."
+    },
+    "s6": {
+      "title": "§ 6 Retention of Title",
+      "p1": "The delivered goods remain the property of the Provider until the purchase price has been paid in full."
+    },
+    "s7": {
+      "title": "§ 7 Warranty",
+      "p1": "The statutory warranty rights apply. Food products are excluded from exchange, provided they were delivered without defects and as described.",
+      "p2": "Please inspect the goods immediately upon delivery for recognisable defects. We accept complaints by email."
+    },
+    "s8": {
+      "title": "§ 8 Liability",
+      "p1": "The Provider is liable for damages only in cases of intent and gross negligence. In cases of slight negligence, the Provider is only liable for breach of essential contractual obligations. Liability is limited to the foreseeable damage typical for the contract."
+    },
+    "s9": {
+      "title": "§ 9 Applicable Law",
+      "p1": "The law of the Republic of Austria applies, excluding the UN Convention on Contracts for the International Sale of Goods. For consumers within the EU, the mandatory consumer protection provisions of their country of residence remain unaffected."
+    },
+    "s10": {
+      "title": "§ 10 Final Provisions",
+      "p1": "Should individual provisions of these GTC be or become invalid, the validity of the remaining provisions shall remain unaffected.",
+      "date": "As of: February 2026"
+    }
+  },
+
+  "datenschutz": {
+    "title": "Privacy Policy",
+    "s1": {
+      "title": "1. Privacy at a Glance",
+      "generalTitle": "General Information",
+      "generalText": "The following notices provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you.",
+      "collectionTitle": "Data Collection on This Website",
+      "collectionText1": "Data processing on this website is carried out by the website operator. Their contact details can be found in the legal notice of this website.",
+      "collectionText2": "Your data is collected in part by you providing it to us (e.g. in an order form). Other data is collected automatically or with your consent when you visit the website by our IT systems. This is primarily technical data (e.g. internet browser, operating system or time of page access)."
+    },
+    "s2": {
+      "title": "2. Responsible Body",
+      "company": "Auryx AI LLC",
+      "address": "30 N Gould St Ste N\nSheridan, WY 82801, USA",
+      "emailLabel": "Email:",
+      "email": "info@austriaimperial.com",
+      "text": "The responsible body is the natural or legal person who alone or jointly with others decides on the purposes and means of the processing of personal data."
+    },
+    "s3": {
+      "title": "3. Your Rights",
+      "intro": "You have the right at any time to:",
+      "rights": [
+        "Obtain information about your stored personal data",
+        "Request correction of inaccurate data",
+        "Request deletion of your data",
+        "Request restriction of processing",
+        "Request data portability",
+        "Object to the processing",
+        "Revoke a given consent"
+      ],
+      "outro": "For this purpose and for any further questions regarding data protection, you can contact us at any time."
+    },
+    "s4": {
+      "title": "4. Data Collection on This Website",
+      "serverLogsTitle": "Server Log Files",
+      "serverLogsText1": "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are: browser type and version, operating system used, referrer URL, hostname of the accessing computer, time of the server request and IP address.",
+      "serverLogsText2": "This data is not merged with other data sources. The basis for data processing is Art. 6 para. 1 lit. f GDPR.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "This website does not use tracking cookies. We only use technically necessary cookies that are required for the operation of the site (e.g. shopping cart, session)."
+    },
+    "s5": {
+      "title": "5. Orders and Payment Processing",
+      "text1": "When you order from us, we collect the following data: name, email address, delivery address, billing address and order details. This data is required for contract fulfilment (Art. 6 para. 1 lit. b GDPR).",
+      "text2": "Payment processing is carried out by Stripe, Inc. (510 Townsend Street, San Francisco, CA 94103, USA). We do not receive complete payment data from Stripe (e.g. credit card numbers). Stripe processes your payment data in accordance with their privacy policy:",
+      "stripeLink": "stripe.com/privacy"
+    },
+    "s6": {
+      "title": "6. Disclosure to Third Parties",
+      "text1": "Your data is passed on to our fulfilment partners (producers) to the extent necessary for contract fulfilment (delivery). This includes: name, delivery address and order details.",
+      "text2": "Beyond this, no disclosure to third parties takes place unless we are legally obliged to do so."
+    },
+    "s7": {
+      "title": "7. Data Storage",
+      "text": "Order data is stored for the duration of the statutory retention periods (usually 7 years according to commercial and tax law). After the expiry of the periods, the data is deleted."
+    },
+    "s8": {
+      "title": "8. SSL/TLS Encryption",
+      "text": "This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content. You can recognise an encrypted connection by the fact that the address bar of the browser changes from \"http://\" to \"https://\"."
+    }
+  },
+
+  "impressum": {
+    "title": "Legal Notice",
+    "s1": {
+      "title": "Information according to § 5 TMG / § 25 MedienG",
+      "company": "Auryx AI LLC",
+      "operatorOf": "Operator of the brand Austria Imperial — Green Gold",
+      "address": "30 N Gould St Ste N\nSheridan, WY 82801\nUnited States of America"
+    },
+    "s2": {
+      "title": "Contact",
+      "emailLabel": "Email:",
+      "email": "info@austriaimperial.com",
+      "webLabel": "Web:",
+      "web": "www.austriaimperial.com"
+    },
+    "s3": {
+      "title": "Authorised Representative",
+      "text": "Gottfried Hammerl, Managing Member"
+    },
+    "s4": {
+      "title": "VAT Identification Number",
+      "text": "Will be added after registration with the tax office."
+    },
+    "s5": {
+      "title": "Responsible for Content according to § 55 para. 2 RStV",
+      "name": "Gottfried Hammerl",
+      "addressNote": "(Address as above)"
+    },
+    "s6": {
+      "title": "EU Dispute Resolution",
+      "text1": "The European Commission provides a platform for online dispute resolution (OS):",
+      "link": "https://ec.europa.eu/consumers/odr/",
+      "text2": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration body."
+    },
+    "s7": {
+      "title": "Liability for Content",
+      "text": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
+    },
+    "s8": {
+      "title": "Liability for Links",
+      "text": "Our website contains links to external websites of third parties over whose content we have no influence. Therefore, we cannot assume any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages."
+    },
+    "s9": {
+      "title": "Copyright",
+      "text": "The content and works created by the site operators on these pages are subject to copyright law. Reproduction, processing, distribution and any type of exploitation outside the limits of copyright law require the written consent of the respective author or creator."
+    }
+  },
+
+  "widerruf": {
+    "title": "Cancellation Policy",
+    "s1": {
+      "title": "Right of Cancellation",
+      "p1": "You have the right to cancel this contract within fourteen days without giving any reason.",
+      "p2": "The cancellation period is fourteen days from the day on which you or a third party named by you, who is not the carrier, has taken possession of the goods.",
+      "p3": "To exercise your right of cancellation, you must inform us by means of a clear statement (e.g. by email) of your decision to cancel this contract:",
+      "contact": "Auryx AI LLC\nEmail: info@austriaimperial.com",
+      "p4": "To meet the cancellation deadline, it is sufficient for you to send the notification of the exercise of the right of cancellation before the cancellation period expires."
+    },
+    "s2": {
+      "title": "Consequences of Cancellation",
+      "p1": "If you cancel this contract, we shall reimburse to you all payments received from you, including the costs of delivery (with the exception of the supplementary costs resulting from your choice of a type of delivery other than the least expensive type of standard delivery offered by us), without undue delay and in any event not later than fourteen days from the day on which we are informed about your decision to cancel this contract.",
+      "p2": "We will use the same means of payment as you used for the original transaction, unless you have expressly agreed otherwise. In no case will you be charged any fees because of such reimbursement.",
+      "p3": "We may withhold reimbursement until we have received the goods back or you have supplied evidence of having sent back the goods, whichever is the earliest."
+    },
+    "s3": {
+      "title": "Return Shipment",
+      "p1": "You shall send back the goods without undue delay and in any event not later than fourteen days from the day on which you communicate your cancellation from this contract to us. The deadline is met if you send back the goods before the period of fourteen days has expired.",
+      "p2": "You will bear the direct cost of returning the goods."
+    },
+    "s4": {
+      "title": "Exclusion of the Right of Cancellation",
+      "p1": "The right of cancellation does not exist for contracts for the delivery of goods which can spoil quickly or whose expiry date would be quickly exceeded.",
+      "p2": "The right of cancellation expires for contracts for the delivery of sealed goods which are not suitable for return for reasons of health protection or hygiene if their seal has been removed after delivery.",
+      "p3note": "Note:",
+      "p3": "For food products (pumpkin seed oil, horseradish), the right of cancellation is excluded once the seal of the bottle/jar has been opened."
+    },
+    "s5": {
+      "title": "Model Cancellation Form",
+      "intro": "If you want to cancel the contract, please fill out this form and send it back:",
+      "to": "To: Auryx AI LLC, info@austriaimperial.com",
+      "body": "I/We (*) hereby cancel the contract concluded by me/us (*) for the purchase of the following goods:",
+      "orderedOn": "Ordered on / received on (*):",
+      "consumerName": "Name of the consumer(s):",
+      "consumerAddress": "Address of the consumer(s):",
+      "date": "Date:",
+      "footnote": "(*) Delete as appropriate."
+    }
+  },
+
+  "language": {
+    "de": "DE",
+    "en": "EN",
+    "ar": "AR"
+  },
+
+  "admin": {
+    "title": "AIGG Admin",
+    "subtitle": "Green Gold Dashboard",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "customers": "Customers",
+      "fulfillment": "Fulfillment",
+      "accounting": "Accounting",
+      "overview": "Overview",
+      "ledger": "Ledger",
+      "reports": "Reports",
+      "users": "Users",
+      "partners": "Partners",
+      "logout": "Logout",
+      "backToShop": "Back to Shop"
+    },
+    "role": {
+      "admin": "Administrator",
+      "viewer": "Viewer",
+      "producer": "Producer"
+    },
+    "status": {
+      "pending": "Pending",
+      "paid": "Paid",
+      "processing": "Processing",
+      "partially_shipped": "Partially Shipped",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "cancelled": "Cancelled",
+      "refunded": "Refunded"
+    },
+    "fulfillmentStatus": {
+      "pending": "Pending",
+      "sent_to_producer": "Sent to Producer",
+      "confirmed": "Confirmed",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "failed": "Failed",
+      "cancelled": "Cancelled"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Overview",
+      "ordersMonth": "Orders (Month)",
+      "revenueMonth": "Revenue (Month)",
+      "grossProfit": "Gross Profit",
+      "pendingFulfillments": "Pending Fulfillments",
+      "total": "total",
+      "revenueWaterfall": "Revenue Waterfall",
+      "auryx10": "Auryx 10%",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "recentOrders": "Recent Orders",
+      "viewAll": "View all",
+      "noOrders": "No orders yet"
+    },
+    "login": {
+      "title": "Admin Dashboard",
+      "brand": "Austria Imperial — Green Gold",
+      "email": "Email",
+      "password": "Password",
+      "submit": "Sign in",
+      "submitting": "Signing in...",
+      "error": "Login failed",
+      "genericError": "An error occurred",
+      "restricted": "Access restricted to authorized personnel"
+    },
+    "orders": {
+      "title": "Orders",
+      "totalCount": "{count} orders total",
+      "filter": "Filter",
+      "resetFilter": "Reset filters",
+      "noOrders": "No orders found",
+      "items": "items",
+      "order": "Order",
+      "customer": "Customer",
+      "status": "Status",
+      "positions": "Items",
+      "date": "Date",
+      "amount": "Amount",
+      "page": "Page",
+      "of": "of",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "orderDetail": {
+      "backToOverview": "Back to overview",
+      "createdAt": "Created on",
+      "shippingAddress": "Shipping Address",
+      "payment": "Payment",
+      "subtotal": "Subtotal",
+      "shipping": "Shipping",
+      "total": "Total",
+      "customer": "Customer",
+      "accountId": "Account #{id}",
+      "guestOrder": "Guest Order",
+      "positions": "Items",
+      "product": "Product",
+      "producer": "Producer",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "fulfillment": "Fulfillment",
+      "noFulfillment": "No Fulfillment Orders",
+      "tracking": "Tracking",
+      "error": "Error",
+      "retryAttempts": "Retry attempts",
+      "ledgerEntries": "Ledger Entries",
+      "type": "Type",
+      "revenue": "Revenue",
+      "costs": "Costs",
+      "profit": "Profit",
+      "auryx": "Auryx",
+      "peterCol": "Peter",
+      "gottfriedCol": "Gottfried",
+      "dateCol": "Date"
+    },
+    "customers": {
+      "title": "Customers",
+      "totalCount": "{count} customers total",
+      "totalStat": "Total",
+      "accounts": "Accounts",
+      "guests": "Guests",
+      "totalRevenue": "Total Revenue",
+      "noCustomers": "No customers yet",
+      "name": "Name",
+      "email": "Email",
+      "type": "Type",
+      "ordersCol": "Orders",
+      "revenueCol": "Revenue",
+      "lastOrder": "Last Order",
+      "account": "Account",
+      "guest": "Guest"
+    },
+    "fulfillmentPage": {
+      "title": "Fulfillment",
+      "subtitle": "Manage producer orders",
+      "pending": "Pending",
+      "failed": "Failed",
+      "shipped": "Shipped",
+      "delivered": "Delivered",
+      "activeOrders": "Active Orders",
+      "noActiveOrders": "No active fulfillment orders",
+      "order": "Order",
+      "producerCol": "Producer",
+      "statusCol": "Status",
+      "trackingCol": "Tracking",
+      "createdCol": "Created",
+      "retriesCol": "Retries"
+    },
+    "fulfillmentActions": {
+      "retry": "Retry",
+      "sent": "Sent",
+      "networkError": "Network error",
+      "error": "Error",
+      "updateStatusManually": "Update status manually",
+      "trackingNumber": "Tracking No.",
+      "trackingUrl": "Tracking URL",
+      "save": "Save"
+    },
+    "accounting": {
+      "title": "Accounting",
+      "show": "Show",
+      "revenue": "Revenue",
+      "grossProfit": "Gross Profit",
+      "margin": "Margin",
+      "peter50": "Peter (50%)",
+      "gottfried50": "Gottfried (50%)",
+      "costBreakdown": "Cost Breakdown",
+      "revenueBrutto": "Revenue (Gross)",
+      "producerCosts": "Producer Costs",
+      "packaging": "Packaging",
+      "shippingCost": "Shipping",
+      "paymentFees": "Payment Fees (Stripe)",
+      "customs": "Customs",
+      "totalCosts": "Total Costs",
+      "auryxD2C": "Auryx AI (10% D2C)",
+      "peter50Rest": "Peter (50% Remainder)",
+      "gottfried50Rest": "Gottfried (50% Remainder)",
+      "sales": "Sales",
+      "refunds": "Refunds",
+      "entries": "Entries",
+      "ytd": "Year-to-Date",
+      "totalRevenueYtd": "Total Revenue YTD",
+      "grossProfitYtd": "Gross Profit YTD",
+      "auryxYtd": "Auryx AI YTD",
+      "peterYtd": "Peter YTD",
+      "gottfriedYtd": "Gottfried YTD",
+      "viewLedger": "View Ledger",
+      "reports": "Reports"
+    },
+    "ledger": {
+      "backToAccounting": "Back to Accounting",
+      "title": "Financial Ledger",
+      "entriesCount": "{count} entries · Append-Only",
+      "csvExport": "CSV Export",
+      "filter": "Filter",
+      "reset": "Reset",
+      "noEntries": "No ledger entries found",
+      "date": "Date",
+      "order": "Order",
+      "type": "Type",
+      "revenue": "Revenue",
+      "producerCosts": "Prod. Costs",
+      "shipping": "Shipping",
+      "stripeFee": "Stripe Fee",
+      "profit": "Profit",
+      "auryx": "Auryx",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "page": "Page",
+      "of": "of",
+      "previous": "Previous",
+      "next": "Next"
+    },
+    "reports": {
+      "backToAccounting": "Back to Accounting",
+      "title": "Monthly Reports",
+      "subtitle": "Audit-proof reports with SHA256 integrity. Based exclusively on the Financial Ledger.",
+      "generateNew": "Generate new report",
+      "month": "Month",
+      "year": "Year",
+      "generating": "Generating...",
+      "generate": "Generate",
+      "reportGenerated": "Report {period} generated. Hash: {hash}...",
+      "generationError": "Error during generation",
+      "unknownError": "Unknown error",
+      "archiveNote": "When regenerating, the previous report is archived (never deleted). The new report receives a new SHA256 hash.",
+      "allReports": "All Reports",
+      "loadingReports": "Loading reports...",
+      "noReports": "No reports generated yet",
+      "archived": "Archived",
+      "current": "Current",
+      "revenueLabel": "Revenue",
+      "profitLabel": "Profit",
+      "peterLabel": "Peter",
+      "entriesLabel": "entries",
+      "by": "by",
+      "summaryCsv": "Summary CSV",
+      "ledgerCsv": "Ledger CSV"
+    },
+    "users": {
+      "title": "Users",
+      "subtitle": "Manage admin access",
+      "newUser": "New User",
+      "createUser": "Create new user",
+      "emailLabel": "Email",
+      "nameLabel": "Name",
+      "passwordLabel": "Password",
+      "roleLabel": "Role",
+      "emailPlaceholder": "user@example.com",
+      "namePlaceholder": "Full name",
+      "passwordPlaceholder": "Minimum 8 characters",
+      "roleViewer": "Viewer (read only)",
+      "roleAdmin": "Administrator (full access)",
+      "creating": "Creating...",
+      "create": "Create",
+      "cancel": "Cancel",
+      "loadingUsers": "Loading users...",
+      "noUsers": "No users created",
+      "userCreated": "User {email} created",
+      "createError": "Error creating user",
+      "unknownError": "Unknown error",
+      "userReactivated": "User reactivated",
+      "userDeactivated": "User deactivated",
+      "passwordReset": "Password reset",
+      "passwordMinLength": "Password must be at least 8 characters",
+      "adminBadge": "Admin",
+      "viewerBadge": "Viewer",
+      "deactivatedBadge": "Deactivated",
+      "createdAt": "Created",
+      "newPassword": "New password",
+      "saving": "Saving...",
+      "save": "Save",
+      "passwordBtn": "Password",
+      "activate": "Activate",
+      "deactivate": "Deactivate",
+      "roleProducer": "Producer",
+      "producerBadge": "Producer",
+      "producerLabel": "Producer",
+      "selectProducer": "Select producer..."
+    },
+    "partners": {
+      "title": "Partner Management",
+      "subtitle": "Manage B2B partners, users, documents and price lists",
+      "loading": "Loading partners...",
+      "noPartners": "No partners configured.",
+      "users": "Users",
+      "documents": "Documents",
+      "priceList": "Price List",
+      "messages": "Messages",
+      "orders": "B2B Orders",
+      "addUser": "Add User",
+      "uploadDoc": "Upload Document",
+      "sendMessage": "Send Message",
+      "addPrice": "Add Price",
+      "commission": "Commission",
+      "active": "Active",
+      "inactive": "Inactive",
+      "lastLogin": "Last Login",
+      "never": "Never",
+      "overview": "Overview",
+      "userCount": "Users",
+      "docCount": "Documents",
+      "orderCount": "Orders",
+      "status": "Status",
+      "cancel": "Cancel",
+      "noUsers": "No users for this partner.",
+      "noDocs": "No documents uploaded yet.",
+      "noMessages": "No messages yet.",
+      "noOrders": "No B2B orders yet.",
+      "noPrices": "No prices configured yet.",
+      "userCreated": "Partner user created successfully.",
+      "userActivated": "User reactivated.",
+      "userDeactivated": "User deactivated.",
+      "docUploaded": "Document record created.",
+      "messageSent": "Message sent.",
+      "priceAdded": "Price list entry added.",
+      "activate": "Activate",
+      "deactivate": "Deactivate"
+    },
+    "common": {
+      "allStatuses": "All Statuses"
+    },
+    "producerPortal": "Producer Portal",
+    "producerLabel": {
+      "kiendler": "Kiendler",
+      "hernach": "Hernach"
+    },
+    "producerDashboard": {
+      "fulfillmentOverview": "Fulfillment Overview",
+      "monthlyOrders": "Orders This Month",
+      "openFulfillments": "Open Fulfillments",
+      "shippedPackages": "Shipped Packages",
+      "failedOrders": "Failed",
+      "recentFulfillments": "Recent Fulfillments",
+      "tracking": "Tracking"
+    }
+  },
+  "partner": {
+    "title": "Partner Portal",
+    "subtitle": "Austria Imperial Green Gold",
+    "comingSoon": "Coming Soon",
+    "comingSoonDescription": "This feature is currently under development and will be available soon.",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Orders",
+      "documents": "Documents",
+      "priceList": "Price List",
+      "messages": "Messages",
+      "newOrder": "New Order",
+      "logout": "Sign Out"
+    },
+    "login": {
+      "title": "Partner Portal",
+      "subtitle": "Sign in with your partner account",
+      "email": "Email Address",
+      "emailPlaceholder": "partner@company.com",
+      "password": "Password",
+      "signIn": "Sign In",
+      "signingIn": "Signing In...",
+      "error": "Invalid credentials",
+      "networkError": "Connection error. Please try again.",
+      "partnerAccess": "Registered partners only"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Overview",
+      "totalOrders": "Total Orders",
+      "thisMonth": "this month",
+      "activeShipments": "Active Shipments",
+      "ordersThisMonth": "Orders This Month",
+      "recentOrders": "Recent Orders",
+      "viewAll": "View All",
+      "noOrders": "No orders yet."
+    },
+    "orders": {
+      "title": "Orders",
+      "totalCount": "{count, plural, =0 {No orders} one {# order} other {# orders}}",
+      "order": "Order",
+      "status": "Status",
+      "date": "Date",
+      "amount": "Amount",
+      "items": "items",
+      "noOrders": "No orders found.",
+      "fulfillments": "Shipments",
+      "page": "Page",
+      "of": "of",
+      "previous": "Previous",
+      "next": "Next",
+      "statusLabels": {
+        "pending": "Pending",
+        "paid": "Paid",
+        "processing": "Processing",
+        "partially_shipped": "Partially Shipped",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "cancelled": "Cancelled",
+        "refunded": "Refunded"
+      },
+      "fulfillmentStatus": {
+        "pending": "Pending",
+        "sent_to_producer": "Sent to Producer",
+        "confirmed": "Confirmed",
+        "shipped": "Shipped",
+        "delivered": "Delivered",
+        "failed": "Failed",
+        "cancelled": "Cancelled"
+      }
+    },
+    "documents": {
+      "title": "Documents",
+      "noDocuments": "No documents available.",
+      "download": "Download",
+      "fileSize": "Size",
+      "uploadedBy": "Uploaded by",
+      "categories": {
+        "customs": "Customs",
+        "certificate": "Certificate",
+        "invoice": "Invoice",
+        "contract": "Contract",
+        "other": "Other"
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "newMessage": "New Message",
+      "noMessages": "No messages yet.",
+      "you": "You",
+      "admin": "AIGG Admin",
+      "unread": "Unread",
+      "compose": {
+        "subject": "Subject",
+        "subjectPlaceholder": "Enter subject...",
+        "body": "Message",
+        "bodyPlaceholder": "Your message...",
+        "send": "Send",
+        "sending": "Sending...",
+        "cancel": "Cancel"
+      }
+    },
+    "priceList": {
+      "title": "Price List",
+      "subtitle": "Current B2B export prices",
+      "product": "Product",
+      "exportPrice": "Export Price",
+      "minQty": "Min. Qty",
+      "validFrom": "Valid From",
+      "validUntil": "Valid Until",
+      "addToOrder": "Add to Order",
+      "noItems": "No price list available.",
+      "createOrder": "Create B2B Order",
+      "items": "items",
+      "estimatedTotal": "Estimated Total"
+    },
+    "newOrder": {
+      "title": "New B2B Order",
+      "product": "Product",
+      "quantity": "Quantity",
+      "unitPrice": "Unit Price",
+      "lineTotal": "Line Total",
+      "remove": "Remove",
+      "notes": "Notes",
+      "notesPlaceholder": "Optional notes about this order...",
+      "orderTotal": "Order Total",
+      "submit": "Submit Order",
+      "submitting": "Submitting...",
+      "success": "Order Submitted!",
+      "successMessage": "Your B2B order has been successfully submitted.",
+      "viewOrders": "View Orders",
+      "noItems": "No items selected yet.",
+      "addFromPriceList": "Add from Price List"
+    },
+    "common": {
+      "loading": "Loading..."
+    }
+  }
+}

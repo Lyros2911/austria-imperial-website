@@ -3,11 +3,13 @@
 import { useCart } from './cart-context';
 import { X, Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import { formatEurCents } from '@/lib/utils';
-import Link from 'next/link';
+import { Link } from '@/i18n/navigation';
+import { useTranslations } from 'next-intl';
 
 export function CartDrawer() {
   const { items, totalItems, totalCents, isOpen, setIsOpen, updateQuantity, removeItem } =
     useCart();
+  const t = useTranslations('cart');
 
   if (!isOpen) return null;
 
@@ -26,7 +28,7 @@ export function CartDrawer() {
           <div className="flex items-center gap-3">
             <ShoppingBag className="w-5 h-5 text-gold" strokeWidth={1.5} />
             <h2 className="font-[var(--font-heading)] text-lg text-cream">
-              Warenkorb
+              {t('title')}
               {totalItems > 0 && (
                 <span className="text-muted text-sm ml-2">({totalItems})</span>
               )}
@@ -45,12 +47,12 @@ export function CartDrawer() {
           {items.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full text-muted gap-4">
               <ShoppingBag className="w-12 h-12 opacity-30" />
-              <p className="text-sm">Dein Warenkorb ist leer</p>
+              <p className="text-sm">{t('empty')}</p>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-gold text-sm hover:text-gold-light transition-colors"
               >
-                Weiter einkaufen →
+                {t('continueShopping')}
               </button>
             </div>
           ) : (
@@ -107,18 +109,18 @@ export function CartDrawer() {
         {items.length > 0 && (
           <div className="border-t border-border-gold px-6 py-5 space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-muted text-sm">Zwischensumme</span>
+              <span className="text-muted text-sm">{t('subtotal')}</span>
               <span className="text-cream text-lg font-[var(--font-heading)] font-semibold">
                 {formatEurCents(totalCents)}
               </span>
             </div>
-            <p className="text-muted text-xs">Versandkosten werden im Checkout berechnet.</p>
+            <p className="text-muted text-xs">{t('shippingNote')}</p>
             <Link
               href="/checkout"
               onClick={() => setIsOpen(false)}
               className="block w-full text-center bg-gold hover:bg-gold-light text-[var(--aigg-black)] font-semibold text-sm tracking-wide py-3.5 rounded transition-colors duration-300"
             >
-              Zur Kasse
+              {t('checkout')}
             </Link>
           </div>
         )}

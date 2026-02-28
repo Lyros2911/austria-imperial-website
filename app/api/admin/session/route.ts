@@ -20,5 +20,6 @@ export async function GET() {
     email: session.email,
     role: session.role,
     name: session.name,
+    producer: session.producer,
   });
 }

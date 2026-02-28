@@ -4,6 +4,10 @@
  * Creates initial products and variants in the database.
  * Optionally creates Stripe products/prices if STRIPE_SECRET_KEY is set.
  *
+ * Produkte:
+ *   Menschen: Kürbiskernöl g.g.A. (250ml, 500ml), Kren trocken (Preise folgen)
+ *   Tiere:    Krenpellets Pferde (Preise folgen), Krenpellets Kamele (Preise folgen)
+ *
  * Usage: npx tsx lib/db/seed.ts
  */
 
@@ -26,6 +30,7 @@ async function seed() {
 
   console.log('Creating products...');
 
+  // Menschen: Kürbiskernöl
   const [kernoel] = await db
     .insert(products)
     .values({
@@ -45,27 +50,71 @@ async function seed() {
     })
     .returning();
 
+  // Menschen: Kren trocken (KEIN Glas!)
   const [kren] = await db
     .insert(products)
     .values({
       slug: 'steirischer-kren',
-      nameDe: 'Steirischer Kren (Meerrettich)',
-      nameEn: 'Styrian Horseradish',
+      nameDe: 'Steirischer Kren trocken — Scharfer Rudi',
+      nameEn: 'Styrian Dried Horseradish — Scharfer Rudi',
       descriptionDe:
-        'Frisch geriebener steirischer Kren aus traditionellem Anbau. ' +
-        'Scharfer, würziger Geschmack — ein Klassiker der österreichischen Küche.',
+        'Getrockneter steirischer Kren (Meerrettich) in Premiumqualität. ' +
+        'Natürlich scharf, ohne Konservierungsstoffe. ' +
+        'Mascot: Scharfer Rudi — der steirische Krieger unter den Gewürzen. Lange haltbar, vielseitig einsetzbar.',
       descriptionEn:
-        'Freshly grated Styrian horseradish from traditional cultivation. ' +
-        'Sharp, spicy flavor — a classic of Austrian cuisine.',
+        'Premium dried Styrian horseradish. Naturally spicy, no preservatives. ' +
+        'Mascot: Scharfer Rudi — the Styrian warrior among spices. Long shelf life, versatile use.',
       category: 'kren',
+      producer: 'hernach',
+    })
+    .returning();
+
+  // Tiere: Krenpellets Pferde
+  const [pferde] = await db
+    .insert(products)
+    .values({
+      slug: 'krenpellets-pferde',
+      nameDe: 'Krenpellets für Pferde — 1kg',
+      nameEn: 'Horseradish Pellets for Horses — 1kg',
+      descriptionDe:
+        'Natürliche Kren-Nahrungsergänzung für Pferde. ' +
+        'Unterstützt die Atemwege und das allgemeine Wohlbefinden. ' +
+        'Aus steirischem Kren hergestellt, pelletiert für einfache Dosierung.',
+      descriptionEn:
+        'Natural horseradish feed supplement for horses. ' +
+        'Supports respiratory health and overall well-being. ' +
+        'Made from Styrian horseradish, pelletized for easy dosage.',
+      category: 'tiernahrung',
+      producer: 'hernach',
+    })
+    .returning();
+
+  // Tiere: Krenpellets Kamele
+  const [kamele] = await db
+    .insert(products)
+    .values({
+      slug: 'krenpellets-kamele',
+      nameDe: 'Krenpellets für Kamele — 1kg',
+      nameEn: 'Horseradish Pellets for Camels — 1kg',
+      descriptionDe:
+        'Speziell für den arabischen Markt entwickelte Kren-Nahrungsergänzung für Kamele. ' +
+        'Premium-Qualität aus steirischem Kren, pelletiert für einfache Verabreichung.',
+      descriptionEn:
+        'Specially developed horseradish feed supplement for camels, targeting the Arabian market. ' +
+        'Premium quality from Styrian horseradish, pelletized for easy administration.',
+      category: 'tiernahrung',
       producer: 'hernach',
     })
     .returning();
 
   console.log(`  Created: ${kernoel.nameDe} (id: ${kernoel.id})`);
   console.log(`  Created: ${kren.nameDe} (id: ${kren.id})`);
+  console.log(`  Created: ${pferde.nameDe} (id: ${pferde.id})`);
+  console.log(`  Created: ${kamele.nameDe} (id: ${kamele.id})`);
 
   // ── 2. Product Variants ──────────────────────────────────
+  // Nur Kürbiskernöl hat aktuell Varianten mit Preisen.
+  // Kren-Preise + Krenpellets-Preise kommen nächste Woche.
 
   console.log('\nCreating product variants...');
 
@@ -93,42 +142,13 @@ async function seed() {
     ])
     .returning();
 
-  const krenVariants = await db
-    .insert(productVariants)
-    .values([
-      {
-        productId: kren.id,
-        sku: 'KRN-100',
-        nameDe: '100g Glas',
-        nameEn: '100g jar',
-        sizeMl: 100,
-        priceCents: 490, // EUR 4,90
-        weightGrams: 220,
-      },
-      {
-        productId: kren.id,
-        sku: 'KRN-200',
-        nameDe: '200g Glas',
-        nameEn: '200g jar',
-        sizeMl: 200,
-        priceCents: 690, // EUR 6,90
-        weightGrams: 350,
-      },
-      {
-        productId: kren.id,
-        sku: 'KRN-500',
-        nameDe: '500g Glas',
-        nameEn: '500g jar',
-        sizeMl: 500,
-        priceCents: 1190, // EUR 11,90
-        weightGrams: 720,
-      },
-    ])
-    .returning();
+  // HINWEIS: Kren trocken, Krenpellets Pferde und Kamele haben noch KEINE Varianten.
+  // Werden angelegt sobald Preise verfügbar sind.
 
-  for (const v of [...kernoelVariants, ...krenVariants]) {
+  for (const v of kernoelVariants) {
     console.log(`  Created: ${v.sku} — ${v.nameDe} (EUR ${(v.priceCents / 100).toFixed(2)})`);
   }
+  console.log('  Info: Kren + Krenpellets Varianten werden bei Preisfreigabe nachgepflegt.');
 
   // ── 3. Stripe Products + Prices (optional) ──────────────
 
@@ -138,7 +158,7 @@ async function seed() {
     const Stripe = (await import('stripe')).default;
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-    // Create Stripe products
+    // Stripe Products für alle Produkte (auch ohne Preise)
     const stripeKernoel = await stripe.products.create({
       name: 'Steirisches Kürbiskernöl g.g.A.',
       description: 'Premium cold-pressed Styrian pumpkin seed oil (PGI)',
@@ -146,12 +166,29 @@ async function seed() {
     });
 
     const stripeKren = await stripe.products.create({
-      name: 'Steirischer Kren',
-      description: 'Styrian horseradish from traditional cultivation',
+      name: 'Steirischer Kren trocken — Scharfer Rudi',
+      description: 'Premium dried Styrian horseradish',
       metadata: { aigg_product_id: String(kren.id) },
     });
 
-    // Create Stripe prices and update variants
+    const stripePferde = await stripe.products.create({
+      name: 'Krenpellets für Pferde — 1kg',
+      description: 'Natural horseradish feed supplement for horses',
+      metadata: { aigg_product_id: String(pferde.id) },
+    });
+
+    const stripeKamele = await stripe.products.create({
+      name: 'Krenpellets für Kamele — 1kg',
+      description: 'Horseradish feed supplement for camels',
+      metadata: { aigg_product_id: String(kamele.id) },
+    });
+
+    console.log(`  Stripe Product: ${stripeKernoel.name} → ${stripeKernoel.id}`);
+    console.log(`  Stripe Product: ${stripeKren.name} → ${stripeKren.id}`);
+    console.log(`  Stripe Product: ${stripePferde.name} → ${stripePferde.id}`);
+    console.log(`  Stripe Product: ${stripeKamele.name} → ${stripeKamele.id}`);
+
+    // Stripe Prices nur für Kürbiskernöl (einzige Produkte mit Varianten/Preisen)
     for (const variant of kernoelVariants) {
       const price = await stripe.prices.create({
         product: stripeKernoel.id,
@@ -169,22 +206,7 @@ async function seed() {
       console.log(`  Stripe price: ${variant.sku} → ${price.id}`);
     }
 
-    for (const variant of krenVariants) {
-      const price = await stripe.prices.create({
-        product: stripeKren.id,
-        unit_amount: variant.priceCents,
-        currency: 'eur',
-        metadata: {
-          aigg_variant_id: String(variant.id),
-          sku: variant.sku,
-        },
-      });
-
-      await sql`UPDATE product_variants SET stripe_price_id = ${price.id} WHERE id = ${variant.id}`;
-
-      console.log(`  Stripe price: ${variant.sku} → ${price.id}`);
-    }
-
+    console.log('  Info: Stripe Prices für Kren + Krenpellets werden bei Preisfreigabe erstellt.');
     console.log('  Stripe setup complete.');
   } else {
     console.log('\nSkipping Stripe setup (STRIPE_SECRET_KEY not set).');
@@ -194,8 +216,8 @@ async function seed() {
   // ── Done ─────────────────────────────────────────────────
 
   console.log('\nSeed complete!');
-  console.log(`  Products: 2`);
-  console.log(`  Variants: ${kernoelVariants.length + krenVariants.length} (${kernoelVariants.length} Kernöl + ${krenVariants.length} Kren)`);
+  console.log(`  Products: 4 (2 Menschen + 2 Tiere)`);
+  console.log(`  Variants: ${kernoelVariants.length} (nur Kürbiskernöl — Kren/Krenpellets Preise folgen)`);
 }
 
 seed().catch((err) => {

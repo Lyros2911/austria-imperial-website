@@ -32,6 +32,7 @@ import { relations } from 'drizzle-orm';
 export const productCategoryEnum = pgEnum('product_category', [
   'kernoel',
   'kren',
+  'tiernahrung',
 ]);
 
 export const producerEnum = pgEnum('producer', [
@@ -393,6 +394,7 @@ export const adminUsers = pgTable('admin_users', {
   passwordHash: text('password_hash').notNull(),
   name: varchar('name', { length: 100 }),
   role: varchar('role', { length: 20 }).notNull().default('admin'),
+  producer: producerEnum('producer'), // NULL = kein Producer (admin/viewer), 'kiendler' oder 'hernach'
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
   deletedAt: timestamp('deleted_at'),
@@ -444,6 +446,154 @@ export const partnerCommissions = pgTable('partner_commissions', {
   createdAt: timestamp('created_at').notNull().defaultNow(),
   paidAt: timestamp('paid_at'),
   notes: text('notes'),
+});
+
+// ============================================================
+// 16. PARTNER USERS (Saudi-Partner-Portal)
+//
+// Eigene Tabelle, getrennt von admin_users.
+// Jeder Partner-User gehoert zu genau einer partner_config.
+// ============================================================
+
+export const partnerUsers = pgTable('partner_users', {
+  id: serial('id').primaryKey(),
+  email: varchar('email', { length: 255 }).notNull().unique(),
+  passwordHash: text('password_hash').notNull(),
+  name: varchar('name', { length: 200 }),
+  companyName: varchar('company_name', { length: 200 }),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  locale: varchar('locale', { length: 10 }).notNull().default('ar'),
+  active: boolean('active').notNull().default(true),
+  lastLoginAt: timestamp('last_login_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+  deletedAt: timestamp('deleted_at'),
+});
+
+// ============================================================
+// 17. PARTNER DOCUMENTS (Zollpapiere, Zertifikate, Rechnungen)
+//
+// Hochgeladen vom Admin, sichtbar im Partner-Portal.
+// Dateien werden im Volume /data/partner-docs gespeichert.
+// ============================================================
+
+export const documentCategoryEnum = pgEnum('document_category', [
+  'customs',
+  'certificate',
+  'invoice',
+  'contract',
+  'other',
+]);
+
+export const partnerDocuments = pgTable('partner_documents', {
+  id: serial('id').primaryKey(),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  title: varchar('title', { length: 300 }).notNull(),
+  category: documentCategoryEnum('category').notNull().default('other'),
+  fileName: varchar('file_name', { length: 300 }).notNull(),
+  fileSize: integer('file_size'), // bytes
+  mimeType: varchar('mime_type', { length: 100 }),
+  storagePath: text('storage_path').notNull(), // internal path or S3 key
+  uploadedBy: varchar('uploaded_by', { length: 200 }).notNull(), // admin email
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// 18. PARTNER PRICE LISTS (B2B-Exportpreise)
+//
+// Jeder Eintrag = 1 Produkt-Variante mit B2B-Preis für 1 Partner.
+// ============================================================
+
+export const partnerPriceLists = pgTable('partner_price_lists', {
+  id: serial('id').primaryKey(),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  productVariantId: integer('product_variant_id')
+    .notNull()
+    .references(() => productVariants.id),
+  exportPriceCents: integer('export_price_cents').notNull(),
+  currency: varchar('currency', { length: 3 }).notNull().default('EUR'),
+  minOrderQuantity: integer('min_order_quantity').notNull().default(1),
+  validFrom: timestamp('valid_from').notNull().defaultNow(),
+  validUntil: timestamp('valid_until'),
+  active: boolean('active').notNull().default(true),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// 19. PARTNER MESSAGES (Partner ↔ AIGG Kommunikation)
+//
+// Einfaches Nachrichtensystem zwischen Partner und AIGG-Admin.
+// ============================================================
+
+export const messageSenderTypeEnum = pgEnum('message_sender_type', ['partner', 'admin']);
+
+export const partnerMessages = pgTable('partner_messages', {
+  id: serial('id').primaryKey(),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  senderType: messageSenderTypeEnum('sender_type').notNull(),
+  senderName: varchar('sender_name', { length: 200 }).notNull(),
+  subject: varchar('subject', { length: 300 }),
+  body: text('body').notNull(),
+  readAt: timestamp('read_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// 20. PARTNER ORDERS (B2B-Bestellungen)
+//
+// B2B-Bestellungen direkt vom Partner (nicht über Shop).
+// Status-Workflow: draft → submitted → confirmed → shipped → delivered
+// ============================================================
+
+export const partnerOrderStatusEnum = pgEnum('partner_order_status', [
+  'draft',
+  'submitted',
+  'confirmed',
+  'processing',
+  'shipped',
+  'delivered',
+  'cancelled',
+]);
+
+export const partnerOrders = pgTable('partner_orders', {
+  id: serial('id').primaryKey(),
+  partnerConfigId: integer('partner_config_id')
+    .notNull()
+    .references(() => partnerConfig.id),
+  orderNumber: varchar('order_number', { length: 30 }).notNull().unique(),
+  status: partnerOrderStatusEnum('status').notNull().default('draft'),
+  totalCents: integer('total_cents').notNull().default(0),
+  currency: varchar('currency', { length: 3 }).notNull().default('EUR'),
+  notes: text('notes'),
+  submittedBy: varchar('submitted_by', { length: 200 }), // partner user email
+  confirmedBy: varchar('confirmed_by', { length: 200 }), // admin email
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+  submittedAt: timestamp('submitted_at'),
+  confirmedAt: timestamp('confirmed_at'),
+  shippedAt: timestamp('shipped_at'),
+  deliveredAt: timestamp('delivered_at'),
+});
+
+export const partnerOrderItems = pgTable('partner_order_items', {
+  id: serial('id').primaryKey(),
+  partnerOrderId: integer('partner_order_id')
+    .notNull()
+    .references(() => partnerOrders.id),
+  productVariantId: integer('product_variant_id')
+    .notNull()
+    .references(() => productVariants.id),
+  quantity: integer('quantity').notNull(),
+  unitPriceCents: integer('unit_price_cents').notNull(),
+  totalCents: integer('total_cents').notNull(),
 });
 
 // ============================================================
@@ -519,6 +669,18 @@ export const financialLedgerRelations = relations(financialLedger, ({ one }) => 
 
 export const partnerConfigRelations = relations(partnerConfig, ({ many }) => ({
   commissions: many(partnerCommissions),
+  users: many(partnerUsers),
+  documents: many(partnerDocuments),
+  priceLists: many(partnerPriceLists),
+  messages: many(partnerMessages),
+  partnerOrders: many(partnerOrders),
+}));
+
+export const partnerUsersRelations = relations(partnerUsers, ({ one }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerUsers.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
 }));
 
 export const partnerCommissionsRelations = relations(partnerCommissions, ({ one }) => ({
@@ -529,6 +691,50 @@ export const partnerCommissionsRelations = relations(partnerCommissions, ({ one 
   order: one(orders, {
     fields: [partnerCommissions.orderId],
     references: [orders.id],
+  }),
+}));
+
+export const partnerDocumentsRelations = relations(partnerDocuments, ({ one }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerDocuments.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
+}));
+
+export const partnerPriceListsRelations = relations(partnerPriceLists, ({ one }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerPriceLists.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
+  productVariant: one(productVariants, {
+    fields: [partnerPriceLists.productVariantId],
+    references: [productVariants.id],
+  }),
+}));
+
+export const partnerMessagesRelations = relations(partnerMessages, ({ one }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerMessages.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
+}));
+
+export const partnerOrdersRelations = relations(partnerOrders, ({ one, many }) => ({
+  partner: one(partnerConfig, {
+    fields: [partnerOrders.partnerConfigId],
+    references: [partnerConfig.id],
+  }),
+  items: many(partnerOrderItems),
+}));
+
+export const partnerOrderItemsRelations = relations(partnerOrderItems, ({ one }) => ({
+  partnerOrder: one(partnerOrders, {
+    fields: [partnerOrderItems.partnerOrderId],
+    references: [partnerOrders.id],
+  }),
+  productVariant: one(productVariants, {
+    fields: [partnerOrderItems.productVariantId],
+    references: [productVariants.id],
   }),
 }));
 
@@ -558,3 +764,15 @@ export type PartnerConfig = typeof partnerConfig.$inferSelect;
 export type NewPartnerConfig = typeof partnerConfig.$inferInsert;
 export type PartnerCommission = typeof partnerCommissions.$inferSelect;
 export type NewPartnerCommission = typeof partnerCommissions.$inferInsert;
+export type PartnerUser = typeof partnerUsers.$inferSelect;
+export type NewPartnerUser = typeof partnerUsers.$inferInsert;
+export type PartnerDocument = typeof partnerDocuments.$inferSelect;
+export type NewPartnerDocument = typeof partnerDocuments.$inferInsert;
+export type PartnerPriceList = typeof partnerPriceLists.$inferSelect;
+export type NewPartnerPriceList = typeof partnerPriceLists.$inferInsert;
+export type PartnerMessage = typeof partnerMessages.$inferSelect;
+export type NewPartnerMessage = typeof partnerMessages.$inferInsert;
+export type PartnerOrder = typeof partnerOrders.$inferSelect;
+export type NewPartnerOrder = typeof partnerOrders.$inferInsert;
+export type PartnerOrderItem = typeof partnerOrderItems.$inferSelect;
+export type NewPartnerOrderItem = typeof partnerOrderItems.$inferInsert;

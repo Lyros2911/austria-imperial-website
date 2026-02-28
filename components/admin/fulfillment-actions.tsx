@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { RefreshCw, Loader2, CheckCircle, AlertCircle, Save } from 'lucide-react';
 
 interface FulfillmentOrderData {
@@ -17,6 +18,7 @@ interface FulfillmentOrderData {
  * Retry Button — re-dispatches a failed/pending fulfillment order.
  */
 export function RetryButton({ fulfillmentOrder }: { fulfillmentOrder: FulfillmentOrderData }) {
+  const t = useTranslations('admin');
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<{ success: boolean; error?: string } | null>(null);
 
@@ -40,7 +42,7 @@ export function RetryButton({ fulfillmentOrder }: { fulfillmentOrder: Fulfillmen
         setTimeout(() => window.location.reload(), 1500);
       }
     } catch (err) {
-      setResult({ success: false, error: 'Netzwerkfehler' });
+      setResult({ success: false, error: t('fulfillmentActions.networkError') });
     } finally {
       setLoading(false);
     }
@@ -60,12 +62,12 @@ export function RetryButton({ fulfillmentOrder }: { fulfillmentOrder: Fulfillmen
         ) : (
           <RefreshCw className="w-3 h-3" />
         )}
-        Retry
+        {t('fulfillmentActions.retry')}
       </button>
       {result && (
         <span className={`text-[10px] flex items-center gap-1 ${result.success ? 'text-emerald-400' : 'text-red-400'}`}>
           {result.success ? <CheckCircle className="w-3 h-3" /> : <AlertCircle className="w-3 h-3" />}
-          {result.success ? 'Gesendet' : result.error}
+          {result.success ? t('fulfillmentActions.sent') : result.error}
         </span>
       )}
     </div>
@@ -76,6 +78,7 @@ export function RetryButton({ fulfillmentOrder }: { fulfillmentOrder: Fulfillmen
  * Status Update Form — manual status change with optional tracking info.
  */
 export function StatusUpdateForm({ fulfillmentOrder }: { fulfillmentOrder: FulfillmentOrderData }) {
+  const t = useTranslations('admin');
   const [status, setStatus] = useState(fulfillmentOrder.status);
   const [trackingNumber, setTrackingNumber] = useState(fulfillmentOrder.trackingNumber ?? '');
   const [trackingUrl, setTrackingUrl] = useState(fulfillmentOrder.trackingUrl ?? '');
@@ -109,28 +112,28 @@ export function StatusUpdateForm({ fulfillmentOrder }: { fulfillmentOrder: Fulfi
         setMessage({ type: 'success', text: `Status → ${status}` });
         setTimeout(() => window.location.reload(), 1000);
       } else {
-        setMessage({ type: 'error', text: data.error || 'Fehler' });
+        setMessage({ type: 'error', text: data.error || t('fulfillmentActions.error') });
       }
     } catch {
-      setMessage({ type: 'error', text: 'Netzwerkfehler' });
+      setMessage({ type: 'error', text: t('fulfillmentActions.networkError') });
     } finally {
       setLoading(false);
     }
   };
 
   const statusOptions = [
-    { value: 'pending', label: 'Ausstehend' },
-    { value: 'sent_to_producer', label: 'An Produzent' },
-    { value: 'confirmed', label: 'Bestätigt' },
-    { value: 'shipped', label: 'Versandt' },
-    { value: 'delivered', label: 'Zugestellt' },
-    { value: 'failed', label: 'Fehlgeschlagen' },
-    { value: 'cancelled', label: 'Storniert' },
+    { value: 'pending', label: t('fulfillmentStatus.pending') },
+    { value: 'sent_to_producer', label: t('fulfillmentStatus.sent_to_producer') },
+    { value: 'confirmed', label: t('fulfillmentStatus.confirmed') },
+    { value: 'shipped', label: t('fulfillmentStatus.shipped') },
+    { value: 'delivered', label: t('fulfillmentStatus.delivered') },
+    { value: 'failed', label: t('fulfillmentStatus.failed') },
+    { value: 'cancelled', label: t('fulfillmentStatus.cancelled') },
   ];
 
   return (
     <form onSubmit={handleSubmit} className="mt-3 pt-3 border-t border-white/[0.06]">
-      <p className="text-[10px] text-muted uppercase tracking-wider mb-2">Status manuell aktualisieren</p>
+      <p className="text-[10px] text-muted uppercase tracking-wider mb-2">{t('fulfillmentActions.updateStatusManually')}</p>
       <div className="flex flex-wrap gap-2 items-end">
         <select
           value={status}
@@ -147,14 +150,14 @@ export function StatusUpdateForm({ fulfillmentOrder }: { fulfillmentOrder: Fulfi
           type="text"
           value={trackingNumber}
           onChange={(e) => setTrackingNumber(e.target.value)}
-          placeholder="Tracking-Nr."
+          placeholder={t('fulfillmentActions.trackingNumber')}
           className="bg-[#080808] border border-white/[0.08] rounded px-2 py-1.5 text-cream text-[11px] w-32 placeholder:text-muted/30 focus:border-gold/40 focus:outline-none"
         />
         <input
           type="text"
           value={trackingUrl}
           onChange={(e) => setTrackingUrl(e.target.value)}
-          placeholder="Tracking-URL"
+          placeholder={t('fulfillmentActions.trackingUrl')}
           className="bg-[#080808] border border-white/[0.08] rounded px-2 py-1.5 text-cream text-[11px] w-44 placeholder:text-muted/30 focus:border-gold/40 focus:outline-none"
         />
         <button
@@ -163,7 +166,7 @@ export function StatusUpdateForm({ fulfillmentOrder }: { fulfillmentOrder: Fulfi
           className="flex items-center gap-1 bg-white/[0.06] border border-white/[0.1] text-cream rounded px-3 py-1.5 text-[10px] hover:bg-white/[0.1] disabled:opacity-50 transition-colors"
         >
           {loading ? <Loader2 className="w-3 h-3 animate-spin" /> : <Save className="w-3 h-3" />}
-          Speichern
+          {t('fulfillmentActions.save')}
         </button>
       </div>
       {message && (

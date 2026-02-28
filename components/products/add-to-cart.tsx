@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useCart } from '@/components/cart/cart-context';
 import { formatEurCents } from '@/lib/utils';
 import { ShoppingBag, Check } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 interface ProductInfo {
   id: number;
@@ -28,6 +29,7 @@ export function AddToCartSection({
   variants: VariantInfo[];
 }) {
   const { addItem } = useCart();
+  const t = useTranslations('addToCart');
   const [selectedId, setSelectedId] = useState(variants[0]?.id);
   const [quantity, setQuantity] = useState(1);
   const [added, setAdded] = useState(false);
@@ -58,7 +60,7 @@ export function AddToCartSection({
       {/* Variant selector */}
       {variants.length > 1 && (
         <div className="space-y-3">
-          <label className="text-muted text-xs tracking-[0.2em] uppercase">Größe wählen</label>
+          <label className="text-muted text-xs tracking-[0.2em] uppercase">{t('selectSize')}</label>
           <div className="flex gap-3 flex-wrap">
             {variants.map((v) => (
               <button
@@ -85,7 +87,7 @@ export function AddToCartSection({
         <span className="text-gold text-3xl font-[var(--font-heading)] font-semibold">
           {formatEurCents(selected.priceCents)}
         </span>
-        <span className="text-muted text-sm">inkl. MwSt.</span>
+        <span className="text-muted text-sm">{t('inclVat')}</span>
       </div>
 
       {/* Quantity + Add to Cart */}
@@ -121,12 +123,12 @@ export function AddToCartSection({
           {added ? (
             <>
               <Check className="w-4 h-4" />
-              Hinzugefügt
+              {t('added')}
             </>
           ) : (
             <>
               <ShoppingBag className="w-4 h-4" strokeWidth={2} />
-              In den Warenkorb
+              {t('addToCart')}
             </>
           )}
         </button>

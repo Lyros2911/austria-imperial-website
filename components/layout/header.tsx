@@ -1,15 +1,26 @@
 'use client';
 
-import Link from 'next/link';
+import { Link, usePathname, useRouter } from '@/i18n/navigation';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useLocale, useTranslations } from 'next-intl';
 import { useCart } from '@/components/cart/cart-context';
 import { CartDrawer } from '@/components/cart/cart-drawer';
 import { ShoppingBag, Menu, X } from 'lucide-react';
+import { routing } from '@/i18n/routing';
 
 export function Header() {
-  const { totalItems, isOpen, setIsOpen } = useCart();
+  const t = useTranslations('nav');
+  const tLang = useTranslations('language');
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+  const { totalItems, setIsOpen } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleLocaleSwitch = (newLocale: string) => {
+    router.replace(pathname, { locale: newLocale });
+  };
 
   return (
     <>
@@ -29,17 +40,35 @@ export function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
-            <NavLink href="/products">Produkte</NavLink>
-            <NavLink href="/about">Über Uns</NavLink>
-            <NavLink href="/contact">Kontakt</NavLink>
+            <NavLink href="/products">{t('products')}</NavLink>
+            <NavLink href="/about">{t('about')}</NavLink>
+            <NavLink href="/contact">{t('contact')}</NavLink>
           </nav>
 
-          {/* Cart + Mobile Menu */}
+          {/* Language Switcher + Cart + Mobile Menu */}
           <div className="flex items-center gap-4">
+            {/* Language Switcher */}
+            <div className="hidden sm:flex items-center border border-border-gold rounded overflow-hidden text-xs">
+              {routing.locales.map((loc) => (
+                <button
+                  key={loc}
+                  onClick={() => handleLocaleSwitch(loc)}
+                  className={`px-2.5 py-1.5 transition-colors duration-200 ${
+                    locale === loc
+                      ? 'bg-gold text-[var(--aigg-black)] font-semibold'
+                      : 'text-muted hover:text-cream'
+                  }`}
+                >
+                  {tLang(loc)}
+                </button>
+              ))}
+            </div>
+
+            {/* Cart */}
             <button
               onClick={() => setIsOpen(true)}
               className="relative p-2 text-cream hover:text-gold transition-colors"
-              aria-label="Warenkorb öffnen"
+              aria-label={t('openCart')}
             >
               <ShoppingBag className="w-5 h-5" strokeWidth={1.5} />
               {totalItems > 0 && (
@@ -49,10 +78,11 @@ export function Header() {
               )}
             </button>
 
+            {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
               className="md:hidden p-2 text-cream hover:text-gold transition-colors"
-              aria-label="Menü"
+              aria-label={t('menu')}
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -63,9 +93,26 @@ export function Header() {
         {menuOpen && (
           <div className="md:hidden border-t border-border-gold bg-[var(--aigg-black)]/95 backdrop-blur-md animate-slide-down">
             <nav className="flex flex-col px-6 py-6 gap-4">
-              <MobileNavLink href="/products" onClick={() => setMenuOpen(false)}>Produkte</MobileNavLink>
-              <MobileNavLink href="/about" onClick={() => setMenuOpen(false)}>Über Uns</MobileNavLink>
-              <MobileNavLink href="/contact" onClick={() => setMenuOpen(false)}>Kontakt</MobileNavLink>
+              <MobileNavLink href="/products" onClick={() => setMenuOpen(false)}>{t('products')}</MobileNavLink>
+              <MobileNavLink href="/about" onClick={() => setMenuOpen(false)}>{t('about')}</MobileNavLink>
+              <MobileNavLink href="/contact" onClick={() => setMenuOpen(false)}>{t('contact')}</MobileNavLink>
+
+              {/* Mobile Language Switcher */}
+              <div className="flex items-center gap-3 pt-4 border-t border-border-gold mt-2">
+                {routing.locales.map((loc) => (
+                  <button
+                    key={loc}
+                    onClick={() => { handleLocaleSwitch(loc); setMenuOpen(false); }}
+                    className={`px-3 py-1.5 rounded text-sm transition-colors ${
+                      locale === loc
+                        ? 'bg-gold text-[var(--aigg-black)] font-semibold'
+                        : 'text-muted hover:text-cream border border-border-gold'
+                    }`}
+                  >
+                    {tLang(loc)}
+                  </button>
+                ))}
+              </div>
             </nav>
           </div>
         )}

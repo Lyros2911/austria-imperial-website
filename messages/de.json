@@ -1,0 +1,935 @@
+{
+  "meta": {
+    "titleDefault": "Austria Imperial — Green Gold",
+    "titleTemplate": "%s | Austria Imperial",
+    "description": "Premium Steirisches Kürbiskernöl g.g.A. und Steirischer Kren — authentische österreichische Spezialitäten direkt vom Erzeuger.",
+    "products": {
+      "title": "Produkte",
+      "description": "Steirisches Kürbiskernöl g.g.A., Steirischer Kren und natürliche Tiernahrung — unsere Premium-Spezialitäten."
+    },
+    "about": {
+      "title": "Über Uns",
+      "description": "Die Geschichte hinter Austria Imperial — authentische steirische Spezialitäten."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie Austria Imperial — Green Gold. Wir freuen uns auf Ihre Nachricht."
+    },
+    "agb": {
+      "title": "Allgemeine Geschäftsbedingungen",
+      "description": "AGB von Austria Imperial — Green Gold."
+    },
+    "datenschutz": {
+      "title": "Datenschutzerklärung",
+      "description": "Datenschutzerklärung von Austria Imperial — Green Gold."
+    },
+    "impressum": {
+      "title": "Impressum",
+      "description": "Impressum und Anbieterkennzeichnung von Austria Imperial — Green Gold."
+    },
+    "widerruf": {
+      "title": "Widerrufsbelehrung",
+      "description": "Widerrufsbelehrung von Austria Imperial — Green Gold."
+    }
+  },
+
+  "nav": {
+    "products": "Produkte",
+    "about": "Über Uns",
+    "contact": "Kontakt",
+    "openCart": "Warenkorb öffnen",
+    "menu": "Menü"
+  },
+
+  "hero": {
+    "tagline": "Steirische Spezialitäten seit Generationen",
+    "heading1": "Grünes Gold",
+    "heading2": "aus der Steiermark",
+    "subheading": "Authentisches Steirisches Kürbiskernöl g.g.A. und feiner Steirischer Kren — direkt von unseren Erzeugern zu Ihnen.",
+    "ctaProducts": "Produkte entdecken",
+    "ctaStory": "Unsere Geschichte",
+    "imageAlt": "Steirisches Kürbiskernöl g.g.A. — Austria Imperial Green Gold"
+  },
+
+  "home": {
+    "specialties": "Unsere Spezialitäten",
+    "premiumProducts": "Premium Produkte",
+    "trust": {
+      "ggaCertified": {
+        "title": "g.g.A. Zertifiziert",
+        "description": "Geschützte geographische Angabe — garantierte Herkunft aus der Steiermark."
+      },
+      "directProducer": {
+        "title": "Direkt vom Erzeuger",
+        "description": "Keine Zwischenhändler. Von der Ölmühle und dem Krenbauern direkt zu Ihnen."
+      },
+      "securePayment": {
+        "title": "Sichere Bezahlung",
+        "description": "Verschlüsselte Zahlung via Stripe. Visa, Mastercard, SEPA und mehr."
+      }
+    }
+  },
+
+  "products": {
+    "collection": "Kollektion",
+    "title": "Unsere Produkte",
+    "subtitle": "Sorgfältig ausgewählte österreichische Spezialitäten — von traditionellen Erzeugern in der Steiermark hergestellt.",
+    "forHumans": "Für Menschen",
+    "forHumansDesc": "Premium-Lebensmittel aus der Steiermark — Kürbiskernöl mit g.g.A.-Schutz und natürlich scharfer Kren.",
+    "forAnimals": "Für Tiere",
+    "forAnimalsDesc": "Natürliche Nahrungsergänzung aus steirischem Kren — pelletiert für Pferde und Kamele.",
+    "from": "ab",
+    "comingSoon": "Demnächst verfügbar",
+    "categories": {
+      "kernoel": "Kürbiskernöl",
+      "kren": "Kren",
+      "tiernahrung": "Tiernahrung"
+    }
+  },
+
+  "productDetail": {
+    "categories": {
+      "kernoel": "Steirisches Kürbiskernöl",
+      "kren": "Steirischer Kren",
+      "tiernahrung": "Natürliche Tiernahrung"
+    },
+    "ggaBadge": "g.g.A. Zertifiziert",
+    "comingSoon": {
+      "title": "Demnächst verfügbar",
+      "description": "Preise und Bestellmöglichkeit werden in Kürze veröffentlicht. Kontaktieren Sie uns für Vorbestellungen oder weitere Informationen."
+    },
+    "origin": "Herkunft",
+    "originValue": "Steiermark, Österreich",
+    "producer": "Erzeuger",
+    "certification": "Zertifizierung",
+    "certificationValue": "g.g.A. (geschützte geographische Angabe)",
+    "targetAudience": "Zielgruppe",
+    "horses": "Pferde",
+    "camels": "Kamele",
+    "shipping": "Versand",
+    "shippingValue": "Innerhalb von 3–5 Werktagen",
+    "producers": {
+      "kiendler": "Familie Kiendler",
+      "hernach": "Hof Hernach"
+    }
+  },
+
+  "addToCart": {
+    "selectSize": "Größe wählen",
+    "inclVat": "inkl. MwSt.",
+    "addToCart": "In den Warenkorb",
+    "added": "Hinzugefügt"
+  },
+
+  "cart": {
+    "title": "Warenkorb",
+    "empty": "Dein Warenkorb ist leer",
+    "continueShopping": "Weiter einkaufen →",
+    "subtotal": "Zwischensumme",
+    "shippingNote": "Versandkosten werden im Checkout berechnet.",
+    "checkout": "Zur Kasse"
+  },
+
+  "checkout": {
+    "emptyCart": "Dein Warenkorb ist leer",
+    "backToProducts": "Zurück zu den Produkten",
+    "continueShopping": "Weiter einkaufen",
+    "orderSummary": "Bestellübersicht",
+    "subtotal": "Zwischensumme",
+    "shipping": "Versand",
+    "shippingNote": "Wird im nächsten Schritt berechnet",
+    "total": "Gesamt",
+    "payWithStripe": "Sicher bezahlen mit Stripe",
+    "redirecting": "Wird weitergeleitet...",
+    "stripeRedirect": "Sie werden zu Stripe weitergeleitet um die Zahlung sicher abzuschließen.",
+    "checkoutFailed": "Checkout fehlgeschlagen",
+    "genericError": "Ein Fehler ist aufgetreten"
+  },
+
+  "checkoutSuccess": {
+    "thankYou": "Vielen Dank!",
+    "orderPlaced": "Ihre Bestellung wurde erfolgreich aufgegeben. Sie erhalten in Kürze eine Bestätigungs-E-Mail mit allen Details.",
+    "orderRef": "Bestellreferenz:",
+    "whatsNext": "Was passiert als nächstes?",
+    "step1": "Ihre Bestellung wird an unsere Erzeuger weitergeleitet.",
+    "step2": "Sie erhalten eine Versandbenachrichtigung mit Tracking-Nummer.",
+    "step3": "Lieferung innerhalb von 3–5 Werktagen.",
+    "discoverMore": "Weitere Produkte entdecken",
+    "loading": "Laden..."
+  },
+
+  "about": {
+    "tagline": "Unsere Geschichte",
+    "heading": "Grünes Gold aus der Steiermark",
+    "story": {
+      "p1": "Die Steiermark ist eine der faszinierendsten Genussregionen Europas. Sanfte Hügel, fruchtbare Böden und ein mildes Klima schaffen ideale Bedingungen für Produkte von außergewöhnlicher Qualität.",
+      "p2": "Austria Imperial — Green Gold bringt diese Tradition direkt zu Ihnen: Steirisches Kürbiskernöl mit geschützter geographischer Angabe (g.g.A.) und handverlesener Kren aus traditionellem Anbau."
+    },
+    "kernoel": {
+      "title": "Das Kürbiskernöl",
+      "p1": "Unser Kürbiskernöl stammt von der Ölmühle Kiendler in der Südsteiermark. Hier werden seit Generationen steirische Kürbiskerne nach überlieferter Tradition kaltgepresst. Das Ergebnis: ein tiefgrünes Öl mit intensivem, nussigem Aroma — das ‚grüne Gold' der Steiermark.",
+      "p2": "Die EU-geschützte Herkunftsbezeichnung g.g.A. (geschützte geographische Angabe) garantiert, dass nur Öl aus der Steiermark diesen Namen tragen darf. Jede Flasche ist ein Stück authentischer österreichischer Genusskultur."
+    },
+    "kren": {
+      "title": "Der Kren",
+      "p1": "Steirischer Kren (Meerrettich) von der Familie Hernach wird nach bewährten Methoden angebaut und frisch verarbeitet. Die scharfe Würze und das vollmundige Aroma machen ihn zu einem unverzichtbaren Begleiter der österreichischen Küche — ob zum Tafelspitz, auf dem Jausenbrett oder als Verfeinerung für Saucen."
+    },
+    "values": {
+      "title": "Wofür wir stehen",
+      "directProducer": {
+        "title": "Direkt vom Erzeuger",
+        "text": "Keine Zwischenhändler. Unsere Produkte kommen direkt von den Produzenten zu Ihnen."
+      },
+      "authenticOrigin": {
+        "title": "Authentische Herkunft",
+        "text": "EU-zertifizierte Qualität. Jedes Produkt ist rückverfolgbar bis zum Erzeuger."
+      },
+      "traditionModern": {
+        "title": "Tradition trifft Moderne",
+        "text": "Überlieferte Handwerkskunst, verpackt für die heutige Zeit."
+      }
+    }
+  },
+
+  "contact": {
+    "tagline": "Kontakt",
+    "heading": "Sprechen Sie uns an",
+    "subtitle": "Fragen zu unseren Produkten, Großbestellungen oder Kooperationen? Wir freuen uns auf Ihre Nachricht.",
+    "email": {
+      "title": "E-Mail",
+      "content": "info@austriaimperial.com",
+      "detail": "Wir antworten in der Regel innerhalb von 24 Stunden."
+    },
+    "b2b": {
+      "title": "Für Geschäftskunden",
+      "content": "B2B-Anfragen willkommen",
+      "detail": "Restaurants, Feinkostläden und Händler — kontaktieren Sie uns für individuelle Angebote und Konditionen."
+    },
+    "operator": {
+      "title": "Betreiber",
+      "content": "Auryx AI LLC",
+      "detail": "30 N Gould St Ste N, Sheridan, WY 82801, USA"
+    },
+    "form": {
+      "title": "Nachricht senden",
+      "name": "Name",
+      "namePlaceholder": "Ihr Name",
+      "email": "E-Mail",
+      "emailPlaceholder": "ihre@email.com",
+      "subject": "Betreff",
+      "subjectGeneral": "Allgemeine Anfrage",
+      "subjectOrder": "Frage zu einer Bestellung",
+      "subjectB2b": "Geschäftskunde / B2B",
+      "subjectPress": "Presse / Kooperation",
+      "message": "Nachricht",
+      "messagePlaceholder": "Ihre Nachricht...",
+      "submit": "Nachricht senden",
+      "sending": "Wird gesendet...",
+      "success": {
+        "title": "Nachricht gesendet!",
+        "text": "Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 24 Stunden bei Ihnen.",
+        "sendAnother": "Weitere Nachricht senden"
+      },
+      "error": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut oder schreiben Sie uns direkt an info@austriaimperial.com",
+      "privacyConsent": "Mit dem Absenden stimmen Sie unserer <link>Datenschutzerklärung</link> zu."
+    }
+  },
+
+  "footer": {
+    "description": "Authentische österreichische Spezialitäten direkt vom Erzeuger. Steirisches Kürbiskernöl g.g.A. und feiner Kren.",
+    "navigation": "Navigation",
+    "legal": "Rechtliches",
+    "impressum": "Impressum",
+    "datenschutz": "Datenschutz",
+    "agb": "AGB",
+    "widerruf": "Widerrufsbelehrung",
+    "admin": "Admin",
+    "copyright": "© {year} Austria Imperial — Green Gold. Alle Rechte vorbehalten.",
+    "poweredBy": "Powered by"
+  },
+
+  "agb": {
+    "title": "Allgemeine Geschäftsbedingungen",
+    "s1": {
+      "title": "§ 1 Geltungsbereich",
+      "p1": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop von Austria Imperial — Green Gold (betrieben von Auryx AI LLC, nachfolgend ‚Anbieter') getätigt werden.",
+      "p2": "Die AGB gelten in der zum Zeitpunkt der Bestellung gültigen Fassung. Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu."
+    },
+    "s2": {
+      "title": "§ 2 Vertragsschluss",
+      "p1": "Die Darstellung der Produkte im Online-Shop stellt kein rechtlich bindendes Angebot, sondern eine Aufforderung zur Bestellung dar.",
+      "p2": "Durch Anklicken des Bestell-Buttons geben Sie eine verbindliche Bestellung der im Warenkorb enthaltenen Waren ab. Die Bestätigung des Eingangs der Bestellung erfolgt unmittelbar nach dem Absenden per E-Mail (Bestellbestätigung).",
+      "p3": "Der Kaufvertrag kommt zustande, wenn die Ware an den Versanddienstleister übergeben wird."
+    },
+    "s3": {
+      "title": "§ 3 Preise und Versandkosten",
+      "p1": "Alle angegebenen Preise sind Endpreise und verstehen sich inklusive der gesetzlichen Mehrwertsteuer, sofern anwendbar. Zusätzlich fallen Versandkosten an, die vor Abschluss der Bestellung deutlich angezeigt werden."
+    },
+    "s4": {
+      "title": "§ 4 Zahlung",
+      "p1": "Die Zahlung erfolgt über den Zahlungsdienstleister Stripe. Folgende Zahlungsarten stehen zur Verfügung: Kreditkarte (Visa, Mastercard), SEPA-Lastschrift und weitere von Stripe angebotene Zahlungsmethoden.",
+      "p2": "Der Rechnungsbetrag wird bei Bestelleingang belastet."
+    },
+    "s5": {
+      "title": "§ 5 Lieferung",
+      "p1": "Die Lieferung erfolgt direkt durch unsere Produzenten an die vom Kunden angegebene Lieferadresse. Bei Bestellungen mit Produkten verschiedener Produzenten kann die Lieferung in mehreren Paketen erfolgen.",
+      "p2": "Die Lieferzeit beträgt in der Regel 3–7 Werktage innerhalb der EU. Für Lieferungen außerhalb der EU können längere Lieferzeiten und zusätzliche Zollgebühren anfallen."
+    },
+    "s6": {
+      "title": "§ 6 Eigentumsvorbehalt",
+      "p1": "Die gelieferte Ware bleibt bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Anbieters."
+    },
+    "s7": {
+      "title": "§ 7 Gewährleistung",
+      "p1": "Es gelten die gesetzlichen Gewährleistungsrechte. Lebensmittel sind vom Umtausch ausgeschlossen, sofern sie fehlerfrei und wie beschrieben geliefert wurden.",
+      "p2": "Bitte prüfen Sie die Ware bei Lieferung unverzüglich auf erkennbare Mängel. Mängelrügen nehmen wir per E-Mail entgegen."
+    },
+    "s8": {
+      "title": "§ 8 Haftung",
+      "p1": "Für Schäden haftet der Anbieter nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten. Die Haftung ist auf den vertragstypischen, vorhersehbaren Schaden begrenzt."
+    },
+    "s9": {
+      "title": "§ 9 Anwendbares Recht",
+      "p1": "Es gilt das Recht der Republik Österreich unter Ausschluss des UN-Kaufrechts. Für Verbraucher innerhalb der EU bleiben die zwingenden Verbraucherschutzbestimmungen des jeweiligen Wohnsitzlandes unberührt."
+    },
+    "s10": {
+      "title": "§ 10 Schlussbestimmungen",
+      "p1": "Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt.",
+      "date": "Stand: Februar 2026"
+    }
+  },
+
+  "datenschutz": {
+    "title": "Datenschutzerklärung",
+    "s1": {
+      "title": "1. Datenschutz auf einen Blick",
+      "generalTitle": "Allgemeine Hinweise",
+      "generalText": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.",
+      "collectionTitle": "Datenerfassung auf dieser Website",
+      "collectionText1": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.",
+      "collectionText2": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.\u00a0B. in einem Bestellformular). Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.\u00a0B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
+    },
+    "s2": {
+      "title": "2. Verantwortliche Stelle",
+      "company": "Auryx AI LLC",
+      "address": "30 N Gould St Ste N\nSheridan, WY 82801, USA",
+      "emailLabel": "E-Mail:",
+      "email": "info@austriaimperial.com",
+      "text": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet."
+    },
+    "s3": {
+      "title": "3. Ihre Rechte",
+      "intro": "Sie haben jederzeit das Recht:",
+      "rights": [
+        "Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten",
+        "Berichtigung unrichtiger Daten zu verlangen",
+        "Löschung Ihrer Daten zu verlangen",
+        "Einschränkung der Verarbeitung zu verlangen",
+        "Datenübertragbarkeit zu verlangen",
+        "Widerspruch gegen die Verarbeitung einzulegen",
+        "Eine erteilte Einwilligung zu widerrufen"
+      ],
+      "outro": "Hierzu sowie bei weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden."
+    },
+    "s4": {
+      "title": "4. Datenerfassung auf dieser Website",
+      "serverLogsTitle": "Server-Log-Dateien",
+      "serverLogsText1": "Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.",
+      "serverLogsText2": "Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
+      "cookiesTitle": "Cookies",
+      "cookiesText": "Diese Website verwendet keine Tracking-Cookies. Wir setzen ausschließlich technisch notwendige Cookies ein, die für den Betrieb der Seite erforderlich sind (z.\u00a0B. Warenkorb, Session)."
+    },
+    "s5": {
+      "title": "5. Bestellungen und Zahlungsabwicklung",
+      "text1": "Wenn Sie bei uns bestellen, erheben wir folgende Daten: Name, E-Mail-Adresse, Lieferadresse, Rechnungsadresse und Bestelldetails. Diese Daten sind zur Vertragserfüllung erforderlich (Art. 6 Abs. 1 lit. b DSGVO).",
+      "text2": "Die Zahlungsabwicklung erfolgt über Stripe, Inc. (510 Townsend Street, San Francisco, CA 94103, USA). Wir erhalten von Stripe keine vollständigen Zahlungsdaten (z.\u00a0B. Kreditkartennummern). Stripe verarbeitet Ihre Zahlungsdaten gemäß deren Datenschutzerklärung:",
+      "stripeLink": "stripe.com/privacy"
+    },
+    "s6": {
+      "title": "6. Weitergabe an Dritte",
+      "text1": "Ihre Daten werden an unsere Fulfillment-Partner (Produzenten) weitergegeben, soweit dies zur Vertragserfüllung (Lieferung) notwendig ist. Dies umfasst: Name, Lieferadresse und Bestelldetails.",
+      "text2": "Eine darüber hinausgehende Weitergabe an Dritte findet nicht statt, es sei denn, wir sind gesetzlich dazu verpflichtet."
+    },
+    "s7": {
+      "title": "7. Datenspeicherung",
+      "text": "Bestelldaten werden für die Dauer der gesetzlichen Aufbewahrungsfristen gespeichert (in der Regel 7 Jahre gemäß Handels- und Steuerrecht). Nach Ablauf der Fristen werden die Daten gelöscht."
+    },
+    "s8": {
+      "title": "8. SSL/TLS-Verschlüsselung",
+      "text": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von 'http://' auf 'https://' wechselt."
+    }
+  },
+
+  "impressum": {
+    "title": "Impressum",
+    "s1": {
+      "title": "Angaben gemäß § 5 TMG / § 25 MedienG",
+      "company": "Auryx AI LLC",
+      "operatorOf": "Betreiber der Marke Austria Imperial — Green Gold",
+      "address": "30 N Gould St Ste N\nSheridan, WY 82801\nUnited States of America"
+    },
+    "s2": {
+      "title": "Kontakt",
+      "emailLabel": "E-Mail:",
+      "email": "info@austriaimperial.com",
+      "webLabel": "Web:",
+      "web": "www.austriaimperial.com"
+    },
+    "s3": {
+      "title": "Vertretungsberechtigter",
+      "text": "Gottfried Hammerl, Managing Member"
+    },
+    "s4": {
+      "title": "Umsatzsteuer-Identifikationsnummer",
+      "text": "Wird nach Anmeldung beim Finanzamt ergänzt."
+    },
+    "s5": {
+      "title": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
+      "name": "Gottfried Hammerl",
+      "addressNote": "(Anschrift wie oben)"
+    },
+    "s6": {
+      "title": "EU-Streitschlichtung",
+      "text1": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
+      "link": "https://ec.europa.eu/consumers/odr/",
+      "text2": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
+    },
+    "s7": {
+      "title": "Haftung für Inhalte",
+      "text": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+    },
+    "s8": {
+      "title": "Haftung für Links",
+      "text": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
+    },
+    "s9": {
+      "title": "Urheberrecht",
+      "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+    }
+  },
+
+  "widerruf": {
+    "title": "Widerrufsbelehrung",
+    "s1": {
+      "title": "Widerrufsrecht",
+      "p1": "Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
+      "p2": "Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.",
+      "p3": "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z.\u00a0B. per E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren:",
+      "contact": "Auryx AI LLC\nE-Mail: info@austriaimperial.com",
+      "p4": "Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden."
+    },
+    "s2": {
+      "title": "Folgen des Widerrufs",
+      "p1": "Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen ist.",
+      "p2": "Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart. In keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.",
+      "p3": "Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist."
+    },
+    "s3": {
+      "title": "Rücksendung",
+      "p1": "Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses Vertrags unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden.",
+      "p2": "Sie tragen die unmittelbaren Kosten der Rücksendung der Waren."
+    },
+    "s4": {
+      "title": "Ausschluss des Widerrufsrechts",
+      "p1": "Das Widerrufsrecht besteht nicht bei Verträgen zur Lieferung von Waren, die schnell verderben können oder deren Verfallsdatum schnell überschritten würde.",
+      "p2": "Das Widerrufsrecht erlischt bei Verträgen zur Lieferung versiegelter Waren, die aus Gründen des Gesundheitsschutzes oder der Hygiene nicht zur Rückgabe geeignet sind, wenn ihre Versiegelung nach der Lieferung entfernt wurde.",
+      "p3note": "Hinweis:",
+      "p3": "Bei Lebensmitteln (Kürbiskernöl, Kren) ist das Widerrufsrecht ausgeschlossen, sobald die Versiegelung der Flasche/des Glases geöffnet wurde."
+    },
+    "s5": {
+      "title": "Muster-Widerrufsformular",
+      "intro": "Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück:",
+      "to": "An: Auryx AI LLC, info@austriaimperial.com",
+      "body": "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren:",
+      "orderedOn": "Bestellt am / erhalten am (*):",
+      "consumerName": "Name des/der Verbraucher(s):",
+      "consumerAddress": "Anschrift des/der Verbraucher(s):",
+      "date": "Datum:",
+      "footnote": "(*) Unzutreffendes streichen."
+    }
+  },
+
+  "language": {
+    "de": "DE",
+    "en": "EN",
+    "ar": "AR"
+  },
+
+  "admin": {
+    "title": "AIGG Admin",
+    "subtitle": "Green Gold Dashboard",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Bestellungen",
+      "customers": "Kunden",
+      "fulfillment": "Fulfillment",
+      "accounting": "Accounting",
+      "overview": "Übersicht",
+      "ledger": "Ledger",
+      "reports": "Reports",
+      "users": "Benutzer",
+      "partners": "Partner",
+      "logout": "Abmelden",
+      "backToShop": "Zurück zum Shop"
+    },
+    "role": {
+      "admin": "Administrator",
+      "viewer": "Betrachter",
+      "producer": "Produzent"
+    },
+    "status": {
+      "pending": "Ausstehend",
+      "paid": "Bezahlt",
+      "processing": "In Bearbeitung",
+      "partially_shipped": "Teilversandt",
+      "shipped": "Versandt",
+      "delivered": "Zugestellt",
+      "cancelled": "Storniert",
+      "refunded": "Erstattet"
+    },
+    "fulfillmentStatus": {
+      "pending": "Ausstehend",
+      "sent_to_producer": "An Produzent",
+      "confirmed": "Bestätigt",
+      "shipped": "Versandt",
+      "delivered": "Zugestellt",
+      "failed": "Fehlgeschlagen",
+      "cancelled": "Storniert"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Übersicht",
+      "ordersMonth": "Bestellungen (Monat)",
+      "revenueMonth": "Umsatz (Monat)",
+      "grossProfit": "Bruttogewinn",
+      "pendingFulfillments": "Offene Fulfillments",
+      "total": "gesamt",
+      "revenueWaterfall": "Revenue-Waterfall",
+      "auryx10": "Auryx 10%",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "recentOrders": "Letzte Bestellungen",
+      "viewAll": "Alle anzeigen",
+      "noOrders": "Noch keine Bestellungen"
+    },
+    "login": {
+      "title": "Admin Dashboard",
+      "brand": "Austria Imperial — Green Gold",
+      "email": "E-Mail",
+      "password": "Passwort",
+      "submit": "Anmelden",
+      "submitting": "Anmelden...",
+      "error": "Login fehlgeschlagen",
+      "genericError": "Ein Fehler ist aufgetreten",
+      "restricted": "Zugang nur für autorisiertes Personal"
+    },
+    "orders": {
+      "title": "Bestellungen",
+      "totalCount": "{count} Bestellungen gesamt",
+      "filter": "Filtern",
+      "resetFilter": "Filter zurücksetzen",
+      "noOrders": "Keine Bestellungen gefunden",
+      "items": "Artikel",
+      "order": "Bestellung",
+      "customer": "Kunde",
+      "status": "Status",
+      "positions": "Positionen",
+      "date": "Datum",
+      "amount": "Betrag",
+      "page": "Seite",
+      "of": "von",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "orderDetail": {
+      "backToOverview": "Zurück zur Übersicht",
+      "createdAt": "Erstellt am",
+      "shippingAddress": "Lieferadresse",
+      "payment": "Zahlung",
+      "subtotal": "Subtotal",
+      "shipping": "Versand",
+      "total": "Gesamt",
+      "customer": "Kunde",
+      "accountId": "Konto #{id}",
+      "guestOrder": "Gast-Bestellung",
+      "positions": "Positionen",
+      "product": "Produkt",
+      "producer": "Produzent",
+      "quantity": "Menge",
+      "unitPrice": "Stückpreis",
+      "fulfillment": "Fulfillment",
+      "noFulfillment": "Keine Fulfillment Orders",
+      "tracking": "Tracking",
+      "error": "Fehler",
+      "retryAttempts": "Retry-Versuche",
+      "ledgerEntries": "Buchungen (Ledger)",
+      "type": "Typ",
+      "revenue": "Umsatz",
+      "costs": "Kosten",
+      "profit": "Gewinn",
+      "auryx": "Auryx",
+      "peterCol": "Peter",
+      "gottfriedCol": "Gottfried",
+      "dateCol": "Datum"
+    },
+    "customers": {
+      "title": "Kunden",
+      "totalCount": "{count} Kunden gesamt",
+      "totalStat": "Gesamt",
+      "accounts": "Konten",
+      "guests": "Gäste",
+      "totalRevenue": "Gesamtumsatz",
+      "noCustomers": "Noch keine Kunden",
+      "name": "Name",
+      "email": "Email",
+      "type": "Typ",
+      "ordersCol": "Bestellungen",
+      "revenueCol": "Umsatz",
+      "lastOrder": "Letzte Bestellung",
+      "account": "Konto",
+      "guest": "Gast"
+    },
+    "fulfillmentPage": {
+      "title": "Fulfillment",
+      "subtitle": "Produzentenaufträge verwalten",
+      "pending": "Ausstehend",
+      "failed": "Fehlgeschlagen",
+      "shipped": "Versandt",
+      "delivered": "Zugestellt",
+      "activeOrders": "Aktive Aufträge",
+      "noActiveOrders": "Keine aktiven Fulfillment-Aufträge",
+      "order": "Bestellung",
+      "producerCol": "Produzent",
+      "statusCol": "Status",
+      "trackingCol": "Tracking",
+      "createdCol": "Erstellt",
+      "retriesCol": "Retries"
+    },
+    "fulfillmentActions": {
+      "retry": "Retry",
+      "sent": "Gesendet",
+      "networkError": "Netzwerkfehler",
+      "error": "Fehler",
+      "updateStatusManually": "Status manuell aktualisieren",
+      "trackingNumber": "Tracking-Nr.",
+      "trackingUrl": "Tracking-URL",
+      "save": "Speichern"
+    },
+    "accounting": {
+      "title": "Accounting",
+      "show": "Anzeigen",
+      "revenue": "Umsatz",
+      "grossProfit": "Bruttogewinn",
+      "margin": "Marge",
+      "peter50": "Peter (50%)",
+      "gottfried50": "Gottfried (50%)",
+      "costBreakdown": "Kostenaufstellung",
+      "revenueBrutto": "Umsatz (Brutto)",
+      "producerCosts": "Produzentenkosten",
+      "packaging": "Verpackung",
+      "shippingCost": "Versand",
+      "paymentFees": "Zahlungsgebühren (Stripe)",
+      "customs": "Zoll",
+      "totalCosts": "Gesamtkosten",
+      "auryxD2C": "Auryx AI (10% D2C)",
+      "peter50Rest": "Peter (50% Rest)",
+      "gottfried50Rest": "Gottfried (50% Rest)",
+      "sales": "Verkäufe",
+      "refunds": "Erstattungen",
+      "entries": "Buchungen",
+      "ytd": "Year-to-Date",
+      "totalRevenueYtd": "Gesamtumsatz YTD",
+      "grossProfitYtd": "Bruttogewinn YTD",
+      "auryxYtd": "Auryx AI YTD",
+      "peterYtd": "Peter YTD",
+      "gottfriedYtd": "Gottfried YTD",
+      "viewLedger": "Ledger ansehen",
+      "reports": "Reports"
+    },
+    "ledger": {
+      "backToAccounting": "Zurück zu Accounting",
+      "title": "Financial Ledger",
+      "entriesCount": "{count} Einträge · Append-Only",
+      "csvExport": "CSV Export",
+      "filter": "Filtern",
+      "reset": "Zurücksetzen",
+      "noEntries": "Keine Ledger-Einträge gefunden",
+      "date": "Datum",
+      "order": "Order",
+      "type": "Typ",
+      "revenue": "Umsatz",
+      "producerCosts": "Prod.kosten",
+      "shipping": "Versand",
+      "stripeFee": "Stripe Fee",
+      "profit": "Gewinn",
+      "auryx": "Auryx",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "page": "Seite",
+      "of": "von",
+      "previous": "Zurück",
+      "next": "Weiter"
+    },
+    "reports": {
+      "backToAccounting": "Zurück zu Accounting",
+      "title": "Monatsberichte",
+      "subtitle": "Revisionssichere Reports mit SHA256-Integrität. Basiert ausschließlich auf dem Financial Ledger.",
+      "generateNew": "Neuen Report generieren",
+      "month": "Monat",
+      "year": "Jahr",
+      "generating": "Generiere...",
+      "generate": "Generieren",
+      "reportGenerated": "Report {period} generiert. Hash: {hash}...",
+      "generationError": "Fehler bei der Generierung",
+      "unknownError": "Unbekannter Fehler",
+      "archiveNote": "Bei Neugenerierung wird der vorherige Report archiviert (nie gelöscht). Der neue Report bekommt einen neuen SHA256-Hash.",
+      "allReports": "Alle Reports",
+      "loadingReports": "Lade Reports...",
+      "noReports": "Noch keine Reports generiert",
+      "archived": "Archiviert",
+      "current": "Aktuell",
+      "revenueLabel": "Umsatz",
+      "profitLabel": "Gewinn",
+      "peterLabel": "Peter",
+      "entriesLabel": "Einträge",
+      "by": "von",
+      "summaryCsv": "Summary CSV",
+      "ledgerCsv": "Ledger CSV"
+    },
+    "users": {
+      "title": "Benutzer",
+      "subtitle": "Admin-Zugänge verwalten",
+      "newUser": "Neuer Benutzer",
+      "createUser": "Neuen Benutzer erstellen",
+      "emailLabel": "Email",
+      "nameLabel": "Name",
+      "passwordLabel": "Passwort",
+      "roleLabel": "Rolle",
+      "emailPlaceholder": "benutzer@example.com",
+      "namePlaceholder": "Vor- und Nachname",
+      "passwordPlaceholder": "Mindestens 8 Zeichen",
+      "roleViewer": "Betrachter (nur lesen)",
+      "roleAdmin": "Administrator (voller Zugriff)",
+      "creating": "Erstelle...",
+      "create": "Erstellen",
+      "cancel": "Abbrechen",
+      "loadingUsers": "Lade Benutzer...",
+      "noUsers": "Keine Benutzer angelegt",
+      "userCreated": "Benutzer {email} erstellt",
+      "createError": "Fehler beim Erstellen",
+      "unknownError": "Unbekannter Fehler",
+      "userReactivated": "Benutzer reaktiviert",
+      "userDeactivated": "Benutzer deaktiviert",
+      "passwordReset": "Passwort zurückgesetzt",
+      "passwordMinLength": "Passwort muss mindestens 8 Zeichen haben",
+      "adminBadge": "Admin",
+      "viewerBadge": "Betrachter",
+      "deactivatedBadge": "Deaktiviert",
+      "createdAt": "Erstellt",
+      "newPassword": "Neues Passwort",
+      "saving": "Speichere...",
+      "save": "Speichern",
+      "passwordBtn": "Passwort",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren",
+      "roleProducer": "Produzent",
+      "producerBadge": "Produzent",
+      "producerLabel": "Produzent",
+      "selectProducer": "Produzent auswählen..."
+    },
+    "producerPortal": "Produzenten-Portal",
+    "producerLabel": {
+      "kiendler": "Kiendler",
+      "hernach": "Hernach"
+    },
+    "producerDashboard": {
+      "fulfillmentOverview": "Fulfillment-Übersicht",
+      "monthlyOrders": "Aufträge diesen Monat",
+      "openFulfillments": "Offene Fulfillments",
+      "shippedPackages": "Versandte Pakete",
+      "failedOrders": "Fehlgeschlagen",
+      "recentFulfillments": "Aktuelle Fulfillments",
+      "tracking": "Tracking"
+    },
+    "partners": {
+      "title": "Partner-Verwaltung",
+      "subtitle": "B2B-Partner, Benutzer, Dokumente und Preislisten verwalten",
+      "loading": "Lade Partner...",
+      "noPartners": "Keine Partner konfiguriert.",
+      "users": "Benutzer",
+      "documents": "Dokumente",
+      "priceList": "Preisliste",
+      "messages": "Nachrichten",
+      "orders": "B2B-Bestellungen",
+      "addUser": "Benutzer anlegen",
+      "uploadDoc": "Dokument hochladen",
+      "sendMessage": "Nachricht senden",
+      "addPrice": "Preis hinzufügen",
+      "commission": "Provision",
+      "active": "Aktiv",
+      "inactive": "Inaktiv",
+      "lastLogin": "Letzter Login",
+      "never": "Nie",
+      "overview": "Übersicht",
+      "userCount": "Benutzer",
+      "docCount": "Dokumente",
+      "orderCount": "Bestellungen",
+      "status": "Status",
+      "cancel": "Abbrechen",
+      "noUsers": "Keine Benutzer für diesen Partner.",
+      "noDocs": "Noch keine Dokumente hochgeladen.",
+      "noMessages": "Noch keine Nachrichten.",
+      "noOrders": "Noch keine B2B-Bestellungen.",
+      "noPrices": "Noch keine Preise konfiguriert.",
+      "userCreated": "Partner-Benutzer erfolgreich erstellt.",
+      "userActivated": "Benutzer reaktiviert.",
+      "userDeactivated": "Benutzer deaktiviert.",
+      "docUploaded": "Dokument-Eintrag erstellt.",
+      "messageSent": "Nachricht gesendet.",
+      "priceAdded": "Preislisten-Eintrag hinzugefügt.",
+      "activate": "Aktivieren",
+      "deactivate": "Deaktivieren"
+    },
+    "common": {
+      "allStatuses": "Alle Status"
+    }
+  },
+  "partner": {
+    "title": "Partner Portal",
+    "subtitle": "Austria Imperial Green Gold",
+    "comingSoon": "Demnächst verfügbar",
+    "comingSoonDescription": "Dieses Feature wird gerade entwickelt und steht Ihnen bald zur Verfügung.",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Bestellungen",
+      "documents": "Dokumente",
+      "priceList": "Preisliste",
+      "messages": "Nachrichten",
+      "newOrder": "Neue Bestellung",
+      "logout": "Abmelden"
+    },
+    "login": {
+      "title": "Partner Portal",
+      "subtitle": "Melden Sie sich mit Ihrem Partner-Konto an",
+      "email": "E-Mail-Adresse",
+      "emailPlaceholder": "partner@firma.com",
+      "password": "Passwort",
+      "signIn": "Anmelden",
+      "signingIn": "Anmeldung...",
+      "error": "Ungültige Anmeldedaten",
+      "networkError": "Verbindungsfehler. Bitte versuchen Sie es erneut.",
+      "partnerAccess": "Nur für registrierte Partner"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Übersicht",
+      "totalOrders": "Bestellungen gesamt",
+      "thisMonth": "diesen Monat",
+      "activeShipments": "Aktive Lieferungen",
+      "ordersThisMonth": "Bestellungen diesen Monat",
+      "recentOrders": "Letzte Bestellungen",
+      "viewAll": "Alle anzeigen",
+      "noOrders": "Noch keine Bestellungen vorhanden."
+    },
+    "orders": {
+      "title": "Bestellungen",
+      "totalCount": "{count, plural, =0 {Keine Bestellungen} one {# Bestellung} other {# Bestellungen}}",
+      "order": "Bestellung",
+      "status": "Status",
+      "date": "Datum",
+      "amount": "Betrag",
+      "items": "Positionen",
+      "noOrders": "Keine Bestellungen gefunden.",
+      "fulfillments": "Lieferungen",
+      "page": "Seite",
+      "of": "von",
+      "previous": "Zurück",
+      "next": "Weiter",
+      "statusLabels": {
+        "pending": "Ausstehend",
+        "paid": "Bezahlt",
+        "processing": "In Bearbeitung",
+        "partially_shipped": "Teilweise versendet",
+        "shipped": "Versendet",
+        "delivered": "Zugestellt",
+        "cancelled": "Storniert",
+        "refunded": "Erstattet"
+      },
+      "fulfillmentStatus": {
+        "pending": "Ausstehend",
+        "sent_to_producer": "An Produzent gesendet",
+        "confirmed": "Bestätigt",
+        "shipped": "Versendet",
+        "delivered": "Zugestellt",
+        "failed": "Fehlgeschlagen",
+        "cancelled": "Storniert"
+      }
+    },
+    "documents": {
+      "title": "Dokumente",
+      "noDocuments": "Keine Dokumente vorhanden.",
+      "download": "Download",
+      "fileSize": "Größe",
+      "uploadedBy": "Hochgeladen von",
+      "categories": {
+        "customs": "Zollpapiere",
+        "certificate": "Zertifikat",
+        "invoice": "Rechnung",
+        "contract": "Vertrag",
+        "other": "Sonstiges"
+      }
+    },
+    "messages": {
+      "title": "Nachrichten",
+      "newMessage": "Neue Nachricht",
+      "noMessages": "Keine Nachrichten.",
+      "you": "Sie",
+      "admin": "AIGG Admin",
+      "unread": "Ungelesen",
+      "compose": {
+        "subject": "Betreff",
+        "subjectPlaceholder": "Betreff eingeben...",
+        "body": "Nachricht",
+        "bodyPlaceholder": "Ihre Nachricht...",
+        "send": "Senden",
+        "sending": "Wird gesendet...",
+        "cancel": "Abbrechen"
+      }
+    },
+    "priceList": {
+      "title": "Preisliste",
+      "subtitle": "Aktuelle B2B-Exportpreise",
+      "product": "Produkt",
+      "exportPrice": "Exportpreis",
+      "minQty": "Mindestmenge",
+      "validFrom": "Gültig ab",
+      "validUntil": "Gültig bis",
+      "addToOrder": "Bestellen",
+      "noItems": "Keine Preisliste vorhanden.",
+      "createOrder": "B2B-Bestellung erstellen",
+      "items": "Artikel",
+      "estimatedTotal": "Geschätztes Total"
+    },
+    "newOrder": {
+      "title": "Neue B2B-Bestellung",
+      "product": "Produkt",
+      "quantity": "Menge",
+      "unitPrice": "Stückpreis",
+      "lineTotal": "Gesamt",
+      "remove": "Entfernen",
+      "notes": "Anmerkungen",
+      "notesPlaceholder": "Optionale Anmerkungen zur Bestellung...",
+      "orderTotal": "Bestellsumme",
+      "submit": "Bestellung aufgeben",
+      "submitting": "Wird gesendet...",
+      "success": "Bestellung aufgegeben!",
+      "successMessage": "Ihre B2B-Bestellung wurde erfolgreich übermittelt.",
+      "viewOrders": "Bestellungen ansehen",
+      "noItems": "Noch keine Artikel gewählt.",
+      "addFromPriceList": "Aus Preisliste hinzufügen"
+    },
+    "common": {
+      "loading": "Wird geladen..."
+    }
+  }
+}

@@ -29,6 +29,7 @@ export interface AdminPayload {
   email: string;
   role: string;
   name: string | null;
+  producer: string | null; // 'kiendler' | 'hernach' | null
 }
 
 export async function createAdminToken(payload: AdminPayload): Promise<string> {
@@ -98,6 +99,7 @@ export async function adminLogin(
     email: admin.email,
     role: admin.role,
     name: admin.name,
+    producer: admin.producer ?? null,
   });
 
   return { success: true };
@@ -105,7 +107,7 @@ export async function adminLogin(
 
 // ─── Role Helpers ─────────────────────────────
 
-export type AdminRole = 'admin' | 'viewer';
+export type AdminRole = 'admin' | 'viewer' | 'producer';
 
 /**
  * Prüft ob der aktuelle User admin-Rechte hat (Schreibzugriff).

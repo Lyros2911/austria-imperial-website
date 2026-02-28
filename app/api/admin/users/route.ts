@@ -30,6 +30,7 @@ export async function GET() {
       email: true,
       name: true,
       role: true,
+      producer: true,
       createdAt: true,
       updatedAt: true,
       deletedAt: true,
@@ -45,8 +46,12 @@ const createSchema = z.object({
   email: z.string().email('Ungültige E-Mail-Adresse'),
   name: z.string().min(1, 'Name ist Pflicht'),
   password: z.string().min(8, 'Passwort muss mind. 8 Zeichen haben'),
-  role: z.enum(['admin', 'viewer']),
-});
+  role: z.enum(['admin', 'viewer', 'producer']),
+  producer: z.enum(['kiendler', 'hernach']).nullable().optional(),
+}).refine(
+  (data) => data.role !== 'producer' || !!data.producer,
+  { message: 'Producer muss angegeben werden wenn Rolle "producer" ist', path: ['producer'] },
+);
 
 export async function POST(request: NextRequest) {
   const session = await getAdminSession();
@@ -88,6 +93,7 @@ export async function POST(request: NextRequest) {
       name: parsed.data.name,
       passwordHash,
       role: parsed.data.role,
+      producer: parsed.data.role === 'producer' ? parsed.data.producer! : null,
     })
     .returning({ id: adminUsers.id, email: adminUsers.email });
 
@@ -96,7 +102,12 @@ export async function POST(request: NextRequest) {
     entityType: 'admin_user',
     entityId: newUser.id,
     action: 'create',
-    newValues: { email: parsed.data.email, name: parsed.data.name, role: parsed.data.role },
+    newValues: {
+      email: parsed.data.email,
+      name: parsed.data.name,
+      role: parsed.data.role,
+      producer: parsed.data.role === 'producer' ? parsed.data.producer : null,
+    },
     performedBy: session.email,
   });
 
