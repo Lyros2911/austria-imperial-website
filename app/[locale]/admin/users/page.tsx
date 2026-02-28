@@ -42,7 +42,8 @@ export default function UsersPage() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState<'admin' | 'viewer' | 'producer'>('viewer');
-  const [producer, setProducer] = useState<'kiendler' | 'hernach' | ''>('');
+  const [producer, setProducer] = useState<string>('');
+  const [producerOptions, setProducerOptions] = useState<Array<{ slug: string; displayName: string }>>([]);
 
   // Reset password
   const [resetUserId, setResetUserId] = useState<number | null>(null);
@@ -65,6 +66,22 @@ export default function UsersPage() {
   useEffect(() => {
     fetchUsers();
   }, [fetchUsers]);
+
+  // Fetch available producers for the dropdown
+  useEffect(() => {
+    async function fetchProducers() {
+      try {
+        const res = await fetch('/api/admin/producers');
+        if (res.ok) {
+          const data = await res.json();
+          setProducerOptions(data.producers);
+        }
+      } catch {
+        console.error('Failed to fetch producers');
+      }
+    }
+    fetchProducers();
+  }, []);
 
   const handleCreate = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -279,13 +296,16 @@ export default function UsersPage() {
                   </label>
                   <select
                     value={producer}
-                    onChange={(e) => setProducer(e.target.value as 'kiendler' | 'hernach')}
+                    onChange={(e) => setProducer(e.target.value)}
                     required
                     className="w-full bg-[#080808] border border-white/[0.08] rounded-lg px-3 py-2 text-cream text-sm focus:border-gold/40 focus:outline-none"
                   >
                     <option value="">{t('selectProducer')}</option>
-                    <option value="kiendler">Kiendler</option>
-                    <option value="hernach">Hernach</option>
+                    {producerOptions.map((p) => (
+                      <option key={p.slug} value={p.slug}>
+                        {p.displayName}
+                      </option>
+                    ))}
                   </select>
                 </div>
               )}

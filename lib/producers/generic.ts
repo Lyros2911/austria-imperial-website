@@ -1,68 +1,71 @@
 /**
- * Hernach Producer Client — Kren (Meerrettich)
+ * Generic Producer Client — Austria Imperial Green Gold
  *
- * Modes:
- * 1. API Mode: Direct REST integration (HERNACH_API_URL + HERNACH_API_KEY)
- * 2. Email Fallback: Sends structured order email to HERNACH_EMAIL
+ * Configurable producer client that reads from DB config.
+ * Used for dynamically registered producers that don't have
+ * custom implementations like Kiendler or Hernach.
  *
- * Hernach handles:
- * - Steirischer Kren (100g, 200g, 500g)
- * - Packaging + Versand from their facility
+ * Supports both API and email modes, configured per-producer
+ * in the producers table.
  */
 
 import type {
   ProducerClient,
+  ProducerConfig,
   ProducerOrderPayload,
   ProducerSendResult,
   ProducerStatusResult,
 } from './types';
 import { buildOrderEmail, sendProducerEmail } from './email';
 
-export class HernachClient implements ProducerClient {
-  readonly name = 'hernach';
+export class GenericProducerClient implements ProducerClient {
+  readonly name: string;
+
+  constructor(private config: ProducerConfig) {
+    this.name = config.slug;
+  }
 
   isApiMode(): boolean {
-    return !!(process.env.HERNACH_API_URL && process.env.HERNACH_API_KEY);
+    return this.config.mode === 'api' && !!this.config.apiUrl;
   }
 
   async sendOrder(payload: ProducerOrderPayload): Promise<ProducerSendResult> {
-    if (this.isApiMode()) {
-      return this.sendViaApi(payload);
-    }
+    if (this.isApiMode()) return this.sendViaApi(payload);
     return this.sendViaEmail(payload);
   }
 
   async getStatus(externalOrderId: string): Promise<ProducerStatusResult> {
     if (!this.isApiMode()) {
+      // Email mode: status is managed manually via admin UI
       return { status: 'sent_to_producer' };
     }
 
     try {
       const res = await fetch(
-        `${process.env.HERNACH_API_URL}/orders/${externalOrderId}/status`,
+        `${this.config.apiUrl}/orders/${externalOrderId}/status`,
         {
           headers: {
-            Authorization: `Bearer ${process.env.HERNACH_API_KEY}`,
+            Authorization: `Bearer ${this.config.apiKeyEncrypted}`,
             'Content-Type': 'application/json',
           },
         }
       );
 
       if (!res.ok) {
-        throw new Error(`Hernach API returned ${res.status}`);
+        throw new Error(`${this.name} API returned ${res.status}`);
       }
 
       const data = await res.json();
 
       return {
-        status: mapHernachStatus(data.status),
+        status: data.status ?? 'sent_to_producer',
         trackingNumber: data.tracking_number ?? null,
         trackingUrl: data.tracking_url ?? null,
         rawPayload: data,
       };
     } catch (err) {
       throw new Error(
-        `Hernach status check failed: ${err instanceof Error ? err.message : 'Unknown error'}`
+        `${this.name} status check failed: ${err instanceof Error ? err.message : 'Unknown'}`
       );
     }
   }
@@ -91,10 +94,10 @@ export class HernachClient implements ProducerClient {
         notes: payload.notes,
       };
 
-      const res = await fetch(`${process.env.HERNACH_API_URL}/orders`, {
+      const res = await fetch(`${this.config.apiUrl}/orders`, {
         method: 'POST',
         headers: {
-          Authorization: `Bearer ${process.env.HERNACH_API_KEY}`,
+          Authorization: `Bearer ${this.config.apiKeyEncrypted}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(apiPayload),
@@ -105,7 +108,7 @@ export class HernachClient implements ProducerClient {
         return {
           success: false,
           method: 'api',
-          error: `Hernach API ${res.status}: ${errorBody}`,
+          error: `${this.name} API ${res.status}: ${errorBody}`,
         };
       }
 
@@ -120,23 +123,22 @@ export class HernachClient implements ProducerClient {
       return {
         success: false,
         method: 'api',
-        error: `Hernach API unreachable: ${err instanceof Error ? err.message : 'Unknown error'}`,
+        error: `${this.name} API unreachable: ${err instanceof Error ? err.message : 'Unknown'}`,
       };
     }
   }
 
   private async sendViaEmail(payload: ProducerOrderPayload): Promise<ProducerSendResult> {
-    const email = process.env.HERNACH_EMAIL;
-    if (!email) {
+    if (!this.config.contactEmail) {
       return {
         success: false,
         method: 'email',
-        error: 'HERNACH_EMAIL not configured',
+        error: `No contact email configured for ${this.name}`,
       };
     }
 
     try {
-      const emailData = buildOrderEmail(payload, 'hernach', email);
+      const emailData = buildOrderEmail(payload, this.name, this.config.contactEmail);
       const sent = await sendProducerEmail(emailData);
 
       if (!sent) {
@@ -156,22 +158,8 @@ export class HernachClient implements ProducerClient {
       return {
         success: false,
         method: 'email',
-        error: `Email send error: ${err instanceof Error ? err.message : 'Unknown error'}`,
+        error: `Email send error: ${err instanceof Error ? err.message : 'Unknown'}`,
       };
     }
   }
-}
-
-function mapHernachStatus(
-  externalStatus: string
-): ProducerStatusResult['status'] {
-  const mapping: Record<string, ProducerStatusResult['status']> = {
-    received: 'confirmed',
-    processing: 'confirmed',
-    packed: 'confirmed',
-    shipped: 'shipped',
-    delivered: 'delivered',
-    cancelled: 'cancelled',
-  };
-  return mapping[externalStatus?.toLowerCase()] ?? 'sent_to_producer';
 }

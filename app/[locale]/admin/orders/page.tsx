@@ -38,11 +38,10 @@ async function getOrders(params: SearchParams, producer?: string | null) {
 
   // Producer filter: only show orders that contain items from this producer
   if (producer) {
-    const producerVal = producer as 'kiendler' | 'hernach';
     const producerOrderIds = db
       .selectDistinct({ orderId: orderItems.orderId })
       .from(orderItems)
-      .where(eq(orderItems.producer, producerVal));
+      .where(sql`${orderItems.producer} = ${producer}`);
     conditions.push(inArray(orders.id, producerOrderIds));
   }
 

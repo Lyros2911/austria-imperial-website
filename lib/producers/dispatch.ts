@@ -30,7 +30,6 @@ import type {
   ProducerOrderPayload,
   ProducerOrderItem,
   ProducerShippingAddress,
-  ProducerName,
 } from './types';
 import { updateFulfillmentInAirtable, logCommunicationToAirtable } from '@/lib/airtable/sync';
 import { COMM_TYPE } from '@/lib/airtable/types';
@@ -119,7 +118,7 @@ export async function dispatchSingleFulfillment(
     }
   }
 
-  const producer = getProducer(fo.producer as ProducerName);
+  const producer = await getProducer(fo.producer);
 
   // Build the payload with only items for THIS producer
   const producerItems: ProducerOrderItem[] = order.items

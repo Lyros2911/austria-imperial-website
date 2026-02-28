@@ -61,7 +61,7 @@ async function getDashboardData(producer?: string | null) {
 
   // Producer-specific dashboard: only their orders/fulfillments
   if (producer) {
-    const producerVal = producer as 'kiendler' | 'hernach';
+    const producerVal = producer;
 
     const [
       monthFulfillmentsResult,
@@ -75,7 +75,7 @@ async function getDashboardData(producer?: string | null) {
         .select({ count: sql<number>`count(*)::int` })
         .from(fulfillmentOrders)
         .where(and(
-          eq(fulfillmentOrders.producer, producerVal),
+          sql`${fulfillmentOrders.producer} = ${producerVal}`,
           gte(fulfillmentOrders.createdAt, startOfMonth),
         )),
 
@@ -84,7 +84,7 @@ async function getDashboardData(producer?: string | null) {
         .select({ count: sql<number>`count(*)::int` })
         .from(fulfillmentOrders)
         .where(and(
-          eq(fulfillmentOrders.producer, producerVal),
+          sql`${fulfillmentOrders.producer} = ${producerVal}`,
           eq(fulfillmentOrders.status, 'pending'),
         )),
 
@@ -93,7 +93,7 @@ async function getDashboardData(producer?: string | null) {
         .select({ count: sql<number>`count(*)::int` })
         .from(fulfillmentOrders)
         .where(and(
-          eq(fulfillmentOrders.producer, producerVal),
+          sql`${fulfillmentOrders.producer} = ${producerVal}`,
           eq(fulfillmentOrders.status, 'shipped'),
           gte(fulfillmentOrders.createdAt, startOfMonth),
         )),
@@ -103,13 +103,13 @@ async function getDashboardData(producer?: string | null) {
         .select({ count: sql<number>`count(*)::int` })
         .from(fulfillmentOrders)
         .where(and(
-          eq(fulfillmentOrders.producer, producerVal),
+          sql`${fulfillmentOrders.producer} = ${producerVal}`,
           eq(fulfillmentOrders.status, 'failed'),
         )),
 
       // Recent fulfillment orders with parent order data
       db.query.fulfillmentOrders.findMany({
-        where: eq(fulfillmentOrders.producer, producerVal),
+        where: sql`${fulfillmentOrders.producer} = ${producerVal}`,
         orderBy: (fo, { desc }) => [desc(fo.createdAt)],
         limit: 10,
         with: {

@@ -10,13 +10,13 @@
  * ENV: RESEND_API_KEY
  */
 
-import type { ProducerOrderPayload, ProducerName, ProducerEmailData } from './types';
+import type { ProducerOrderPayload, ProducerEmailData } from './types';
 import { sendEmail, AIGG_FROM_EMAIL } from '@/lib/email/resend';
 
 /**
  * Build the order email body (plain text).
  */
-export function buildOrderEmailBody(payload: ProducerOrderPayload, producerName: ProducerName): string {
+export function buildOrderEmailBody(payload: ProducerOrderPayload, producerName: string): string {
   const lines: string[] = [
     `═══════════════════════════════════════════════`,
     `  NEUE BESTELLUNG — AUSTRIA IMPERIAL GREEN GOLD`,
@@ -83,7 +83,7 @@ export function buildOrderEmailBody(payload: ProducerOrderPayload, producerName:
  */
 export function buildOrderEmail(
   payload: ProducerOrderPayload,
-  producerName: ProducerName,
+  producerName: string,
   toEmail: string
 ): ProducerEmailData {
   const subject = `[AIGG] Neue Bestellung ${payload.orderNumber} — ${payload.items.length} Artikel`;

@@ -119,7 +119,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
       quantity: number;
       unitPriceCents: number;
       totalCents: number;
-      producer: 'kiendler' | 'hernach';
+      producer: string;
     }> = [];
 
     for (const cartItem of input.items) {
@@ -132,7 +132,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         quantity: cartItem.quantity,
         unitPriceCents: variant.priceCents,
         totalCents: lineTotal,
-        producer: variant.product.producer as 'kiendler' | 'hernach',
+        producer: variant.product.producer,
       });
     }
 
@@ -180,6 +180,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
       await tx.insert(orderItems).values({
         orderId: order.id,
         ...item,
+        producer: item.producer as any,
       });
     }
 
@@ -197,7 +198,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         .insert(fulfillmentOrders)
         .values({
           orderId: order.id,
-          producer: producer as 'kiendler' | 'hernach',
+          producer: producer as any,
           status: 'pending',
         })
         .returning({ id: fulfillmentOrders.id });

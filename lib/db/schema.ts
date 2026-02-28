@@ -40,6 +40,39 @@ export const producerEnum = pgEnum('producer', [
   'hernach',
 ]);
 
+export const producerModeEnum = pgEnum('producer_mode', ['api', 'email']);
+
+// ============================================================
+// PRODUCERS — Dynamische Produzenten-Verwaltung
+//
+// Einzelne Quelle der Wahrheit für alle Produzenten-Metadaten.
+// slug MUSS mit dem PostgreSQL-Enum-Wert übereinstimmen.
+// Neue Produzenten: ALTER TYPE producer ADD VALUE + INSERT hier.
+// ============================================================
+
+export const producers = pgTable('producers', {
+  id: serial('id').primaryKey(),
+  slug: varchar('slug', { length: 50 }).notNull().unique(),
+  displayName: varchar('display_name', { length: 200 }).notNull(),
+  displayNameDe: varchar('display_name_de', { length: 200 }).notNull(),
+  displayNameEn: varchar('display_name_en', { length: 200 }).notNull(),
+  displayNameAr: varchar('display_name_ar', { length: 200 }),
+  contactEmail: varchar('contact_email', { length: 255 }),
+  apiUrl: varchar('api_url', { length: 500 }),
+  apiKeyEncrypted: text('api_key_encrypted'),
+  mode: producerModeEnum('mode').notNull().default('email'),
+  airtableTableName: varchar('airtable_table_name', { length: 200 }),
+  logoUrl: text('logo_url'),
+  descriptionDe: text('description_de'),
+  descriptionEn: text('description_en'),
+  descriptionAr: text('description_ar'),
+  commissionPercent: decimal('commission_percent', { precision: 5, scale: 2 }).notNull().default('0'),
+  isActive: boolean('is_active').notNull().default(true),
+  sortOrder: integer('sort_order').notNull().default(0),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+});
+
 export const orderStatusEnum = pgEnum('order_status', [
   'pending',
   'paid',
@@ -600,6 +633,10 @@ export const partnerOrderItems = pgTable('partner_order_items', {
 // RELATIONS
 // ============================================================
 
+export const producersRelations = relations(producers, ({ many }) => ({
+  products: many(products),
+}));
+
 export const productsRelations = relations(products, ({ many }) => ({
   variants: many(productVariants),
 }));
@@ -776,3 +813,5 @@ export type PartnerOrder = typeof partnerOrders.$inferSelect;
 export type NewPartnerOrder = typeof partnerOrders.$inferInsert;
 export type PartnerOrderItem = typeof partnerOrderItems.$inferSelect;
 export type NewPartnerOrderItem = typeof partnerOrderItems.$inferInsert;
+export type Producer = typeof producers.$inferSelect;
+export type NewProducer = typeof producers.$inferInsert;

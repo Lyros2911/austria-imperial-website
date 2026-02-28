@@ -19,7 +19,7 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 async function getFulfillmentData(producer?: string | null) {
-  const producerVal = producer as 'kiendler' | 'hernach' | undefined;
+  const producerVal = producer ?? undefined;
 
   // Stats overview — optionally filtered by producer
   const statsQuery = db
@@ -30,14 +30,14 @@ async function getFulfillmentData(producer?: string | null) {
     .from(fulfillmentOrders);
 
   const stats = producerVal
-    ? await statsQuery.where(eq(fulfillmentOrders.producer, producerVal)).groupBy(fulfillmentOrders.status)
+    ? await statsQuery.where(sql`${fulfillmentOrders.producer} = ${producerVal}`).groupBy(fulfillmentOrders.status)
     : await statsQuery.groupBy(fulfillmentOrders.status);
 
   // Active fulfillments (not delivered/cancelled) — optionally filtered by producer
   const active = await db.query.fulfillmentOrders.findMany({
     where: producerVal
       ? (fo, { and: a, notInArray: ni }) =>
-          a(eq(fo.producer, producerVal), ni(fo.status, ['delivered', 'cancelled']))
+          a(sql`${fo.producer} = ${producerVal}`, ni(fo.status, ['delivered', 'cancelled']))
       : (fo, { notInArray: ni }) =>
           ni(fo.status, ['delivered', 'cancelled']),
     orderBy: (fo, { desc: d }) => [d(fo.createdAt)],

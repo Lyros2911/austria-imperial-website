@@ -16,6 +16,7 @@ import {
   Users,
   Shield,
   Globe,
+  Factory,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -62,6 +63,7 @@ function buildNavigation(role: string, t: (key: string) => string): NavItem[] {
   if (role === 'admin') {
     nav.push({ label: t('nav.users'), href: '/admin/users', icon: Shield });
     nav.push({ label: t('nav.partners'), href: '/admin/partners', icon: Globe });
+    nav.push({ label: t('nav.producers'), href: '/admin/producers', icon: Factory });
   }
 
   return nav;

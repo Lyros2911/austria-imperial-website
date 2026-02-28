@@ -47,7 +47,7 @@ const createSchema = z.object({
   name: z.string().min(1, 'Name ist Pflicht'),
   password: z.string().min(8, 'Passwort muss mind. 8 Zeichen haben'),
   role: z.enum(['admin', 'viewer', 'producer']),
-  producer: z.enum(['kiendler', 'hernach']).nullable().optional(),
+  producer: z.string().min(1).nullable().optional(),  // validated server-side against DB producers
 }).refine(
   (data) => data.role !== 'producer' || !!data.producer,
   { message: 'Producer muss angegeben werden wenn Rolle "producer" ist', path: ['producer'] },
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
       name: parsed.data.name,
       passwordHash,
       role: parsed.data.role,
-      producer: parsed.data.role === 'producer' ? parsed.data.producer! : null,
+      producer: (parsed.data.role === 'producer' ? parsed.data.producer! : null) as any,
     })
     .returning({ id: adminUsers.id, email: adminUsers.email });
 

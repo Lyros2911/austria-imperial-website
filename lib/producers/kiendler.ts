@@ -19,7 +19,7 @@ import type {
 import { buildOrderEmail, sendProducerEmail } from './email';
 
 export class KiendlerClient implements ProducerClient {
-  readonly name = 'kiendler' as const;
+  readonly name = 'kiendler';
 
   isApiMode(): boolean {
     return !!(process.env.KIENDLER_API_URL && process.env.KIENDLER_API_KEY);

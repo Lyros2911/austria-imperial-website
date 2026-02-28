@@ -93,6 +93,11 @@ export const FULFILLMENT_STATUS_LABELS: Record<string, string> = {
   cancelled: 'Storniert',
 };
 
+/**
+ * Static fallback for existing producers.
+ * For new producers, labels come from the producers table.
+ * Use: PRODUCER_LABELS[slug] ?? slug
+ */
 export const PRODUCER_LABELS: Record<string, string> = {
   kiendler: 'Kiendler',
   hernach: 'Hernach',

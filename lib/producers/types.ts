@@ -13,7 +13,7 @@
  * → Kein Core-System-Umbau nötig.
  */
 
-export type ProducerName = 'kiendler' | 'hernach';
+export type ProducerName = string;
 
 export type FulfillmentStatus =
   | 'pending'
@@ -87,8 +87,18 @@ export interface ProducerStatusResult {
  * - sendOrder MUST NOT throw — returns { success: false, error } on failure
  * - getStatus MAY throw if external API is unreachable (caller handles retry)
  */
+export interface ProducerConfig {
+  slug: string;
+  displayName: string;
+  contactEmail: string | null;
+  apiUrl: string | null;
+  apiKeyEncrypted: string | null;
+  mode: 'api' | 'email';
+  airtableTableName: string | null;
+}
+
 export interface ProducerClient {
-  readonly name: ProducerName;
+  readonly name: string;
 
   /**
    * Send a fulfillment order to this producer.
@@ -121,6 +131,6 @@ export interface ProducerEmailData {
   to: string;
   subject: string;
   body: string;
-  producerName: ProducerName;
+  producerName: string;
   fulfillmentOrderId: number;
 }

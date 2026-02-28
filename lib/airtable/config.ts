@@ -28,8 +28,28 @@ export const TABLES = {
   PARTNER_REVENUE: 'Partner Revenue',
 } as const;
 
-/** Map DB producer enum → Airtable table name */
+/** Map DB producer enum → Airtable table name (static fallback for performance) */
 export const PRODUCER_TABLE_MAP: Record<string, string> = {
   kiendler: TABLES.SHOP_KUERBISKERNOEL,
   hernach: TABLES.SHOP_KREN,
 };
+
+/**
+ * Dynamic lookup for producer Airtable table name.
+ * Checks static map first, then falls back to DB lookup.
+ */
+export async function getProducerTableName(slug: string): Promise<string | null> {
+  const staticName = PRODUCER_TABLE_MAP[slug];
+  if (staticName) return staticName;
+
+  // Dynamic lookup from DB
+  const { db } = await import('@/lib/db/drizzle');
+  const { producers } = await import('@/lib/db/schema');
+  const { eq } = await import('drizzle-orm');
+
+  const producer = await db.query.producers.findFirst({
+    where: eq(producers.slug, slug),
+    columns: { airtableTableName: true },
+  });
+  return producer?.airtableTableName ?? null;
+}
