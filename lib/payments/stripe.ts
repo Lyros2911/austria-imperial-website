@@ -1,7 +1,7 @@
 /**
  * Stripe Client — Austria Imperial Green Gold
  *
- * Same Stripe Account as Auryx AI LLC (Wyoming).
+ * Stripe Account des AIGG Vereins (Auftragsverarbeitung via Auryx AI LLC).
  * Mode: 'payment' (one-time checkout, NOT subscription).
  */
 

@@ -6,8 +6,8 @@
  * REGELN (Stand: Strukturvereinbarung 26.02.2026):
  * 1. Commission wird NUR berechnet wenn die Bestellung "attributed" ist
  *    (utm_campaign enthält 'auryx_engine' oder attribution_source != 'direct').
- * 2. AIGG: commission_percent = 10 → Auryx erhält 10% D2C-Nettoumsatz als Technologiepartner.
- *    (Vertraglich geregelt: Auryx AI LLC = offizieller Technologiepartner der AIGG GmbH)
+ * 2. AIGG: Auryx erhält Dienstleistungsvergütung als Technologiepartner.
+ *    (Vertraglich geregelt: Auryx AI LLC = Auftragsverarbeiter des AIGG Vereins)
  * 3. Zukünftige Kunden: commission_percent = 10 → Status 'pending' → 'paid' via Stripe Connect.
  * 4. partner_commissions ist APPEND-ONLY analog zu financial_ledger.
  * 5. Idempotent: Unique constraint auf (partner_config_id, order_id).

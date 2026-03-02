@@ -9,9 +9,9 @@
  * - Bei attributed Verkäufen: application_fee_amount = commission %
  * - Geld fliesst: Kunde → Connected Account, Auryx nimmt application_fee
  *
- * AIGG SONDERFALL:
- * - AIGG nutzt denselben Stripe-Account wie Auryx (kein Connected Account)
- * - commission_percent = 0 → KEIN application_fee_amount
+ * AIGG SONDERFALL (Verein, Stand: März 2026):
+ * - AIGG nutzt eigenen Stripe-Account (kein Connected Account)
+ * - Auryx erhält Dienstleistungsvergütung statt commission
  * - Checkout läuft ganz normal ohne Connect-Parameter
  *
  * ZUKÜNFTIGE KUNDEN:
