@@ -32,7 +32,6 @@
       "description": "Cancellation Policy of Austria Imperial — Green Gold."
     }
   },
-
   "nav": {
     "products": "Products",
     "about": "About Us",
@@ -40,7 +39,6 @@
     "openCart": "Open cart",
     "menu": "Menu"
   },
-
   "hero": {
     "tagline": "Styrian Specialties for Generations",
     "heading1": "Green Gold",
@@ -50,7 +48,6 @@
     "ctaStory": "Our Story",
     "imageAlt": "Styrian Pumpkin Seed Oil PGI — Austria Imperial Green Gold"
   },
-
   "home": {
     "specialties": "Our Specialties",
     "premiumProducts": "Premium Products",
@@ -69,7 +66,6 @@
       }
     }
   },
-
   "products": {
     "collection": "Collection",
     "title": "Our Products",
@@ -86,7 +82,6 @@
       "tiernahrung": "Animal Nutrition"
     }
   },
-
   "productDetail": {
     "categories": {
       "kernoel": "Styrian Pumpkin Seed Oil",
@@ -113,14 +108,12 @@
       "hernach": "Hernach Farm"
     }
   },
-
   "addToCart": {
     "selectSize": "Select size",
     "inclVat": "incl. VAT",
     "addToCart": "Add to Cart",
     "added": "Added"
   },
-
   "cart": {
     "title": "Cart",
     "empty": "Your cart is empty",
@@ -129,7 +122,6 @@
     "shippingNote": "Shipping costs will be calculated at checkout.",
     "checkout": "Checkout"
   },
-
   "checkout": {
     "emptyCart": "Your cart is empty",
     "backToProducts": "Back to products",
@@ -145,7 +137,6 @@
     "checkoutFailed": "Checkout failed",
     "genericError": "An error occurred"
   },
-
   "checkoutSuccess": {
     "thankYou": "Thank You!",
     "orderPlaced": "Your order has been placed successfully. You will receive a confirmation email with all details shortly.",
@@ -157,7 +148,6 @@
     "discoverMore": "Discover more products",
     "loading": "Loading..."
   },
-
   "about": {
     "tagline": "Our Story",
     "heading": "Green Gold from Styria",
@@ -190,7 +180,6 @@
       }
     }
   },
-
   "contact": {
     "tagline": "Contact",
     "heading": "Get in Touch",
@@ -207,8 +196,8 @@
     },
     "operator": {
       "title": "Operator",
-      "content": "Auryx AI LLC",
-      "detail": "30 N Gould St Ste N, Sheridan, WY 82801, USA"
+      "content": "Austria Imperial Green Gold — Association",
+      "detail": "Registered seat: Austria | info@austriaimperial.com"
     },
     "form": {
       "title": "Send a Message",
@@ -234,7 +223,6 @@
       "privacyConsent": "By submitting, you agree to our <link>Privacy Policy</link>."
     }
   },
-
   "footer": {
     "description": "Authentic Austrian specialties direct from the producer. Styrian Pumpkin Seed Oil PGI and fine horseradish.",
     "navigation": "Navigation",
@@ -247,13 +235,13 @@
     "copyright": "© {year} Austria Imperial — Green Gold. All rights reserved.",
     "poweredBy": "Powered by"
   },
-
   "agb": {
     "title": "Terms and Conditions",
     "s1": {
       "title": "§ 1 Scope of Application",
-      "p1": "These General Terms and Conditions (GTC) apply to all orders placed through the online shop of Austria Imperial — Green Gold (operated by Auryx AI LLC, hereinafter referred to as \"Provider\").",
-      "p2": "The GTC apply in the version valid at the time of the order. Deviating terms of the customer are not recognised unless the Provider expressly agrees to their validity in writing."
+      "p1": "These General Terms and Conditions (GTC) apply to all orders placed through the online shop of Austria Imperial — Green Gold. By placing an order, you enter into a purchase contract with the association Austria Imperial Green Gold — Association for the Research of AI-Powered Marketing of Regional Specialities, represented by the board (hereinafter referred to as \"Provider\").",
+      "p2": "The GTC apply in the version valid at the time of the order. Deviating terms of the customer are not recognised unless the Provider expressly agrees to their validity in writing.",
+      "p3": "The association pursues charitable purposes. Product sales serve the implementation of a scientific field study on the impact of AI-generated content on the sales of regional specialities (ancillary purpose privilege pursuant to § 1 para. 2 VerG)."
     },
     "s2": {
       "title": "§ 2 Conclusion of Contract",
@@ -277,28 +265,31 @@
     },
     "s6": {
       "title": "§ 6 Retention of Title",
-      "p1": "The delivered goods remain the property of the Provider until the purchase price has been paid in full."
+      "p1": "The delivered goods remain the property of the association until the purchase price has been paid in full."
     },
     "s7": {
       "title": "§ 7 Warranty",
-      "p1": "The statutory warranty rights apply. Food products are excluded from exchange, provided they were delivered without defects and as described.",
+      "p1": "The statutory warranty rights under Austrian Civil Code (ABGB) and Consumer Protection Act (KSchG) apply. Food products are excluded from exchange, provided they were delivered without defects and as described.",
       "p2": "Please inspect the goods immediately upon delivery for recognisable defects. We accept complaints by email."
     },
     "s8": {
       "title": "§ 8 Liability",
-      "p1": "The Provider is liable for damages only in cases of intent and gross negligence. In cases of slight negligence, the Provider is only liable for breach of essential contractual obligations. Liability is limited to the foreseeable damage typical for the contract."
+      "p1": "The association is liable for damages only in cases of intent and gross negligence. In cases of slight negligence, the association is only liable for breach of essential contractual obligations. Liability is limited to the foreseeable damage typical for the contract."
     },
     "s9": {
-      "title": "§ 9 Applicable Law",
-      "p1": "The law of the Republic of Austria applies, excluding the UN Convention on Contracts for the International Sale of Goods. For consumers within the EU, the mandatory consumer protection provisions of their country of residence remain unaffected."
+      "title": "§ 9 Right of Withdrawal",
+      "p1": "Consumers are entitled to a statutory right of withdrawal pursuant to the Austrian Distance and Off-Premises Contracts Act (FAGG) and the Consumer Protection Act (KSchG). Please refer to our cancellation policy for details."
     },
     "s10": {
-      "title": "§ 10 Final Provisions",
+      "title": "§ 10 Applicable Law",
+      "p1": "The law of the Republic of Austria applies, excluding the UN Convention on Contracts for the International Sale of Goods. For consumers within the EU, the mandatory consumer protection provisions of their country of residence remain unaffected."
+    },
+    "s11": {
+      "title": "§ 11 Final Provisions",
       "p1": "Should individual provisions of these GTC be or become invalid, the validity of the remaining provisions shall remain unaffected.",
-      "date": "As of: February 2026"
+      "date": "As of: March 2026"
     }
   },
-
   "datenschutz": {
     "title": "Privacy Policy",
     "s1": {
@@ -306,67 +297,88 @@
       "generalTitle": "General Information",
       "generalText": "The following notices provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you.",
       "collectionTitle": "Data Collection on This Website",
-      "collectionText1": "Data processing on this website is carried out by the website operator. Their contact details can be found in the legal notice of this website.",
+      "collectionText1": "Data processing on this website is carried out by the association Austria Imperial Green Gold — Association for the Research of AI-Powered Marketing of Regional Specialities. Contact details can be found in the legal notice of this website.",
       "collectionText2": "Your data is collected in part by you providing it to us (e.g. in an order form). Other data is collected automatically or with your consent when you visit the website by our IT systems. This is primarily technical data (e.g. internet browser, operating system or time of page access)."
     },
     "s2": {
       "title": "2. Responsible Body",
-      "company": "Auryx AI LLC",
-      "address": "30 N Gould St Ste N\nSheridan, WY 82801, USA",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Association for the Research of AI-Powered Marketing of Regional Specialities",
+      "zvr": "ZVR Number: [to be entered after registration]",
+      "address": "Registered seat: Austria\n[Address to be added after registration]",
+      "obmann": "Chairman: Gottfried Hammerl",
       "emailLabel": "Email:",
       "email": "info@austriaimperial.com",
       "text": "The responsible body is the natural or legal person who alone or jointly with others decides on the purposes and means of the processing of personal data."
     },
     "s3": {
-      "title": "3. Your Rights",
+      "title": "3. Data Processor",
+      "text1": "The association uses Auryx AI LLC as a data processor pursuant to Art. 28 GDPR for the operation of technical infrastructure (content engine, automation, hosting).",
+      "text2": "A data processing agreement (DPA) between the association and Auryx AI LLC governs the GDPR-compliant processing.",
+      "auryx": "Auryx AI LLC, 30 N Gould St Ste N, Sheridan, WY 82801, USA"
+    },
+    "s4": {
+      "title": "4. Your Rights",
       "intro": "You have the right at any time to:",
       "rights": [
-        "Obtain information about your stored personal data",
-        "Request correction of inaccurate data",
-        "Request deletion of your data",
-        "Request restriction of processing",
-        "Request data portability",
-        "Object to the processing",
-        "Revoke a given consent"
+        "Obtain information about your stored personal data (Art. 15 GDPR)",
+        "Request correction of inaccurate data (Art. 16 GDPR)",
+        "Request deletion of your data (Art. 17 GDPR)",
+        "Request restriction of processing (Art. 18 GDPR)",
+        "Request data portability (Art. 20 GDPR)",
+        "Object to the processing (Art. 21 GDPR)",
+        "Revoke a given consent at any time (Art. 7 para. 3 GDPR)",
+        "Lodge a complaint with the Austrian Data Protection Authority (dsb.gv.at)"
       ],
       "outro": "For this purpose and for any further questions regarding data protection, you can contact us at any time."
     },
-    "s4": {
-      "title": "4. Data Collection on This Website",
+    "s5": {
+      "title": "5. Data Collection on This Website",
       "serverLogsTitle": "Server Log Files",
       "serverLogsText1": "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are: browser type and version, operating system used, referrer URL, hostname of the accessing computer, time of the server request and IP address.",
-      "serverLogsText2": "This data is not merged with other data sources. The basis for data processing is Art. 6 para. 1 lit. f GDPR.",
+      "serverLogsText2": "This data is not merged with other data sources. The basis for data processing is Art. 6 para. 1 lit. f GDPR (legitimate interest in technical provision).",
       "cookiesTitle": "Cookies",
-      "cookiesText": "This website does not use tracking cookies. We only use technically necessary cookies that are required for the operation of the site (e.g. shopping cart, session)."
-    },
-    "s5": {
-      "title": "5. Orders and Payment Processing",
-      "text1": "When you order from us, we collect the following data: name, email address, delivery address, billing address and order details. This data is required for contract fulfilment (Art. 6 para. 1 lit. b GDPR).",
-      "text2": "Payment processing is carried out by Stripe, Inc. (510 Townsend Street, San Francisco, CA 94103, USA). We do not receive complete payment data from Stripe (e.g. credit card numbers). Stripe processes your payment data in accordance with their privacy policy:",
-      "stripeLink": "stripe.com/privacy"
+      "cookiesText": "This website does not use tracking cookies. We only use technically necessary cookies that are required for the operation of the site (e.g. shopping cart, session). Legal basis: Art. 6 para. 1 lit. f GDPR."
     },
     "s6": {
-      "title": "6. Disclosure to Third Parties",
-      "text1": "Your data is passed on to our fulfilment partners (producers) to the extent necessary for contract fulfilment (delivery). This includes: name, delivery address and order details.",
-      "text2": "Beyond this, no disclosure to third parties takes place unless we are legally obliged to do so."
+      "title": "6. Orders and Payment Processing",
+      "text1": "When you order from us, we collect the following data: name, email address, delivery address, billing address and order details. This data is required for contract fulfilment (Art. 6 para. 1 lit. b GDPR).",
+      "text2": "Payment processing is carried out by Stripe, Inc. (354 Oyster Point Blvd, South San Francisco, CA 94080, USA). We do not receive complete payment data from Stripe (e.g. credit card numbers). Stripe processes your payment data in accordance with their privacy policy:",
+      "stripeLink": "stripe.com/privacy"
     },
     "s7": {
-      "title": "7. Data Storage",
-      "text": "Order data is stored for the duration of the statutory retention periods (usually 7 years according to commercial and tax law). After the expiry of the periods, the data is deleted."
+      "title": "7. Data in the Context of the Field Study",
+      "text1": "The association conducts a scientific field study to research how AI-generated content influences the sales of regional specialities in international markets.",
+      "text2": "As part of this study, purchase data is anonymised and evaluated in aggregate form. No personal data is published in study reports. The evaluation is based exclusively on aggregated, non-traceable metrics (e.g. total revenue, number of orders, average order value per market).",
+      "text3": "Legal basis: Legitimate interest of the association in carrying out its statutory research activities (Art. 6 para. 1 lit. f GDPR). For optional surveys (post-purchase survey), we obtain your explicit consent (Art. 6 para. 1 lit. a GDPR).",
+      "text4": "You may object to the use of your anonymised purchase data for research purposes at any time by contacting us via email."
     },
     "s8": {
-      "title": "8. SSL/TLS Encryption",
+      "title": "8. Disclosure to Third Parties",
+      "text1": "Your data is passed on to our fulfilment partners (producers) to the extent necessary for contract fulfilment (delivery). This includes: name, delivery address and order details.",
+      "text2": "In addition, data is shared with the data processor Auryx AI LLC (see Section 3) for technical processing.",
+      "text3": "Beyond this, no disclosure to third parties takes place unless we are legally obliged to do so."
+    },
+    "s9": {
+      "title": "9. Data Storage and Deletion Concept",
+      "text1": "Order data is stored for the duration of the statutory retention periods (7 years pursuant to § 132 BAO — Austrian Federal Fiscal Code).",
+      "text2": "Data of prospective customers (e.g. newsletter, contact form) is deleted after 2 years of inactivity.",
+      "text3": "Data of study participants (optional surveys) is fully anonymised after completion of the study.",
+      "text4": "After expiry of the respective retention periods, personal data is deleted or irreversibly anonymised."
+    },
+    "s10": {
+      "title": "10. SSL/TLS Encryption",
       "text": "This site uses SSL or TLS encryption for security reasons and to protect the transmission of confidential content. You can recognise an encrypted connection by the fact that the address bar of the browser changes from \"http://\" to \"https://\"."
     }
   },
-
   "impressum": {
     "title": "Legal Notice",
     "s1": {
-      "title": "Information according to § 5 TMG / § 25 MedienG",
-      "company": "Auryx AI LLC",
-      "operatorOf": "Operator of the brand Austria Imperial — Green Gold",
-      "address": "30 N Gould St Ste N\nSheridan, WY 82801\nUnited States of America"
+      "title": "Information according to § 5 ECG and § 25 MedienG",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Association for the Research of AI-Powered Marketing of Regional Specialities",
+      "zvr": "ZVR Number: [to be entered after registration]",
+      "address": "Registered seat: Austria\n[Address to be added after registration]"
     },
     "s2": {
       "title": "Contact",
@@ -376,38 +388,47 @@
       "web": "www.austriaimperial.com"
     },
     "s3": {
-      "title": "Authorised Representative",
-      "text": "Gottfried Hammerl, Managing Member"
+      "title": "Board",
+      "obmann": "Chairman and Secretary: Gottfried Hammerl",
+      "kassier": "Treasurer and Deputy Chairman: Peter Kräcksammer",
+      "vertretung": "Joint representation by both board members"
     },
     "s4": {
-      "title": "VAT Identification Number",
-      "text": "Will be added after registration with the tax office."
+      "title": "Purpose of the Association",
+      "text": "Scientific and practical research into how AI-generated content influences the sales of regional specialities in international markets, particularly in English-speaking and Arabic-speaking regions."
     },
     "s5": {
-      "title": "Responsible for Content according to § 55 para. 2 RStV",
-      "name": "Gottfried Hammerl",
-      "addressNote": "(Address as above)"
+      "title": "Value Added Tax",
+      "text": "To be added after clarification with tax advisor (small business exemption pursuant to § 6 para. 1 Z 27 UStG or regular VAT liability)."
     },
     "s6": {
+      "title": "Responsible for Content according to § 25 MedienG",
+      "name": "Gottfried Hammerl (Chairman)",
+      "addressNote": "(Address as above)"
+    },
+    "s7": {
       "title": "EU Dispute Resolution",
       "text1": "The European Commission provides a platform for online dispute resolution (OS):",
       "link": "https://ec.europa.eu/consumers/odr/",
       "text2": "We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration body."
     },
-    "s7": {
-      "title": "Liability for Content",
-      "text": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 para. 1 TMG. According to §§ 8 to 10 TMG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
-    },
     "s8": {
+      "title": "Liability for Content",
+      "text": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 16 ECG. Pursuant to §§ 13 to 17 ECG, however, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity."
+    },
+    "s9": {
       "title": "Liability for Links",
       "text": "Our website contains links to external websites of third parties over whose content we have no influence. Therefore, we cannot assume any liability for this third-party content. The respective provider or operator of the pages is always responsible for the content of the linked pages."
     },
-    "s9": {
+    "s10": {
       "title": "Copyright",
-      "text": "The content and works created by the site operators on these pages are subject to copyright law. Reproduction, processing, distribution and any type of exploitation outside the limits of copyright law require the written consent of the respective author or creator."
+      "text": "The content and works created by the association on these pages are subject to Austrian copyright law. Reproduction, processing, distribution and any type of exploitation outside the limits of copyright law require the written consent of the association."
+    },
+    "s11": {
+      "title": "Applicable Law and Jurisdiction",
+      "text": "Austrian law applies. Place of jurisdiction is [to be added after registration]."
     }
   },
-
   "widerruf": {
     "title": "Cancellation Policy",
     "s1": {
@@ -415,7 +436,7 @@
       "p1": "You have the right to cancel this contract within fourteen days without giving any reason.",
       "p2": "The cancellation period is fourteen days from the day on which you or a third party named by you, who is not the carrier, has taken possession of the goods.",
       "p3": "To exercise your right of cancellation, you must inform us by means of a clear statement (e.g. by email) of your decision to cancel this contract:",
-      "contact": "Auryx AI LLC\nEmail: info@austriaimperial.com",
+      "contact": "Austria Imperial Green Gold — Association for the Research of AI-Powered Marketing of Regional Specialities\nEmail: info@austriaimperial.com",
       "p4": "To meet the cancellation deadline, it is sufficient for you to send the notification of the exercise of the right of cancellation before the cancellation period expires."
     },
     "s2": {
@@ -439,7 +460,7 @@
     "s5": {
       "title": "Model Cancellation Form",
       "intro": "If you want to cancel the contract, please fill out this form and send it back:",
-      "to": "To: Auryx AI LLC, info@austriaimperial.com",
+      "to": "To: Austria Imperial Green Gold — Association for the Research of AI-Powered Marketing of Regional Specialities, info@austriaimperial.com",
       "body": "I/We (*) hereby cancel the contract concluded by me/us (*) for the purchase of the following goods:",
       "orderedOn": "Ordered on / received on (*):",
       "consumerName": "Name of the consumer(s):",
@@ -448,13 +469,11 @@
       "footnote": "(*) Delete as appropriate."
     }
   },
-
   "language": {
     "de": "DE",
     "en": "EN",
     "ar": "AR"
   },
-
   "admin": {
     "title": "AIGG Admin",
     "subtitle": "Green Gold Dashboard",
@@ -471,7 +490,11 @@
       "partners": "Partners",
       "producers": "Producers",
       "logout": "Logout",
-      "backToShop": "Back to Shop"
+      "backToShop": "Back to Shop",
+      "verein": "Association Finance",
+      "mitglieder": "Members",
+      "studien": "Study Reports",
+      "transactions": "Transactions"
     },
     "role": {
       "admin": "Administrator",
@@ -506,7 +529,7 @@
       "pendingFulfillments": "Pending Fulfillments",
       "total": "total",
       "revenueWaterfall": "Revenue Waterfall",
-      "auryx10": "Auryx 10%",
+      "auryx10": "Auryx",
       "peter": "Peter",
       "gottfried": "Gottfried",
       "recentOrders": "Recent Orders",
@@ -632,7 +655,7 @@
       "paymentFees": "Payment Fees (Stripe)",
       "customs": "Customs",
       "totalCosts": "Total Costs",
-      "auryxD2C": "Auryx AI (10% D2C)",
+      "auryxD2C": "Auryx Service Fee",
       "peter50Rest": "Peter (50% Remainder)",
       "gottfried50Rest": "Gottfried (50% Remainder)",
       "sales": "Sales",
@@ -641,7 +664,7 @@
       "ytd": "Year-to-Date",
       "totalRevenueYtd": "Total Revenue YTD",
       "grossProfitYtd": "Gross Profit YTD",
-      "auryxYtd": "Auryx AI YTD",
+      "auryxYtd": "Auryx Service Fee YTD",
       "peterYtd": "Peter YTD",
       "gottfriedYtd": "Gottfried YTD",
       "viewLedger": "View Ledger",
@@ -793,6 +816,117 @@
       "failedOrders": "Failed",
       "recentFulfillments": "Recent Fulfillments",
       "tracking": "Tracking"
+    },
+    "verein": {
+      "title": "Association Finance",
+      "subtitle": "Internal financial transactions of the association",
+      "totalBalance": "Total Balance",
+      "monthIncome": "Income (Month)",
+      "monthExpense": "Expenses (Month)",
+      "pendingCountersign": "Pending Countersignatures",
+      "transactions": "Transactions",
+      "addTransaction": "New Transaction",
+      "noTransactions": "No transactions recorded yet.",
+      "date": "Date",
+      "amount": "Amount",
+      "category": "Category",
+      "description": "Description",
+      "executedBy": "Executed by",
+      "countersigned": "Countersigned",
+      "countersign": "Countersign",
+      "receipt": "Receipt",
+      "paymentMethod": "Payment Method",
+      "over1000": "Over €1,000",
+      "needsCountersign": "Countersignature required",
+      "pendingApproval": "Approval pending",
+      "approved": "Approved",
+      "income": "Income",
+      "expense": "Expense",
+      "save": "Save",
+      "cancel": "Cancel",
+      "categoryLabels": {
+        "produkte": "Products",
+        "reisen": "Travel",
+        "equipment": "Equipment",
+        "dienstleistungen": "Services",
+        "auryx_rechnung": "Auryx Invoice",
+        "marketing": "Marketing",
+        "sonstiges": "Other"
+      },
+      "boardMemberLabels": {
+        "gottfried": "Gottfried (Chairman)",
+        "peter": "Peter (Treasurer)"
+      },
+      "paymentMethodLabels": {
+        "karte_gottfried": "Card Gottfried",
+        "karte_peter": "Card Peter",
+        "ueberweisung": "Bank Transfer",
+        "bar": "Cash"
+      },
+      "byPerson": "By Person",
+      "byCategory": "By Category",
+      "gottfriedTotal": "Gottfried total",
+      "peterTotal": "Peter total"
+    },
+    "mitglieder": {
+      "title": "Association Members",
+      "subtitle": "Member registry per VerG 2002",
+      "totalMembers": "Total Members",
+      "activeMembers": "Active Members",
+      "addMember": "New Member",
+      "noMembers": "No members recorded yet.",
+      "memberNumber": "Member No.",
+      "name": "Name",
+      "email": "Email",
+      "category": "Category",
+      "joinDate": "Join Date",
+      "status": "Status",
+      "notes": "Notes",
+      "dataOrigin": "Data Origin",
+      "gdprConsent": "GDPR Consent",
+      "save": "Save",
+      "cancel": "Cancel",
+      "categoryLabels": {
+        "ordentlich": "Regular",
+        "foerder": "Supporting",
+        "ausserordentlich": "Extraordinary",
+        "ehren": "Honorary"
+      },
+      "statusLabels": {
+        "aktiv": "Active",
+        "ehemalig": "Former"
+      }
+    },
+    "studien": {
+      "title": "Study Reports",
+      "subtitle": "Automated research reports on AI-driven marketing",
+      "totalReports": "Total Reports",
+      "publishedReports": "Published",
+      "noReports": "No study reports available yet.",
+      "reportId": "Report ID",
+      "type": "Type",
+      "period": "Period",
+      "revenue": "Revenue",
+      "orders": "Orders",
+      "status": "Status",
+      "summary": "Summary",
+      "pdf": "PDF",
+      "typeLabels": {
+        "weekly": "Weekly Report",
+        "monthly": "Monthly Report",
+        "quarterly": "Quarterly Report",
+        "yearly": "Annual Report"
+      },
+      "statusLabels": {
+        "draft": "Draft",
+        "final": "Finalized",
+        "published": "Published"
+      },
+      "noSummary": "No summary yet",
+      "viewPdf": "View PDF",
+      "publish": "Publish",
+      "avgOrderValue": "Avg Order Value",
+      "topContent": "Top Content"
     }
   },
   "partner": {

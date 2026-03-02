@@ -1,7 +1,6 @@
-// TODO [NACH GmbH-REGISTRIERUNG]:
-// "Auryx AI LLC" → "Austria Imperial Green Gold GmbH"
-// Adresse: [GmbH-Adresse nach Registrierung]
-// Strukturvereinbarung: 26.02.2026
+// VEREIN-STRUKTUR (Stand: März 2026)
+// Vertragspartner: Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten
+// Widerrufsrecht gem. FAGG/KSchG (gilt auch für Vereine)
 
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 

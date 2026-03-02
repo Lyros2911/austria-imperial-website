@@ -1,7 +1,7 @@
-// TODO [NACH GmbH-REGISTRIERUNG]:
-// "betrieben von Auryx AI LLC" → "betrieben von Austria Imperial Green Gold GmbH"
-// Geschäftsführer: Gottfried Hammerl & Peter Kräcksammer (Gesamtvertretung)
-// Strukturvereinbarung: 26.02.2026
+// VEREIN-STRUKTUR (Stand: März 2026)
+// Vertragspartner: Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten
+// Vertretung: Vorstand (Obmann + Kassier)
+// Produktverkauf = Nebenzweckprivileg gem. § 1 Abs. 2 VerG
 
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 
@@ -34,6 +34,7 @@ export default async function AGBPage({ params }: Props) {
           <Section title={t('s1.title')}>
             <p>{t('s1.p1')}</p>
             <p>{t('s1.p2')}</p>
+            <p className="italic text-muted/80">{t('s1.p3')}</p>
           </Section>
 
           <Section title={t('s2.title')}>
@@ -75,8 +76,12 @@ export default async function AGBPage({ params }: Props) {
 
           <Section title={t('s10.title')}>
             <p>{t('s10.p1')}</p>
+          </Section>
+
+          <Section title={t('s11.title')}>
+            <p>{t('s11.p1')}</p>
             <p className="mt-4 text-muted/60">
-              {t('s10.date')}
+              {t('s11.date')}
             </p>
           </Section>
         </div>

@@ -778,6 +778,137 @@ export const partnerOrderItemsRelations = relations(partnerOrderItems, ({ one })
 }));
 
 // ============================================================
+// VEREIN: STUDIENBERICHTE
+// Automatisch generierte Forschungsberichte (Wochen/Monats/Quartalsberichte)
+// Erzeugt von n8n-Workflows, gelesen vom Admin-Dashboard
+// ============================================================
+
+export const studyReportTypeEnum = pgEnum('study_report_type', [
+  'weekly',
+  'monthly',
+  'quarterly',
+  'yearly',
+]);
+
+export const studyReportStatusEnum = pgEnum('study_report_status', [
+  'draft',
+  'final',
+  'published',
+]);
+
+export const studyReports = pgTable('study_reports', {
+  id: serial('id').primaryKey(),
+  reportId: varchar('report_id', { length: 30 }).notNull().unique(), // WB-2026-W10, MB-2026-03, QB-2026-Q1
+  type: studyReportTypeEnum('type').notNull(),
+  periodFrom: timestamp('period_from').notNull(),
+  periodTo: timestamp('period_to').notNull(),
+  // Kennzahlen
+  totalRevenue: integer('total_revenue'), // in Cent
+  orderCount: integer('order_count'),
+  averageOrderValue: integer('average_order_value'), // in Cent
+  topContent: text('top_content'), // Best-performender Content
+  // Content
+  aiSummary: text('ai_summary'), // Claude-generierte Zusammenfassung
+  pdfUrl: text('pdf_url'), // Link zum PDF in GCS (gs://aigg-reports/...)
+  // Aufschlüsselung
+  dataByLanguage: jsonb('data_by_language'), // { de: {...}, en: {...}, ar: {...} }
+  dataByMarket: jsonb('data_by_market'), // { dach: {...}, english: {...}, arabic: {...} }
+  contentMetrics: jsonb('content_metrics'), // Array von Content-Performance-Daten
+  // Meta
+  status: studyReportStatusEnum('status').notNull().default('draft'),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  publishedAt: timestamp('published_at'),
+});
+
+// ============================================================
+// VEREIN: VEREINSFINANZEN
+// Interne Finanztransaktionen des Vereins (Obmann + Kassier)
+// 1.000-€-Grenze für Einzelzeichnung, darüber Gegenzeichnung nötig
+// ============================================================
+
+export const transactionCategoryEnum = pgEnum('transaction_category', [
+  'produkte',
+  'reisen',
+  'equipment',
+  'dienstleistungen',
+  'auryx_rechnung',
+  'marketing',
+  'sonstiges',
+]);
+
+export const boardMemberEnum = pgEnum('board_member', [
+  'gottfried',
+  'peter',
+]);
+
+export const paymentMethodEnum = pgEnum('payment_method_verein', [
+  'karte_gottfried',
+  'karte_peter',
+  'ueberweisung',
+  'bar',
+]);
+
+export const vereinsfinanzen = pgTable('vereinsfinanzen', {
+  id: serial('id').primaryKey(),
+  transactionId: varchar('transaction_id', { length: 30 }).notNull().unique(), // TXN-2026-0042
+  date: timestamp('date').notNull(),
+  amount: integer('amount').notNull(), // in Cent, positiv = Einnahme, negativ = Ausgabe
+  category: transactionCategoryEnum('category').notNull(),
+  description: text('description').notNull(), // Zweck der Transaktion
+  executedBy: boardMemberEnum('executed_by').notNull(), // Wer hat die Ausgabe getätigt
+  isOver1000: boolean('is_over_1000').notNull().default(false), // Auto: |amount| > 100000 Cent
+  // Gegenzeichnung (nur bei > 1.000 €)
+  countersignedBy: boardMemberEnum('countersigned_by'), // Wer hat freigegeben
+  countersignedAt: timestamp('countersigned_at'),
+  countersignatureRequired: boolean('countersignature_required').notNull().default(false),
+  // Belege
+  receiptUrl: text('receipt_url'), // Link zum Beleg (GCS/Upload)
+  receiptReference: varchar('receipt_reference', { length: 100 }), // Belegnummer
+  paymentMethod: paymentMethodEnum('payment_method'),
+  // Meta
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+  createdByAdminId: integer('created_by_admin_id').references(() => adminUsers.id),
+});
+
+// ============================================================
+// VEREIN: MITGLIEDER
+// Vereinsmitglieder nach VerG 2002
+// Ordentlich (Stimmrecht), Förder (kein Stimmrecht),
+// Außerordentlich (Kooperationspartner), Ehrenmitglied
+// ============================================================
+
+export const memberCategoryEnum = pgEnum('member_category', [
+  'ordentlich',
+  'foerder',
+  'ausserordentlich',
+  'ehren',
+]);
+
+export const memberStatusEnum = pgEnum('member_status', [
+  'aktiv',
+  'ehemalig',
+]);
+
+export const vereinsmitglieder = pgTable('vereinsmitglieder', {
+  id: serial('id').primaryKey(),
+  memberNumber: varchar('member_number', { length: 20 }).notNull().unique(), // M-001
+  firstName: varchar('first_name', { length: 100 }).notNull(),
+  lastName: varchar('last_name', { length: 100 }).notNull(),
+  email: varchar('email', { length: 255 }).notNull(),
+  category: memberCategoryEnum('category').notNull(),
+  joinDate: timestamp('join_date').notNull(),
+  status: memberStatusEnum('status').notNull().default('aktiv'),
+  // DSGVO
+  gdprConsentDate: timestamp('gdpr_consent_date'),
+  dataOrigin: varchar('data_origin', { length: 255 }), // z.B. "Gründungsmitglied"
+  // Meta
+  notes: text('notes'),
+  createdAt: timestamp('created_at').defaultNow().notNull(),
+  updatedAt: timestamp('updated_at').defaultNow().notNull(),
+});
+
+// ============================================================
 // TYPE EXPORTS
 // ============================================================
 
@@ -817,3 +948,9 @@ export type PartnerOrderItem = typeof partnerOrderItems.$inferSelect;
 export type NewPartnerOrderItem = typeof partnerOrderItems.$inferInsert;
 export type Producer = typeof producers.$inferSelect;
 export type NewProducer = typeof producers.$inferInsert;
+export type StudyReport = typeof studyReports.$inferSelect;
+export type NewStudyReport = typeof studyReports.$inferInsert;
+export type Vereinsfinanz = typeof vereinsfinanzen.$inferSelect;
+export type NewVereinsfinanz = typeof vereinsfinanzen.$inferInsert;
+export type Vereinsmitglied = typeof vereinsmitglieder.$inferSelect;
+export type NewVereinsmitglied = typeof vereinsmitglieder.$inferInsert;

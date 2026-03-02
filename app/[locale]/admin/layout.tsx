@@ -17,6 +17,8 @@ import {
   Shield,
   Globe,
   Factory,
+  Wallet,
+  GraduationCap,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -58,6 +60,20 @@ function buildNavigation(role: string, t: (key: string) => string): NavItem[] {
       { label: t('nav.reports'), href: '/admin/accounting/reports' },
     ],
   });
+
+  // Vereins-Bereich (Finanzen + Mitglieder)
+  nav.push({
+    label: t('nav.verein'),
+    href: '/admin/verein',
+    icon: Wallet,
+    children: [
+      { label: t('nav.transactions'), href: '/admin/verein' },
+      { label: t('nav.mitglieder'), href: '/admin/verein/mitglieder' },
+    ],
+  });
+
+  // Studienberichte
+  nav.push({ label: t('nav.studien'), href: '/admin/studien', icon: GraduationCap });
 
   // Benutzerverwaltung nur für Admins
   if (role === 'admin') {
@@ -168,8 +184,8 @@ function AdminSidebar({ onClose }: { onClose?: () => void }) {
                   <div className="ml-7 mt-0.5 space-y-0.5 border-l border-white/[0.06] pl-3">
                     {item.children.map((child) => {
                       const childActive =
-                        child.href === '/admin/accounting'
-                          ? pathname === '/admin/accounting'
+                        child.href === '/admin/accounting' || child.href === '/admin/verein'
+                          ? pathname === child.href
                           : pathname.startsWith(child.href);
                       return (
                         <Link

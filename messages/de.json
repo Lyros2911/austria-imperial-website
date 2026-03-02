@@ -32,7 +32,6 @@
       "description": "Widerrufsbelehrung von Austria Imperial — Green Gold."
     }
   },
-
   "nav": {
     "products": "Produkte",
     "about": "Über Uns",
@@ -40,7 +39,6 @@
     "openCart": "Warenkorb öffnen",
     "menu": "Menü"
   },
-
   "hero": {
     "tagline": "Steirische Spezialitäten seit Generationen",
     "heading1": "Grünes Gold",
@@ -50,7 +48,6 @@
     "ctaStory": "Unsere Geschichte",
     "imageAlt": "Steirisches Kürbiskernöl g.g.A. — Austria Imperial Green Gold"
   },
-
   "home": {
     "specialties": "Unsere Spezialitäten",
     "premiumProducts": "Premium Produkte",
@@ -69,7 +66,6 @@
       }
     }
   },
-
   "products": {
     "collection": "Kollektion",
     "title": "Unsere Produkte",
@@ -86,7 +82,6 @@
       "tiernahrung": "Tiernahrung"
     }
   },
-
   "productDetail": {
     "categories": {
       "kernoel": "Steirisches Kürbiskernöl",
@@ -113,14 +108,12 @@
       "hernach": "Hof Hernach"
     }
   },
-
   "addToCart": {
     "selectSize": "Größe wählen",
     "inclVat": "inkl. MwSt.",
     "addToCart": "In den Warenkorb",
     "added": "Hinzugefügt"
   },
-
   "cart": {
     "title": "Warenkorb",
     "empty": "Dein Warenkorb ist leer",
@@ -129,7 +122,6 @@
     "shippingNote": "Versandkosten werden im Checkout berechnet.",
     "checkout": "Zur Kasse"
   },
-
   "checkout": {
     "emptyCart": "Dein Warenkorb ist leer",
     "backToProducts": "Zurück zu den Produkten",
@@ -145,7 +137,6 @@
     "checkoutFailed": "Checkout fehlgeschlagen",
     "genericError": "Ein Fehler ist aufgetreten"
   },
-
   "checkoutSuccess": {
     "thankYou": "Vielen Dank!",
     "orderPlaced": "Ihre Bestellung wurde erfolgreich aufgegeben. Sie erhalten in Kürze eine Bestätigungs-E-Mail mit allen Details.",
@@ -157,7 +148,6 @@
     "discoverMore": "Weitere Produkte entdecken",
     "loading": "Laden..."
   },
-
   "about": {
     "tagline": "Unsere Geschichte",
     "heading": "Grünes Gold aus der Steiermark",
@@ -190,7 +180,6 @@
       }
     }
   },
-
   "contact": {
     "tagline": "Kontakt",
     "heading": "Sprechen Sie uns an",
@@ -207,8 +196,8 @@
     },
     "operator": {
       "title": "Betreiber",
-      "content": "Auryx AI LLC",
-      "detail": "30 N Gould St Ste N, Sheridan, WY 82801, USA"
+      "content": "Austria Imperial Green Gold — Verein",
+      "detail": "Sitz: Österreich | info@austriaimperial.com"
     },
     "form": {
       "title": "Nachricht senden",
@@ -234,7 +223,6 @@
       "privacyConsent": "Mit dem Absenden stimmen Sie unserer <link>Datenschutzerklärung</link> zu."
     }
   },
-
   "footer": {
     "description": "Authentische österreichische Spezialitäten direkt vom Erzeuger. Steirisches Kürbiskernöl g.g.A. und feiner Kren.",
     "navigation": "Navigation",
@@ -247,13 +235,13 @@
     "copyright": "© {year} Austria Imperial — Green Gold. Alle Rechte vorbehalten.",
     "poweredBy": "Powered by"
   },
-
   "agb": {
     "title": "Allgemeine Geschäftsbedingungen",
     "s1": {
       "title": "§ 1 Geltungsbereich",
-      "p1": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop von Austria Imperial — Green Gold (betrieben von Auryx AI LLC, nachfolgend ‚Anbieter') getätigt werden.",
-      "p2": "Die AGB gelten in der zum Zeitpunkt der Bestellung gültigen Fassung. Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu."
+      "p1": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop von Austria Imperial — Green Gold getätigt werden. Mit Ihrer Bestellung schließen Sie einen Kaufvertrag mit dem Verein Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten, vertreten durch den Vorstand (nachfolgend ‚Anbieter').",
+      "p2": "Die AGB gelten in der zum Zeitpunkt der Bestellung gültigen Fassung. Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.",
+      "p3": "Der Verein verfolgt gemeinnützige Zwecke. Der Produktverkauf dient der Durchführung einer wissenschaftlichen Feldstudie über die Wirkung von KI-generiertem Content auf den Absatz regionaler Spezialitäten (Nebenzweckprivileg gem. § 1 Abs. 2 VerG)."
     },
     "s2": {
       "title": "§ 2 Vertragsschluss",
@@ -277,28 +265,31 @@
     },
     "s6": {
       "title": "§ 6 Eigentumsvorbehalt",
-      "p1": "Die gelieferte Ware bleibt bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Anbieters."
+      "p1": "Die gelieferte Ware bleibt bis zur vollständigen Bezahlung des Kaufpreises Eigentum des Vereins."
     },
     "s7": {
       "title": "§ 7 Gewährleistung",
-      "p1": "Es gelten die gesetzlichen Gewährleistungsrechte. Lebensmittel sind vom Umtausch ausgeschlossen, sofern sie fehlerfrei und wie beschrieben geliefert wurden.",
+      "p1": "Es gelten die gesetzlichen Gewährleistungsrechte gemäß ABGB und KSchG. Lebensmittel sind vom Umtausch ausgeschlossen, sofern sie fehlerfrei und wie beschrieben geliefert wurden.",
       "p2": "Bitte prüfen Sie die Ware bei Lieferung unverzüglich auf erkennbare Mängel. Mängelrügen nehmen wir per E-Mail entgegen."
     },
     "s8": {
       "title": "§ 8 Haftung",
-      "p1": "Für Schäden haftet der Anbieter nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet der Anbieter nur bei Verletzung wesentlicher Vertragspflichten. Die Haftung ist auf den vertragstypischen, vorhersehbaren Schaden begrenzt."
+      "p1": "Für Schäden haftet der Verein nur bei Vorsatz und grober Fahrlässigkeit. Bei leichter Fahrlässigkeit haftet der Verein nur bei Verletzung wesentlicher Vertragspflichten. Die Haftung ist auf den vertragstypischen, vorhersehbaren Schaden begrenzt."
     },
     "s9": {
-      "title": "§ 9 Anwendbares Recht",
-      "p1": "Es gilt das Recht der Republik Österreich unter Ausschluss des UN-Kaufrechts. Für Verbraucher innerhalb der EU bleiben die zwingenden Verbraucherschutzbestimmungen des jeweiligen Wohnsitzlandes unberührt."
+      "title": "§ 9 Widerrufsrecht",
+      "p1": "Verbrauchern steht ein gesetzliches Widerrufsrecht gemäß Fern- und Auswärtsgeschäfte-Gesetz (FAGG) und Konsumentenschutzgesetz (KSchG) zu. Details entnehmen Sie bitte unserer Widerrufsbelehrung."
     },
     "s10": {
-      "title": "§ 10 Schlussbestimmungen",
+      "title": "§ 10 Anwendbares Recht",
+      "p1": "Es gilt das Recht der Republik Österreich unter Ausschluss des UN-Kaufrechts. Für Verbraucher innerhalb der EU bleiben die zwingenden Verbraucherschutzbestimmungen des jeweiligen Wohnsitzlandes unberührt."
+    },
+    "s11": {
+      "title": "§ 11 Schlussbestimmungen",
       "p1": "Sollten einzelne Bestimmungen dieser AGB unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen davon unberührt.",
-      "date": "Stand: Februar 2026"
+      "date": "Stand: März 2026"
     }
   },
-
   "datenschutz": {
     "title": "Datenschutzerklärung",
     "s1": {
@@ -306,67 +297,88 @@
       "generalTitle": "Allgemeine Hinweise",
       "generalText": "Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.",
       "collectionTitle": "Datenerfassung auf dieser Website",
-      "collectionText1": "Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum dieser Website entnehmen.",
-      "collectionText2": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z.\u00a0B. in einem Bestellformular). Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z.\u00a0B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
+      "collectionText1": "Die Datenverarbeitung auf dieser Website erfolgt durch den Verein Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.",
+      "collectionText2": "Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen (z. B. in einem Bestellformular). Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs)."
     },
     "s2": {
       "title": "2. Verantwortliche Stelle",
-      "company": "Auryx AI LLC",
-      "address": "30 N Gould St Ste N\nSheridan, WY 82801, USA",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten",
+      "zvr": "ZVR-Zahl: [wird nach Vereinsgründung eingetragen]",
+      "address": "Sitz: Österreich\n[Adresse wird nach Gründung ergänzt]",
+      "obmann": "Obmann: Gottfried Hammerl",
       "emailLabel": "E-Mail:",
       "email": "info@austriaimperial.com",
       "text": "Verantwortliche Stelle ist die natürliche oder juristische Person, die allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten entscheidet."
     },
     "s3": {
-      "title": "3. Ihre Rechte",
+      "title": "3. Auftragsverarbeiter",
+      "text1": "Der Verein bedient sich für den Betrieb der technischen Infrastruktur (Content-Engine, Automatisierung, Hosting) der Auryx AI LLC als Auftragsverarbeiter gemäß Art. 28 DSGVO.",
+      "text2": "Ein Auftragsverarbeitungsvertrag (AV-Vertrag) zwischen dem Verein und Auryx AI LLC regelt die datenschutzkonforme Verarbeitung.",
+      "auryx": "Auryx AI LLC, 30 N Gould St Ste N, Sheridan, WY 82801, USA"
+    },
+    "s4": {
+      "title": "4. Ihre Rechte",
       "intro": "Sie haben jederzeit das Recht:",
       "rights": [
-        "Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten",
-        "Berichtigung unrichtiger Daten zu verlangen",
-        "Löschung Ihrer Daten zu verlangen",
-        "Einschränkung der Verarbeitung zu verlangen",
-        "Datenübertragbarkeit zu verlangen",
-        "Widerspruch gegen die Verarbeitung einzulegen",
-        "Eine erteilte Einwilligung zu widerrufen"
+        "Auskunft über Ihre gespeicherten personenbezogenen Daten zu erhalten (Art. 15 DSGVO)",
+        "Berichtigung unrichtiger Daten zu verlangen (Art. 16 DSGVO)",
+        "Löschung Ihrer Daten zu verlangen (Art. 17 DSGVO)",
+        "Einschränkung der Verarbeitung zu verlangen (Art. 18 DSGVO)",
+        "Datenübertragbarkeit zu verlangen (Art. 20 DSGVO)",
+        "Widerspruch gegen die Verarbeitung einzulegen (Art. 21 DSGVO)",
+        "Eine erteilte Einwilligung jederzeit zu widerrufen (Art. 7 Abs. 3 DSGVO)",
+        "Beschwerde bei der österreichischen Datenschutzbehörde (dsb.gv.at) einzureichen"
       ],
       "outro": "Hierzu sowie bei weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden."
     },
-    "s4": {
-      "title": "4. Datenerfassung auf dieser Website",
+    "s5": {
+      "title": "5. Datenerfassung auf dieser Website",
       "serverLogsTitle": "Server-Log-Dateien",
       "serverLogsText1": "Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind: Browsertyp und -version, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse.",
-      "serverLogsText2": "Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO.",
+      "serverLogsText2": "Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Grundlage für die Datenverarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Bereitstellung).",
       "cookiesTitle": "Cookies",
-      "cookiesText": "Diese Website verwendet keine Tracking-Cookies. Wir setzen ausschließlich technisch notwendige Cookies ein, die für den Betrieb der Seite erforderlich sind (z.\u00a0B. Warenkorb, Session)."
-    },
-    "s5": {
-      "title": "5. Bestellungen und Zahlungsabwicklung",
-      "text1": "Wenn Sie bei uns bestellen, erheben wir folgende Daten: Name, E-Mail-Adresse, Lieferadresse, Rechnungsadresse und Bestelldetails. Diese Daten sind zur Vertragserfüllung erforderlich (Art. 6 Abs. 1 lit. b DSGVO).",
-      "text2": "Die Zahlungsabwicklung erfolgt über Stripe, Inc. (510 Townsend Street, San Francisco, CA 94103, USA). Wir erhalten von Stripe keine vollständigen Zahlungsdaten (z.\u00a0B. Kreditkartennummern). Stripe verarbeitet Ihre Zahlungsdaten gemäß deren Datenschutzerklärung:",
-      "stripeLink": "stripe.com/privacy"
+      "cookiesText": "Diese Website verwendet keine Tracking-Cookies. Wir setzen ausschließlich technisch notwendige Cookies ein, die für den Betrieb der Seite erforderlich sind (z. B. Warenkorb, Session). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO."
     },
     "s6": {
-      "title": "6. Weitergabe an Dritte",
-      "text1": "Ihre Daten werden an unsere Fulfillment-Partner (Produzenten) weitergegeben, soweit dies zur Vertragserfüllung (Lieferung) notwendig ist. Dies umfasst: Name, Lieferadresse und Bestelldetails.",
-      "text2": "Eine darüber hinausgehende Weitergabe an Dritte findet nicht statt, es sei denn, wir sind gesetzlich dazu verpflichtet."
+      "title": "6. Bestellungen und Zahlungsabwicklung",
+      "text1": "Wenn Sie bei uns bestellen, erheben wir folgende Daten: Name, E-Mail-Adresse, Lieferadresse, Rechnungsadresse und Bestelldetails. Diese Daten sind zur Vertragserfüllung erforderlich (Art. 6 Abs. 1 lit. b DSGVO).",
+      "text2": "Die Zahlungsabwicklung erfolgt über Stripe, Inc. (354 Oyster Point Blvd, South San Francisco, CA 94080, USA). Wir erhalten von Stripe keine vollständigen Zahlungsdaten (z. B. Kreditkartennummern). Stripe verarbeitet Ihre Zahlungsdaten gemäß deren Datenschutzerklärung:",
+      "stripeLink": "stripe.com/privacy"
     },
     "s7": {
-      "title": "7. Datenspeicherung",
-      "text": "Bestelldaten werden für die Dauer der gesetzlichen Aufbewahrungsfristen gespeichert (in der Regel 7 Jahre gemäß Handels- und Steuerrecht). Nach Ablauf der Fristen werden die Daten gelöscht."
+      "title": "7. Daten im Rahmen der Feldstudie",
+      "text1": "Der Verein führt eine wissenschaftliche Feldstudie durch, um zu erforschen, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst.",
+      "text2": "Im Rahmen dieser Studie werden Kaufdaten anonymisiert und aggregiert ausgewertet. Es werden keine personenbezogenen Daten in Studienberichten veröffentlicht. Die Auswertung erfolgt ausschließlich auf Basis zusammengefasster, nicht-rückverfolgbarer Kennzahlen (z. B. Gesamtumsatz, Bestellanzahl, durchschnittlicher Warenkorbwert pro Markt).",
+      "text3": "Rechtsgrundlage: Berechtigtes Interesse des Vereins an der Durchführung seiner satzungsmäßigen Forschungstätigkeit (Art. 6 Abs. 1 lit. f DSGVO). Für optionale Umfragen (Post-Purchase-Survey) holen wir Ihre ausdrückliche Einwilligung ein (Art. 6 Abs. 1 lit. a DSGVO).",
+      "text4": "Sie können der Nutzung Ihrer anonymisierten Kaufdaten für Forschungszwecke jederzeit widersprechen, indem Sie uns per E-Mail kontaktieren."
     },
     "s8": {
-      "title": "8. SSL/TLS-Verschlüsselung",
+      "title": "8. Weitergabe an Dritte",
+      "text1": "Ihre Daten werden an unsere Fulfillment-Partner (Produzenten) weitergegeben, soweit dies zur Vertragserfüllung (Lieferung) notwendig ist. Dies umfasst: Name, Lieferadresse und Bestelldetails.",
+      "text2": "Darüber hinaus werden Daten an den Auftragsverarbeiter Auryx AI LLC (siehe Abschnitt 3) zur technischen Verarbeitung weitergegeben.",
+      "text3": "Eine darüber hinausgehende Weitergabe an Dritte findet nicht statt, es sei denn, wir sind gesetzlich dazu verpflichtet."
+    },
+    "s9": {
+      "title": "9. Datenspeicherung und Löschkonzept",
+      "text1": "Bestelldaten werden für die Dauer der gesetzlichen Aufbewahrungsfristen gespeichert (7 Jahre gemäß § 132 BAO).",
+      "text2": "Daten von Interessenten (z. B. Newsletter, Kontaktformular) werden nach 2 Jahren Inaktivität gelöscht.",
+      "text3": "Daten von Studienteilnehmern (optionale Umfragen) werden nach Abschluss der Studie vollständig anonymisiert.",
+      "text4": "Nach Ablauf der jeweiligen Fristen werden personenbezogene Daten gelöscht oder irreversibel anonymisiert."
+    },
+    "s10": {
+      "title": "10. SSL/TLS-Verschlüsselung",
       "text": "Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von 'http://' auf 'https://' wechselt."
     }
   },
-
   "impressum": {
     "title": "Impressum",
     "s1": {
-      "title": "Angaben gemäß § 5 TMG / § 25 MedienG",
-      "company": "Auryx AI LLC",
-      "operatorOf": "Betreiber der Marke Austria Imperial — Green Gold",
-      "address": "30 N Gould St Ste N\nSheridan, WY 82801\nUnited States of America"
+      "title": "Angaben gemäß § 5 ECG und § 25 MedienG",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten",
+      "zvr": "ZVR-Zahl: [wird nach Vereinsgründung eingetragen]",
+      "address": "Sitz: Österreich\n[Adresse wird nach Gründung ergänzt]"
     },
     "s2": {
       "title": "Kontakt",
@@ -376,46 +388,55 @@
       "web": "www.austriaimperial.com"
     },
     "s3": {
-      "title": "Vertretungsberechtigter",
-      "text": "Gottfried Hammerl, Managing Member"
+      "title": "Vorstand",
+      "obmann": "Obmann und Schriftführer: Gottfried Hammerl",
+      "kassier": "Kassier und Obmann-Stellvertreter: Peter Kräcksammer",
+      "vertretung": "Gesamtvertretung durch beide Vorstandsmitglieder"
     },
     "s4": {
-      "title": "Umsatzsteuer-Identifikationsnummer",
-      "text": "Wird nach Anmeldung beim Finanzamt ergänzt."
+      "title": "Vereinszweck",
+      "text": "Wissenschaftliche und praxisnahe Erforschung, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst, insbesondere im englischsprachigen und arabischsprachigen Raum."
     },
     "s5": {
-      "title": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV",
-      "name": "Gottfried Hammerl",
-      "addressNote": "(Anschrift wie oben)"
+      "title": "Umsatzsteuer",
+      "text": "Wird nach Klärung mit dem Steuerberater ergänzt (Kleinunternehmerregelung gem. § 6 Abs. 1 Z 27 UStG oder reguläre USt-Pflicht)."
     },
     "s6": {
+      "title": "Verantwortlich für den Inhalt gemäß § 25 MedienG",
+      "name": "Gottfried Hammerl (Obmann)",
+      "addressNote": "(Anschrift wie oben)"
+    },
+    "s7": {
       "title": "EU-Streitschlichtung",
       "text1": "Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
       "link": "https://ec.europa.eu/consumers/odr/",
       "text2": "Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen."
     },
-    "s7": {
-      "title": "Haftung für Inhalte",
-      "text": "Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
-    },
     "s8": {
+      "title": "Haftung für Inhalte",
+      "text": "Als Diensteanbieter sind wir gemäß § 16 ECG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Gemäß §§ 13 bis 17 ECG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen."
+    },
+    "s9": {
       "title": "Haftung für Links",
       "text": "Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich."
     },
-    "s9": {
+    "s10": {
       "title": "Urheberrecht",
-      "text": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers."
+      "text": "Die durch den Verein erstellten Inhalte und Werke auf diesen Seiten unterliegen dem österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des Vereins."
+    },
+    "s11": {
+      "title": "Anwendbares Recht und Gerichtsstand",
+      "text": "Es gilt österreichisches Recht. Gerichtsstand ist [wird nach Gründung ergänzt]."
     }
   },
-
   "widerruf": {
     "title": "Widerrufsbelehrung",
     "s1": {
       "title": "Widerrufsrecht",
       "p1": "Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.",
       "p2": "Die Widerrufsfrist beträgt vierzehn Tage ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.",
-      "p3": "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z.\u00a0B. per E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren:",
-      "contact": "Auryx AI LLC\nE-Mail: info@austriaimperial.com",
+      "p3": "Um Ihr Widerrufsrecht auszuüben, müssen Sie uns mittels einer eindeutigen Erklärung (z. B. per E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren:",
+      "contact": "Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten\nE-Mail: info@austriaimperial.com",
       "p4": "Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden."
     },
     "s2": {
@@ -439,7 +460,7 @@
     "s5": {
       "title": "Muster-Widerrufsformular",
       "intro": "Wenn Sie den Vertrag widerrufen wollen, füllen Sie bitte dieses Formular aus und senden Sie es zurück:",
-      "to": "An: Auryx AI LLC, info@austriaimperial.com",
+      "to": "An: Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten, info@austriaimperial.com",
       "body": "Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren:",
       "orderedOn": "Bestellt am / erhalten am (*):",
       "consumerName": "Name des/der Verbraucher(s):",
@@ -448,13 +469,11 @@
       "footnote": "(*) Unzutreffendes streichen."
     }
   },
-
   "language": {
     "de": "DE",
     "en": "EN",
     "ar": "AR"
   },
-
   "admin": {
     "title": "AIGG Admin",
     "subtitle": "Green Gold Dashboard",
@@ -471,7 +490,11 @@
       "partners": "Partner",
       "producers": "Produzenten",
       "logout": "Abmelden",
-      "backToShop": "Zurück zum Shop"
+      "backToShop": "Zurück zum Shop",
+      "verein": "Vereinsfinanzen",
+      "mitglieder": "Mitglieder",
+      "studien": "Studienberichte",
+      "transactions": "Transaktionen"
     },
     "role": {
       "admin": "Administrator",
@@ -506,7 +529,7 @@
       "pendingFulfillments": "Offene Fulfillments",
       "total": "gesamt",
       "revenueWaterfall": "Revenue-Waterfall",
-      "auryx10": "Auryx 10%",
+      "auryx10": "Auryx",
       "peter": "Peter",
       "gottfried": "Gottfried",
       "recentOrders": "Letzte Bestellungen",
@@ -632,7 +655,7 @@
       "paymentFees": "Zahlungsgebühren (Stripe)",
       "customs": "Zoll",
       "totalCosts": "Gesamtkosten",
-      "auryxD2C": "Auryx AI (10% D2C)",
+      "auryxD2C": "Auryx Dienstleistung",
       "peter50Rest": "Peter (50% Rest)",
       "gottfried50Rest": "Gottfried (50% Rest)",
       "sales": "Verkäufe",
@@ -641,7 +664,7 @@
       "ytd": "Year-to-Date",
       "totalRevenueYtd": "Gesamtumsatz YTD",
       "grossProfitYtd": "Bruttogewinn YTD",
-      "auryxYtd": "Auryx AI YTD",
+      "auryxYtd": "Auryx Dienstleistung YTD",
       "peterYtd": "Peter YTD",
       "gottfriedYtd": "Gottfried YTD",
       "viewLedger": "Ledger ansehen",
@@ -793,6 +816,117 @@
     },
     "common": {
       "allStatuses": "Alle Status"
+    },
+    "verein": {
+      "title": "Vereinsfinanzen",
+      "subtitle": "Interne Finanztransaktionen des Vereins",
+      "totalBalance": "Gesamtvermögen",
+      "monthIncome": "Einnahmen (Monat)",
+      "monthExpense": "Ausgaben (Monat)",
+      "pendingCountersign": "Offene Gegenzeichnungen",
+      "transactions": "Transaktionen",
+      "addTransaction": "Neue Transaktion",
+      "noTransactions": "Noch keine Transaktionen erfasst.",
+      "date": "Datum",
+      "amount": "Betrag",
+      "category": "Kategorie",
+      "description": "Beschreibung",
+      "executedBy": "Durchgeführt von",
+      "countersigned": "Gegengezeichnet",
+      "countersign": "Gegenzeichnen",
+      "receipt": "Beleg",
+      "paymentMethod": "Zahlungsmethode",
+      "over1000": "Über €1.000",
+      "needsCountersign": "Gegenzeichnung erforderlich",
+      "pendingApproval": "Freigabe ausstehend",
+      "approved": "Freigegeben",
+      "income": "Einnahme",
+      "expense": "Ausgabe",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "categoryLabels": {
+        "produkte": "Produkte",
+        "reisen": "Reisen",
+        "equipment": "Equipment",
+        "dienstleistungen": "Dienstleistungen",
+        "auryx_rechnung": "Auryx-Rechnung",
+        "marketing": "Marketing",
+        "sonstiges": "Sonstiges"
+      },
+      "boardMemberLabels": {
+        "gottfried": "Gottfried (Obmann)",
+        "peter": "Peter (Kassier)"
+      },
+      "paymentMethodLabels": {
+        "karte_gottfried": "Karte Gottfried",
+        "karte_peter": "Karte Peter",
+        "ueberweisung": "Überweisung",
+        "bar": "Bar"
+      },
+      "byPerson": "Nach Person",
+      "byCategory": "Nach Kategorie",
+      "gottfriedTotal": "Gottfried gesamt",
+      "peterTotal": "Peter gesamt"
+    },
+    "mitglieder": {
+      "title": "Vereinsmitglieder",
+      "subtitle": "Mitglieder-Register gem. VerG 2002",
+      "totalMembers": "Mitglieder gesamt",
+      "activeMembers": "Aktive Mitglieder",
+      "addMember": "Neues Mitglied",
+      "noMembers": "Noch keine Mitglieder erfasst.",
+      "memberNumber": "Mitglieds-Nr.",
+      "name": "Name",
+      "email": "E-Mail",
+      "category": "Kategorie",
+      "joinDate": "Beitritt",
+      "status": "Status",
+      "notes": "Notizen",
+      "dataOrigin": "Herkunft",
+      "gdprConsent": "DSGVO-Einwilligung",
+      "save": "Speichern",
+      "cancel": "Abbrechen",
+      "categoryLabels": {
+        "ordentlich": "Ordentlich",
+        "foerder": "Fördermitglied",
+        "ausserordentlich": "Außerordentlich",
+        "ehren": "Ehrenmitglied"
+      },
+      "statusLabels": {
+        "aktiv": "Aktiv",
+        "ehemalig": "Ehemalig"
+      }
+    },
+    "studien": {
+      "title": "Studienberichte",
+      "subtitle": "Automatische Forschungsberichte zur KI-gestützten Vermarktung",
+      "totalReports": "Berichte gesamt",
+      "publishedReports": "Veröffentlicht",
+      "noReports": "Noch keine Studienberichte vorhanden.",
+      "reportId": "Bericht-ID",
+      "type": "Typ",
+      "period": "Zeitraum",
+      "revenue": "Umsatz",
+      "orders": "Bestellungen",
+      "status": "Status",
+      "summary": "Zusammenfassung",
+      "pdf": "PDF",
+      "typeLabels": {
+        "weekly": "Wochenbericht",
+        "monthly": "Monatsbericht",
+        "quarterly": "Quartalsbericht",
+        "yearly": "Jahresbericht"
+      },
+      "statusLabels": {
+        "draft": "Entwurf",
+        "final": "Finalisiert",
+        "published": "Veröffentlicht"
+      },
+      "noSummary": "Noch keine Zusammenfassung",
+      "viewPdf": "PDF ansehen",
+      "publish": "Veröffentlichen",
+      "avgOrderValue": "Ø Bestellwert",
+      "topContent": "Top-Content"
     }
   },
   "partner": {
