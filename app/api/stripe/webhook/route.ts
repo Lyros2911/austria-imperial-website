@@ -364,7 +364,9 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
       // Attribution tracking
       attributionSource: attribution.attributionSource,
       utmSource: attribution.utmSource,
+      utmMedium: attribution.utmMedium,
       utmCampaign: attribution.utmCampaign,
+      utmContent: attribution.utmContent,
     });
 
     // 2) Sync fulfillment orders (one per producer → separate product tables)

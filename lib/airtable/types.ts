@@ -24,7 +24,9 @@ export interface ShopBestellungenFields {
   // Attribution tracking
   Quelle?: string; // "instagram", "youtube", "direct"
   'UTM Source'?: string;
+  'UTM Medium'?: string;
   'UTM Campaign'?: string;
+  'UTM Content'?: string;
 }
 
 export interface ShopProductFields {

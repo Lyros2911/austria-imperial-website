@@ -75,7 +75,9 @@ export interface SyncOrderInput {
   // Attribution tracking
   attributionSource?: string;
   utmSource?: string;
+  utmMedium?: string;
   utmCampaign?: string;
+  utmContent?: string;
 }
 
 /**
@@ -106,7 +108,9 @@ export async function syncOrderToAirtable(
       // Attribution tracking
       Quelle: input.attributionSource || 'direct',
       'UTM Source': input.utmSource || '',
+      'UTM Medium': input.utmMedium || '',
       'UTM Campaign': input.utmCampaign || '',
+      'UTM Content': input.utmContent || '',
     };
 
     const result = await upsertByFormula<ShopBestellungenFields>(
