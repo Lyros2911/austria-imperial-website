@@ -4,10 +4,12 @@ import { Link } from '@/i18n/navigation';
 import NextLink from 'next/link';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { NewsletterSignup } from '@/components/newsletter-signup';
 
 export function Footer() {
   const t = useTranslations('footer');
   const tNav = useTranslations('nav');
+  const tNewsletter = useTranslations('newsletter');
 
   return (
     <footer className="border-t border-border-gold bg-surface">
@@ -32,6 +34,8 @@ export function Footer() {
             <h4 className="text-cream text-sm tracking-[0.2em] uppercase mb-4">{t('navigation')}</h4>
             <nav className="flex flex-col gap-2">
               <FooterLink href="/products">{tNav('products')}</FooterLink>
+              <FooterLink href="/expedition">{tNav('expedition')}</FooterLink>
+              <FooterLink href="/sponsoring">{tNav('sponsoring')}</FooterLink>
               <FooterLink href="/about">{tNav('about')}</FooterLink>
               <FooterLink href="/contact">{tNav('contact')}</FooterLink>
             </nav>
@@ -50,6 +54,15 @@ export function Footer() {
               </Link>
             </nav>
           </div>
+        </div>
+
+        {/* Newsletter */}
+        <div className="mt-12 pt-8 border-t border-border-gold">
+          <div className="text-center mb-6">
+            <h4 className="text-cream text-sm tracking-[0.2em] uppercase mb-2">{tNewsletter('title')}</h4>
+            <p className="text-muted text-sm">{tNewsletter('description')}</p>
+          </div>
+          <NewsletterSignup source="footer" />
         </div>
 
         {/* Bottom */}

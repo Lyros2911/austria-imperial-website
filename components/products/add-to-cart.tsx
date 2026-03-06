@@ -5,6 +5,7 @@ import { useCart } from '@/components/cart/cart-context';
 import { formatEurCents } from '@/lib/utils';
 import { ShoppingBag, Check } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { trackABEvent } from '@/lib/ab-tracking';
 
 interface ProductInfo {
   id: number;
@@ -53,6 +54,12 @@ export function AddToCartSection({
     );
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+
+    // A/B Test: Warenkorb-Event tracken
+    trackABEvent('add_to_cart', {
+      productSlug: product.slug,
+      metadata: { variantId: selected.id, sku: selected.sku, quantity },
+    });
   };
 
   return (

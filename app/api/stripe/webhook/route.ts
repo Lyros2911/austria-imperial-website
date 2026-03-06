@@ -25,6 +25,7 @@ import { sendOrderConfirmation, sendOrderNotification } from '@/lib/email/order-
 import { db } from '@/lib/db/drizzle';
 import { orders, fulfillmentOrders, orderItems, productVariants, products, financialLedger, auditLog, stripeWebhookEvents } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
+import { abEvents, abExperiments } from '@/lib/db/schema';
 import {
   syncOrderToAirtable,
   syncFulfillmentToAirtable,
@@ -237,9 +238,14 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
     referrerUrl: session.metadata?.referrer || undefined,
   };
 
+  // ─── A/B-Variante aus Session Metadata extrahieren ────────────
+  const abVariant = session.metadata?.ab_variant || undefined;
+  const abExperimentSlug = session.metadata?.ab_experiment || undefined;
+  const abVisitorId = session.metadata?.ab_visitor_id || undefined;
+
   console.log(
     `[Stripe Webhook] Attribution for ${session.id}: source=${attribution.attributionSource}, ` +
-    `utm_campaign=${attribution.utmCampaign || 'none'}`
+    `utm_campaign=${attribution.utmCampaign || 'none'}, ab_variant=${abVariant || 'none'}`
   );
 
   // Create the order atomically
@@ -269,12 +275,45 @@ async function handleCheckoutComplete(session: Stripe.Checkout.Session, eventId:
     locale: session.locale ?? 'de',
     // Attribution tracking
     ...attribution,
+    // A/B Testing
+    abVariant,
+    abExperimentSlug,
   });
 
   console.log(
     `[Stripe Webhook] Order created: ${result.orderNumber} ` +
     `(${result.fulfillmentOrderIds.length} fulfillment orders, ledger: ${result.ledgerId}, event: ${eventId})`
   );
+
+  // ─── A/B Test: Purchase-Event serverseitig erfassen (non-blocking) ──────
+  if (abVariant && abExperimentSlug && abVisitorId) {
+    try {
+      const experiment = await db.query.abExperiments.findFirst({
+        where: eq(abExperiments.slug, abExperimentSlug),
+      });
+      if (experiment) {
+        await db.insert(abEvents).values({
+          experimentId: experiment.id,
+          visitorId: abVisitorId,
+          variant: abVariant,
+          eventType: 'purchase',
+          metadata: {
+            orderId: result.orderId,
+            orderNumber: result.orderNumber,
+            totalCents: result.totalCents,
+          },
+        });
+        console.log(
+          `[Stripe Webhook] AB purchase event logged: variant=${abVariant}, order=${result.orderNumber}`
+        );
+      }
+    } catch (abErr) {
+      console.error(
+        '[Stripe Webhook] AB event logging failed (non-critical):',
+        abErr instanceof Error ? abErr.message : 'Unknown'
+      );
+    }
+  }
 
   // ─── Partner Commission berechnen (non-blocking) ──────
   try {

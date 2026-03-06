@@ -53,7 +53,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Check if this is a locale-prefixed admin route ──
-  const adminMatch = pathname.match(/^\/(de|en|ar)\/admin(\/.*)?$/);
+  const adminMatch = pathname.match(/^\/(de|en|ar|fr|it|es)\/admin(\/.*)?$/);
 
   if (adminMatch) {
     const locale = adminMatch[1];
@@ -85,7 +85,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Check if this is a locale-prefixed partner route ──
-  const partnerMatch = pathname.match(/^\/(de|en|ar)\/partner(\/.*)?$/);
+  const partnerMatch = pathname.match(/^\/(de|en|ar|fr|it|es)\/partner(\/.*)?$/);
 
   if (partnerMatch) {
     const locale = partnerMatch[1];

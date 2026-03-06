@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { ShoppingBag, Lock, ArrowLeft } from 'lucide-react';
 import { Link } from '@/i18n/navigation';
 import { useTranslations } from 'next-intl';
+import { trackABEvent } from '@/lib/ab-tracking';
 
 export default function CheckoutPage() {
   const { items, totalCents } = useCart();
@@ -33,6 +34,11 @@ export default function CheckoutPage() {
   const handleCheckout = async () => {
     setLoading(true);
     setError(null);
+
+    // A/B Test: Checkout-Start-Event tracken
+    trackABEvent('checkout_start', {
+      metadata: { itemCount: items.length, totalCents },
+    });
 
     try {
       const res = await fetch('/api/checkout', {

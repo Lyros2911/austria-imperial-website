@@ -30,6 +30,10 @@
     "widerruf": {
       "title": "Widerrufsbelehrung",
       "description": "Widerrufsbelehrung von Austria Imperial — Green Gold."
+    },
+    "expedition": {
+      "title": "Die Expedition — Austria Imperial Green Gold",
+      "description": "3 Jahre, 40+ Länder, 40+ Sprachen: Mobile Forschungsexpedition zu KI-gestützter Vermarktung und Übersetzung."
     }
   },
   "nav": {
@@ -37,7 +41,9 @@
     "about": "Über Uns",
     "contact": "Kontakt",
     "openCart": "Warenkorb öffnen",
-    "menu": "Menü"
+    "menu": "Menü",
+    "expedition": "Expedition",
+    "sponsoring": "Sponsoring"
   },
   "hero": {
     "tagline": "Steirische Spezialitäten seit Generationen",
@@ -64,6 +70,12 @@
         "title": "Sichere Bezahlung",
         "description": "Verschlüsselte Zahlung via Stripe. Visa, Mastercard, SEPA und mehr."
       }
+    },
+    "expedition": {
+      "tagline": "Coming Soon",
+      "title": "Mobile Forschungsexpedition 2026–2029",
+      "text": "3 Jahre, 40+ Länder, 40+ Sprachen — eine wissenschaftliche Feldexpedition durch Europa und Zentralasien.",
+      "cta": "Mehr erfahren"
     }
   },
   "products": {
@@ -178,6 +190,16 @@
         "title": "Tradition trifft Moderne",
         "text": "Überlieferte Handwerkskunst, verpackt für die heutige Zeit."
       }
+    },
+    "verein": {
+      "title": "Der Verein",
+      "p1": "Austria Imperial Green Gold ist ein eingetragener Verein mit Sitz in Wien, Österreich. Als gemeinnütziger Träger betreibt der Verein den Direktvertrieb steirischer Spezialitäten und führt wissenschaftliche Feldstudien zu KI-gestützter Vermarktung, Übersetzung und Performance durch.",
+      "p2": "Der Verein verbindet die Förderung regionaler Produzenten mit angewandter Forschung — ein Modell, das Tradition und Technologie vereint."
+    },
+    "expedition": {
+      "title": "Die Expedition",
+      "p1": "Ab 2026 startet der Verein eine 3-jährige mobile Forschungsexpedition durch 40+ Länder in Europa und Zentralasien. Im Fokus: KI-gestütztes Marketing, Echtzeit-Übersetzung in 40+ Sprachen und Performance-Tracking unter Expeditionsbedingungen.",
+      "cta": "Mehr zur Expedition"
     }
   },
   "contact": {
@@ -241,7 +263,7 @@
       "title": "§ 1 Geltungsbereich",
       "p1": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Bestellungen, die über den Online-Shop von Austria Imperial — Green Gold getätigt werden. Mit Ihrer Bestellung schließen Sie einen Kaufvertrag mit dem Verein Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten, vertreten durch den Vorstand (nachfolgend ‚Anbieter').",
       "p2": "Die AGB gelten in der zum Zeitpunkt der Bestellung gültigen Fassung. Abweichende Bedingungen des Kunden werden nicht anerkannt, es sei denn, der Anbieter stimmt ihrer Geltung ausdrücklich schriftlich zu.",
-      "p3": "Der Verein verfolgt gemeinnützige Zwecke. Der Produktverkauf dient der Durchführung einer wissenschaftlichen Feldstudie über die Wirkung von KI-generiertem Content auf den Absatz regionaler Spezialitäten (Nebenzweckprivileg gem. § 1 Abs. 2 VerG)."
+      "p3": "Der Verein verfolgt gemeinnützige Zwecke. Der Produktverkauf dient der Durchführung wissenschaftlicher Feldstudien über die Wirkung von KI-generiertem Content auf den Absatz regionaler Spezialitäten sowie der Erforschung von KI-Übersetzungssystemen, Leistungs- und Gesundheitsparametern und der KI-Landschaft in Europa (Nebenzweckprivileg gem. § 1 Abs. 2 VerG)."
     },
     "s2": {
       "title": "§ 2 Vertragsschluss",
@@ -347,10 +369,10 @@
       "stripeLink": "stripe.com/privacy"
     },
     "s7": {
-      "title": "7. Daten im Rahmen der Feldstudie",
-      "text1": "Der Verein führt eine wissenschaftliche Feldstudie durch, um zu erforschen, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst.",
-      "text2": "Im Rahmen dieser Studie werden Kaufdaten anonymisiert und aggregiert ausgewertet. Es werden keine personenbezogenen Daten in Studienberichten veröffentlicht. Die Auswertung erfolgt ausschließlich auf Basis zusammengefasster, nicht-rückverfolgbarer Kennzahlen (z. B. Gesamtumsatz, Bestellanzahl, durchschnittlicher Warenkorbwert pro Markt).",
-      "text3": "Rechtsgrundlage: Berechtigtes Interesse des Vereins an der Durchführung seiner satzungsmäßigen Forschungstätigkeit (Art. 6 Abs. 1 lit. f DSGVO). Für optionale Umfragen (Post-Purchase-Survey) holen wir Ihre ausdrückliche Einwilligung ein (Art. 6 Abs. 1 lit. a DSGVO).",
+      "title": "7. Daten im Rahmen der Feldstudien",
+      "text1": "Der Verein führt wissenschaftliche Feldstudien durch, um zu erforschen, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst. Die Forschung umfasst zusätzlich: KI-gestützte Echtzeit-Übersetzungssysteme im Feldversuch, Leistungsentwicklung und metabolische Marker unter mobilen Langzeitbedingungen sowie die Dokumentation der KI-Landschaft in Europa.",
+      "text2": "Im Rahmen dieser Studien werden Kaufdaten sowie ggf. Befragungsergebnisse anonymisiert und aggregiert ausgewertet. Es werden keine personenbezogenen Daten in Studienberichten veröffentlicht. Die Auswertung erfolgt ausschließlich auf Basis zusammengefasster, nicht-rückverfolgbarer Kennzahlen (z. B. Gesamtumsatz, Bestellanzahl, durchschnittlicher Warenkorbwert pro Markt, Plattform-Attribution).",
+      "text3": "Rechtsgrundlage: Berechtigtes Interesse des Vereins an der Durchführung seiner satzungsmäßigen Forschungstätigkeit (Art. 6 Abs. 1 lit. f DSGVO, § 2 Abs. 4–5 der Vereinsstatuten). Für optionale Umfragen (Post-Purchase-Survey) holen wir Ihre ausdrückliche Einwilligung ein (Art. 6 Abs. 1 lit. a DSGVO).",
       "text4": "Sie können der Nutzung Ihrer anonymisierten Kaufdaten für Forschungszwecke jederzeit widersprechen, indem Sie uns per E-Mail kontaktieren."
     },
     "s8": {
@@ -395,7 +417,7 @@
     },
     "s4": {
       "title": "Vereinszweck",
-      "text": "Wissenschaftliche und praxisnahe Erforschung, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst, insbesondere im englischsprachigen und arabischsprachigen Raum."
+      "text": "Wissenschaftliche und praxisnahe Erforschung, wie KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten beeinflusst. Die Forschungstätigkeit umfasst insbesondere: (a) KI-gestützte Vermarktung und Content-Erstellung, (b) Leistungsentwicklung und metabolische Marker unter mobilen Langzeitbedingungen, (c) strukturierte Ernährung und funktionelles Training im Expeditionskontext, (d) KI-gestützte Echtzeit-Übersetzungssysteme im Feldversuch, (e) Akzeptanz und Praxistauglichkeit von KI-Übersetzung in realen Verkaufssituationen, (f) Dokumentation der KI-Landschaft in Europa mit Relevanz für KMU. Alle erhobenen Daten werden anonymisiert und aggregiert verarbeitet und dienen ausschließlich gemeinnützigen Forschungszwecken (§ 2 Abs. 4–5 der Vereinsstatuten)."
     },
     "s5": {
       "title": "Umsatzsteuer",
@@ -472,7 +494,10 @@
   "language": {
     "de": "DE",
     "en": "EN",
-    "ar": "AR"
+    "ar": "AR",
+    "fr": "FR",
+    "it": "IT",
+    "es": "ES"
   },
   "admin": {
     "title": "AIGG Admin",
@@ -493,7 +518,9 @@
       "backToShop": "Zurück zum Shop",
       "verein": "Vereinsfinanzen",
       "mitglieder": "Mitglieder",
-      "studien": "Studienberichte",
+      "studien": "Studien",
+      "studienReports": "Berichte",
+      "abTests": "A/B Tests",
       "transactions": "Transaktionen"
     },
     "role": {
@@ -926,7 +953,32 @@
       "viewPdf": "PDF ansehen",
       "publish": "Veröffentlichen",
       "avgOrderValue": "Ø Bestellwert",
-      "topContent": "Top-Content"
+      "topContent": "Top-Content",
+      "export": "Export",
+      "auryxEngine": "Auryx Engine Umsatz",
+      "platforms": "Plattformen",
+      "activePlatforms": "aktive Quellen",
+      "platformPerformance": "Plattform-Performance",
+      "languageBreakdown": "Sprach-Aufschlüsselung",
+      "noData": "Keine Daten in diesem Zeitraum"
+    },
+    "abTests": {
+      "title": "A/B Tests — Avatar-Studie",
+      "subtitle": "Vergleich: Mit KI-Avatar vs. ohne Avatar auf Produktseiten",
+      "noExperiments": "Noch keine A/B-Experimente konfiguriert.",
+      "totalVisitors": "Besucher gesamt",
+      "conversionRate": "Conversion-Rate",
+      "revenueByVariant": "Umsatz nach Variante",
+      "significance": "Signifikanz",
+      "funnel": "Conversion-Funnel",
+      "variantA": "Variante A",
+      "variantB": "Variante B",
+      "pageViews": "Seitenaufrufe",
+      "avatarImpressions": "Avatar-Impressionen",
+      "addToCart": "In den Warenkorb",
+      "checkoutStart": "Checkout gestartet",
+      "purchases": "Käufe",
+      "studyNotice": "Daten werden anonymisiert erhoben. Die Studie wird vom AIGG Verein zur Erforschung KI-gestützter Vermarktung durchgeführt."
     }
   },
   "partner": {
@@ -1066,5 +1118,460 @@
     "common": {
       "loading": "Wird geladen..."
     }
+  },
+  "expedition": {
+    "meta": {
+      "title": "Die Expedition — Austria Imperial Green Gold",
+      "description": "3 Jahre, 40+ Länder, 40+ Sprachen: Die mobile Forschungsexpedition des AIGG Vereins zu KI-gestützter Vermarktung, Übersetzung und Performance."
+    },
+    "hero": {
+      "tagline": "Mobile Forschungsexpedition 2026–2029",
+      "title": "3 Jahre. 40+ Länder. 40+ Sprachen. Eine Studie.",
+      "subtitle": "Eine wissenschaftliche Feldexpedition durch Europa und Zentralasien — mit KI-gestützter Vermarktung, Echtzeit-Übersetzung und Performance-Tracking.",
+      "cta": "Route entdecken",
+      "ctaSecondary": "Sponsor werden"
+    },
+    "route": {
+      "tagline": "Die Route",
+      "title": "Die Route durch 40+ Länder",
+      "subtitle": "Von Österreich durch Südosteuropa, Westeuropa, das Baltikum, den Kaukasus bis nach Zentralasien.",
+      "phase1": {
+        "title": "Phase 1: Südosteuropa & Balkan",
+        "months": "Monate 1–3",
+        "countries": "Österreich, Slowenien, Kroatien, Bosnien, Montenegro, Albanien, Nordmazedonien, Griechenland",
+        "focus": "KI-Szene Ljubljana, KI-Übersetzung: Slowenisch, Kroatisch, Bosnisch, Albanisch, Griechisch"
+      },
+      "phase2": {
+        "title": "Phase 2: Westeuropa & Nordeuropa",
+        "months": "Monate 4–6",
+        "countries": "Italien, Frankreich, Spanien, Portugal, Belgien, Niederlande, Skandinavien",
+        "focus": "Premium-Märkte, EU AI Act Brüssel, Mistral AI Paris, KI-Hubs Amsterdam/Stockholm/Helsinki"
+      },
+      "phase3": {
+        "title": "Phase 3: Osteuropa & Baltikum",
+        "months": "Monate 7–8",
+        "countries": "Estland, Lettland, Litauen, Polen, Tschechien, Slowakei, Ungarn, Rumänien, Bulgarien",
+        "focus": "Estland = digitalisiertestes Land der Welt. KI-Übersetzung: 9+ seltene Sprachen"
+      },
+      "phase4": {
+        "title": "Phase 4: Türkei & Kaukasus",
+        "months": "Monate 9–10",
+        "countries": "Türkei (Istanbul, Kappadokien), Georgien, Armenien",
+        "focus": "Brücke Europa–Asien, kulturelle Schnittstelle"
+      },
+      "phase5": {
+        "title": "Phase 5: Zentralasien — Hauptfokus",
+        "months": "Monate 11–14",
+        "countries": "Usbekistan (Taschkent, Samarkand, Buchara), Kasachstan (Almaty, Astana), Kirgisistan (Bischkek, Issyk-Kul)",
+        "focus": "Härtester Test: Usbekisch, Kasachisch, Kirgisisch. Pferdekultur, Steppenpferde, Nomaden"
+      },
+      "phase6": {
+        "title": "Phase 6: Rückkehr",
+        "months": "Monate 15–18",
+        "countries": "Variante A: Russland (Nowosibirsk, Moskau, St. Petersburg) → Finnland → Österreich. Variante B: China (Xinjiang → Shanghai)",
+        "focus": "Finale Datenerhebung, Rückkehr und Auswertung"
+      }
+    },
+    "waves": {
+      "tagline": "3-Jahres-Studienprogramm",
+      "title": "3 Wellen durch 40+ Länder",
+      "subtitle": "Die Studie ist als mehrjähriges Expeditionsprogramm in drei Wellen konzipiert — mit Basisphasen in Österreich für Auswertung und Publikation.",
+      "items": {
+        "wave1": {
+          "title": "Welle 1: Europa → Zentralasien → Russland",
+          "period": "Oktober 2026 – April 2028 (18 Monate)",
+          "description": "30+ Länder, 30+ Sprachen. Südosteuropa, Westeuropa, Baltikum, Türkei, Kaukasus, Zentralasien, Russland."
+        },
+        "base1": {
+          "title": "Basisphase 1: Österreich",
+          "period": "April – Juni 2028 (3 Monate)",
+          "description": "Datenauswertung Welle 1, Zwischenbericht, Vorträge an Universitäten und Konferenzen, Sponsor-Reporting."
+        },
+        "wave2": {
+          "title": "Welle 2: China-Expedition",
+          "period": "Juli – Dezember 2028 (4–6 Monate)",
+          "description": "Xinjiang → Xi'an → Shanghai → Peking. 1,4 Mrd. Einwohner, größter Verbrauchermarkt der Welt."
+        },
+        "base2": {
+          "title": "Basisphase 2: Österreich",
+          "period": "Januar – März 2029 (2–3 Monate)",
+          "description": "Auswertung China-Daten, Vorbereitung Welle 3, Sponsor-Reporting und Akquise."
+        },
+        "wave3": {
+          "title": "Welle 3: Arabischer Raum",
+          "period": "Frühjahr 2029 (3–4 Monate)",
+          "description": "Jordanien → Saudi-Arabien → UAE → Oman. Aktivierung NUR bei geopolitischer Stabilisierung."
+        },
+        "conclusion": {
+          "title": "Abschluss: Gesamtauswertung",
+          "period": "Herbst 2029 (3 Monate)",
+          "description": "Abschlusspublikation, Vortragsreihe (TEDx, Universitäten, KI-Konferenzen), Archivierung aller Daten."
+        }
+      },
+      "budget": "Gesamtbudget: ca. EUR 735.000 — modular finanzierbar (Welle 1 separat startbar)"
+    },
+    "vehicles": {
+      "tagline": "Die Fahrzeuge",
+      "title": "Zwei mobile Forschungsstationen",
+      "sprinter": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 1",
+        "driver": "Gottfried",
+        "description": "Vollausbau als Wohn- und Bürofahrzeug. Mobiles Hauptquartier mit ergonomischem Arbeitsplatz, MacBook Pro 16\" M4 Max, externem Monitor, Starlink-Internet, Schlafbereich, Nasszelle, Thermomix TM7 Küche, 600W Solar, 300Ah LiFePO4."
+      },
+      "offroad": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 2",
+        "driver": "Peter",
+        "description": "IDENTISCH ausgebaut wie Sprinter 1. Zwei identische Fahrzeuge bedeuten: doppelte Sichtbarkeit für den Ausbauer-Sponsor, kompatible Ersatzteile und maximale Flexibilität."
+      }
+    },
+    "equipment": {
+      "tagline": "Das Equipment",
+      "title": "Technologie für 8K und KI",
+      "antigravity": {
+        "title": "Antigravity A1",
+        "spec": "360°-Drohne, 8K, unter 249g, FPV-Goggles",
+        "description": "Unsichtbar im Bild durch 360°-Aufnahme. Minimale Regulierung weltweit."
+      },
+      "hovelair": {
+        "title": "HOVERAir X1 PROMAX",
+        "spec": "2x, 8K, 192g, Palm-Start, Follow-Speed 42 km/h",
+        "description": "Eine pro Fahrzeug. Kein Controller nötig, Tracking-Drohne für den Alltag."
+      },
+      "macbook": {
+        "title": "MacBook Pro 16\" M4 Max",
+        "spec": "2x, 128GB Unified Memory, 4TB SSD",
+        "description": "Für 8K/360°-Videobearbeitung und lokale KI-Inference unterwegs."
+      },
+      "insta360": {
+        "title": "Insta360 X5",
+        "spec": "360°-Kamera, 8K",
+        "description": "Immersive 360°-Dokumentation der gesamten Expedition."
+      },
+      "sony": {
+        "title": "Sony A7C II",
+        "spec": "2x, Vollformat 4K60",
+        "description": "Hauptkamera für professionelle Foto- und Videodokumentation der gesamten Expedition."
+      },
+      "gopro": {
+        "title": "GoPro Hero 13",
+        "spec": "2x, Action-Cam 5.3K",
+        "description": "Robuste Action-Kamera für Outdoor-Szenen, Pferdefütterung und spontane Aufnahmen."
+      },
+      "rode": {
+        "title": "RØDE Wireless PRO + NTG5",
+        "spec": "Professionelles Audio-Setup",
+        "description": "Kabellose Mikrofone und Richtrohr für Interviews, Tastings und Dokumentation."
+      },
+      "thermomix": {
+        "title": "Thermomix TM7",
+        "spec": "KI-Kochassistent Cookidoo",
+        "description": "Strukturierte Ernährung unterwegs — KI-gestütztes Kochen für Performance-Optimierung im Sprinter."
+      },
+      "garmin": {
+        "title": "Garmin Fenix 8",
+        "spec": "2x, 24/7 Performance-Tracking",
+        "description": "Laufendes Monitoring von HRV, Schlaf, Aktivität und GPS-Tracking über die gesamte Studiendauer."
+      },
+      "gimbal": {
+        "title": "DJI RS 4 Mini",
+        "spec": "2x, 3-Achsen-Gimbal",
+        "description": "Professionelle Videostabilisierung für stabilisierte Handaufnahmen in jeder Situation."
+      }
+    },
+    "research": {
+      "tagline": "Die Forschung",
+      "title": "21 Forschungsfragen in 4 Bereichen",
+      "categories": {
+        "marketing": "KI-gestütztes Marketing",
+        "translation": "KI-Übersetzung",
+        "performance": "Performance & Health",
+        "ai_landscape": "KI-Landschaft Europa"
+      },
+      "questions": {
+        "f1": {
+          "id": "F1",
+          "category": "marketing",
+          "question": "Wie beeinflusst KI-generierter Content den Absatz regionaler Spezialitäten in internationalen Märkten?"
+        },
+        "f2": {
+          "id": "F2",
+          "category": "marketing",
+          "question": "Welche Content-Formate (Text, Bild, Video) erzielen die höchste Conversion-Rate pro Plattform?"
+        },
+        "f3": {
+          "id": "F3",
+          "category": "marketing",
+          "question": "Wie unterscheidet sich die Wirkung von KI-Content zwischen verschiedenen Kulturräumen?"
+        },
+        "f4": {
+          "id": "F4",
+          "category": "marketing",
+          "question": "Kann ein Maskottchen-basierter Ansatz die Markenbekanntheit in neuen Märkten beschleunigen?"
+        },
+        "f5": {
+          "id": "F5",
+          "category": "marketing",
+          "question": "Welche Plattform (Instagram, YouTube, TikTok) liefert den höchsten ROI pro Markt?"
+        },
+        "f6": {
+          "id": "F6",
+          "category": "marketing",
+          "question": "Wie verändert sich die Content-Qualität bei steigender Automatisierung?"
+        },
+        "f7": {
+          "id": "F7",
+          "category": "marketing",
+          "question": "Lässt sich durch KI-Attribution der Zusammenhang zwischen Content und Umsatz exakt messen?"
+        },
+        "f8": {
+          "id": "F8",
+          "category": "marketing",
+          "question": "Wie reagieren B2B-Partner auf KI-generiertes Marketingmaterial?"
+        },
+        "f9": {
+          "id": "F9",
+          "category": "marketing",
+          "question": "Welchen Einfluss hat 360°-Video-Content auf die Kaufentscheidung?"
+        },
+        "f10": {
+          "id": "F10",
+          "category": "performance",
+          "question": "Wie entwickelt sich die körperliche Leistungsfähigkeit unter mobilen Langzeitbedingungen?"
+        },
+        "f11": {
+          "id": "F11",
+          "category": "performance",
+          "question": "Welche metabolischen Marker verändern sich im Verlauf einer mehrjährigen Expedition signifikant?"
+        },
+        "f12": {
+          "id": "F12",
+          "category": "performance",
+          "question": "Kann strukturierte Ernährung (Thermomix TM7) die Resilienz unter Expeditionsbedingungen stärken?"
+        },
+        "f13": {
+          "id": "F13",
+          "category": "performance",
+          "question": "Wie wirkt funktionelles Training auf Stressreaktionen im Expeditionsalltag?"
+        },
+        "f14": {
+          "id": "F14",
+          "category": "performance",
+          "question": "Welchen Einfluss haben unterschiedliche Klimazonen auf physiologische Parameter?"
+        },
+        "f15": {
+          "id": "F15",
+          "category": "performance",
+          "question": "Korreliert physische Disziplin mit unternehmerischer Leistungsfähigkeit?"
+        },
+        "f16": {
+          "id": "F16",
+          "category": "translation",
+          "question": "Kann KI-Übersetzung die Sprachbarriere als Export-Hindernis eliminieren?"
+        },
+        "f17": {
+          "id": "F17",
+          "category": "translation",
+          "question": "Wie groß sind die Qualitätsunterschiede zwischen Hauptsprachen und seltenen Sprachen?"
+        },
+        "f18": {
+          "id": "F18",
+          "category": "ai_landscape",
+          "question": "Wie wird KI in verschiedenen europäischen Regionen adoptiert und reguliert?"
+        },
+        "f19": {
+          "id": "F19",
+          "category": "marketing",
+          "question": "Wie effektiv sind KI-Avatare beim Verkauf regionaler Premium-Produkte im Vergleich zu herkömmlichen Produktdarstellungen?"
+        },
+        "f20": {
+          "id": "F20",
+          "category": "marketing",
+          "question": "Wie beeinflusst Avatar-Interaktion die Markenwahrnehmung und Kaufabschlussrate in verschiedenen Kulturen?"
+        },
+        "f21": {
+          "id": "F21",
+          "category": "marketing",
+          "question": "Sind KI-Avatare ein skalierbares Vertriebsmodell für den KMU-Export?"
+        }
+      }
+    },
+    "translation_study": {
+      "tagline": "KI-Übersetzungsstudie",
+      "title": "Echtzeit-Übersetzung in 40+ Sprachen",
+      "description": "Ein durchgängiger Forschungsstrang: KI-gestützte Echtzeit-Übersetzer im Feldversuch. Von Google Translate Live über DeepL Voice bis zu KI-Synchronisation — getestet in realen Verkaufssituationen.",
+      "tools": "Getestete Tools: Echtzeit-Sprachübersetzer, KI-Untertitelung für 360°-Videos, KI-generierte Produktbeschreibungen, KI-Synchronisation",
+      "metrics": "Pro Land dokumentiert: Genauigkeit, Kundenreaktion, Offline-Fähigkeit, Dialekte, Lebensmittel-Fachbegriffe, Vertrauenswirkung",
+      "languagesTitle": "Sprachen im Feldtest"
+    },
+    "performance": {
+      "tagline": "Performance & Health",
+      "title": "Körper und Geist unter Expeditionsbedingungen",
+      "description": "Sportmedizinische Baseline, laufendes Wearable-Tracking (HRV, Schlaf, Aktivität), strukturierte Ernährung, Bluttests alle 3–4 Monate, mobiles Training.",
+      "sponsoringTitle": "Sponsoring-Kategorien",
+      "categories": {
+        "sport": "Sport- & Trainingsausrüstung",
+        "wearables": "Wearables & Tracking-Technologie",
+        "supplements": "Nahrungsergänzung",
+        "outdoor": "Outdoor-Equipment",
+        "healthtech": "Gesundheitstechnologie",
+        "food": "Performance-Food-Marken",
+        "telemedizin": "Telemedizin-Anbieter",
+        "bloodtest": "Bluttest-Labore"
+      },
+      "cta": "Interesse als Sponsor? Kontaktieren Sie uns."
+    },
+    "geopolitical": {
+      "title": "Hinweis zur Route",
+      "text": "Der arabische Raum ist aufgrund der aktuellen geopolitischen Lage als Expeditionsgebiet vorübergehend zurückgestellt. Bestehende Netzwerke und Partnerschaften werden aufrechterhalten. Eine eigene Expeditionswelle (Welle 3) ist nach Stabilisierung der Lage vorgesehen."
+    },
+    "tracker": {
+      "tagline": "Live-Tracker",
+      "title": "Folgen Sie der Expedition in Echtzeit",
+      "description": "Während der Expedition werden hier Live-Updates, GPS-Positionen und Expedition-Berichte veröffentlicht.",
+      "comingSoon": "Verfügbar ab Expeditionsstart",
+      "newsletter": "Newsletter abonnieren für Updates"
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Expedition-Updates direkt in Ihr Postfach.",
+    "placeholder": "Ihre E-Mail-Adresse",
+    "submit": "Abonnieren",
+    "submitting": "Wird gesendet...",
+    "success": "Erfolgreich abonniert! Vielen Dank.",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es erneut.",
+    "alreadySubscribed": "Diese E-Mail-Adresse ist bereits abonniert.",
+    "privacy": "Wir respektieren Ihre Privatsphäre. Abmeldung jederzeit möglich."
+  },
+  "blog": {
+    "tagline": "Expeditions-Updates",
+    "title": "Blog",
+    "subtitle": "Neuigkeiten und Berichte rund um die Austria Imperial Forschungsexpedition.",
+    "readMore": "Weiterlesen",
+    "backToList": "Alle Beiträge",
+    "noPosts": "Noch keine Beiträge. Bleiben Sie dran!"
+  },
+  "sponsoring": {
+    "meta": {
+      "title": "Sponsoring — Austria Imperial Expedition",
+      "description": "Werden Sie Sponsor der Austria Imperial Forschungsexpedition — 3 Jahre, 40+ Länder, 40+ Sprachen."
+    },
+    "hero": {
+      "tagline": "Partner der Expedition",
+      "title": "Sponsoring-Partnerschaft",
+      "subtitle": "Begleiten Sie die Austria Imperial Forschungsexpedition als Sponsor — 3 Jahre durch 40+ Länder mit KI-gestützter Dokumentation, 360°-Content und wissenschaftlicher Forschung."
+    },
+    "categories": {
+      "tagline": "14 Sponsoring-Bereiche",
+      "title": "Sponsoring-Kategorien",
+      "subtitle": "Unsere Expedition bietet Sichtbarkeit in vierzehn spezialisierten Bereichen — jeder mit eigener Zielgruppe und Reichweite.",
+      "items": {
+        "cameras360": {
+          "title": "360°-Kameras",
+          "description": "Immersive 360°-Dokumentation der gesamten Expedition — Ihre Kamera als Fenster in 40+ Länder."
+        },
+        "drones": {
+          "title": "Drohnen",
+          "description": "Luftaufnahmen in 8K — Ihre Drohnentechnologie im täglichen Einsatz über 40+ Länder."
+        },
+        "wearables": {
+          "title": "Wearables & Tracking",
+          "description": "Laufendes Monitoring von HRV, Schlaf und Aktivität — Ihre Technologie als Forschungsinstrument."
+        },
+        "vehicle": {
+          "title": "Fahrzeug-Ausbauer",
+          "description": "Zwei identische Mercedes Sprinter 4x4 — Ihr Ausbau als fahrende Werbefläche auf 3 Kontinenten."
+        },
+        "internet": {
+          "title": "Internet & Konnektivität",
+          "description": "Zuverlässiges Internet weltweit — Ihre Lösung hält das mobile Forschungslabor verbunden."
+        },
+        "kitchen": {
+          "title": "Küchengeräte & Ernährung",
+          "description": "Strukturierte Ernährung on the road — Ihr Gerät als täglicher Begleiter im Performance-Modul."
+        },
+        "cameras": {
+          "title": "Kameras & Video",
+          "description": "Professionelle 4K/8K-Dokumentation — Ihre Kameratechnik im 3-Jahres-Langzeiteinsatz."
+        },
+        "sport": {
+          "title": "Sport- & Trainingsausrüstung",
+          "description": "Funktionelles Training unter Expeditionsbedingungen — Ihre Ausrüstung im täglichen Einsatz über 3 Jahre dokumentiert."
+        },
+        "supplements": {
+          "title": "Nahrungsergänzung",
+          "description": "Strukturierte Supplementierung unter extremen Reisebedingungen — wissenschaftlich dokumentiert."
+        },
+        "outdoor": {
+          "title": "Outdoor-Equipment",
+          "description": "Von Alpen bis Steppe — Ihre Ausrüstung im Langzeittest über verschiedene Klimazonen."
+        },
+        "telemedizin": {
+          "title": "Telemedizin-Anbieter",
+          "description": "Ärztliche Fernbetreuung über Grenzen und Zeitzonen — Ihre Plattform im Praxistest."
+        },
+        "bloodtest": {
+          "title": "Bluttest-Labore",
+          "description": "Regelmäßige Blutanalysen alle 3–4 Monate — Ihre Diagnostik als Forschungsgrundlage."
+        },
+        "audio": {
+          "title": "Audio-Equipment",
+          "description": "Professionelle Audio-Aufnahme in 40+ Ländern — Ihre Mikrofontechnik für Interviews und Dokumentation."
+        },
+        "software": {
+          "title": "Software & KI",
+          "description": "KI-gestützte Übersetzung und Content-Erstellung — Ihre Software als zentrales Forschungsinstrument."
+        }
+      }
+    },
+    "tiers": {
+      "tagline": "Partnerschafts-Level",
+      "title": "Sponsoring-Stufen",
+      "items": {
+        "presenting": {
+          "title": "Presenting Partner",
+          "description": "Maximale Sichtbarkeit als Hauptsponsor der Expedition — Ihr Logo auf allen Fahrzeugen und in jedem Content.",
+          "benefits": {
+            "0": "Logo auf beiden Expeditionsfahrzeugen",
+            "1": "Nennung in allen 360°-Videos und Social Media Posts",
+            "2": "Exklusiver Zugang zu Forschungsergebnissen und Daten"
+          }
+        },
+        "category": {
+          "title": "Category Partner",
+          "description": "Exklusivität in Ihrer Sponsoring-Kategorie — keine Konkurrenzmarke in Ihrem Bereich.",
+          "benefits": {
+            "0": "Exklusivrecht in einer der 14 Kategorien",
+            "1": "Regelmäßige Content-Erwähnungen und Produkttests",
+            "2": "Quartalsberichte mit Nutzungsdaten und Reichweite"
+          }
+        },
+        "equipment": {
+          "title": "Equipment Partner",
+          "description": "Sachleistungen statt Geld — Ihre Produkte im täglichen Einsatz, dokumentiert und geteilt.",
+          "benefits": {
+            "0": "Produktplatzierung in Expedition-Content",
+            "1": "Ehrliche Langzeit-Reviews nach Expeditionsende",
+            "2": "Social Media Tags und Verlinkungen"
+          }
+        }
+      }
+    },
+    "partners": {
+      "tagline": "Unsere Partner",
+      "title": "Expedition-Partner",
+      "comingSoon": "Platz verfügbar"
+    },
+    "cta": {
+      "title": "Interesse an einer Sponsoring-Partnerschaft?",
+      "description": "Wir freuen uns über Ihr Interesse an der Austria Imperial Forschungsexpedition. Kontaktieren Sie uns für ein unverbindliches Gespräch über Partnerschaftsmöglichkeiten.",
+      "button": "Kontakt aufnehmen"
+    }
+  },
+  "studyNotice": {
+    "text": "Diese Produktseite ist Teil einer wissenschaftlichen Studie des AIGG Vereins zur Erforschung KI-gestützter Vermarktung. Es werden ausschließlich anonymisierte, nicht-personenbezogene Nutzungsdaten erhoben. Ihre Teilnahme ist freiwillig und hat keinen Einfluss auf Ihren Einkauf."
+  },
+  "mascot": {
+    "studyBadge": "KI-Studie"
   }
 }

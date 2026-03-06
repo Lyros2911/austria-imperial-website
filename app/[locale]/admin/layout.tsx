@@ -72,8 +72,16 @@ function buildNavigation(role: string, t: (key: string) => string): NavItem[] {
     ],
   });
 
-  // Studienberichte
-  nav.push({ label: t('nav.studien'), href: '/admin/studien', icon: GraduationCap });
+  // Studien (Berichte + A/B Tests)
+  nav.push({
+    label: t('nav.studien'),
+    href: '/admin/studien',
+    icon: GraduationCap,
+    children: [
+      { label: t('nav.studienReports'), href: '/admin/studien' },
+      { label: t('nav.abTests'), href: '/admin/studien/ab-tests' },
+    ],
+  });
 
   // Benutzerverwaltung nur für Admins
   if (role === 'admin') {
@@ -184,7 +192,7 @@ function AdminSidebar({ onClose }: { onClose?: () => void }) {
                   <div className="ml-7 mt-0.5 space-y-0.5 border-l border-white/[0.06] pl-3">
                     {item.children.map((child) => {
                       const childActive =
-                        child.href === '/admin/accounting' || child.href === '/admin/verein'
+                        child.href === '/admin/accounting' || child.href === '/admin/verein' || child.href === '/admin/studien'
                           ? pathname === child.href
                           : pathname.startsWith(child.href);
                       return (

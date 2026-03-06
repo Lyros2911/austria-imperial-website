@@ -7,6 +7,7 @@ import { products, productVariants } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { ProductCard } from '@/components/products/product-card';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Compass } from 'lucide-react';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -107,6 +108,28 @@ export default async function HomePage({ params }: Props) {
               <ProductCard key={product.id} product={product} locale={locale} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ═══ Expedition Teaser ═══ */}
+      <section className="py-20 px-6 border-t border-border-gold">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-gold/60 text-xs tracking-[0.3em] uppercase mb-4">
+            {tHome('expedition.tagline')}
+          </p>
+          <h2 className="font-[var(--font-heading)] text-2xl sm:text-3xl text-cream font-semibold mb-4">
+            {tHome('expedition.title')}
+          </h2>
+          <p className="text-muted text-base max-w-xl mx-auto leading-relaxed mb-8">
+            {tHome('expedition.text')}
+          </p>
+          <Link
+            href="/expedition"
+            className="inline-flex items-center gap-2 border border-border-gold text-cream/70 hover:text-gold hover:border-gold/40 text-sm tracking-wide px-8 py-3 rounded transition-all duration-300"
+          >
+            <Compass className="w-4 h-4" />
+            {tHome('expedition.cta')}
+          </Link>
         </div>
       </section>
 

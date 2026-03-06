@@ -13,6 +13,7 @@ import { productVariants } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
 import { z } from 'zod';
 import { ATTRIBUTION_COOKIE, parseAttributionCookie } from '@/lib/attribution';
+import { AB_COOKIE, parseABCookie } from '@/lib/ab-testing';
 import { getConnectConfig, buildConnectCheckoutParams } from '@/lib/payments/connect';
 
 const checkoutSchema = z.object({
@@ -55,6 +56,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    // Prüfe ob alle Varianten aktiv sind
+    const inactiveVariants = variants.filter((v) => !v.isActive);
+    if (inactiveVariants.length > 0) {
+      return NextResponse.json(
+        { error: 'Ein oder mehrere Produkte sind derzeit nicht verfügbar.' },
+        { status: 400 }
+      );
+    }
+
     // Build Stripe line items — use stored price IDs when available, fall back to price_data
     const lineItems = items.map((item) => {
       const variant = variants.find((v) => v.id === item.variantId)!;
@@ -93,6 +103,12 @@ export async function POST(request: NextRequest) {
     const attrMatch = cookieHeader.match(new RegExp(`${ATTRIBUTION_COOKIE}=([^;]+)`));
     const attribution = parseAttributionCookie(
       attrMatch ? decodeURIComponent(attrMatch[1]) : undefined
+    );
+
+    // ─── A/B-Variante aus Cookie lesen ────────────────
+    const abMatch = cookieHeader.match(new RegExp(`${AB_COOKIE}=([^;]+)`));
+    const abAssignment = parseABCookie(
+      abMatch ? decodeURIComponent(abMatch[1]) : undefined
     );
 
     // ─── Stripe Connect: Check if this shop has a connected account ───
@@ -144,6 +160,10 @@ export async function POST(request: NextRequest) {
         utm_campaign: attribution?.utm_campaign || '',
         utm_content: attribution?.utm_content || '',
         referrer: attribution?.referrer || '',
+        // A/B Testing
+        ab_variant: abAssignment?.variant || '',
+        ab_experiment: abAssignment?.experimentSlug || '',
+        ab_visitor_id: abAssignment?.visitorId || '',
       },
       // Stripe Connect: application_fee + transfer_data (only if connected account exists)
       ...connectParams,

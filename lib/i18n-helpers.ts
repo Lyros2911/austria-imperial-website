@@ -9,11 +9,16 @@ export function getLocalizedField(
   field: string,
   locale: string
 ): string {
+  // Direct match for locales with DB columns
   if (locale === 'en') {
     return (entity[`${field}En`] as string) || (entity[`${field}De`] as string) || '';
   }
   if (locale === 'ar') {
     return (entity[`${field}Ar`] as string) || (entity[`${field}De`] as string) || '';
   }
-  return (entity[`${field}De`] as string) || '';
+  if (locale === 'de') {
+    return (entity[`${field}De`] as string) || '';
+  }
+  // FR, IT, ES: no dedicated DB columns yet → fall back to EN → DE
+  return (entity[`${field}En`] as string) || (entity[`${field}De`] as string) || '';
 }

@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from 'next/font/google';
 import { Suspense } from 'react';
 import './globals.css';
 import { AttributionCapture } from '@/components/attribution-capture';
+import { ABTestCapture } from '@/components/ab-test-capture';
 
 const playfair = Playfair_Display({
   variable: '--font-playfair',
@@ -49,6 +50,7 @@ export default function RootLayout({
       <body className={`${playfair.variable} ${inter.variable} antialiased grain`}>
         <Suspense fallback={null}>
           <AttributionCapture />
+          <ABTestCapture />
         </Suspense>
         {children}
       </body>

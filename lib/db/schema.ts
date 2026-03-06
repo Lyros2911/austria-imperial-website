@@ -248,6 +248,10 @@ export const orders = pgTable('orders', {
   utmContent: varchar('utm_content', { length: 255 }),
   referrerUrl: varchar('referrer_url', { length: 500 }),
 
+  // A/B Testing — Avatar-Studie
+  abVariant: varchar('ab_variant', { length: 20 }),          // 'A' oder 'B'
+  abExperimentSlug: varchar('ab_experiment_slug', { length: 50 }),  // z.B. 'avatar-v1'
+
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
 });
@@ -909,6 +913,74 @@ export const vereinsmitglieder = pgTable('vereinsmitglieder', {
 });
 
 // ============================================================
+// A/B TESTING: EXPERIMENTS
+// Konfiguration der A/B-Tests (Avatare vs. ohne Avatare)
+// Studie: KI-Avatar-Verkaufsstudie (AIGG Verein)
+// ============================================================
+
+export const abExperimentStatusEnum = pgEnum('ab_experiment_status', [
+  'draft',
+  'running',
+  'paused',
+  'completed',
+]);
+
+export const abEventTypeEnum = pgEnum('ab_event_type', [
+  'page_view',
+  'avatar_impression',
+  'avatar_click',
+  'add_to_cart',
+  'checkout_start',
+  'purchase',
+]);
+
+export const abExperiments = pgTable('ab_experiments', {
+  id: serial('id').primaryKey(),
+  slug: varchar('slug', { length: 50 }).notNull().unique(),
+  name: varchar('name', { length: 200 }).notNull(),
+  description: text('description'),
+  variantAName: varchar('variant_a_name', { length: 100 }).notNull().default('with_avatar'),
+  variantBName: varchar('variant_b_name', { length: 100 }).notNull().default('control'),
+  trafficPercent: integer('traffic_percent').notNull().default(50), // % assigned to variant A
+  status: abExperimentStatusEnum('status').notNull().default('draft'),
+  startedAt: timestamp('started_at'),
+  endedAt: timestamp('ended_at'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+  updatedAt: timestamp('updated_at').notNull().defaultNow(),
+});
+
+// ============================================================
+// A/B TESTING: EVENTS (APPEND-ONLY)
+// Anonyme Tracking-Events fuer A/B-Tests
+// Keine PII — nur anonyme Visitor-ID (UUID)
+// ============================================================
+
+export const abEvents = pgTable('ab_events', {
+  id: serial('id').primaryKey(),
+  experimentId: integer('experiment_id')
+    .notNull()
+    .references(() => abExperiments.id),
+  visitorId: varchar('visitor_id', { length: 36 }).notNull(), // UUID, keine PII
+  variant: varchar('variant', { length: 20 }).notNull(),       // 'A' oder 'B'
+  eventType: abEventTypeEnum('event_type').notNull(),
+  productSlug: varchar('product_slug', { length: 100 }),
+  locale: varchar('locale', { length: 10 }),
+  metadata: jsonb('metadata'),
+  createdAt: timestamp('created_at').notNull().defaultNow(),
+});
+
+export const abExperimentsRelations = relations(abExperiments, ({ many }) => ({
+  events: many(abEvents),
+}));
+
+export const abEventsRelations = relations(abEvents, ({ one }) => ({
+  experiment: one(abExperiments, {
+    fields: [abEvents.experimentId],
+    references: [abExperiments.id],
+  }),
+}));
+
+// ============================================================
 // TYPE EXPORTS
 // ============================================================
 
@@ -954,3 +1026,24 @@ export type Vereinsfinanz = typeof vereinsfinanzen.$inferSelect;
 export type NewVereinsfinanz = typeof vereinsfinanzen.$inferInsert;
 export type Vereinsmitglied = typeof vereinsmitglieder.$inferSelect;
 export type NewVereinsmitglied = typeof vereinsmitglieder.$inferInsert;
+
+// ============================================================
+// NEWSLETTER SUBSCRIBERS
+// ============================================================
+
+export const newsletterSubscribers = pgTable('newsletter_subscribers', {
+  id: serial('id').primaryKey(),
+  email: varchar('email', { length: 255 }).notNull().unique(),
+  locale: varchar('locale', { length: 10 }).notNull().default('de'),
+  source: varchar('source', { length: 50 }).notNull().default('website'),
+  subscribedAt: timestamp('subscribed_at').notNull().defaultNow(),
+  unsubscribedAt: timestamp('unsubscribed_at'),
+  isActive: boolean('is_active').notNull().default(true),
+});
+
+export type NewsletterSubscriber = typeof newsletterSubscribers.$inferSelect;
+export type NewNewsletterSubscriber = typeof newsletterSubscribers.$inferInsert;
+export type ABExperiment = typeof abExperiments.$inferSelect;
+export type NewABExperiment = typeof abExperiments.$inferInsert;
+export type ABEvent = typeof abEvents.$inferSelect;
+export type NewABEvent = typeof abEvents.$inferInsert;

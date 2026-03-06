@@ -1,0 +1,1577 @@
+{
+  "meta": {
+    "titleDefault": "Austria Imperial — Green Gold",
+    "titleTemplate": "%s | Austria Imperial",
+    "description": "Steirisches Kürbiskernöl g.g.A. premium e Kren della Stiria — autentiche specialita austriache direttamente dal produttore.",
+    "products": {
+      "title": "Prodotti",
+      "description": "Steirisches Kürbiskernöl g.g.A., Kren della Stiria e alimentazione animale naturale — le nostre specialita premium."
+    },
+    "about": {
+      "title": "Chi siamo",
+      "description": "La storia di Austria Imperial — autentiche specialita della Stiria."
+    },
+    "contact": {
+      "title": "Contatti",
+      "description": "Contattate Austria Imperial — Green Gold. Non vediamo l'ora di ricevere il vostro messaggio."
+    },
+    "agb": {
+      "title": "Condizioni generali di vendita",
+      "description": "CGV di Austria Imperial — Green Gold."
+    },
+    "datenschutz": {
+      "title": "Informativa sulla privacy",
+      "description": "Informativa sulla privacy di Austria Imperial — Green Gold."
+    },
+    "impressum": {
+      "title": "Note legali",
+      "description": "Note legali e identificazione del fornitore di Austria Imperial — Green Gold."
+    },
+    "widerruf": {
+      "title": "Diritto di recesso",
+      "description": "Informazioni sul diritto di recesso di Austria Imperial — Green Gold."
+    },
+    "expedition": {
+      "title": "La Spedizione — Austria Imperial Green Gold",
+      "description": "3 anni, 40+ paesi, 40+ lingue: Spedizione di ricerca mobile sul marketing e la traduzione assistiti dall'IA."
+    }
+  },
+  "nav": {
+    "products": "Prodotti",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "openCart": "Apri il carrello",
+    "menu": "Menu",
+    "expedition": "Spedizione",
+    "sponsoring": "Sponsoring"
+  },
+  "hero": {
+    "tagline": "Specialita della Stiria da generazioni",
+    "heading1": "Oro verde",
+    "heading2": "dalla Stiria",
+    "subheading": "Autentico Steirisches Kürbiskernöl g.g.A. e pregiato Kren della Stiria — direttamente dai nostri produttori a voi.",
+    "ctaProducts": "Scopri i prodotti",
+    "ctaStory": "La nostra storia",
+    "imageAlt": "Steirisches Kürbiskernöl g.g.A. — Austria Imperial Green Gold"
+  },
+  "home": {
+    "specialties": "Le nostre specialita",
+    "premiumProducts": "Prodotti premium",
+    "trust": {
+      "ggaCertified": {
+        "title": "Certificato g.g.A.",
+        "description": "Indicazione geografica protetta — origine garantita dalla Stiria."
+      },
+      "directProducer": {
+        "title": "Direttamente dal produttore",
+        "description": "Nessun intermediario. Dal frantoio e dal coltivatore di Kren direttamente a voi."
+      },
+      "securePayment": {
+        "title": "Pagamento sicuro",
+        "description": "Pagamento crittografato tramite Stripe. Visa, Mastercard, SEPA e altro."
+      }
+    },
+    "expedition": {
+      "tagline": "Coming Soon",
+      "title": "Spedizione di ricerca mobile 2026-2029",
+      "text": "3 anni, 40+ paesi, 40+ lingue — una spedizione scientifica sul campo attraverso l'Europa e l'Asia centrale.",
+      "cta": "Scopri di piu"
+    }
+  },
+  "products": {
+    "collection": "Collezione",
+    "title": "I nostri prodotti",
+    "subtitle": "Specialita austriache accuratamente selezionate — prodotte da produttori tradizionali in Stiria.",
+    "forHumans": "Per le persone",
+    "forHumansDesc": "Prodotti alimentari premium dalla Stiria — Kürbiskernöl con protezione g.g.A. e Kren naturalmente piccante.",
+    "forAnimals": "Per gli animali",
+    "forAnimalsDesc": "Integratore alimentare naturale a base di Kren della Stiria — in pellet per cavalli e cammelli.",
+    "from": "da",
+    "comingSoon": "Disponibile a breve",
+    "categories": {
+      "kernoel": "Kürbiskernöl",
+      "kren": "Kren",
+      "tiernahrung": "Alimentazione animale"
+    }
+  },
+  "productDetail": {
+    "categories": {
+      "kernoel": "Steirisches Kürbiskernöl",
+      "kren": "Kren della Stiria",
+      "tiernahrung": "Alimentazione animale naturale"
+    },
+    "ggaBadge": "Certificato g.g.A.",
+    "comingSoon": {
+      "title": "Disponibile a breve",
+      "description": "I prezzi e le opzioni di ordinazione saranno pubblicati a breve. Contattateci per preordini o ulteriori informazioni."
+    },
+    "origin": "Origine",
+    "originValue": "Stiria, Austria",
+    "producer": "Produttore",
+    "certification": "Certificazione",
+    "certificationValue": "g.g.A. (geschützte geographische Angabe — indicazione geografica protetta)",
+    "targetAudience": "Pubblico di destinazione",
+    "horses": "Cavalli",
+    "camels": "Cammelli",
+    "shipping": "Spedizione",
+    "shippingValue": "Entro 3-5 giorni lavorativi",
+    "producers": {
+      "kiendler": "Famiglia Kiendler",
+      "hernach": "Fattoria Hernach"
+    }
+  },
+  "addToCart": {
+    "selectSize": "Scegli la dimensione",
+    "inclVat": "IVA inclusa",
+    "addToCart": "Aggiungi al carrello",
+    "added": "Aggiunto"
+  },
+  "cart": {
+    "title": "Carrello",
+    "empty": "Il tuo carrello e vuoto",
+    "continueShopping": "Continua lo shopping →",
+    "subtotal": "Subtotale",
+    "shippingNote": "Le spese di spedizione saranno calcolate al checkout.",
+    "checkout": "Procedi al pagamento"
+  },
+  "checkout": {
+    "emptyCart": "Il tuo carrello e vuoto",
+    "backToProducts": "Torna ai prodotti",
+    "continueShopping": "Continua lo shopping",
+    "orderSummary": "Riepilogo dell'ordine",
+    "subtotal": "Subtotale",
+    "shipping": "Spedizione",
+    "shippingNote": "Calcolato nel passaggio successivo",
+    "total": "Totale",
+    "payWithStripe": "Paga in sicurezza con Stripe",
+    "redirecting": "Reindirizzamento in corso...",
+    "stripeRedirect": "Sarete reindirizzati a Stripe per completare il pagamento in sicurezza.",
+    "checkoutFailed": "Pagamento fallito",
+    "genericError": "Si e verificato un errore"
+  },
+  "checkoutSuccess": {
+    "thankYou": "Grazie mille!",
+    "orderPlaced": "Il vostro ordine e stato effettuato con successo. Riceverete a breve un'e-mail di conferma con tutti i dettagli.",
+    "orderRef": "Riferimento ordine:",
+    "whatsNext": "Cosa succede ora?",
+    "step1": "Il vostro ordine viene trasmesso ai nostri produttori.",
+    "step2": "Riceverete una notifica di spedizione con numero di tracciamento.",
+    "step3": "Consegna entro 3-5 giorni lavorativi.",
+    "discoverMore": "Scopri altri prodotti",
+    "loading": "Caricamento..."
+  },
+  "about": {
+    "tagline": "La nostra storia",
+    "heading": "Oro verde dalla Stiria",
+    "story": {
+      "p1": "La Stiria e una delle regioni gastronomiche piu affascinanti d'Europa. Dolci colline, terreni fertili e un clima mite creano condizioni ideali per prodotti di qualita eccezionale.",
+      "p2": "Austria Imperial — Green Gold vi porta questa tradizione direttamente: Steirisches Kürbiskernöl con indicazione geografica protetta (g.g.A.) e Kren coltivato secondo la tradizione."
+    },
+    "kernoel": {
+      "title": "Il Kürbiskernöl",
+      "p1": "Il nostro Kürbiskernöl proviene dal frantoio Kiendler nella Stiria meridionale. Qui da generazioni i semi di zucca della Stiria vengono spremuti a freddo secondo la tradizione. Il risultato: un olio verde scuro dal gusto intenso e nocciolato — l'« oro verde » della Stiria.",
+      "p2": "La denominazione d'origine protetta dall'UE g.g.A. (geschützte geographische Angabe — indicazione geografica protetta) garantisce che solo l'olio della Stiria possa portare questo nome. Ogni bottiglia e un pezzo di autentica cultura gastronomica austriaca."
+    },
+    "kren": {
+      "title": "Il Kren",
+      "p1": "Il Kren della Stiria (rafano) della famiglia Hernach viene coltivato con metodi collaudati e lavorato fresco. Il suo piccante e il suo aroma pieno lo rendono un accompagnamento indispensabile della cucina austriaca — che sia con il Tafelspitz, su un tagliere di salumi o per arricchire le salse."
+    },
+    "values": {
+      "title": "I nostri valori",
+      "directProducer": {
+        "title": "Direttamente dal produttore",
+        "text": "Nessun intermediario. I nostri prodotti arrivano direttamente dai produttori a voi."
+      },
+      "authenticOrigin": {
+        "title": "Origine autentica",
+        "text": "Qualita certificata dall'UE. Ogni prodotto e tracciabile fino al produttore."
+      },
+      "traditionModern": {
+        "title": "Tradizione incontra modernita",
+        "text": "Artigianato tramandato, confezionato per i tempi moderni."
+      }
+    },
+    "verein": {
+      "title": "L'associazione",
+      "p1": "Austria Imperial Green Gold e un'associazione registrata (Verein) con sede a Vienna, Austria. In qualita di ente senza scopo di lucro, l'associazione gestisce la vendita diretta di specialita della Stiria e conduce studi scientifici sul campo riguardanti il marketing, la traduzione e le performance assistiti dall'IA.",
+      "p2": "L'associazione combina la promozione dei produttori regionali con la ricerca applicata — un modello che unisce tradizione e tecnologia."
+    },
+    "expedition": {
+      "title": "La Spedizione",
+      "p1": "A partire dal 2026, l'associazione lancera una spedizione di ricerca mobile di 3 anni attraverso oltre 40 paesi in Europa e Asia centrale. Al centro: marketing assistito dall'IA, traduzione in tempo reale in oltre 40 lingue e monitoraggio delle performance in condizioni di spedizione.",
+      "cta": "Scopri di piu sulla Spedizione"
+    }
+  },
+  "contact": {
+    "tagline": "Contatti",
+    "heading": "Contattateci",
+    "subtitle": "Domande sui nostri prodotti, ordini all'ingrosso o collaborazioni? Non vediamo l'ora di ricevere il vostro messaggio.",
+    "email": {
+      "title": "E-mail",
+      "content": "info@austriaimperial.com",
+      "detail": "Rispondiamo generalmente entro 24 ore."
+    },
+    "b2b": {
+      "title": "Per clienti aziendali",
+      "content": "Richieste B2B benvenute",
+      "detail": "Ristoranti, gastronomie e rivenditori — contattateci per offerte e condizioni personalizzate."
+    },
+    "operator": {
+      "title": "Gestore",
+      "content": "Austria Imperial Green Gold — Verein (associazione)",
+      "detail": "Sede: Austria | info@austriaimperial.com"
+    },
+    "form": {
+      "title": "Invia un messaggio",
+      "name": "Nome",
+      "namePlaceholder": "Il vostro nome",
+      "email": "E-mail",
+      "emailPlaceholder": "vostra@email.com",
+      "subject": "Oggetto",
+      "subjectGeneral": "Richiesta generale",
+      "subjectOrder": "Domanda su un ordine",
+      "subjectB2b": "Cliente aziendale / B2B",
+      "subjectPress": "Stampa / Collaborazione",
+      "message": "Messaggio",
+      "messagePlaceholder": "Il vostro messaggio...",
+      "submit": "Invia messaggio",
+      "sending": "Invio in corso...",
+      "success": {
+        "title": "Messaggio inviato!",
+        "text": "Grazie per il vostro messaggio. Vi risponderemo entro 24 ore.",
+        "sendAnother": "Invia un altro messaggio"
+      },
+      "error": "Si e verificato un problema. Riprovate o scriveteci direttamente a info@austriaimperial.com",
+      "privacyConsent": "Inviando questo modulo, accettate la nostra <link>informativa sulla privacy</link>."
+    }
+  },
+  "footer": {
+    "description": "Autentiche specialita austriache direttamente dal produttore. Steirisches Kürbiskernöl g.g.A. e pregiato Kren.",
+    "navigation": "Navigazione",
+    "legal": "Note legali",
+    "impressum": "Note legali",
+    "datenschutz": "Privacy",
+    "agb": "CGV",
+    "widerruf": "Diritto di recesso",
+    "admin": "Admin",
+    "copyright": "© {year} Austria Imperial — Green Gold. Tutti i diritti riservati.",
+    "poweredBy": "Powered by"
+  },
+  "agb": {
+    "title": "Condizioni generali di vendita",
+    "s1": {
+      "title": "§ 1 Ambito di applicazione",
+      "p1": "Le presenti condizioni generali di vendita (CGV) si applicano a tutti gli ordini effettuati tramite il negozio online di Austria Imperial — Green Gold. Con il vostro ordine, stipulate un contratto di vendita con l'associazione Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten (associazione per la ricerca sul marketing di specialita regionali assistito dall'IA), rappresentata dal consiglio direttivo (di seguito « fornitore »).",
+      "p2": "Le CGV si applicano nella versione vigente al momento dell'ordine. Condizioni divergenti del cliente non sono riconosciute, salvo accordo scritto espresso del fornitore.",
+      "p3": "L'associazione persegue finalita di pubblica utilita. La vendita dei prodotti serve alla realizzazione di studi scientifici sul campo riguardanti l'effetto dei contenuti generati dall'IA sulle vendite di specialita regionali, nonche alla ricerca sui sistemi di traduzione IA, sui parametri di performance e salute e sul panorama dell'IA in Europa (Nebenzweckprivileg — privilegio di attivita accessoria ai sensi del § 1 comma 2 VerG)."
+    },
+    "s2": {
+      "title": "§ 2 Conclusione del contratto",
+      "p1": "La presentazione dei prodotti nel negozio online non costituisce un'offerta giuridicamente vincolante, ma un invito a effettuare un ordine.",
+      "p2": "Cliccando sul pulsante di ordine, effettuate un ordine vincolante dei prodotti contenuti nel carrello. La conferma di ricezione dell'ordine viene inviata immediatamente via e-mail (conferma d'ordine).",
+      "p3": "Il contratto di vendita si conclude quando la merce viene consegnata al corriere."
+    },
+    "s3": {
+      "title": "§ 3 Prezzi e spese di spedizione",
+      "p1": "Tutti i prezzi indicati sono prezzi finali e si intendono comprensivi dell'IVA legale, ove applicabile. Si applicano inoltre spese di spedizione, che vengono chiaramente indicate prima della conclusione dell'ordine."
+    },
+    "s4": {
+      "title": "§ 4 Pagamento",
+      "p1": "Il pagamento avviene tramite il fornitore di servizi di pagamento Stripe. Sono disponibili i seguenti metodi di pagamento: carta di credito (Visa, Mastercard), addebito diretto SEPA e altri metodi di pagamento offerti da Stripe.",
+      "p2": "L'importo della fattura viene addebitato al momento della ricezione dell'ordine."
+    },
+    "s5": {
+      "title": "§ 5 Consegna",
+      "p1": "La consegna viene effettuata direttamente dai nostri produttori all'indirizzo di consegna indicato dal cliente. Per ordini contenenti prodotti di diversi produttori, la consegna puo avvenire in piu pacchi.",
+      "p2": "I tempi di consegna sono generalmente di 3-7 giorni lavorativi all'interno dell'UE. Per consegne al di fuori dell'UE possono applicarsi tempi di consegna piu lunghi e costi doganali aggiuntivi."
+    },
+    "s6": {
+      "title": "§ 6 Riserva di proprieta (Eigentumsvorbehalt)",
+      "p1": "La merce consegnata rimane di proprieta dell'associazione fino al completo pagamento del prezzo di acquisto."
+    },
+    "s7": {
+      "title": "§ 7 Garanzia (Gewährleistung)",
+      "p1": "Si applicano i diritti di garanzia legali ai sensi dell'ABGB (Codice civile austriaco) e del KSchG (Legge sulla protezione dei consumatori). I prodotti alimentari sono esclusi dalla sostituzione se consegnati senza difetti e come descritto.",
+      "p2": "Vi preghiamo di controllare la merce immediatamente alla consegna per eventuali difetti evidenti. I reclami per difetti possono essere inviati via e-mail."
+    },
+    "s8": {
+      "title": "§ 8 Responsabilita (Haftung)",
+      "p1": "L'associazione risponde solo in caso di dolo e colpa grave. In caso di colpa lieve, l'associazione risponde solo per la violazione di obblighi contrattuali essenziali. La responsabilita e limitata al danno prevedibile tipico del contratto."
+    },
+    "s9": {
+      "title": "§ 9 Diritto di recesso (Widerrufsrecht)",
+      "p1": "I consumatori hanno diritto al recesso legale ai sensi del FAGG (Fern- und Auswärtsgeschäfte-Gesetz — legge sui contratti a distanza e fuori sede) e del KSchG (Konsumentenschutzgesetz — legge sulla protezione dei consumatori). Per i dettagli consultate le nostre informazioni sul diritto di recesso."
+    },
+    "s10": {
+      "title": "§ 10 Diritto applicabile",
+      "p1": "Si applica il diritto della Repubblica d'Austria, con esclusione della Convenzione delle Nazioni Unite sulla vendita internazionale di merci. Per i consumatori all'interno dell'UE, le disposizioni imperative di protezione dei consumatori del rispettivo paese di residenza restano impregiudicate."
+    },
+    "s11": {
+      "title": "§ 11 Disposizioni finali",
+      "p1": "Qualora singole disposizioni delle presenti CGV fossero o divenissero invalide, la validita delle restanti disposizioni non ne sara pregiudicata.",
+      "date": "Stato: marzo 2026"
+    }
+  },
+  "datenschutz": {
+    "title": "Informativa sulla privacy",
+    "s1": {
+      "title": "1. Protezione dei dati in breve",
+      "generalTitle": "Informazioni generali",
+      "generalText": "Le seguenti indicazioni forniscono una semplice panoramica di cosa succede ai vostri dati personali quando visitate questo sito web. I dati personali sono tutti i dati con i quali potete essere identificati personalmente.",
+      "collectionTitle": "Raccolta dati su questo sito",
+      "collectionText1": "Il trattamento dei dati su questo sito e effettuato dall'associazione Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten. I dati di contatto sono disponibili nelle note legali di questo sito.",
+      "collectionText2": "I vostri dati vengono raccolti in parte quando ce li comunicate (ad esempio in un modulo d'ordine). Altri dati vengono raccolti automaticamente o dopo il vostro consenso durante la visita del sito dai nostri sistemi informatici. Si tratta principalmente di dati tecnici (ad esempio browser, sistema operativo o ora della visita)."
+    },
+    "s2": {
+      "title": "2. Responsabile del trattamento",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten (associazione per la ricerca sul marketing di specialita regionali assistito dall'IA)",
+      "zvr": "ZVR-Zahl (numero di registro delle associazioni): [sara inserito dopo la fondazione dell'associazione]",
+      "address": "Sede: Austria\n[Indirizzo sara aggiunto dopo la fondazione]",
+      "obmann": "Obmann (presidente): Gottfried Hammerl",
+      "emailLabel": "E-mail:",
+      "email": "info@austriaimperial.com",
+      "text": "Il responsabile del trattamento e la persona fisica o giuridica che, da sola o insieme ad altri, decide le finalita e i mezzi del trattamento dei dati personali."
+    },
+    "s3": {
+      "title": "3. Responsabile del trattamento (Auftragsverarbeiter)",
+      "text1": "L'associazione si avvale di Auryx AI LLC come responsabile del trattamento ai sensi dell'art. 28 del GDPR per la gestione dell'infrastruttura tecnica (motore di contenuti, automazione, hosting).",
+      "text2": "Un contratto di trattamento (AV-Vertrag — Auftragsverarbeitungsvertrag) tra l'associazione e Auryx AI LLC regola il trattamento conforme alla protezione dei dati.",
+      "auryx": "Auryx AI LLC, 30 N Gould St Ste N, Sheridan, WY 82801, USA"
+    },
+    "s4": {
+      "title": "4. I vostri diritti",
+      "intro": "Avete in qualsiasi momento il diritto di:",
+      "rights": [
+        "Ottenere informazioni sui vostri dati personali memorizzati (art. 15 GDPR)",
+        "Richiedere la rettifica di dati inesatti (art. 16 GDPR)",
+        "Richiedere la cancellazione dei vostri dati (art. 17 GDPR)",
+        "Richiedere la limitazione del trattamento (art. 18 GDPR)",
+        "Richiedere la portabilita dei dati (art. 20 GDPR)",
+        "Opporvi al trattamento (art. 21 GDPR)",
+        "Revocare in qualsiasi momento un consenso prestato (art. 7 comma 3 GDPR)",
+        "Presentare reclamo all'autorita austriaca per la protezione dei dati (dsb.gv.at)"
+      ],
+      "outro": "Per questo e per qualsiasi altra domanda relativa alla protezione dei dati, potete contattarci in qualsiasi momento."
+    },
+    "s5": {
+      "title": "5. Raccolta dati su questo sito",
+      "serverLogsTitle": "File di log del server",
+      "serverLogsText1": "Il fornitore delle pagine raccoglie e memorizza automaticamente informazioni nei cosiddetti file di log del server che il vostro browser ci trasmette automaticamente. Si tratta di: tipo e versione del browser, sistema operativo utilizzato, URL di riferimento, nome host del computer accedente, ora della richiesta al server e indirizzo IP.",
+      "serverLogsText2": "Non viene effettuata alcuna unificazione di questi dati con altre fonti di dati. La base giuridica del trattamento dei dati e l'art. 6 comma 1 lett. f del GDPR (legittimo interesse alla messa a disposizione tecnica).",
+      "cookiesTitle": "Cookie",
+      "cookiesText": "Questo sito non utilizza cookie di tracciamento. Utilizziamo esclusivamente cookie tecnicamente necessari per il funzionamento del sito (ad esempio carrello, sessione). Base giuridica: art. 6 comma 1 lett. f del GDPR."
+    },
+    "s6": {
+      "title": "6. Ordini e gestione dei pagamenti",
+      "text1": "Quando effettuate un ordine presso di noi, raccogliamo i seguenti dati: nome, indirizzo e-mail, indirizzo di consegna, indirizzo di fatturazione e dettagli dell'ordine. Questi dati sono necessari per l'esecuzione del contratto (art. 6 comma 1 lett. b del GDPR).",
+      "text2": "La gestione dei pagamenti avviene tramite Stripe, Inc. (354 Oyster Point Blvd, South San Francisco, CA 94080, USA). Non riceviamo da Stripe dati di pagamento completi (ad esempio numeri di carta di credito). Stripe tratta i vostri dati di pagamento conformemente alla propria informativa sulla privacy:",
+      "stripeLink": "stripe.com/privacy"
+    },
+    "s7": {
+      "title": "7. Dati nell'ambito degli studi sul campo",
+      "text1": "L'associazione conduce studi scientifici sul campo per studiare come i contenuti generati dall'IA influenzano le vendite di specialita regionali sui mercati internazionali. La ricerca comprende inoltre: sistemi di traduzione in tempo reale assistiti dall'IA in condizioni reali, evoluzione delle performance e marcatori metabolici in condizioni mobili di lunga durata, nonche la documentazione del panorama dell'IA in Europa.",
+      "text2": "Nell'ambito di questi studi, i dati di acquisto e, se del caso, i risultati dei sondaggi vengono valutati in forma anonimizzata e aggregata. Non vengono pubblicati dati personali nei rapporti di studio. La valutazione si basa esclusivamente su indicatori aggregati e non tracciabili (ad esempio fatturato totale, numero di ordini, valore medio del carrello per mercato, attribuzione di piattaforma).",
+      "text3": "Base giuridica: legittimo interesse dell'associazione alla realizzazione delle sue attivita di ricerca statutarie (art. 6 comma 1 lett. f del GDPR, § 2 comma 4-5 dello statuto dell'associazione). Per i sondaggi opzionali (sondaggio post-acquisto), otteniamo il vostro consenso espresso (art. 6 comma 1 lett. a del GDPR).",
+      "text4": "Potete opporvi in qualsiasi momento all'utilizzo dei vostri dati di acquisto anonimizzati a fini di ricerca contattandoci via e-mail."
+    },
+    "s8": {
+      "title": "8. Trasmissione a terzi",
+      "text1": "I vostri dati vengono trasmessi ai nostri partner di fulfillment (produttori) nella misura in cui cio e necessario per l'esecuzione del contratto (consegna). Cio comprende: nome, indirizzo di consegna e dettagli dell'ordine.",
+      "text2": "Inoltre, i dati vengono trasmessi al responsabile del trattamento Auryx AI LLC (vedi sezione 3) per il trattamento tecnico.",
+      "text3": "Non avviene alcuna ulteriore trasmissione a terzi, salvo che siamo obbligati per legge."
+    },
+    "s9": {
+      "title": "9. Conservazione dei dati e concetto di cancellazione",
+      "text1": "I dati degli ordini vengono conservati per la durata dei termini di conservazione legali (7 anni ai sensi del § 132 BAO — Bundesabgabenordnung, codice tributario federale austriaco).",
+      "text2": "I dati dei potenziali clienti (ad esempio newsletter, modulo di contatto) vengono cancellati dopo 2 anni di inattivita.",
+      "text3": "I dati dei partecipanti agli studi (sondaggi opzionali) vengono completamente anonimizzati al termine dello studio.",
+      "text4": "Alla scadenza dei rispettivi termini, i dati personali vengono cancellati o anonimizzati in modo irreversibile."
+    },
+    "s10": {
+      "title": "10. Crittografia SSL/TLS",
+      "text": "Questo sito utilizza per motivi di sicurezza e per la protezione della trasmissione di contenuti riservati una crittografia SSL o TLS. Potete riconoscere una connessione crittografata dal fatto che la barra degli indirizzi del browser passa da 'http://' a 'https://'."
+    }
+  },
+  "impressum": {
+    "title": "Note legali",
+    "s1": {
+      "title": "Informazioni ai sensi del § 5 ECG e § 25 MedienG (diritto austriaco)",
+      "company": "Austria Imperial Green Gold",
+      "legalName": "Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten (associazione per la ricerca sul marketing di specialita regionali assistito dall'IA)",
+      "zvr": "ZVR-Zahl (numero di registro delle associazioni): [sara inserito dopo la fondazione dell'associazione]",
+      "address": "Sede: Austria\n[Indirizzo sara aggiunto dopo la fondazione]"
+    },
+    "s2": {
+      "title": "Contatti",
+      "emailLabel": "E-mail:",
+      "email": "info@austriaimperial.com",
+      "webLabel": "Web:",
+      "web": "www.austriaimperial.com"
+    },
+    "s3": {
+      "title": "Consiglio direttivo (Vorstand)",
+      "obmann": "Obmann (presidente) e segretario: Gottfried Hammerl",
+      "kassier": "Kassier (tesoriere) e vicepresidente: Peter Kräcksammer",
+      "vertretung": "Rappresentanza congiunta da entrambi i membri del consiglio"
+    },
+    "s4": {
+      "title": "Scopo dell'associazione (Vereinszweck)",
+      "text": "Ricerca scientifica e pratica su come i contenuti generati dall'IA influenzano le vendite di specialita regionali sui mercati internazionali. Le attivita di ricerca comprendono in particolare: (a) marketing e creazione di contenuti assistiti dall'IA, (b) evoluzione delle performance e marcatori metabolici in condizioni mobili di lunga durata, (c) alimentazione strutturata e allenamento funzionale in contesto di spedizione, (d) sistemi di traduzione in tempo reale assistiti dall'IA in condizioni reali, (e) accettazione e praticabilita della traduzione IA in situazioni di vendita reali, (f) documentazione del panorama dell'IA in Europa con rilevanza per le PMI. Tutti i dati raccolti vengono trattati in forma anonimizzata e aggregata e servono esclusivamente a scopi di ricerca di pubblica utilita (§ 2 comma 4-5 dello statuto dell'associazione)."
+    },
+    "s5": {
+      "title": "Imposta sul valore aggiunto (Umsatzsteuer)",
+      "text": "Sara completato dopo il chiarimento con il consulente fiscale (regime dei piccoli imprenditori — Kleinunternehmerregelung ai sensi del § 6 comma 1 Z 27 UStG o assoggettamento normale all'IVA)."
+    },
+    "s6": {
+      "title": "Responsabile del contenuto ai sensi del § 25 MedienG (legge austriaca sui media)",
+      "name": "Gottfried Hammerl (Obmann — presidente)",
+      "addressNote": "(Indirizzo come sopra)"
+    },
+    "s7": {
+      "title": "Risoluzione delle controversie online dell'UE",
+      "text1": "La Commissione europea mette a disposizione una piattaforma per la risoluzione online delle controversie (ODR):",
+      "link": "https://ec.europa.eu/consumers/odr/",
+      "text2": "Non siamo disposti ne obbligati a partecipare a procedure di risoluzione delle controversie davanti a un organismo di conciliazione per i consumatori."
+    },
+    "s8": {
+      "title": "Responsabilita per i contenuti",
+      "text": "In qualita di fornitore di servizi, siamo responsabili dei nostri contenuti su queste pagine ai sensi del § 16 ECG (legge austriaca sul commercio elettronico) e delle leggi generali. Ai sensi dei §§ 13-17 ECG, tuttavia, non siamo obbligati come fornitori di servizi a monitorare le informazioni trasmesse o memorizzate da terzi ne a ricercare circostanze che indichino un'attivita illegale."
+    },
+    "s9": {
+      "title": "Responsabilita per i link",
+      "text": "La nostra offerta contiene link a siti web esterni di terzi, sui cui contenuti non abbiamo alcuna influenza. Pertanto, non possiamo assumerci alcuna responsabilita per questi contenuti esterni. Il rispettivo fornitore o gestore delle pagine collegate e sempre responsabile dei loro contenuti."
+    },
+    "s10": {
+      "title": "Diritto d'autore (Urheberrecht)",
+      "text": "I contenuti e le opere creati dall'associazione su queste pagine sono soggetti al diritto d'autore austriaco. La riproduzione, l'elaborazione, la diffusione e qualsiasi forma di sfruttamento al di fuori dei limiti del diritto d'autore richiedono il consenso scritto dell'associazione."
+    },
+    "s11": {
+      "title": "Diritto applicabile e foro competente",
+      "text": "Si applica il diritto austriaco. Il foro competente e [sara completato dopo la fondazione]."
+    }
+  },
+  "widerruf": {
+    "title": "Diritto di recesso (Widerrufsbelehrung)",
+    "s1": {
+      "title": "Diritto di recesso (Widerrufsrecht)",
+      "p1": "Avete il diritto di recedere dal presente contratto entro quattordici giorni senza dover fornire alcuna motivazione.",
+      "p2": "Il termine di recesso e di quattordici giorni a decorrere dal giorno in cui voi o un terzo da voi designato, diverso dal vettore, avete preso possesso delle merci.",
+      "p3": "Per esercitare il vostro diritto di recesso, dovete informarci della vostra decisione di recedere dal presente contratto mediante una dichiarazione chiara (ad esempio via e-mail):",
+      "contact": "Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten\nE-mail: info@austriaimperial.com",
+      "p4": "Per rispettare il termine di recesso, e sufficiente che inviate la comunicazione relativa all'esercizio del diritto di recesso prima della scadenza del termine di recesso."
+    },
+    "s2": {
+      "title": "Conseguenze del recesso",
+      "p1": "Se recedete dal presente contratto, vi rimborseremo tutti i pagamenti che abbiamo ricevuto da voi, compresi i costi di consegna (ad eccezione dei costi aggiuntivi derivanti dalla vostra scelta di un tipo di consegna diverso dalla consegna standard piu economica da noi offerta), senza indebito ritardo e al piu tardi entro quattordici giorni dal giorno in cui siamo stati informati della vostra decisione di recedere dal presente contratto.",
+      "p2": "Per questo rimborso, utilizzeremo lo stesso mezzo di pagamento che avete utilizzato per la transazione originale, salvo diverso accordo espresso con voi. In nessun caso vi saranno addebitati costi a causa di questo rimborso.",
+      "p3": "Possiamo rifiutare il rimborso fino a quando non avremo ricevuto le merci restituite o fino a quando non avrete fornito la prova di averle rispedite, a seconda di quale evento si verifichi per primo."
+    },
+    "s3": {
+      "title": "Restituzione",
+      "p1": "Dovete rispedirci o consegnarci le merci senza indebito ritardo e in ogni caso al piu tardi entro quattordici giorni dal giorno in cui ci avete comunicato il recesso dal presente contratto. Il termine e rispettato se spedite le merci prima della scadenza del termine di quattordici giorni.",
+      "p2": "I costi diretti della restituzione delle merci sono a vostro carico."
+    },
+    "s4": {
+      "title": "Esclusione del diritto di recesso",
+      "p1": "Il diritto di recesso non sussiste per contratti di fornitura di merci che possono deteriorarsi rapidamente o la cui data di scadenza verrebbe rapidamente superata.",
+      "p2": "Il diritto di recesso si estingue per contratti di fornitura di merci sigillate che non si prestano alla restituzione per motivi di tutela della salute o dell'igiene, qualora il loro sigillo sia stato rimosso dopo la consegna.",
+      "p3note": "Nota:",
+      "p3": "Per i prodotti alimentari (Kürbiskernöl, Kren), il diritto di recesso e escluso non appena il sigillo della bottiglia o del barattolo e stato aperto."
+    },
+    "s5": {
+      "title": "Modulo tipo di recesso (Muster-Widerrufsformular)",
+      "intro": "Se desiderate recedere dal contratto, compilate questo modulo e rinviatecelo:",
+      "to": "A: Austria Imperial Green Gold — Verein zur Erforschung KI-gestützter Vermarktung regionaler Spezialitäten, info@austriaimperial.com",
+      "body": "Con la presente io/noi (*) revoco/revochiamo il contratto da me/noi (*) stipulato per l'acquisto delle seguenti merci:",
+      "orderedOn": "Ordinato il / ricevuto il (*):",
+      "consumerName": "Nome del/dei consumatore/i:",
+      "consumerAddress": "Indirizzo del/dei consumatore/i:",
+      "date": "Data:",
+      "footnote": "(*) Cancellare la dicitura non pertinente."
+    }
+  },
+  "language": {
+    "de": "DE",
+    "en": "EN",
+    "ar": "AR",
+    "fr": "FR",
+    "it": "IT",
+    "es": "ES"
+  },
+  "admin": {
+    "title": "AIGG Admin",
+    "subtitle": "Green Gold Dashboard",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Ordini",
+      "customers": "Clienti",
+      "fulfillment": "Fulfillment",
+      "accounting": "Contabilita",
+      "overview": "Panoramica",
+      "ledger": "Ledger",
+      "reports": "Report",
+      "users": "Utenti",
+      "partners": "Partner",
+      "producers": "Produttori",
+      "logout": "Disconnetti",
+      "backToShop": "Torna al negozio",
+      "verein": "Finanze dell'associazione",
+      "mitglieder": "Membri",
+      "studien": "Studi",
+      "studienReports": "Report",
+      "abTests": "A/B Tests",
+      "transactions": "Transazioni"
+    },
+    "role": {
+      "admin": "Amministratore",
+      "viewer": "Osservatore",
+      "producer": "Produttore"
+    },
+    "status": {
+      "pending": "In attesa",
+      "paid": "Pagato",
+      "processing": "In elaborazione",
+      "partially_shipped": "Parzialmente spedito",
+      "shipped": "Spedito",
+      "delivered": "Consegnato",
+      "cancelled": "Annullato",
+      "refunded": "Rimborsato"
+    },
+    "fulfillmentStatus": {
+      "pending": "In attesa",
+      "sent_to_producer": "Inviato al produttore",
+      "confirmed": "Confermato",
+      "shipped": "Spedito",
+      "delivered": "Consegnato",
+      "failed": "Fallito",
+      "cancelled": "Annullato"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Panoramica",
+      "ordersMonth": "Ordini (mese)",
+      "revenueMonth": "Fatturato (mese)",
+      "grossProfit": "Utile lordo",
+      "pendingFulfillments": "Fulfillment in attesa",
+      "total": "totale",
+      "revenueWaterfall": "Revenue-Waterfall",
+      "auryx10": "Auryx",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "recentOrders": "Ultimi ordini",
+      "viewAll": "Mostra tutto",
+      "noOrders": "Nessun ordine ancora"
+    },
+    "login": {
+      "title": "Admin Dashboard",
+      "brand": "Austria Imperial — Green Gold",
+      "email": "E-mail",
+      "password": "Password",
+      "submit": "Accedi",
+      "submitting": "Accesso in corso...",
+      "error": "Accesso fallito",
+      "genericError": "Si e verificato un errore",
+      "restricted": "Accesso riservato al personale autorizzato"
+    },
+    "orders": {
+      "title": "Ordini",
+      "totalCount": "{count} ordini totali",
+      "filter": "Filtra",
+      "resetFilter": "Reimposta filtro",
+      "noOrders": "Nessun ordine trovato",
+      "items": "Articoli",
+      "order": "Ordine",
+      "customer": "Cliente",
+      "status": "Stato",
+      "positions": "Posizioni",
+      "date": "Data",
+      "amount": "Importo",
+      "page": "Pagina",
+      "of": "di",
+      "previous": "Precedente",
+      "next": "Successivo"
+    },
+    "orderDetail": {
+      "backToOverview": "Torna alla panoramica",
+      "createdAt": "Creato il",
+      "shippingAddress": "Indirizzo di consegna",
+      "payment": "Pagamento",
+      "subtotal": "Subtotale",
+      "shipping": "Spedizione",
+      "total": "Totale",
+      "customer": "Cliente",
+      "accountId": "Account #{id}",
+      "guestOrder": "Ordine ospite",
+      "positions": "Posizioni",
+      "product": "Prodotto",
+      "producer": "Produttore",
+      "quantity": "Quantita",
+      "unitPrice": "Prezzo unitario",
+      "fulfillment": "Fulfillment",
+      "noFulfillment": "Nessun ordine di fulfillment",
+      "tracking": "Tracciamento",
+      "error": "Errore",
+      "retryAttempts": "Tentativi di ripetizione",
+      "ledgerEntries": "Registrazioni (Ledger)",
+      "type": "Tipo",
+      "revenue": "Fatturato",
+      "costs": "Costi",
+      "profit": "Utile",
+      "auryx": "Auryx",
+      "peterCol": "Peter",
+      "gottfriedCol": "Gottfried",
+      "dateCol": "Data"
+    },
+    "customers": {
+      "title": "Clienti",
+      "totalCount": "{count} clienti totali",
+      "totalStat": "Totale",
+      "accounts": "Account",
+      "guests": "Ospiti",
+      "totalRevenue": "Fatturato totale",
+      "noCustomers": "Nessun cliente ancora",
+      "name": "Nome",
+      "email": "E-mail",
+      "type": "Tipo",
+      "ordersCol": "Ordini",
+      "revenueCol": "Fatturato",
+      "lastOrder": "Ultimo ordine",
+      "account": "Account",
+      "guest": "Ospite"
+    },
+    "fulfillmentPage": {
+      "title": "Fulfillment",
+      "subtitle": "Gestisci ordini produttori",
+      "pending": "In attesa",
+      "failed": "Fallito",
+      "shipped": "Spedito",
+      "delivered": "Consegnato",
+      "activeOrders": "Ordini attivi",
+      "noActiveOrders": "Nessun ordine di fulfillment attivo",
+      "order": "Ordine",
+      "producerCol": "Produttore",
+      "statusCol": "Stato",
+      "trackingCol": "Tracciamento",
+      "createdCol": "Creato",
+      "retriesCol": "Tentativi"
+    },
+    "fulfillmentActions": {
+      "retry": "Riprova",
+      "sent": "Inviato",
+      "networkError": "Errore di rete",
+      "error": "Errore",
+      "updateStatusManually": "Aggiorna stato manualmente",
+      "trackingNumber": "Nr. tracciamento",
+      "trackingUrl": "URL tracciamento",
+      "save": "Salva"
+    },
+    "accounting": {
+      "title": "Contabilita",
+      "show": "Mostra",
+      "revenue": "Fatturato",
+      "grossProfit": "Utile lordo",
+      "margin": "Margine",
+      "peter50": "Peter (50%)",
+      "gottfried50": "Gottfried (50%)",
+      "costBreakdown": "Ripartizione dei costi",
+      "revenueBrutto": "Fatturato (lordo)",
+      "producerCosts": "Costi produttore",
+      "packaging": "Imballaggio",
+      "shippingCost": "Spedizione",
+      "paymentFees": "Commissioni di pagamento (Stripe)",
+      "customs": "Dogana",
+      "totalCosts": "Costi totali",
+      "auryxD2C": "Servizio Auryx",
+      "peter50Rest": "Peter (50% restante)",
+      "gottfried50Rest": "Gottfried (50% restante)",
+      "sales": "Vendite",
+      "refunds": "Rimborsi",
+      "entries": "Registrazioni",
+      "ytd": "Year-to-Date",
+      "totalRevenueYtd": "Fatturato totale YTD",
+      "grossProfitYtd": "Utile lordo YTD",
+      "auryxYtd": "Servizio Auryx YTD",
+      "peterYtd": "Peter YTD",
+      "gottfriedYtd": "Gottfried YTD",
+      "viewLedger": "Visualizza ledger",
+      "reports": "Report"
+    },
+    "ledger": {
+      "backToAccounting": "Torna alla contabilita",
+      "title": "Financial Ledger",
+      "entriesCount": "{count} registrazioni · Append-Only",
+      "csvExport": "Export CSV",
+      "filter": "Filtra",
+      "reset": "Reimposta",
+      "noEntries": "Nessuna registrazione trovata nel ledger",
+      "date": "Data",
+      "order": "Ordine",
+      "type": "Tipo",
+      "revenue": "Fatturato",
+      "producerCosts": "Costi prod.",
+      "shipping": "Spedizione",
+      "stripeFee": "Stripe Fee",
+      "profit": "Utile",
+      "auryx": "Auryx",
+      "peter": "Peter",
+      "gottfried": "Gottfried",
+      "page": "Pagina",
+      "of": "di",
+      "previous": "Precedente",
+      "next": "Successivo"
+    },
+    "reports": {
+      "backToAccounting": "Torna alla contabilita",
+      "title": "Report mensili",
+      "subtitle": "Report verificabili con integrita SHA256. Basati esclusivamente sul Financial Ledger.",
+      "generateNew": "Genera nuovo report",
+      "month": "Mese",
+      "year": "Anno",
+      "generating": "Generazione...",
+      "generate": "Genera",
+      "reportGenerated": "Report {period} generato. Hash: {hash}...",
+      "generationError": "Errore nella generazione",
+      "unknownError": "Errore sconosciuto",
+      "archiveNote": "In caso di nuova generazione, il report precedente viene archiviato (mai cancellato). Il nuovo report riceve un nuovo hash SHA256.",
+      "allReports": "Tutti i report",
+      "loadingReports": "Caricamento report...",
+      "noReports": "Nessun report generato finora",
+      "archived": "Archiviato",
+      "current": "Attuale",
+      "revenueLabel": "Fatturato",
+      "profitLabel": "Utile",
+      "peterLabel": "Peter",
+      "entriesLabel": "Registrazioni",
+      "by": "di",
+      "summaryCsv": "CSV Riepilogo",
+      "ledgerCsv": "CSV Ledger"
+    },
+    "users": {
+      "title": "Utenti",
+      "subtitle": "Gestisci accessi amministratore",
+      "newUser": "Nuovo utente",
+      "createUser": "Crea nuovo utente",
+      "emailLabel": "E-mail",
+      "nameLabel": "Nome",
+      "passwordLabel": "Password",
+      "roleLabel": "Ruolo",
+      "emailPlaceholder": "utente@esempio.com",
+      "namePlaceholder": "Nome e cognome",
+      "passwordPlaceholder": "Minimo 8 caratteri",
+      "roleViewer": "Osservatore (sola lettura)",
+      "roleAdmin": "Amministratore (accesso completo)",
+      "creating": "Creazione...",
+      "create": "Crea",
+      "cancel": "Annulla",
+      "loadingUsers": "Caricamento utenti...",
+      "noUsers": "Nessun utente creato",
+      "userCreated": "Utente {email} creato",
+      "createError": "Errore nella creazione",
+      "unknownError": "Errore sconosciuto",
+      "userReactivated": "Utente riattivato",
+      "userDeactivated": "Utente disattivato",
+      "passwordReset": "Password reimpostata",
+      "passwordMinLength": "La password deve avere almeno 8 caratteri",
+      "adminBadge": "Admin",
+      "viewerBadge": "Osservatore",
+      "deactivatedBadge": "Disattivato",
+      "createdAt": "Creato il",
+      "newPassword": "Nuova password",
+      "saving": "Salvataggio...",
+      "save": "Salva",
+      "passwordBtn": "Password",
+      "activate": "Attiva",
+      "deactivate": "Disattiva",
+      "roleProducer": "Produttore",
+      "producerBadge": "Produttore",
+      "producerLabel": "Produttore",
+      "selectProducer": "Seleziona produttore..."
+    },
+    "producerPortal": "Portale produttore",
+    "producerLabel": {
+      "kiendler": "Kiendler",
+      "hernach": "Hernach"
+    },
+    "producerDashboard": {
+      "fulfillmentOverview": "Panoramica fulfillment",
+      "monthlyOrders": "Ordini questo mese",
+      "openFulfillments": "Fulfillment in attesa",
+      "shippedPackages": "Pacchi spediti",
+      "failedOrders": "Falliti",
+      "recentFulfillments": "Fulfillment recenti",
+      "tracking": "Tracciamento"
+    },
+    "partners": {
+      "title": "Gestione partner",
+      "subtitle": "Gestisci partner B2B, utenti, documenti e listini prezzi",
+      "loading": "Caricamento partner...",
+      "noPartners": "Nessun partner configurato.",
+      "users": "Utenti",
+      "documents": "Documenti",
+      "priceList": "Listino prezzi",
+      "messages": "Messaggi",
+      "orders": "Ordini B2B",
+      "addUser": "Crea utente",
+      "uploadDoc": "Carica documento",
+      "sendMessage": "Invia messaggio",
+      "addPrice": "Aggiungi prezzo",
+      "commission": "Commissione",
+      "active": "Attivo",
+      "inactive": "Inattivo",
+      "lastLogin": "Ultimo accesso",
+      "never": "Mai",
+      "overview": "Panoramica",
+      "userCount": "Utenti",
+      "docCount": "Documenti",
+      "orderCount": "Ordini",
+      "status": "Stato",
+      "cancel": "Annulla",
+      "noUsers": "Nessun utente per questo partner.",
+      "noDocs": "Nessun documento caricato.",
+      "noMessages": "Nessun messaggio.",
+      "noOrders": "Nessun ordine B2B.",
+      "noPrices": "Nessun prezzo configurato.",
+      "userCreated": "Utente partner creato con successo.",
+      "userActivated": "Utente riattivato.",
+      "userDeactivated": "Utente disattivato.",
+      "docUploaded": "Voce documento creata.",
+      "messageSent": "Messaggio inviato.",
+      "priceAdded": "Voce listino prezzi aggiunta.",
+      "activate": "Attiva",
+      "deactivate": "Disattiva"
+    },
+    "common": {
+      "allStatuses": "Tutti gli stati"
+    },
+    "verein": {
+      "title": "Finanze dell'associazione",
+      "subtitle": "Transazioni finanziarie interne dell'associazione",
+      "totalBalance": "Patrimonio totale",
+      "monthIncome": "Entrate (mese)",
+      "monthExpense": "Uscite (mese)",
+      "pendingCountersign": "Controfirme in attesa",
+      "transactions": "Transazioni",
+      "addTransaction": "Nuova transazione",
+      "noTransactions": "Nessuna transazione registrata.",
+      "date": "Data",
+      "amount": "Importo",
+      "category": "Categoria",
+      "description": "Descrizione",
+      "executedBy": "Eseguito da",
+      "countersigned": "Controfirmato",
+      "countersign": "Controfirma",
+      "receipt": "Ricevuta",
+      "paymentMethod": "Metodo di pagamento",
+      "over1000": "Oltre 1.000 €",
+      "needsCountersign": "Controfirma necessaria",
+      "pendingApproval": "Approvazione in attesa",
+      "approved": "Approvato",
+      "income": "Entrata",
+      "expense": "Uscita",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "categoryLabels": {
+        "produkte": "Prodotti",
+        "reisen": "Viaggi",
+        "equipment": "Attrezzatura",
+        "dienstleistungen": "Servizi",
+        "auryx_rechnung": "Fattura Auryx",
+        "marketing": "Marketing",
+        "sonstiges": "Altro"
+      },
+      "boardMemberLabels": {
+        "gottfried": "Gottfried (Obmann — presidente)",
+        "peter": "Peter (Kassier — tesoriere)"
+      },
+      "paymentMethodLabels": {
+        "karte_gottfried": "Carta Gottfried",
+        "karte_peter": "Carta Peter",
+        "ueberweisung": "Bonifico",
+        "bar": "Contanti"
+      },
+      "byPerson": "Per persona",
+      "byCategory": "Per categoria",
+      "gottfriedTotal": "Gottfried totale",
+      "peterTotal": "Peter totale"
+    },
+    "mitglieder": {
+      "title": "Membri dell'associazione",
+      "subtitle": "Registro dei membri ai sensi del VerG 2002 (legge austriaca sulle associazioni)",
+      "totalMembers": "Membri totali",
+      "activeMembers": "Membri attivi",
+      "addMember": "Nuovo membro",
+      "noMembers": "Nessun membro registrato.",
+      "memberNumber": "Nr. membro",
+      "name": "Nome",
+      "email": "E-mail",
+      "category": "Categoria",
+      "joinDate": "Adesione",
+      "status": "Stato",
+      "notes": "Note",
+      "dataOrigin": "Origine",
+      "gdprConsent": "Consenso GDPR",
+      "save": "Salva",
+      "cancel": "Annulla",
+      "categoryLabels": {
+        "ordentlich": "Membro ordinario (ordentlich)",
+        "foerder": "Membro sostenitore (Fördermitglied)",
+        "ausserordentlich": "Membro straordinario (außerordentlich)",
+        "ehren": "Membro onorario (Ehrenmitglied)"
+      },
+      "statusLabels": {
+        "aktiv": "Attivo",
+        "ehemalig": "Ex membro"
+      }
+    },
+    "studien": {
+      "title": "Report degli studi",
+      "subtitle": "Report di ricerca automatici sul marketing assistito dall'IA",
+      "totalReports": "Report totali",
+      "publishedReports": "Pubblicati",
+      "noReports": "Nessun report di studio disponibile.",
+      "reportId": "ID report",
+      "type": "Tipo",
+      "period": "Periodo",
+      "revenue": "Fatturato",
+      "orders": "Ordini",
+      "status": "Stato",
+      "summary": "Riepilogo",
+      "pdf": "PDF",
+      "typeLabels": {
+        "weekly": "Report settimanale",
+        "monthly": "Report mensile",
+        "quarterly": "Report trimestrale",
+        "yearly": "Report annuale"
+      },
+      "statusLabels": {
+        "draft": "Bozza",
+        "final": "Finalizzato",
+        "published": "Pubblicato"
+      },
+      "noSummary": "Nessun riepilogo ancora",
+      "viewPdf": "Visualizza PDF",
+      "publish": "Pubblica",
+      "avgOrderValue": "Valore medio ordine",
+      "topContent": "Miglior contenuto",
+      "export": "Export",
+      "auryxEngine": "Fatturato Auryx Engine",
+      "platforms": "Piattaforme",
+      "activePlatforms": "fonti attive",
+      "platformPerformance": "Performance delle piattaforme",
+      "languageBreakdown": "Ripartizione per lingua",
+      "noData": "Nessun dato in questo periodo"
+    },
+    "abTests": {
+      "title": "A/B Tests — Studio Avatar",
+      "subtitle": "Confronto: con avatar IA vs. senza avatar sulle pagine prodotto",
+      "noExperiments": "Nessun esperimento A/B configurato.",
+      "totalVisitors": "Visitatori totali",
+      "conversionRate": "Tasso di conversione",
+      "revenueByVariant": "Fatturato per variante",
+      "significance": "Significativita",
+      "funnel": "Funnel di conversione",
+      "variantA": "Variante A",
+      "variantB": "Variante B",
+      "pageViews": "Visualizzazioni pagina",
+      "avatarImpressions": "Impressioni avatar",
+      "addToCart": "Aggiungi al carrello",
+      "checkoutStart": "Checkout avviato",
+      "purchases": "Acquisti",
+      "studyNotice": "I dati vengono raccolti in forma anonima. Lo studio e condotto dall'associazione AIGG per la ricerca sul marketing assistito dall'IA."
+    }
+  },
+  "partner": {
+    "title": "Portale partner",
+    "subtitle": "Austria Imperial Green Gold",
+    "comingSoon": "Disponibile a breve",
+    "comingSoonDescription": "Questa funzionalita e in fase di sviluppo e sara presto a vostra disposizione.",
+    "nav": {
+      "dashboard": "Dashboard",
+      "orders": "Ordini",
+      "documents": "Documenti",
+      "priceList": "Listino prezzi",
+      "messages": "Messaggi",
+      "newOrder": "Nuovo ordine",
+      "logout": "Disconnetti"
+    },
+    "login": {
+      "title": "Portale partner",
+      "subtitle": "Accedete con il vostro account partner",
+      "email": "Indirizzo e-mail",
+      "emailPlaceholder": "partner@azienda.com",
+      "password": "Password",
+      "signIn": "Accedi",
+      "signingIn": "Accesso in corso...",
+      "error": "Credenziali non valide",
+      "networkError": "Errore di connessione. Riprovate.",
+      "partnerAccess": "Solo per partner registrati"
+    },
+    "dashboard": {
+      "title": "Dashboard",
+      "overview": "Panoramica",
+      "totalOrders": "Ordini totali",
+      "thisMonth": "questo mese",
+      "activeShipments": "Spedizioni attive",
+      "ordersThisMonth": "Ordini questo mese",
+      "recentOrders": "Ultimi ordini",
+      "viewAll": "Mostra tutto",
+      "noOrders": "Nessun ordine ancora."
+    },
+    "orders": {
+      "title": "Ordini",
+      "totalCount": "{count, plural, =0 {Nessun ordine} one {# ordine} other {# ordini}}",
+      "order": "Ordine",
+      "status": "Stato",
+      "date": "Data",
+      "amount": "Importo",
+      "items": "Posizioni",
+      "noOrders": "Nessun ordine trovato.",
+      "fulfillments": "Consegne",
+      "page": "Pagina",
+      "of": "di",
+      "previous": "Precedente",
+      "next": "Successivo",
+      "statusLabels": {
+        "pending": "In attesa",
+        "paid": "Pagato",
+        "processing": "In elaborazione",
+        "partially_shipped": "Parzialmente spedito",
+        "shipped": "Spedito",
+        "delivered": "Consegnato",
+        "cancelled": "Annullato",
+        "refunded": "Rimborsato"
+      },
+      "fulfillmentStatus": {
+        "pending": "In attesa",
+        "sent_to_producer": "Inviato al produttore",
+        "confirmed": "Confermato",
+        "shipped": "Spedito",
+        "delivered": "Consegnato",
+        "failed": "Fallito",
+        "cancelled": "Annullato"
+      }
+    },
+    "documents": {
+      "title": "Documenti",
+      "noDocuments": "Nessun documento disponibile.",
+      "download": "Download",
+      "fileSize": "Dimensione",
+      "uploadedBy": "Caricato da",
+      "categories": {
+        "customs": "Documenti doganali",
+        "certificate": "Certificato",
+        "invoice": "Fattura",
+        "contract": "Contratto",
+        "other": "Altro"
+      }
+    },
+    "messages": {
+      "title": "Messaggi",
+      "newMessage": "Nuovo messaggio",
+      "noMessages": "Nessun messaggio.",
+      "you": "Voi",
+      "admin": "AIGG Admin",
+      "unread": "Non letto",
+      "compose": {
+        "subject": "Oggetto",
+        "subjectPlaceholder": "Inserire l'oggetto...",
+        "body": "Messaggio",
+        "bodyPlaceholder": "Il vostro messaggio...",
+        "send": "Invia",
+        "sending": "Invio in corso...",
+        "cancel": "Annulla"
+      }
+    },
+    "priceList": {
+      "title": "Listino prezzi",
+      "subtitle": "Prezzi B2B export attuali",
+      "product": "Prodotto",
+      "exportPrice": "Prezzo export",
+      "minQty": "Quantita minima",
+      "validFrom": "Valido dal",
+      "validUntil": "Valido fino al",
+      "addToOrder": "Ordina",
+      "noItems": "Nessun listino prezzi disponibile.",
+      "createOrder": "Crea ordine B2B",
+      "items": "Articoli",
+      "estimatedTotal": "Totale stimato"
+    },
+    "newOrder": {
+      "title": "Nuovo ordine B2B",
+      "product": "Prodotto",
+      "quantity": "Quantita",
+      "unitPrice": "Prezzo unitario",
+      "lineTotal": "Totale",
+      "remove": "Rimuovi",
+      "notes": "Note",
+      "notesPlaceholder": "Note opzionali sull'ordine...",
+      "orderTotal": "Totale ordine",
+      "submit": "Invia ordine",
+      "submitting": "Invio in corso...",
+      "success": "Ordine inviato!",
+      "successMessage": "Il vostro ordine B2B e stato trasmesso con successo.",
+      "viewOrders": "Visualizza ordini",
+      "noItems": "Nessun articolo selezionato.",
+      "addFromPriceList": "Aggiungi dal listino prezzi"
+    },
+    "common": {
+      "loading": "Caricamento..."
+    }
+  },
+  "expedition": {
+    "meta": {
+      "title": "La Spedizione — Austria Imperial Green Gold",
+      "description": "3 anni, 40+ paesi, 40+ lingue: La spedizione di ricerca mobile dell'associazione AIGG sul marketing, la traduzione e le performance assistiti dall'IA."
+    },
+    "hero": {
+      "tagline": "Spedizione di ricerca mobile 2026-2029",
+      "title": "3 anni. 40+ paesi. 40+ lingue. Uno studio.",
+      "subtitle": "Una spedizione scientifica sul campo attraverso l'Europa e l'Asia centrale — con marketing assistito dall'IA, traduzione in tempo reale e monitoraggio delle performance.",
+      "cta": "Scopri il percorso",
+      "ctaSecondary": "Diventa sponsor"
+    },
+    "route": {
+      "tagline": "Il percorso",
+      "title": "La rotta attraverso 40+ paesi",
+      "subtitle": "Dall'Austria attraverso l'Europa sudorientale, l'Europa occidentale, il Baltico, il Caucaso fino all'Asia centrale.",
+      "phase1": {
+        "title": "Fase 1: Europa sudorientale e Balcani",
+        "months": "Mesi 1-3",
+        "countries": "Austria, Slovenia, Croazia, Bosnia, Montenegro, Albania, Macedonia del Nord, Grecia",
+        "focus": "Scena IA Lubiana, traduzione IA: sloveno, croato, bosniaco, albanese, greco"
+      },
+      "phase2": {
+        "title": "Fase 2: Europa occidentale e settentrionale",
+        "months": "Mesi 4-6",
+        "countries": "Italia, Francia, Spagna, Portogallo, Belgio, Paesi Bassi, Scandinavia",
+        "focus": "Mercati premium, EU AI Act Bruxelles, Mistral AI Parigi, hub IA Amsterdam/Stoccolma/Helsinki"
+      },
+      "phase3": {
+        "title": "Fase 3: Europa orientale e Baltico",
+        "months": "Mesi 7-8",
+        "countries": "Estonia, Lettonia, Lituania, Polonia, Repubblica Ceca, Slovacchia, Ungheria, Romania, Bulgaria",
+        "focus": "Estonia = paese piu digitalizzato al mondo. Traduzione IA: 9+ lingue rare"
+      },
+      "phase4": {
+        "title": "Fase 4: Turchia e Caucaso",
+        "months": "Mesi 9-10",
+        "countries": "Turchia (Istanbul, Cappadocia), Georgia, Armenia",
+        "focus": "Ponte Europa-Asia, interfaccia culturale"
+      },
+      "phase5": {
+        "title": "Fase 5: Asia centrale — Focus principale",
+        "months": "Mesi 11-14",
+        "countries": "Uzbekistan (Tashkent, Samarcanda, Bukhara), Kazakistan (Almaty, Astana), Kirghizistan (Bishkek, Issyk-Kul)",
+        "focus": "Il test piu difficile: uzbeco, kazaco, kirghizo. Cultura equestre, cavalli delle steppe, nomadi"
+      },
+      "phase6": {
+        "title": "Fase 6: Ritorno",
+        "months": "Mesi 15-18",
+        "countries": "Variante A: Russia (Novosibirsk, Mosca, San Pietroburgo) → Finlandia → Austria. Variante B: Cina (Xinjiang → Shanghai)",
+        "focus": "Raccolta dati finale, ritorno e valutazione"
+      }
+    },
+    "waves": {
+      "tagline": "Programma di studio triennale",
+      "title": "3 ondate attraverso 40+ paesi",
+      "subtitle": "Lo studio e concepito come un programma di spedizione pluriennale in tre ondate — con fasi base in Austria per analisi e pubblicazione.",
+      "items": {
+        "wave1": {
+          "title": "Ondata 1: Europa → Asia centrale → Russia",
+          "period": "Ottobre 2026 – Aprile 2028 (18 mesi)",
+          "description": "30+ paesi, 30+ lingue. Europa sudorientale, Europa occidentale, Baltico, Turchia, Caucaso, Asia centrale, Russia."
+        },
+        "base1": {
+          "title": "Fase base 1: Austria",
+          "period": "Aprile – Giugno 2028 (3 mesi)",
+          "description": "Analisi dati Ondata 1, rapporto intermedio, conferenze presso universita, reporting sponsor."
+        },
+        "wave2": {
+          "title": "Ondata 2: Spedizione Cina",
+          "period": "Luglio – Dicembre 2028 (4–6 mesi)",
+          "description": "Xinjiang → Xi'an → Shanghai → Pechino. 1,4 miliardi di abitanti, il mercato consumer piu grande del mondo."
+        },
+        "base2": {
+          "title": "Fase base 2: Austria",
+          "period": "Gennaio – Marzo 2029 (2–3 mesi)",
+          "description": "Analisi dati Cina, preparazione Ondata 3, reporting e acquisizione sponsor."
+        },
+        "wave3": {
+          "title": "Ondata 3: Regione araba",
+          "period": "Primavera 2029 (3–4 mesi)",
+          "description": "Giordania → Arabia Saudita → EAU → Oman. Attivazione SOLO in caso di stabilizzazione geopolitica."
+        },
+        "conclusion": {
+          "title": "Conclusione: Analisi finale",
+          "period": "Autunno 2029 (3 mesi)",
+          "description": "Pubblicazione finale, serie di conferenze (TEDx, universita, conferenze IA), archiviazione di tutti i dati."
+        }
+      },
+      "budget": "Budget totale: ca. 735.000 EUR — finanziamento modulare possibile (Ondata 1 avviabile indipendentemente)"
+    },
+    "vehicles": {
+      "tagline": "I veicoli",
+      "title": "Due stazioni di ricerca mobili",
+      "sprinter": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 1",
+        "driver": "Gottfried",
+        "description": "Allestimento completo come veicolo abitabile e ufficio. Quartier generale mobile con postazione di lavoro ergonomica, MacBook Pro 16\" M4 Max, monitor esterno, internet Starlink, zona notte, bagno, cucina Thermomix TM7, 600W solare, 300Ah LiFePO4."
+      },
+      "offroad": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 2",
+        "driver": "Peter",
+        "description": "Allestimento IDENTICO allo Sprinter 1. Due veicoli identici significano: doppia visibilita per lo sponsor dell'allestimento, pezzi di ricambio compatibili e massima flessibilita."
+      }
+    },
+    "equipment": {
+      "tagline": "Le attrezzature",
+      "title": "Tecnologia per l'8K e l'IA",
+      "antigravity": {
+        "title": "Antigravity A1",
+        "spec": "Drone 360°, 8K, meno di 249g, visore FPV",
+        "description": "Invisibile nell'immagine grazie alla ripresa a 360°. Regolamentazione minima in tutto il mondo."
+      },
+      "hovelair": {
+        "title": "HOVERAir X1 PROMAX",
+        "spec": "2x, 8K, 192g, decollo dal palmo, velocita di inseguimento 42 km/h",
+        "description": "Uno per veicolo. Nessun controller necessario, drone di tracking per l'uso quotidiano."
+      },
+      "macbook": {
+        "title": "MacBook Pro 16\" M4 Max",
+        "spec": "2x, 128 GB di memoria unificata, SSD 4 TB",
+        "description": "Per l'editing video 8K/360° e l'inferenza IA locale in viaggio."
+      },
+      "insta360": {
+        "title": "Insta360 X5",
+        "spec": "Camera 360°, 8K",
+        "description": "Documentazione immersiva a 360° dell'intera spedizione."
+      },
+      "sony": {
+        "title": "Sony A7C II",
+        "spec": "2x, Full-Frame 4K60",
+        "description": "Fotocamera principale per la documentazione fotografica e video professionale dell'intera spedizione."
+      },
+      "gopro": {
+        "title": "GoPro Hero 13",
+        "spec": "2x, Action-Cam 5.3K",
+        "description": "Action camera robusta per scene all'aperto e riprese spontanee."
+      },
+      "rode": {
+        "title": "RØDE Wireless PRO + NTG5",
+        "spec": "Setup audio professionale",
+        "description": "Microfoni wireless e microfono direzionale per interviste, degustazioni e documentazione."
+      },
+      "thermomix": {
+        "title": "Thermomix TM7",
+        "spec": "Assistente di cucina IA Cookidoo",
+        "description": "Alimentazione strutturata in viaggio — cucina assistita dall'IA per l'ottimizzazione delle prestazioni."
+      },
+      "garmin": {
+        "title": "Garmin Fenix 8",
+        "spec": "2x, Monitoraggio prestazioni 24/7",
+        "description": "Monitoraggio continuo di HRV, sonno, attivita e tracciamento GPS per tutta la durata dello studio."
+      },
+      "gimbal": {
+        "title": "DJI RS 4 Mini",
+        "spec": "2x, Stabilizzatore 3 assi",
+        "description": "Stabilizzazione video professionale per riprese a mano fluide in ogni situazione."
+      }
+    },
+    "research": {
+      "tagline": "La ricerca",
+      "title": "21 domande di ricerca in 4 ambiti",
+      "categories": {
+        "marketing": "Marketing assistito dall'IA",
+        "translation": "Traduzione IA",
+        "performance": "Performance & Salute",
+        "ai_landscape": "Panorama dell'IA in Europa"
+      },
+      "questions": {
+        "f1": {
+          "id": "F1",
+          "category": "marketing",
+          "question": "Come influenzano i contenuti generati dall'IA le vendite di specialita regionali sui mercati internazionali?"
+        },
+        "f2": {
+          "id": "F2",
+          "category": "marketing",
+          "question": "Quali formati di contenuto (testo, immagine, video) ottengono il miglior tasso di conversione per piattaforma?"
+        },
+        "f3": {
+          "id": "F3",
+          "category": "marketing",
+          "question": "Come varia l'effetto dei contenuti IA tra diversi spazi culturali?"
+        },
+        "f4": {
+          "id": "F4",
+          "category": "marketing",
+          "question": "Un approccio basato sulle mascotte puo accelerare la notorieta del marchio sui nuovi mercati?"
+        },
+        "f5": {
+          "id": "F5",
+          "category": "marketing",
+          "question": "Quale piattaforma (Instagram, YouTube, TikTok) offre il miglior ROI per mercato?"
+        },
+        "f6": {
+          "id": "F6",
+          "category": "marketing",
+          "question": "Come evolve la qualita dei contenuti con un'automazione crescente?"
+        },
+        "f7": {
+          "id": "F7",
+          "category": "marketing",
+          "question": "L'attribuzione tramite IA consente di misurare con precisione il legame tra contenuti e fatturato?"
+        },
+        "f8": {
+          "id": "F8",
+          "category": "marketing",
+          "question": "Come reagiscono i partner B2B al materiale di marketing generato dall'IA?"
+        },
+        "f9": {
+          "id": "F9",
+          "category": "marketing",
+          "question": "Quale influenza ha il contenuto video a 360° sulla decisione di acquisto?"
+        },
+        "f10": {
+          "id": "F10",
+          "category": "performance",
+          "question": "Come si evolve la condizione fisica in condizioni mobili di lunga durata?"
+        },
+        "f11": {
+          "id": "F11",
+          "category": "performance",
+          "question": "Quali marcatori metabolici cambiano significativamente nel corso di una spedizione pluriennale?"
+        },
+        "f12": {
+          "id": "F12",
+          "category": "performance",
+          "question": "Un'alimentazione strutturata (Thermomix TM7) puo rafforzare la resilienza in condizioni di spedizione?"
+        },
+        "f13": {
+          "id": "F13",
+          "category": "performance",
+          "question": "Come agisce l'allenamento funzionale sulle reazioni allo stress nel quotidiano della spedizione?"
+        },
+        "f14": {
+          "id": "F14",
+          "category": "performance",
+          "question": "Quale influenza hanno le diverse zone climatiche sui parametri fisiologici?"
+        },
+        "f15": {
+          "id": "F15",
+          "category": "performance",
+          "question": "La disciplina fisica e correlata alla performance imprenditoriale?"
+        },
+        "f16": {
+          "id": "F16",
+          "category": "translation",
+          "question": "La traduzione IA puo eliminare la barriera linguistica come ostacolo all'esportazione?"
+        },
+        "f17": {
+          "id": "F17",
+          "category": "translation",
+          "question": "Quanto sono grandi le differenze di qualita tra lingue principali e lingue rare?"
+        },
+        "f18": {
+          "id": "F18",
+          "category": "ai_landscape",
+          "question": "Come viene adottata e regolata l'IA nelle diverse regioni europee?"
+        },
+        "f19": {
+          "id": "F19",
+          "category": "marketing",
+          "question": "Quanto sono efficaci gli avatar IA nella vendita di prodotti regionali premium rispetto alle presentazioni di prodotto tradizionali?"
+        },
+        "f20": {
+          "id": "F20",
+          "category": "marketing",
+          "question": "Come influenza l'interazione con un avatar la percezione del marchio e il tasso di conversione nelle diverse culture?"
+        },
+        "f21": {
+          "id": "F21",
+          "category": "marketing",
+          "question": "Gli avatar IA rappresentano un modello di vendita scalabile per l'export delle PMI?"
+        }
+      }
+    },
+    "translation_study": {
+      "tagline": "Studio sulla traduzione IA",
+      "title": "Traduzione in tempo reale in 40+ lingue",
+      "description": "Un filone di ricerca continuo: traduttori in tempo reale assistiti dall'IA in condizioni reali. Da Google Translate Live a DeepL Voice fino alla sincronizzazione IA — testati in situazioni di vendita reali.",
+      "tools": "Strumenti testati: traduttori vocali in tempo reale, sottotitolazione IA per video 360°, descrizioni di prodotti generate dall'IA, sincronizzazione IA",
+      "metrics": "Documentato per paese: precisione, reazione dei clienti, capacita offline, dialetti, terminologia alimentare, effetto fiducia",
+      "languagesTitle": "Lingue nel test sul campo"
+    },
+    "performance": {
+      "tagline": "Performance & Salute",
+      "title": "Corpo e mente in condizioni di spedizione",
+      "description": "Baseline di medicina sportiva, monitoraggio continuo con wearable (HRV, sonno, attivita), alimentazione strutturata, analisi del sangue ogni 3-4 mesi, allenamento mobile.",
+      "sponsoringTitle": "Categorie di sponsoring",
+      "categories": {
+        "sport": "Attrezzatura sportiva e da allenamento",
+        "wearables": "Wearable e tecnologia di tracking",
+        "supplements": "Integratori alimentari",
+        "outdoor": "Attrezzatura outdoor",
+        "healthtech": "Tecnologia sanitaria",
+        "food": "Marchi di nutrizione performance",
+        "telemedizin": "Fornitori di telemedicina",
+        "bloodtest": "Laboratori di analisi del sangue"
+      },
+      "cta": "Interessati come sponsor? Contattateci."
+    },
+    "geopolitical": {
+      "title": "Nota sul percorso",
+      "text": "La regione araba e temporaneamente posticipata come zona di spedizione a causa dell'attuale situazione geopolitica. Le reti e i partenariati esistenti vengono mantenuti. Un'ondata di spedizione dedicata (Ondata 3) e prevista dopo la stabilizzazione della situazione."
+    },
+    "tracker": {
+      "tagline": "Tracker in diretta",
+      "title": "Seguite la spedizione in tempo reale",
+      "description": "Durante la spedizione, qui verranno pubblicati aggiornamenti in diretta, posizioni GPS e rapporti di spedizione.",
+      "comingSoon": "Disponibile dall'inizio della spedizione",
+      "newsletter": "Iscrivetevi alla newsletter per gli aggiornamenti"
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Aggiornamenti sulla spedizione direttamente nella vostra casella di posta.",
+    "placeholder": "Il vostro indirizzo e-mail",
+    "submit": "Iscriviti",
+    "submitting": "Invio in corso...",
+    "success": "Iscrizione riuscita! Grazie mille.",
+    "error": "Si e verificato un errore. Riprovate.",
+    "alreadySubscribed": "Questo indirizzo e-mail e gia iscritto.",
+    "privacy": "Rispettiamo la vostra privacy. Cancellazione possibile in qualsiasi momento."
+  },
+  "blog": {
+    "tagline": "Aggiornamenti sulla spedizione",
+    "title": "Blog",
+    "subtitle": "Notizie e rapporti sulla spedizione di ricerca Austria Imperial.",
+    "readMore": "Continua a leggere",
+    "backToList": "Tutti gli articoli",
+    "noPosts": "Nessun articolo ancora. Restate sintonizzati!"
+  },
+  "sponsoring": {
+    "meta": {
+      "title": "Sponsoring — Spedizione Austria Imperial",
+      "description": "Diventate sponsor della spedizione di ricerca Austria Imperial — 3 anni, 40+ paesi, 40+ lingue."
+    },
+    "hero": {
+      "tagline": "Partner della spedizione",
+      "title": "Partnership di sponsoring",
+      "subtitle": "Accompagnate la spedizione di ricerca Austria Imperial come sponsor — 3 anni attraverso 40+ paesi con documentazione assistita dall'IA, contenuti 360° e ricerca scientifica."
+    },
+    "categories": {
+      "tagline": "14 ambiti di sponsoring",
+      "title": "Categorie di sponsoring",
+      "subtitle": "La nostra spedizione offre visibilita in quattordici ambiti specializzati — ciascuno con il proprio pubblico di destinazione e la propria portata.",
+      "items": {
+        "cameras360": {
+          "title": "Fotocamere 360°",
+          "description": "Documentazione immersiva a 360° dell'intera spedizione — la vostra fotocamera come finestra su 40+ paesi."
+        },
+        "drones": {
+          "title": "Droni",
+          "description": "Riprese aeree in 8K — la vostra tecnologia drone in uso quotidiano in 40+ paesi."
+        },
+        "wearables": {
+          "title": "Wearable e tracking",
+          "description": "Monitoraggio continuo di HRV, sonno e attivita — la vostra tecnologia come strumento di ricerca."
+        },
+        "vehicle": {
+          "title": "Allestitori di veicoli",
+          "description": "Due Mercedes Sprinter 4x4 identici — il vostro allestimento come cartellone pubblicitario su ruote su 3 continenti."
+        },
+        "internet": {
+          "title": "Internet e connettivita",
+          "description": "Internet affidabile in tutto il mondo — la vostra soluzione mantiene connesso il laboratorio di ricerca mobile."
+        },
+        "kitchen": {
+          "title": "Elettrodomestici da cucina e nutrizione",
+          "description": "Alimentazione strutturata in viaggio — il vostro apparecchio come compagno quotidiano nel modulo performance."
+        },
+        "cameras": {
+          "title": "Fotocamere e video",
+          "description": "Documentazione professionale 4K/8K — la vostra tecnologia fotografica in impiego a lungo termine di 3 anni."
+        },
+        "sport": {
+          "title": "Attrezzatura sportiva e da allenamento",
+          "description": "Allenamento funzionale in condizioni di spedizione — la vostra attrezzatura in uso quotidiano documentata per 3 anni."
+        },
+        "supplements": {
+          "title": "Integratori alimentari",
+          "description": "Integrazione strutturata in condizioni di viaggio estreme — documentata scientificamente."
+        },
+        "outdoor": {
+          "title": "Attrezzatura outdoor",
+          "description": "Dalle Alpi alla steppa — la vostra attrezzatura in test di lunga durata in diverse zone climatiche."
+        },
+        "telemedizin": {
+          "title": "Fornitori di telemedicina",
+          "description": "Assistenza medica a distanza oltre confini e fusi orari — la vostra piattaforma in test pratico."
+        },
+        "bloodtest": {
+          "title": "Laboratori di analisi del sangue",
+          "description": "Analisi del sangue regolari ogni 3-4 mesi — la vostra diagnostica come base di ricerca."
+        },
+        "audio": {
+          "title": "Attrezzatura audio",
+          "description": "Registrazione audio professionale in 40+ paesi — la vostra tecnologia microfonica per interviste e documentazione."
+        },
+        "software": {
+          "title": "Software e IA",
+          "description": "Traduzione e creazione di contenuti assistite dall'IA — il vostro software come strumento di ricerca centrale."
+        }
+      }
+    },
+    "tiers": {
+      "tagline": "Livelli di partnership",
+      "title": "Livelli di sponsoring",
+      "items": {
+        "presenting": {
+          "title": "Presenting Partner",
+          "description": "Massima visibilita come sponsor principale della spedizione — il vostro logo su tutti i veicoli e in ogni contenuto.",
+          "benefits": {
+            "0": "Logo su entrambi i veicoli della spedizione",
+            "1": "Menzione in tutti i video 360° e post sui social media",
+            "2": "Accesso esclusivo ai risultati della ricerca e ai dati"
+          }
+        },
+        "category": {
+          "title": "Category Partner",
+          "description": "Esclusivita nella vostra categoria di sponsoring — nessun marchio concorrente nel vostro ambito.",
+          "benefits": {
+            "0": "Diritto di esclusiva in una delle 14 categorie",
+            "1": "Menzioni regolari nei contenuti e test di prodotto",
+            "2": "Report trimestrali con dati di utilizzo e portata"
+          }
+        },
+        "equipment": {
+          "title": "Equipment Partner",
+          "description": "Prestazioni in natura invece di denaro — i vostri prodotti in uso quotidiano, documentati e condivisi.",
+          "benefits": {
+            "0": "Product placement nei contenuti della spedizione",
+            "1": "Recensioni oneste di lunga durata dopo la fine della spedizione",
+            "2": "Tag e link sui social media"
+          }
+        }
+      }
+    },
+    "partners": {
+      "tagline": "I nostri partner",
+      "title": "Partner della spedizione",
+      "comingSoon": "Posto disponibile"
+    },
+    "cta": {
+      "title": "Interessati a una partnership di sponsoring?",
+      "description": "Siamo lieti del vostro interesse per la spedizione di ricerca Austria Imperial. Contattateci per una conversazione senza impegno sulle possibilita di partnership.",
+      "button": "Contattateci"
+    }
+  },
+  "studyNotice": {
+    "text": "Questa pagina prodotto fa parte di uno studio scientifico dell'associazione AIGG per la ricerca sul marketing assistito dall'IA. Vengono raccolti esclusivamente dati di utilizzo anonimizzati e non personali. La vostra partecipazione e volontaria e non influisce sul vostro acquisto."
+  },
+  "mascot": {
+    "studyBadge": "Studio IA"
+  }
+}

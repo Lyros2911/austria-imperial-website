@@ -127,7 +127,14 @@ export async function POST(req: NextRequest) {
     }
 
     // Gather data from AIGG database
-    const [revenueResult, orderCountResult, topContentResult] = await Promise.all([
+    const [
+      revenueResult,
+      orderCountResult,
+      topContentResult,
+      platformBreakdown,
+      contentBreakdown,
+      languageBreakdown,
+    ] = await Promise.all([
       // Total revenue for period
       db
         .select({
@@ -161,6 +168,53 @@ export async function POST(req: NextRequest) {
         .groupBy(products.nameDe)
         .orderBy(sql`SUM(${orderItems.quantity}) DESC`)
         .limit(1),
+
+      // Attribution: Revenue per platform (utm_source)
+      db
+        .select({
+          platform: sql<string>`COALESCE(${orders.utmSource}, ${orders.attributionSource}, 'direct')`,
+          orderCount: sql<number>`count(*)::int`,
+          revenueCents: sql<number>`COALESCE(SUM(${orders.totalCents}), 0)::int`,
+          avgOrderCents: sql<number>`COALESCE(AVG(${orders.totalCents}), 0)::int`,
+        })
+        .from(orders)
+        .where(and(gte(orders.createdAt, from), lte(orders.createdAt, to)))
+        .groupBy(sql`COALESCE(${orders.utmSource}, ${orders.attributionSource}, 'direct')`)
+        .orderBy(sql`SUM(${orders.totalCents}) DESC`),
+
+      // Attribution: Revenue per content piece (utm_content = output_id from engine)
+      db
+        .select({
+          contentId: orders.utmContent,
+          campaign: orders.utmCampaign,
+          platform: sql<string>`COALESCE(${orders.utmSource}, ${orders.attributionSource}, 'direct')`,
+          orderCount: sql<number>`count(*)::int`,
+          revenueCents: sql<number>`COALESCE(SUM(${orders.totalCents}), 0)::int`,
+        })
+        .from(orders)
+        .where(
+          and(
+            gte(orders.createdAt, from),
+            lte(orders.createdAt, to),
+            sql`${orders.utmContent} IS NOT NULL`
+          )
+        )
+        .groupBy(orders.utmContent, orders.utmCampaign, sql`COALESCE(${orders.utmSource}, ${orders.attributionSource}, 'direct')`)
+        .orderBy(sql`SUM(${orders.totalCents}) DESC`)
+        .limit(50),
+
+      // Language breakdown (locale → DE/EN/AR/etc.)
+      db
+        .select({
+          locale: orders.locale,
+          orderCount: sql<number>`count(*)::int`,
+          revenueCents: sql<number>`COALESCE(SUM(${orders.totalCents}), 0)::int`,
+          avgOrderCents: sql<number>`COALESCE(AVG(${orders.totalCents}), 0)::int`,
+        })
+        .from(orders)
+        .where(and(gte(orders.createdAt, from), lte(orders.createdAt, to)))
+        .groupBy(orders.locale)
+        .orderBy(sql`SUM(${orders.totalCents}) DESC`),
     ]);
 
     const revenue = revenueResult[0]?.revenue ?? 0;
@@ -168,9 +222,69 @@ export async function POST(req: NextRequest) {
     const avgOrderValue = orderCountResult[0]?.avgValue ?? 0;
     const topContent = topContentResult[0]?.productName ?? null;
 
-    // Generate AI summary (simple template, can be enhanced with Claude API later)
+    // Build contentMetrics: platform performance + individual content pieces
+    const contentMetrics = {
+      byPlatform: platformBreakdown.map((row) => ({
+        platform: row.platform,
+        orders: row.orderCount,
+        revenueCents: row.revenueCents,
+        avgOrderCents: row.avgOrderCents,
+        revenueShare: revenue > 0 ? Math.round((row.revenueCents / revenue) * 10000) / 100 : 0,
+      })),
+      byContent: contentBreakdown.map((row) => ({
+        contentId: row.contentId,
+        campaign: row.campaign,
+        platform: row.platform,
+        orders: row.orderCount,
+        revenueCents: row.revenueCents,
+      })),
+      auryxEngineOrders: platformBreakdown
+        .filter((row) => row.platform !== 'direct')
+        .reduce((sum, row) => sum + row.orderCount, 0),
+      auryxEngineRevenue: platformBreakdown
+        .filter((row) => row.platform !== 'direct')
+        .reduce((sum, row) => sum + row.revenueCents, 0),
+      directOrders: platformBreakdown.find((row) => row.platform === 'direct')?.orderCount ?? 0,
+      directRevenue: platformBreakdown.find((row) => row.platform === 'direct')?.revenueCents ?? 0,
+    };
+
+    // Build dataByLanguage: { de: {...}, en: {...}, ar: {...} }
+    const dataByLanguage: Record<string, object> = {};
+    for (const row of languageBreakdown) {
+      dataByLanguage[row.locale] = {
+        orders: row.orderCount,
+        revenueCents: row.revenueCents,
+        avgOrderCents: row.avgOrderCents,
+        revenueShare: revenue > 0 ? Math.round((row.revenueCents / revenue) * 10000) / 100 : 0,
+      };
+    }
+
+    // Build dataByMarket: group locales into market regions
+    const marketMapping: Record<string, string> = {
+      de: 'dach', en: 'english', ar: 'arabic',
+      fr: 'french', it: 'italian', es: 'spanish',
+      tr: 'turkish', ru: 'russian',
+    };
+    const dataByMarket: Record<string, { orders: number; revenueCents: number; avgOrderCents: number; revenueShare: number }> = {};
+    for (const row of languageBreakdown) {
+      const market = marketMapping[row.locale] ?? 'other';
+      if (!dataByMarket[market]) {
+        dataByMarket[market] = { orders: 0, revenueCents: 0, avgOrderCents: 0, revenueShare: 0 };
+      }
+      dataByMarket[market].orders += row.orderCount;
+      dataByMarket[market].revenueCents += row.revenueCents;
+    }
+    // Compute avg + share per market
+    for (const market of Object.keys(dataByMarket)) {
+      const m = dataByMarket[market];
+      m.avgOrderCents = m.orders > 0 ? Math.round(m.revenueCents / m.orders) : 0;
+      m.revenueShare = revenue > 0 ? Math.round((m.revenueCents / revenue) * 10000) / 100 : 0;
+    }
+
+    // Generate AI summary with attribution insights
     const periodLabel = `${from.toLocaleDateString('de-AT')} – ${to.toLocaleDateString('de-AT')}`;
     const typeLabel = type === 'weekly' ? 'Wochenbericht' : type === 'monthly' ? 'Monatsbericht' : type === 'quarterly' ? 'Quartalsbericht' : 'Jahresbericht';
+    const topPlatform = platformBreakdown.find((p) => p.platform !== 'direct');
     const aiSummary = [
       `${typeLabel} für den Zeitraum ${periodLabel}.`,
       orderCount > 0
@@ -180,6 +294,15 @@ export async function POST(req: NextRequest) {
         ? `Der durchschnittliche Bestellwert lag bei €${(avgOrderValue / 100).toFixed(2)}.`
         : '',
       topContent ? `Das meistverkaufte Produkt war: ${topContent}.` : '',
+      contentMetrics.auryxEngineOrders > 0
+        ? `Über die Auryx Content Engine kamen ${contentMetrics.auryxEngineOrders} Bestellungen (€${(contentMetrics.auryxEngineRevenue / 100).toFixed(2)}).`
+        : '',
+      topPlatform
+        ? `Stärkste Plattform: ${topPlatform.platform} mit ${topPlatform.orderCount} Bestellungen (€${(topPlatform.revenueCents / 100).toFixed(2)}).`
+        : '',
+      Object.keys(dataByLanguage).length > 1
+        ? `Bestellungen in ${Object.keys(dataByLanguage).length} Sprachen: ${Object.keys(dataByLanguage).join(', ').toUpperCase()}.`
+        : '',
     ]
       .filter(Boolean)
       .join(' ');
@@ -198,9 +321,9 @@ export async function POST(req: NextRequest) {
         topContent,
         aiSummary,
         status: 'draft',
-        dataByLanguage: null,
-        dataByMarket: null,
-        contentMetrics: null,
+        dataByLanguage,
+        dataByMarket,
+        contentMetrics,
       })
       .returning();
 

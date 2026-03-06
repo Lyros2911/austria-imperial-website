@@ -8,6 +8,48 @@
       "when": 1771235132959,
       "tag": "0000_melted_snowbird",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1771515966000,
+      "tag": "0001_add_stripe_webhook_events",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1772010043000,
+      "tag": "0002_attribution_tracking",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1772096004000,
+      "tag": "0003_partner_revenue",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1772096044000,
+      "tag": "0004_auryx_revenue_share",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1772619518000,
+      "tag": "0005_verein_tables",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1772791920000,
+      "tag": "0006_ab_testing",
+      "breakpoints": true
     }
   ]
 }

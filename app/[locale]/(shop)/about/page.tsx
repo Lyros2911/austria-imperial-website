@@ -1,4 +1,6 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { Link } from '@/i18n/navigation';
+import { Compass } from 'lucide-react';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -57,6 +59,34 @@ export default async function AboutPage({ params }: Props) {
               {t('kren.title')}
             </h2>
             <p>{t('kren.p1')}</p>
+          </section>
+
+          <div className="gold-line" />
+
+          {/* Verein */}
+          <section className="space-y-4">
+            <h2 className="font-[var(--font-heading)] text-2xl text-cream">
+              {t('verein.title')}
+            </h2>
+            <p>{t('verein.p1')}</p>
+            <p>{t('verein.p2')}</p>
+          </section>
+
+          <div className="gold-line" />
+
+          {/* Expedition */}
+          <section className="space-y-4">
+            <h2 className="font-[var(--font-heading)] text-2xl text-cream">
+              {t('expedition.title')}
+            </h2>
+            <p>{t('expedition.p1')}</p>
+            <Link
+              href="/expedition"
+              className="inline-flex items-center gap-2 text-gold hover:text-gold-light text-sm transition-colors"
+            >
+              <Compass className="w-4 h-4" />
+              {t('expedition.cta')}
+            </Link>
           </section>
 
           <div className="gold-line" />

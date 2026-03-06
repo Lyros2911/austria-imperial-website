@@ -41,6 +41,8 @@ export function Header() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-10">
             <NavLink href="/products">{t('products')}</NavLink>
+            <NavLink href="/expedition">{t('expedition')}</NavLink>
+            <NavLink href="/sponsoring">{t('sponsoring')}</NavLink>
             <NavLink href="/about">{t('about')}</NavLink>
             <NavLink href="/contact">{t('contact')}</NavLink>
           </nav>
@@ -94,6 +96,8 @@ export function Header() {
           <div className="md:hidden border-t border-border-gold bg-[var(--aigg-black)]/95 backdrop-blur-md animate-slide-down">
             <nav className="flex flex-col px-6 py-6 gap-4">
               <MobileNavLink href="/products" onClick={() => setMenuOpen(false)}>{t('products')}</MobileNavLink>
+              <MobileNavLink href="/expedition" onClick={() => setMenuOpen(false)}>{t('expedition')}</MobileNavLink>
+              <MobileNavLink href="/sponsoring" onClick={() => setMenuOpen(false)}>{t('sponsoring')}</MobileNavLink>
               <MobileNavLink href="/about" onClick={() => setMenuOpen(false)}>{t('about')}</MobileNavLink>
               <MobileNavLink href="/contact" onClick={() => setMenuOpen(false)}>{t('contact')}</MobileNavLink>
 

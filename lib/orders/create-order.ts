@@ -71,6 +71,9 @@ export interface CreateOrderInput {
   utmCampaign?: string;
   utmContent?: string;
   referrerUrl?: string;
+  // A/B Testing — Avatar-Studie
+  abVariant?: string;
+  abExperimentSlug?: string;
 }
 
 export interface CreateOrderResult {
@@ -78,6 +81,7 @@ export interface CreateOrderResult {
   orderNumber: string;
   fulfillmentOrderIds: number[];
   ledgerId: number;
+  totalCents: number;
 }
 
 // ─── Main Function ─────────────────────────────
@@ -172,6 +176,9 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
         utmCampaign: input.utmCampaign ?? null,
         utmContent: input.utmContent ?? null,
         referrerUrl: input.referrerUrl ?? null,
+        // A/B Testing
+        abVariant: input.abVariant ?? null,
+        abExperimentSlug: input.abExperimentSlug ?? null,
       })
       .returning({ id: orders.id });
 
@@ -269,6 +276,7 @@ export async function createOrder(input: CreateOrderInput): Promise<CreateOrderR
       orderNumber,
       fulfillmentOrderIds,
       ledgerId: ledger.id,
+      totalCents,
     };
   });
 }

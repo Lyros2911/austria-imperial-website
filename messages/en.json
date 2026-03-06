@@ -30,6 +30,10 @@
     "widerruf": {
       "title": "Cancellation Policy",
       "description": "Cancellation Policy of Austria Imperial — Green Gold."
+    },
+    "expedition": {
+      "title": "The Expedition — Austria Imperial Green Gold",
+      "description": "3 years, 40+ countries, 40+ languages: A mobile research expedition on AI-powered marketing and translation."
     }
   },
   "nav": {
@@ -37,7 +41,9 @@
     "about": "About Us",
     "contact": "Contact",
     "openCart": "Open cart",
-    "menu": "Menu"
+    "menu": "Menu",
+    "expedition": "Expedition",
+    "sponsoring": "Sponsoring"
   },
   "hero": {
     "tagline": "Styrian Specialties for Generations",
@@ -64,6 +70,12 @@
         "title": "Secure Payment",
         "description": "Encrypted payment via Stripe. Visa, Mastercard, SEPA and more."
       }
+    },
+    "expedition": {
+      "tagline": "Coming Soon",
+      "title": "Mobile Research Expedition 2026–2029",
+      "text": "3 years, 40+ countries, 40+ languages — a scientific field expedition across Europe and Central Asia.",
+      "cta": "Learn more"
     }
   },
   "products": {
@@ -178,6 +190,16 @@
         "title": "Tradition Meets Modernity",
         "text": "Time-honoured craftsmanship, packaged for today."
       }
+    },
+    "verein": {
+      "title": "The Association",
+      "p1": "Austria Imperial Green Gold is a registered association based in Vienna, Austria. As a non-profit organisation, the association operates the direct-to-consumer sales of Styrian specialities and conducts scientific field studies on AI-powered marketing, translation, and performance.",
+      "p2": "The association combines the promotion of regional producers with applied research — a model that unites tradition and technology."
+    },
+    "expedition": {
+      "title": "The Expedition",
+      "p1": "Starting in 2026, the association will launch a 3-year mobile research expedition across 40+ countries in Europe and Central Asia. Focus areas: AI-powered marketing, real-time translation in 40+ languages, and performance tracking under expedition conditions.",
+      "cta": "Learn more about the expedition"
     }
   },
   "contact": {
@@ -241,7 +263,7 @@
       "title": "§ 1 Scope of Application",
       "p1": "These General Terms and Conditions (GTC) apply to all orders placed through the online shop of Austria Imperial — Green Gold. By placing an order, you enter into a purchase contract with the association Austria Imperial Green Gold — Association for the Research of AI-Powered Marketing of Regional Specialities, represented by the board (hereinafter referred to as \"Provider\").",
       "p2": "The GTC apply in the version valid at the time of the order. Deviating terms of the customer are not recognised unless the Provider expressly agrees to their validity in writing.",
-      "p3": "The association pursues charitable purposes. Product sales serve the implementation of a scientific field study on the impact of AI-generated content on the sales of regional specialities (ancillary purpose privilege pursuant to § 1 para. 2 VerG)."
+      "p3": "The association pursues charitable purposes. Product sales serve the implementation of scientific field studies on the impact of AI-generated content on the sales of regional specialities, as well as the research of AI translation systems, performance and health parameters, and the AI landscape in Europe (ancillary purpose privilege pursuant to § 1 para. 2 VerG)."
     },
     "s2": {
       "title": "§ 2 Conclusion of Contract",
@@ -347,10 +369,10 @@
       "stripeLink": "stripe.com/privacy"
     },
     "s7": {
-      "title": "7. Data in the Context of the Field Study",
-      "text1": "The association conducts a scientific field study to research how AI-generated content influences the sales of regional specialities in international markets.",
-      "text2": "As part of this study, purchase data is anonymised and evaluated in aggregate form. No personal data is published in study reports. The evaluation is based exclusively on aggregated, non-traceable metrics (e.g. total revenue, number of orders, average order value per market).",
-      "text3": "Legal basis: Legitimate interest of the association in carrying out its statutory research activities (Art. 6 para. 1 lit. f GDPR). For optional surveys (post-purchase survey), we obtain your explicit consent (Art. 6 para. 1 lit. a GDPR).",
+      "title": "7. Data in the Context of the Field Studies",
+      "text1": "The association conducts scientific field studies to research how AI-generated content influences the sales of regional specialities in international markets. The research additionally encompasses: AI-powered real-time translation systems in field trials, physical performance and metabolic markers under long-term mobile conditions, and documentation of the AI landscape in Europe.",
+      "text2": "As part of these studies, purchase data and any survey results are anonymised and evaluated in aggregate form. No personal data is published in study reports. The evaluation is based exclusively on aggregated, non-traceable metrics (e.g. total revenue, number of orders, average order value per market, platform attribution).",
+      "text3": "Legal basis: Legitimate interest of the association in carrying out its statutory research activities (Art. 6 para. 1 lit. f GDPR, § 2 para. 4–5 of the association statutes). For optional surveys (post-purchase survey), we obtain your explicit consent (Art. 6 para. 1 lit. a GDPR).",
       "text4": "You may object to the use of your anonymised purchase data for research purposes at any time by contacting us via email."
     },
     "s8": {
@@ -395,7 +417,7 @@
     },
     "s4": {
       "title": "Purpose of the Association",
-      "text": "Scientific and practical research into how AI-generated content influences the sales of regional specialities in international markets, particularly in English-speaking and Arabic-speaking regions."
+      "text": "Scientific and practical research into how AI-generated content influences the sales of regional specialities in international markets. The research activities include in particular: (a) AI-powered marketing and content creation, (b) physical performance and metabolic markers under long-term mobile conditions, (c) structured nutrition and functional training in an expedition context, (d) AI-powered real-time translation systems in field trials, (e) acceptance and practicality of AI translation in real sales situations, (f) documentation of the AI landscape in Europe with relevance for SMEs. All collected data is processed anonymously and in aggregate form, serving exclusively charitable research purposes (§ 2 para. 4–5 of the association statutes)."
     },
     "s5": {
       "title": "Value Added Tax",
@@ -472,7 +494,10 @@
   "language": {
     "de": "DE",
     "en": "EN",
-    "ar": "AR"
+    "ar": "AR",
+    "fr": "FR",
+    "it": "IT",
+    "es": "ES"
   },
   "admin": {
     "title": "AIGG Admin",
@@ -493,7 +518,9 @@
       "backToShop": "Back to Shop",
       "verein": "Association Finance",
       "mitglieder": "Members",
-      "studien": "Study Reports",
+      "studien": "Studies",
+      "studienReports": "Reports",
+      "abTests": "A/B Tests",
       "transactions": "Transactions"
     },
     "role": {
@@ -926,7 +953,32 @@
       "viewPdf": "View PDF",
       "publish": "Publish",
       "avgOrderValue": "Avg Order Value",
-      "topContent": "Top Content"
+      "topContent": "Top Content",
+      "export": "Export",
+      "auryxEngine": "Auryx Engine Revenue",
+      "platforms": "Platforms",
+      "activePlatforms": "active sources",
+      "platformPerformance": "Platform Performance",
+      "languageBreakdown": "Language Breakdown",
+      "noData": "No data for this period"
+    },
+    "abTests": {
+      "title": "A/B Tests — Avatar Study",
+      "subtitle": "Comparison: With AI avatar vs. without avatar on product pages",
+      "noExperiments": "No A/B experiments configured yet.",
+      "totalVisitors": "Total Visitors",
+      "conversionRate": "Conversion Rate",
+      "revenueByVariant": "Revenue by Variant",
+      "significance": "Significance",
+      "funnel": "Conversion Funnel",
+      "variantA": "Variant A",
+      "variantB": "Variant B",
+      "pageViews": "Page Views",
+      "avatarImpressions": "Avatar Impressions",
+      "addToCart": "Add to Cart",
+      "checkoutStart": "Checkout Started",
+      "purchases": "Purchases",
+      "studyNotice": "Data is collected anonymously. The study is conducted by AIGG Verein for research on AI-powered marketing."
     }
   },
   "partner": {
@@ -1066,5 +1118,460 @@
     "common": {
       "loading": "Loading..."
     }
+  },
+  "expedition": {
+    "meta": {
+      "title": "The Expedition — Austria Imperial Green Gold",
+      "description": "3 years, 40+ countries, 40+ languages: The AIGG association's mobile research expedition on AI-powered marketing, translation, and performance."
+    },
+    "hero": {
+      "tagline": "Mobile Research Expedition 2026–2029",
+      "title": "3 Years. 40+ Countries. 40+ Languages. One Study.",
+      "subtitle": "A scientific field expedition across Europe and Central Asia — with AI-powered marketing, real-time translation, and performance tracking.",
+      "cta": "Discover the route",
+      "ctaSecondary": "Become a sponsor"
+    },
+    "route": {
+      "tagline": "The Route",
+      "title": "The Route across 40+ Countries",
+      "subtitle": "From Austria through Southeast Europe, Western Europe, the Baltics, the Caucasus to Central Asia.",
+      "phase1": {
+        "title": "Phase 1: Southeast Europe & Balkans",
+        "months": "Months 1–3",
+        "countries": "Austria, Slovenia, Croatia, Bosnia, Montenegro, Albania, North Macedonia, Greece",
+        "focus": "AI scene Ljubljana, AI translation: Slovenian, Croatian, Bosnian, Albanian, Greek"
+      },
+      "phase2": {
+        "title": "Phase 2: Western Europe & Northern Europe",
+        "months": "Months 4–6",
+        "countries": "Italy, France, Spain, Portugal, Belgium, Netherlands, Scandinavia",
+        "focus": "Premium markets, EU AI Act Brussels, Mistral AI Paris, AI hubs Amsterdam/Stockholm/Helsinki"
+      },
+      "phase3": {
+        "title": "Phase 3: Eastern Europe & Baltics",
+        "months": "Months 7–8",
+        "countries": "Estonia, Latvia, Lithuania, Poland, Czech Republic, Slovakia, Hungary, Romania, Bulgaria",
+        "focus": "Estonia = most digitised country in the world. AI translation: 9+ rare languages"
+      },
+      "phase4": {
+        "title": "Phase 4: Turkey & Caucasus",
+        "months": "Months 9–10",
+        "countries": "Turkey (Istanbul, Cappadocia), Georgia, Armenia",
+        "focus": "Bridge between Europe and Asia, cultural crossroads"
+      },
+      "phase5": {
+        "title": "Phase 5: Central Asia — Main Focus",
+        "months": "Months 11–14",
+        "countries": "Uzbekistan (Tashkent, Samarkand, Bukhara), Kazakhstan (Almaty, Astana), Kyrgyzstan (Bishkek, Issyk-Kul)",
+        "focus": "Toughest test: Uzbek, Kazakh, Kyrgyz. Horse culture, steppe horses, nomads"
+      },
+      "phase6": {
+        "title": "Phase 6: Return",
+        "months": "Months 15–18",
+        "countries": "Option A: Russia (Novosibirsk, Moscow, St. Petersburg) → Finland → Austria. Option B: China (Xinjiang → Shanghai)",
+        "focus": "Final data collection, return and analysis"
+      }
+    },
+    "waves": {
+      "tagline": "3-Year Study Program",
+      "title": "3 Waves across 40+ Countries",
+      "subtitle": "The study is designed as a multi-year expedition program in three waves — with base phases in Austria for analysis and publication.",
+      "items": {
+        "wave1": {
+          "title": "Wave 1: Europe → Central Asia → Russia",
+          "period": "October 2026 – April 2028 (18 months)",
+          "description": "30+ countries, 30+ languages. Southeast Europe, Western Europe, Baltics, Turkey, Caucasus, Central Asia, Russia."
+        },
+        "base1": {
+          "title": "Base Phase 1: Austria",
+          "period": "April – June 2028 (3 months)",
+          "description": "Data analysis Wave 1, interim report, lectures at universities and conferences, sponsor reporting."
+        },
+        "wave2": {
+          "title": "Wave 2: China Expedition",
+          "period": "July – December 2028 (4–6 months)",
+          "description": "Xinjiang → Xi'an → Shanghai → Beijing. 1.4 billion inhabitants, the world's largest consumer market."
+        },
+        "base2": {
+          "title": "Base Phase 2: Austria",
+          "period": "January – March 2029 (2–3 months)",
+          "description": "China data analysis, Wave 3 preparation, sponsor reporting and acquisition."
+        },
+        "wave3": {
+          "title": "Wave 3: Arabian Region",
+          "period": "Spring 2029 (3–4 months)",
+          "description": "Jordan → Saudi Arabia → UAE → Oman. Activation ONLY upon geopolitical stabilization."
+        },
+        "conclusion": {
+          "title": "Conclusion: Final Analysis",
+          "period": "Autumn 2029 (3 months)",
+          "description": "Final publication, lecture series (TEDx, universities, AI conferences), archiving of all data."
+        }
+      },
+      "budget": "Total budget: approx. EUR 735,000 — modular financing possible (Wave 1 can start independently)"
+    },
+    "vehicles": {
+      "tagline": "The Vehicles",
+      "title": "Two Mobile Research Stations",
+      "sprinter": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 1",
+        "driver": "Gottfried",
+        "description": "Full conversion as living and office vehicle. Mobile headquarters with ergonomic workspace, MacBook Pro 16\" M4 Max, external monitor, Starlink internet, sleeping area, bathroom, Thermomix TM7 kitchen, 600W solar, 300Ah LiFePO4."
+      },
+      "offroad": {
+        "title": "Mercedes Sprinter 4x4 — Sprinter 2",
+        "driver": "Peter",
+        "description": "IDENTICALLY equipped to Sprinter 1. Two identical vehicles mean: double visibility for the conversion sponsor, compatible spare parts, and maximum flexibility."
+      }
+    },
+    "equipment": {
+      "tagline": "The Equipment",
+      "title": "Technology for 8K and AI",
+      "antigravity": {
+        "title": "Antigravity A1",
+        "spec": "360° drone, 8K, under 249g, FPV goggles",
+        "description": "Invisible in frame thanks to 360° capture. Minimal regulation worldwide."
+      },
+      "hovelair": {
+        "title": "HOVERAir X1 PROMAX",
+        "spec": "2x, 8K, 192g, palm launch, follow speed 42 km/h",
+        "description": "One per vehicle. No controller needed, tracking drone for everyday use."
+      },
+      "macbook": {
+        "title": "MacBook Pro 16\" M4 Max",
+        "spec": "2x, 128GB Unified Memory, 4TB SSD",
+        "description": "For 8K/360° video editing and local AI inference on the road."
+      },
+      "insta360": {
+        "title": "Insta360 X5",
+        "spec": "360° camera, 8K",
+        "description": "Immersive 360° documentation of the entire expedition."
+      },
+      "sony": {
+        "title": "Sony A7C II",
+        "spec": "2x, Full-Frame 4K60",
+        "description": "Primary camera for professional photo and video documentation throughout the expedition."
+      },
+      "gopro": {
+        "title": "GoPro Hero 13",
+        "spec": "2x, Action Cam 5.3K",
+        "description": "Rugged action camera for outdoor scenes, horse feeding, and spontaneous shots."
+      },
+      "rode": {
+        "title": "RØDE Wireless PRO + NTG5",
+        "spec": "Professional Audio Setup",
+        "description": "Wireless microphones and shotgun mic for interviews, tastings, and documentation."
+      },
+      "thermomix": {
+        "title": "Thermomix TM7",
+        "spec": "AI Cooking Assistant Cookidoo",
+        "description": "Structured nutrition on the road — AI-powered cooking for performance optimization in the Sprinter."
+      },
+      "garmin": {
+        "title": "Garmin Fenix 8",
+        "spec": "2x, 24/7 Performance Tracking",
+        "description": "Continuous monitoring of HRV, sleep, activity, and GPS tracking throughout the entire study."
+      },
+      "gimbal": {
+        "title": "DJI RS 4 Mini",
+        "spec": "2x, 3-Axis Gimbal",
+        "description": "Professional video stabilization for smooth handheld shots in any situation."
+      }
+    },
+    "research": {
+      "tagline": "The Research",
+      "title": "21 Research Questions across 4 Areas",
+      "categories": {
+        "marketing": "AI-Powered Marketing",
+        "translation": "AI Translation",
+        "performance": "Performance & Health",
+        "ai_landscape": "AI Landscape Europe"
+      },
+      "questions": {
+        "f1": {
+          "id": "F1",
+          "category": "marketing",
+          "question": "How does AI-generated content influence sales of regional specialities in international markets?"
+        },
+        "f2": {
+          "id": "F2",
+          "category": "marketing",
+          "question": "Which content formats (text, image, video) achieve the highest conversion rate per platform?"
+        },
+        "f3": {
+          "id": "F3",
+          "category": "marketing",
+          "question": "How does the impact of AI content differ across cultural regions?"
+        },
+        "f4": {
+          "id": "F4",
+          "category": "marketing",
+          "question": "Can a mascot-based approach accelerate brand awareness in new markets?"
+        },
+        "f5": {
+          "id": "F5",
+          "category": "marketing",
+          "question": "Which platform (Instagram, YouTube, TikTok) delivers the highest ROI per market?"
+        },
+        "f6": {
+          "id": "F6",
+          "category": "marketing",
+          "question": "How does content quality change with increasing automation?"
+        },
+        "f7": {
+          "id": "F7",
+          "category": "marketing",
+          "question": "Can AI attribution precisely measure the link between content and revenue?"
+        },
+        "f8": {
+          "id": "F8",
+          "category": "marketing",
+          "question": "How do B2B partners respond to AI-generated marketing material?"
+        },
+        "f9": {
+          "id": "F9",
+          "category": "marketing",
+          "question": "What influence does 360° video content have on purchasing decisions?"
+        },
+        "f10": {
+          "id": "F10",
+          "category": "performance",
+          "question": "How does physical performance develop under long-term mobile conditions?"
+        },
+        "f11": {
+          "id": "F11",
+          "category": "performance",
+          "question": "Which metabolic markers change significantly over the course of a multi-year expedition?"
+        },
+        "f12": {
+          "id": "F12",
+          "category": "performance",
+          "question": "Can structured nutrition (Thermomix TM7) strengthen resilience under expedition conditions?"
+        },
+        "f13": {
+          "id": "F13",
+          "category": "performance",
+          "question": "How does functional training affect stress responses during everyday expedition life?"
+        },
+        "f14": {
+          "id": "F14",
+          "category": "performance",
+          "question": "What influence do different climate zones have on physiological parameters?"
+        },
+        "f15": {
+          "id": "F15",
+          "category": "performance",
+          "question": "Does physical discipline correlate with entrepreneurial performance?"
+        },
+        "f16": {
+          "id": "F16",
+          "category": "translation",
+          "question": "Can AI translation eliminate the language barrier as an export obstacle?"
+        },
+        "f17": {
+          "id": "F17",
+          "category": "translation",
+          "question": "How large are the quality differences between major languages and rare languages?"
+        },
+        "f18": {
+          "id": "F18",
+          "category": "ai_landscape",
+          "question": "How is AI being adopted and regulated across different European regions?"
+        },
+        "f19": {
+          "id": "F19",
+          "category": "marketing",
+          "question": "How effective are AI avatars at selling regional premium products compared to traditional product presentations?"
+        },
+        "f20": {
+          "id": "F20",
+          "category": "marketing",
+          "question": "How does avatar interaction influence brand perception and purchase conversion rates across different cultures?"
+        },
+        "f21": {
+          "id": "F21",
+          "category": "marketing",
+          "question": "Are AI avatars a scalable sales model for SME exports?"
+        }
+      }
+    },
+    "translation_study": {
+      "tagline": "AI Translation Study",
+      "title": "Real-Time Translation in 40+ Languages",
+      "description": "A continuous research strand: AI-powered real-time translators in field trials. From Google Translate Live to DeepL Voice to AI dubbing — tested in real sales situations.",
+      "tools": "Tools tested: real-time speech translators, AI subtitling for 360° videos, AI-generated product descriptions, AI dubbing",
+      "metrics": "Documented per country: accuracy, customer response, offline capability, dialects, food-specific terminology, trust effect",
+      "languagesTitle": "Languages in Field Testing"
+    },
+    "performance": {
+      "tagline": "Performance & Health",
+      "title": "Body and Mind under Expedition Conditions",
+      "description": "Sports-medical baseline, ongoing wearable tracking (HRV, sleep, activity), structured nutrition, blood tests every 3–4 months, mobile training.",
+      "sponsoringTitle": "Sponsoring Categories",
+      "categories": {
+        "sport": "Sports & Training Equipment",
+        "wearables": "Wearables & Tracking Technology",
+        "supplements": "Nutritional Supplements",
+        "outdoor": "Outdoor Equipment",
+        "healthtech": "Health Technology",
+        "food": "Performance Food Brands",
+        "telemedizin": "Telemedicine Providers",
+        "bloodtest": "Blood Test Laboratories"
+      },
+      "cta": "Interested in sponsoring? Contact us."
+    },
+    "geopolitical": {
+      "title": "Note on the Route",
+      "text": "The Arabian region is temporarily postponed as an expedition zone due to the current geopolitical situation. Existing networks and partnerships are being maintained. A dedicated expedition wave (Wave 3) is planned once the situation stabilizes."
+    },
+    "tracker": {
+      "tagline": "Live Tracker",
+      "title": "Follow the Expedition in Real Time",
+      "description": "During the expedition, live updates, GPS positions, and expedition reports will be published here.",
+      "comingSoon": "Available from expedition start",
+      "newsletter": "Subscribe to the newsletter for updates"
+    }
+  },
+  "newsletter": {
+    "title": "Newsletter",
+    "description": "Expedition updates straight to your inbox.",
+    "placeholder": "Your email address",
+    "submit": "Subscribe",
+    "submitting": "Sending...",
+    "success": "Successfully subscribed! Thank you.",
+    "error": "An error occurred. Please try again.",
+    "alreadySubscribed": "This email address is already subscribed.",
+    "privacy": "We respect your privacy. Unsubscribe at any time."
+  },
+  "blog": {
+    "tagline": "Expedition Updates",
+    "title": "Blog",
+    "subtitle": "News and reports from the Austria Imperial Research Expedition.",
+    "readMore": "Read more",
+    "backToList": "All posts",
+    "noPosts": "No posts yet. Stay tuned!"
+  },
+  "sponsoring": {
+    "meta": {
+      "title": "Sponsoring — Austria Imperial Expedition",
+      "description": "Become a sponsor of the Austria Imperial Research Expedition — 3 years, 40+ countries, 40+ languages."
+    },
+    "hero": {
+      "tagline": "Expedition Partners",
+      "title": "Sponsoring Partnership",
+      "subtitle": "Join the Austria Imperial Research Expedition as a sponsor — 3 years through 40+ countries with AI-powered documentation, 360° content, and scientific research."
+    },
+    "categories": {
+      "tagline": "14 Sponsoring Areas",
+      "title": "Sponsoring Categories",
+      "subtitle": "Our expedition offers visibility across fourteen specialised areas — each with its own target audience and reach.",
+      "items": {
+        "cameras360": {
+          "title": "360° Cameras",
+          "description": "Immersive 360° documentation of the entire expedition — your camera as a window into 40+ countries."
+        },
+        "drones": {
+          "title": "Drones",
+          "description": "Aerial footage in 8K — your drone technology in daily use across 40+ countries."
+        },
+        "wearables": {
+          "title": "Wearables & Tracking",
+          "description": "Ongoing monitoring of HRV, sleep, and activity — your technology as a research instrument."
+        },
+        "vehicle": {
+          "title": "Vehicle Converters",
+          "description": "Two identical Mercedes Sprinter 4x4 — your conversion as a rolling billboard across 3 continents."
+        },
+        "internet": {
+          "title": "Internet & Connectivity",
+          "description": "Reliable internet worldwide — your solution keeps the mobile research lab connected."
+        },
+        "kitchen": {
+          "title": "Kitchen & Nutrition",
+          "description": "Structured nutrition on the road — your appliance as a daily companion in the performance module."
+        },
+        "cameras": {
+          "title": "Cameras & Video",
+          "description": "Professional 4K/8K documentation — your camera technology in a 3-year long-term deployment."
+        },
+        "sport": {
+          "title": "Sports & Training Equipment",
+          "description": "Functional training under expedition conditions — your equipment documented in daily use over 3 years."
+        },
+        "supplements": {
+          "title": "Nutritional Supplements",
+          "description": "Structured supplementation under extreme travel conditions — scientifically documented."
+        },
+        "outdoor": {
+          "title": "Outdoor Equipment",
+          "description": "From Alps to steppes — your equipment in long-term testing across different climate zones."
+        },
+        "telemedizin": {
+          "title": "Telemedicine Providers",
+          "description": "Remote medical care across borders and time zones — your platform in practical testing."
+        },
+        "bloodtest": {
+          "title": "Blood Test Laboratories",
+          "description": "Regular blood analyses every 3–4 months — your diagnostics as a research foundation."
+        },
+        "audio": {
+          "title": "Audio Equipment",
+          "description": "Professional audio recording across 40+ countries — your microphone technology for interviews and documentation."
+        },
+        "software": {
+          "title": "Software & AI",
+          "description": "AI-powered translation and content creation — your software as a central research instrument."
+        }
+      }
+    },
+    "tiers": {
+      "tagline": "Partnership Levels",
+      "title": "Sponsoring Tiers",
+      "items": {
+        "presenting": {
+          "title": "Presenting Partner",
+          "description": "Maximum visibility as the main sponsor of the expedition — your logo on all vehicles and in every piece of content.",
+          "benefits": {
+            "0": "Logo on both expedition vehicles",
+            "1": "Mention in all 360° videos and social media posts",
+            "2": "Exclusive access to research results and data"
+          }
+        },
+        "category": {
+          "title": "Category Partner",
+          "description": "Exclusivity in your sponsoring category — no competing brand in your area.",
+          "benefits": {
+            "0": "Exclusive rights in one of the 14 categories",
+            "1": "Regular content mentions and product tests",
+            "2": "Quarterly reports with usage data and reach"
+          }
+        },
+        "equipment": {
+          "title": "Equipment Partner",
+          "description": "In-kind contributions instead of money — your products in daily use, documented and shared.",
+          "benefits": {
+            "0": "Product placement in expedition content",
+            "1": "Honest long-term reviews after expedition end",
+            "2": "Social media tags and links"
+          }
+        }
+      }
+    },
+    "partners": {
+      "tagline": "Our Partners",
+      "title": "Expedition Partners",
+      "comingSoon": "Spot available"
+    },
+    "cta": {
+      "title": "Interested in a Sponsoring Partnership?",
+      "description": "We welcome your interest in the Austria Imperial Research Expedition. Contact us for a no-obligation conversation about partnership opportunities.",
+      "button": "Get in Touch"
+    }
+  },
+  "studyNotice": {
+    "text": "This product page is part of a scientific study by AIGG Verein researching AI-powered marketing. Only anonymised, non-personal usage data is collected. Your participation is voluntary and does not affect your purchase."
+  },
+  "mascot": {
+    "studyBadge": "AI Study"
   }
 }
