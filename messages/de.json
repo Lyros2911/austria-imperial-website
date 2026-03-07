@@ -521,7 +521,8 @@
       "studien": "Studien",
       "studienReports": "Berichte",
       "abTests": "A/B Tests",
-      "transactions": "Transaktionen"
+      "transactions": "Transaktionen",
+      "telegramBot": "Telegram Bot"
     },
     "role": {
       "admin": "Administrator",
@@ -960,7 +961,8 @@
       "activePlatforms": "aktive Quellen",
       "platformPerformance": "Plattform-Performance",
       "languageBreakdown": "Sprach-Aufschlüsselung",
-      "noData": "Keine Daten in diesem Zeitraum"
+      "noData": "Keine Daten in diesem Zeitraum",
+      "abTests": "A/B Tests"
     },
     "abTests": {
       "title": "A/B Tests — Avatar-Studie",
@@ -979,6 +981,123 @@
       "checkoutStart": "Checkout gestartet",
       "purchases": "Käufe",
       "studyNotice": "Daten werden anonymisiert erhoben. Die Studie wird vom AIGG Verein zur Erforschung KI-gestützter Vermarktung durchgeführt."
+    },
+    "telegramBot": {
+      "title": "Expedition Bot",
+      "subtitle": "Mobiles Command Center fuer die AIGG Expedition",
+      "activation": {
+        "title": "Bot-Verknuepfung",
+        "connected": "Verbunden",
+        "notConnected": "Nicht verbunden",
+        "connectedAs": "Bot ist verknuepft",
+        "step1": "Bot oeffnen",
+        "step1Desc": "Oeffne den AIGG Expedition Bot in Telegram.",
+        "step2": "/start senden",
+        "step2Desc": "Sende /start im Chat. Der Bot zeigt dir deine Chat-ID.",
+        "step3": "Chat-ID eingeben",
+        "step3Desc": "Kopiere die Chat-ID und fuege sie unten ein.",
+        "openBot": "Bot oeffnen",
+        "chatIdPlaceholder": "Chat-ID eingeben (z.B. 123456789)",
+        "invalidChatId": "Bitte gib eine gueltige Chat-ID ein (nur Zahlen)",
+        "save": "Verknuepfen",
+        "disconnect": "Trennen",
+        "saving": "Speichern..."
+      },
+      "commands": {
+        "title": "Expeditions-Befehle",
+        "subtitle": "8 Befehle fuer die taegliche Datenerfassung waehrend der Expedition",
+        "exampleLabel": "Beispiel",
+        "tasting": {
+          "description": "Tasting erfassen — Stadt, Ort-Typ, Produkte, Bewertung und Notizen.",
+          "syntax": "/tasting [Stadt], [Ort-Typ], [Produkte], [Bewertung 1-5], [Notiz]",
+          "example": "/tasting Wien, Restaurant, Kernoel + Kren, 4, Super Reaktion"
+        },
+        "translation": {
+          "description": "KI-Uebersetzungstest dokumentieren — Sprache, Tool, Situation, Genauigkeit.",
+          "syntax": "/translation [Sprache], [Tool], [Situation], [Score 1-10], [Notiz]",
+          "example": "/translation Slowenisch, DeepL, Tasting, 7, Offline gut"
+        },
+        "ausgabe": {
+          "description": "Ausgabe erfassen mit automatischer Waehrungsumrechnung (10 Waehrungen).",
+          "syntax": "/ausgabe [Betrag] [Waehrung] [Kategorie], [Land]",
+          "example": "/ausgabe 45 EUR Diesel, Kroatien"
+        },
+        "performance": {
+          "description": "Taegliche Gesundheitsdaten — HRV, Schlaf, Schritte, Training, Wohlbefinden.",
+          "syntax": "/performance [HRV] [Schlaf] [Schritte] [Training Ja/Nein] [Wohlbefinden 1-5]",
+          "example": "/performance 65 82 8500 Ja 4"
+        },
+        "expStatus": {
+          "description": "Dashboard — aktuelles Land, Budget, letzte Tastings, Posts diese Woche.",
+          "syntax": "/exp_status",
+          "example": "/exp_status"
+        },
+        "content": {
+          "description": "Content-Post manuell ausloesen — sendet Thema an die Content-Pipeline.",
+          "syntax": "/content [Thema]",
+          "example": "/content Kuerbiskernoel-Tasting in Istanbul"
+        },
+        "report": {
+          "description": "30-Tage Expeditions-Report — Tastings, Budget, Performance, Content.",
+          "syntax": "/report",
+          "example": "/report"
+        },
+        "expHelp": {
+          "description": "Alle Expeditions-Befehle mit Erklaerungen anzeigen.",
+          "syntax": "/exp_help",
+          "example": "/exp_help"
+        }
+      },
+      "multimedia": {
+        "title": "Multimedia-Faehigkeiten",
+        "subtitle": "Neben Text-Befehlen verarbeitet der Bot auch Fotos, Sprachnachrichten und Dokumente.",
+        "photo": {
+          "title": "Foto-Upload",
+          "description": "Foto senden — GPT-4o Vision analysiert automatisch Produkte, erkennt Personen (DSGVO-Check) und kann als Bild-Post oder Video-Grundlage verwendet werden."
+        },
+        "voice": {
+          "title": "Sprachnachrichten",
+          "description": "Voice-Nachricht senden — Whisper transkribiert automatisch und interpretiert die Anweisung als Command oder Content-Beschreibung."
+        },
+        "documents": {
+          "title": "Dokumente",
+          "description": "PDF, Bilder oder Videos direkt senden — werden automatisch in die Media Library hochgeladen und stehen fuer Content-Produktion bereit."
+        }
+      },
+      "workflow": {
+        "title": "Taeglicher Expeditions-Workflow",
+        "subtitle": "So nutzt ihr den Bot optimal im Expeditionsalltag.",
+        "morning": {
+          "time": "Morgens",
+          "title": "Ueberblick verschaffen",
+          "description": "Tagesstatus abrufen: aktuelles Land, Budget, Tastings, Posts."
+        },
+        "driving": {
+          "time": "Unterwegs",
+          "title": "Ausgaben erfassen",
+          "description": "Bei jeder Zahlung (Diesel, Maut, Essen) sofort loggen."
+        },
+        "tasting": {
+          "time": "Bei Tastings",
+          "title": "Tasting dokumentieren",
+          "description": "Tasting-Daten erfassen + Fotos vom Event senden."
+        },
+        "translation": {
+          "time": "Sprachtest",
+          "title": "KI-Uebersetzer bewerten",
+          "description": "Nach jedem Uebersetzungstest Sprache, Tool und Score loggen."
+        },
+        "evening": {
+          "time": "Abends",
+          "title": "Gesundheitsdaten eintragen",
+          "description": "HRV, Schlaf-Score, Schritte und Wohlbefinden dokumentieren."
+        },
+        "weekly": {
+          "time": "Woechentlich",
+          "title": "Report generieren",
+          "description": "30-Tage Zusammenfassung aller Expeditionsdaten abrufen."
+        }
+      }
     }
   },
   "partner": {

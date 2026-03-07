@@ -20,6 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://austriaimperial.com"),
   title: {
     default: 'Austria Imperial — Green Gold',
     template: '%s | Austria Imperial',
