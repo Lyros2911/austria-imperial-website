@@ -181,9 +181,6 @@ export default async function LedgerPage({
                     <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5">
                       {t('ledger.peter')}
                     </th>
-                    <th className="text-right text-[9px] text-muted uppercase tracking-wider px-4 py-2.5">
-                      {t('ledger.gottfried')}
-                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -236,11 +233,8 @@ export default async function LedgerPage({
                         <td className={`px-4 py-2.5 text-right font-mono hidden xl:table-cell ${rowClass || 'text-blue-400'}`}>
                           {formatEurCents((entry as any).auryxShareCents ?? 0)}
                         </td>
-                        <td className={`px-4 py-2.5 text-right font-mono ${rowClass || 'text-gold'}`}>
-                          {formatEurCents(entry.peterShareCents)}
-                        </td>
-                        <td className={`px-4 py-2.5 text-right font-mono ${rowClass || 'text-cream'}`}>
-                          {formatEurCents(entry.aiggShareCents)}
+                        <td className={`px-4 py-2.5 text-right font-mono ${rowClass || 'text-emerald-400'}`}>
+                          {formatEurCents(entry.peterShareCents + entry.aiggShareCents)}
                         </td>
                       </tr>
                     );

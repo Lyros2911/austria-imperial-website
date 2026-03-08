@@ -1,17 +1,21 @@
 /**
- * AIGG Accounting Engine
+ * AIGG Accounting Engine — Vereinskonforme Darstellung
  *
- * VERBINDLICHE REGELN (Strukturvereinbarung 26.02.2026, unterschrieben):
+ * VERBINDLICHE REGELN:
  * 1. Alle Beträge in EUR Cents (Integer-Arithmetik).
  * 2. Bruttogewinn = Revenue - ProducerCost - Packaging - Shipping - PaymentFee - Customs.
- * 3. Auryx AI: 10% vom D2C-Nettoumsatz (= Revenue nach Abzug Payment Fees) als Technologiepartner.
- * 4. Peter = 50% vom Restgewinn (Bruttogewinn - Auryx-Anteil). Gottfried = 50% vom Restgewinn.
- * 5. NICHT abziehbar vor der Gewinnverteilung: Marketing, Fixkosten, Hosting, Ads.
+ * 3. Auryx AI: 10% vom D2C-Nettoumsatz (= Revenue nach Abzug Payment Fees) als Dienstleistungsvergütung.
+ * 4. Vereinsüberschuss = Bruttogewinn - Auryx Dienstleistung (verbleibt im Verein).
+ * 5. NICHT abziehbar vor der Verteilung: Marketing, Fixkosten, Hosting, Ads.
  * 6. financial_ledger ist APPEND-ONLY. Keine Updates, keine Deletes.
  * 7. Refunds erzeugen NEGATIVE Einträge im aktuellen Monat (kein Rückwirken).
  *
- * Revenue-Waterfall:
- *   Revenue → Vorleistungen → Laufende Kosten → Auryx 10% D2C → Peter 10% Export → Rest 50/50
+ * Verteilung:
+ *   Revenue → Produktkosten → Bruttogewinn → Auryx 10% Dienstleistung → Vereinsüberschuss
+ *
+ * HINWEIS: Historische Ledger-Einträge haben peter_share_cents + aigg_share_cents separat.
+ * Neue Einträge speichern den gesamten Vereinsüberschuss in aigg_share_cents, peter_share_cents = 0.
+ * Für die Anzeige gilt: Vereinsüberschuss = peter_share_cents + aigg_share_cents.
  */
 
 import { db } from '@/lib/db/drizzle';
@@ -31,9 +35,9 @@ export interface CostBreakdown {
 
 export interface ProfitSplit {
   grossProfitCents: number;
-  auryxShareCents: number;    // 10% D2C-Nettoumsatz (Technologiepartner)
-  peterShareCents: number;    // 50% vom Restgewinn (nach Auryx-Abzug)
-  aiggShareCents: number;     // 50% vom Restgewinn = Gottfrieds Anteil
+  auryxShareCents: number;    // 10% D2C-Nettoumsatz (Dienstleistungsvergütung)
+  peterShareCents: number;    // LEGACY: immer 0 bei neuen Einträgen (historisch: 50% Restgewinn)
+  aiggShareCents: number;     // Vereinsüberschuss: Bruttogewinn - Auryx Dienstleistung
 }
 
 export interface LedgerEntryInput {
@@ -65,14 +69,13 @@ export function calculateGrossProfit(costs: CostBreakdown): number {
 }
 
 /**
- * Revenue-Waterfall nach Strukturvereinbarung 26.02.2026:
+ * Vereinskonforme Verteilung:
  *
  * 1. Bruttogewinn berechnen (Revenue - alle Produktkosten)
- * 2. Auryx AI: 10% vom D2C-Nettoumsatz (Revenue - Payment Fees)
- * 3. Restgewinn = Bruttogewinn - Auryx-Anteil
- * 4. Peter = 50% vom Restgewinn, Gottfried (AIGG) = 50% vom Restgewinn
+ * 2. Auryx AI: 10% vom D2C-Nettoumsatz (Revenue - Payment Fees) = Dienstleistungsvergütung
+ * 3. Vereinsüberschuss = Bruttogewinn - Auryx Dienstleistung (verbleibt im Verein)
  *
- * Bei ungeradem Cent: AIGG/Gottfried bekommt den Restcent (Math.floor für Peter).
+ * KEINE personenbezogene Gewinnaufteilung. Überschüsse gehören dem Verein.
  *
  * @param grossProfitCents - Bruttogewinn nach Abzug aller Produktkosten
  * @param d2cNetRevenueCents - D2C-Nettoumsatz (Revenue - Payment Fees) für Auryx 10%
@@ -81,23 +84,19 @@ export function calculateProfitSplit(
   grossProfitCents: number,
   d2cNetRevenueCents?: number,
 ): ProfitSplit {
-  // Auryx 10% vom D2C-Nettoumsatz (nur wenn D2C-Umsatz übergeben wird)
+  // Auryx 10% vom D2C-Nettoumsatz (Dienstleistungsvergütung)
   const auryxShareCents = d2cNetRevenueCents
     ? Math.round(d2cNetRevenueCents * 0.10)
     : 0;
 
-  // Restgewinn nach Auryx-Abzug
-  const remainingProfitCents = Math.max(0, grossProfitCents - auryxShareCents);
-
-  // 50/50 Split des Rests
-  const peterShareCents = Math.floor(remainingProfitCents / 2);
-  const aiggShareCents = remainingProfitCents - peterShareCents;
+  // Vereinsüberschuss = gesamter Restgewinn verbleibt im Verein
+  const vereinsueberschussCents = Math.max(0, grossProfitCents - auryxShareCents);
 
   return {
     grossProfitCents,
     auryxShareCents,
-    peterShareCents,
-    aiggShareCents,
+    peterShareCents: 0,                  // Keine personenbezogene Zuweisung
+    aiggShareCents: vereinsueberschussCents,  // Vereinsüberschuss (verbleibt im Verein)
   };
 }
 

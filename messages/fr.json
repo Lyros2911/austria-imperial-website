@@ -521,7 +521,8 @@
       "studien": "Etudes",
       "studienReports": "Rapports",
       "abTests": "A/B Tests",
-      "transactions": "Transactions"
+      "transactions": "Transactions",
+      "telegramBot": "Bot Telegram"
     },
     "role": {
       "admin": "Administrateur",
@@ -979,6 +980,123 @@
       "checkoutStart": "Paiement commence",
       "purchases": "Achats",
       "studyNotice": "Les donnees sont collectees de maniere anonyme. L'etude est menee par l'association AIGG pour la recherche sur le marketing assiste par l'IA."
+    },
+    "telegramBot": {
+      "title": "Bot Expedition",
+      "subtitle": "Centre de commande mobile pour l'expedition AIGG",
+      "activation": {
+        "title": "Connexion du bot",
+        "connected": "Connecte",
+        "notConnected": "Non connecte",
+        "connectedAs": "Le bot est lie",
+        "step1": "Ouvrir le bot",
+        "step1Desc": "Ouvrez le bot AIGG Expedition dans Telegram.",
+        "step2": "Envoyer /start",
+        "step2Desc": "Envoyez /start dans le chat. Le bot affichera votre Chat ID.",
+        "step3": "Entrer le Chat ID",
+        "step3Desc": "Copiez le Chat ID et collez-le ci-dessous.",
+        "openBot": "Ouvrir le bot",
+        "chatIdPlaceholder": "Entrez le Chat ID (ex: 123456789)",
+        "invalidChatId": "Veuillez entrer un Chat ID valide (chiffres uniquement)",
+        "save": "Connecter",
+        "disconnect": "Deconnecter",
+        "saving": "Enregistrement..."
+      },
+      "commands": {
+        "title": "Commandes d'expedition",
+        "subtitle": "8 commandes pour la collecte quotidienne de donnees pendant l'expedition",
+        "exampleLabel": "Exemple",
+        "tasting": {
+          "description": "Enregistrer une degustation — ville, type de lieu, produits, note et commentaires.",
+          "syntax": "/tasting [Ville], [Type-Lieu], [Produits], [Note 1-5], [Commentaire]",
+          "example": "/tasting Vienne, Restaurant, Huile de courge + Raifort, 4, Super reaction"
+        },
+        "translation": {
+          "description": "Documenter un test de traduction IA — langue, outil, situation, precision.",
+          "syntax": "/translation [Langue], [Outil], [Situation], [Score 1-10], [Note]",
+          "example": "/translation Slovene, DeepL, Degustation, 7, Bon hors ligne"
+        },
+        "ausgabe": {
+          "description": "Enregistrer une depense avec conversion automatique (10 devises supportees).",
+          "syntax": "/ausgabe [Montant] [Devise] [Categorie], [Pays]",
+          "example": "/ausgabe 45 EUR Diesel, Croatie"
+        },
+        "performance": {
+          "description": "Donnees de sante quotidiennes — VFC, sommeil, pas, entrainement, bien-etre.",
+          "syntax": "/performance [VFC] [Sommeil] [Pas] [Entrainement Oui/Non] [Bien-etre 1-5]",
+          "example": "/performance 65 82 8500 Oui 4"
+        },
+        "expStatus": {
+          "description": "Tableau de bord — pays actuel, budget, degustations recentes, posts de la semaine.",
+          "syntax": "/exp_status",
+          "example": "/exp_status"
+        },
+        "content": {
+          "description": "Declencher manuellement un post — envoie le sujet au pipeline de contenu.",
+          "syntax": "/content [Sujet]",
+          "example": "/content Degustation huile de courge a Istanbul"
+        },
+        "report": {
+          "description": "Rapport d'expedition 30 jours — degustations, budget, performance, contenu.",
+          "syntax": "/report",
+          "example": "/report"
+        },
+        "expHelp": {
+          "description": "Afficher toutes les commandes d'expedition avec explications.",
+          "syntax": "/exp_help",
+          "example": "/exp_help"
+        }
+      },
+      "multimedia": {
+        "title": "Capacites multimedia",
+        "subtitle": "En plus des commandes texte, le bot traite aussi les photos, messages vocaux et documents.",
+        "photo": {
+          "title": "Envoi de photos",
+          "description": "Envoyez une photo — GPT-4o Vision analyse automatiquement les produits, detecte les personnes (verification RGPD) et peut servir de base pour un post image ou video."
+        },
+        "voice": {
+          "title": "Messages vocaux",
+          "description": "Envoyez un message vocal — Whisper transcrit automatiquement et interprete l'instruction comme une commande ou description de contenu."
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "Envoyez des PDF, images ou videos directement — automatiquement charges dans la Media Library et disponibles pour la production de contenu."
+        }
+      },
+      "workflow": {
+        "title": "Workflow quotidien d'expedition",
+        "subtitle": "Comment utiliser le bot de maniere optimale au quotidien.",
+        "morning": {
+          "time": "Matin",
+          "title": "Vue d'ensemble",
+          "description": "Consulter le statut quotidien: pays actuel, budget, degustations, posts."
+        },
+        "driving": {
+          "time": "En route",
+          "title": "Enregistrer les depenses",
+          "description": "Enregistrer chaque paiement immediatement (diesel, peages, nourriture)."
+        },
+        "tasting": {
+          "time": "Aux degustations",
+          "title": "Documenter la degustation",
+          "description": "Enregistrer les donnees de degustation + envoyer les photos de l'evenement."
+        },
+        "translation": {
+          "time": "Test linguistique",
+          "title": "Evaluer le traducteur IA",
+          "description": "Apres chaque test de traduction, enregistrer la langue, l'outil et le score."
+        },
+        "evening": {
+          "time": "Soir",
+          "title": "Saisir les donnees de sante",
+          "description": "Documenter VFC, score de sommeil, pas et bien-etre."
+        },
+        "weekly": {
+          "time": "Hebdomadaire",
+          "title": "Generer le rapport",
+          "description": "Obtenir le resume 30 jours de toutes les donnees d'expedition."
+        }
+      }
     }
   },
   "partner": {
@@ -1306,7 +1424,7 @@
         "f4": {
           "id": "F4",
           "category": "marketing",
-          "question": "Une approche basee sur des mascottes peut-elle accelerer la notoriete de marque sur de nouveaux marches ?"
+          "question": "Une approche basee sur des avatars peut-elle accelerer la notoriete de marque sur de nouveaux marches ?"
         },
         "f5": {
           "id": "F5",

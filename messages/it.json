@@ -521,7 +521,8 @@
       "studien": "Studi",
       "studienReports": "Report",
       "abTests": "A/B Tests",
-      "transactions": "Transazioni"
+      "transactions": "Transazioni",
+      "telegramBot": "Bot Telegram"
     },
     "role": {
       "admin": "Amministratore",
@@ -1117,6 +1118,123 @@
     },
     "common": {
       "loading": "Caricamento..."
+    },
+    "telegramBot": {
+      "title": "Bot Spedizione",
+      "subtitle": "Centro di comando mobile per la spedizione AIGG",
+      "activation": {
+        "title": "Collegamento bot",
+        "connected": "Collegato",
+        "notConnected": "Non collegato",
+        "connectedAs": "Il bot e collegato",
+        "step1": "Apri il bot",
+        "step1Desc": "Apri il bot AIGG Expedition in Telegram.",
+        "step2": "Invia /start",
+        "step2Desc": "Invia /start nella chat. Il bot mostrera il tuo Chat ID.",
+        "step3": "Inserisci il Chat ID",
+        "step3Desc": "Copia il Chat ID e incollalo qui sotto.",
+        "openBot": "Apri il bot",
+        "chatIdPlaceholder": "Inserisci il Chat ID (es. 123456789)",
+        "invalidChatId": "Inserisci un Chat ID valido (solo numeri)",
+        "save": "Collega",
+        "disconnect": "Scollega",
+        "saving": "Salvataggio..."
+      },
+      "commands": {
+        "title": "Comandi spedizione",
+        "subtitle": "8 comandi per la raccolta dati quotidiana durante la spedizione",
+        "exampleLabel": "Esempio",
+        "tasting": {
+          "description": "Registra una degustazione — citta, tipo di luogo, prodotti, valutazione e note.",
+          "syntax": "/tasting [Citta], [Tipo-Luogo], [Prodotti], [Valutazione 1-5], [Nota]",
+          "example": "/tasting Vienna, Ristorante, Olio di semi di zucca + Rafano, 4, Ottima reazione"
+        },
+        "translation": {
+          "description": "Documenta test traduzione IA — lingua, strumento, situazione, precisione.",
+          "syntax": "/translation [Lingua], [Strumento], [Situazione], [Score 1-10], [Nota]",
+          "example": "/translation Sloveno, DeepL, Degustazione, 7, Funziona bene offline"
+        },
+        "ausgabe": {
+          "description": "Registra spesa con conversione valuta automatica (10 valute supportate).",
+          "syntax": "/ausgabe [Importo] [Valuta] [Categoria], [Paese]",
+          "example": "/ausgabe 45 EUR Diesel, Croazia"
+        },
+        "performance": {
+          "description": "Dati salute giornalieri — HRV, sonno, passi, allenamento, benessere.",
+          "syntax": "/performance [HRV] [Sonno] [Passi] [Allenamento Si/No] [Benessere 1-5]",
+          "example": "/performance 65 82 8500 Si 4"
+        },
+        "expStatus": {
+          "description": "Dashboard — paese attuale, budget, degustazioni recenti, post della settimana.",
+          "syntax": "/exp_status",
+          "example": "/exp_status"
+        },
+        "content": {
+          "description": "Attiva manualmente un post — invia il tema alla pipeline dei contenuti.",
+          "syntax": "/content [Tema]",
+          "example": "/content Degustazione olio di semi di zucca a Istanbul"
+        },
+        "report": {
+          "description": "Report spedizione 30 giorni — degustazioni, budget, performance, contenuti.",
+          "syntax": "/report",
+          "example": "/report"
+        },
+        "expHelp": {
+          "description": "Mostra tutti i comandi spedizione con spiegazioni.",
+          "syntax": "/exp_help",
+          "example": "/exp_help"
+        }
+      },
+      "multimedia": {
+        "title": "Capacita multimediali",
+        "subtitle": "Oltre ai comandi testuali, il bot elabora anche foto, messaggi vocali e documenti.",
+        "photo": {
+          "title": "Caricamento foto",
+          "description": "Invia una foto — GPT-4o Vision analizza automaticamente i prodotti, rileva persone (controllo GDPR) e puo essere usata come post immagine o base video."
+        },
+        "voice": {
+          "title": "Messaggi vocali",
+          "description": "Invia un messaggio vocale — Whisper trascrive automaticamente e interpreta l'istruzione come comando o descrizione di contenuto."
+        },
+        "documents": {
+          "title": "Documenti",
+          "description": "Invia PDF, immagini o video direttamente — caricati automaticamente nella Media Library e disponibili per la produzione di contenuti."
+        }
+      },
+      "workflow": {
+        "title": "Workflow quotidiano spedizione",
+        "subtitle": "Come utilizzare al meglio il bot nella routine quotidiana della spedizione.",
+        "morning": {
+          "time": "Mattina",
+          "title": "Panoramica",
+          "description": "Controllare lo stato giornaliero: paese attuale, budget, degustazioni, post."
+        },
+        "driving": {
+          "time": "In viaggio",
+          "title": "Registrare le spese",
+          "description": "Registrare ogni pagamento immediatamente (diesel, pedaggi, cibo)."
+        },
+        "tasting": {
+          "time": "Alle degustazioni",
+          "title": "Documentare la degustazione",
+          "description": "Registrare i dati della degustazione + inviare foto dell'evento."
+        },
+        "translation": {
+          "time": "Test linguistico",
+          "title": "Valutare il traduttore IA",
+          "description": "Dopo ogni test di traduzione, registrare lingua, strumento e punteggio."
+        },
+        "evening": {
+          "time": "Sera",
+          "title": "Inserire dati salute",
+          "description": "Documentare HRV, punteggio sonno, passi e benessere."
+        },
+        "weekly": {
+          "time": "Settimanale",
+          "title": "Generare il report",
+          "description": "Ottenere il riepilogo 30 giorni di tutti i dati della spedizione."
+        }
+      }
     }
   },
   "expedition": {
@@ -1306,7 +1424,7 @@
         "f4": {
           "id": "F4",
           "category": "marketing",
-          "question": "Un approccio basato sulle mascotte puo accelerare la notorieta del marchio sui nuovi mercati?"
+          "question": "Un approccio basato sugli avatar puo accelerare la notorieta del marchio sui nuovi mercati?"
         },
         "f5": {
           "id": "F5",

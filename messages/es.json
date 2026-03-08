@@ -521,7 +521,8 @@
       "studien": "Estudios",
       "studienReports": "Informes",
       "abTests": "A/B Tests",
-      "transactions": "Transacciones"
+      "transactions": "Transacciones",
+      "telegramBot": "Bot Telegram"
     },
     "role": {
       "admin": "Administrador",
@@ -1115,6 +1116,123 @@
       "noItems": "Sin articulos seleccionados.",
       "addFromPriceList": "Anadir desde la lista de precios"
     },
+    "telegramBot": {
+      "title": "Bot Expedicion",
+      "subtitle": "Centro de mando movil para la expedicion AIGG",
+      "activation": {
+        "title": "Conexion del bot",
+        "connected": "Conectado",
+        "notConnected": "No conectado",
+        "connectedAs": "El bot esta vinculado",
+        "step1": "Abrir el bot",
+        "step1Desc": "Abre el bot AIGG Expedition en Telegram.",
+        "step2": "Enviar /start",
+        "step2Desc": "Envia /start en el chat. El bot mostrara tu Chat ID.",
+        "step3": "Introducir Chat ID",
+        "step3Desc": "Copia el Chat ID y pegalo abajo.",
+        "openBot": "Abrir bot",
+        "chatIdPlaceholder": "Introduce el Chat ID (ej. 123456789)",
+        "invalidChatId": "Introduce un Chat ID valido (solo numeros)",
+        "save": "Conectar",
+        "disconnect": "Desconectar",
+        "saving": "Guardando..."
+      },
+      "commands": {
+        "title": "Comandos de expedicion",
+        "subtitle": "8 comandos para la recopilacion diaria de datos durante la expedicion",
+        "exampleLabel": "Ejemplo",
+        "tasting": {
+          "description": "Registrar una cata — ciudad, tipo de lugar, productos, puntuacion y notas.",
+          "syntax": "/tasting [Ciudad], [Tipo-Lugar], [Productos], [Puntuacion 1-5], [Nota]",
+          "example": "/tasting Viena, Restaurante, Aceite de calabaza + Rabano, 4, Gran reaccion"
+        },
+        "translation": {
+          "description": "Documentar prueba de traduccion IA — idioma, herramienta, situacion, precision.",
+          "syntax": "/translation [Idioma], [Herramienta], [Situacion], [Score 1-10], [Nota]",
+          "example": "/translation Esloveno, DeepL, Cata, 7, Funciona bien sin conexion"
+        },
+        "ausgabe": {
+          "description": "Registrar gasto con conversion automatica de moneda (10 monedas soportadas).",
+          "syntax": "/ausgabe [Monto] [Moneda] [Categoria], [Pais]",
+          "example": "/ausgabe 45 EUR Diesel, Croacia"
+        },
+        "performance": {
+          "description": "Datos de salud diarios — VFC, sueno, pasos, entrenamiento, bienestar.",
+          "syntax": "/performance [VFC] [Sueno] [Pasos] [Entrenamiento Si/No] [Bienestar 1-5]",
+          "example": "/performance 65 82 8500 Si 4"
+        },
+        "expStatus": {
+          "description": "Panel — pais actual, presupuesto, catas recientes, publicaciones de la semana.",
+          "syntax": "/exp_status",
+          "example": "/exp_status"
+        },
+        "content": {
+          "description": "Activar publicacion manualmente — envia el tema al pipeline de contenido.",
+          "syntax": "/content [Tema]",
+          "example": "/content Cata de aceite de calabaza en Estambul"
+        },
+        "report": {
+          "description": "Informe de expedicion 30 dias — catas, presupuesto, rendimiento, contenido.",
+          "syntax": "/report",
+          "example": "/report"
+        },
+        "expHelp": {
+          "description": "Mostrar todos los comandos de expedicion con explicaciones.",
+          "syntax": "/exp_help",
+          "example": "/exp_help"
+        }
+      },
+      "multimedia": {
+        "title": "Capacidades multimedia",
+        "subtitle": "Ademas de comandos de texto, el bot tambien procesa fotos, mensajes de voz y documentos.",
+        "photo": {
+          "title": "Subir fotos",
+          "description": "Envia una foto — GPT-4o Vision analiza automaticamente productos, detecta personas (verificacion RGPD) y puede usarse como post de imagen o base para video."
+        },
+        "voice": {
+          "title": "Mensajes de voz",
+          "description": "Envia un mensaje de voz — Whisper transcribe automaticamente e interpreta la instruccion como comando o descripcion de contenido."
+        },
+        "documents": {
+          "title": "Documentos",
+          "description": "Envia PDF, imagenes o videos directamente — se suben automaticamente a la Media Library y estan disponibles para produccion de contenido."
+        }
+      },
+      "workflow": {
+        "title": "Flujo diario de expedicion",
+        "subtitle": "Como usar el bot de manera optima en la rutina diaria de la expedicion.",
+        "morning": {
+          "time": "Manana",
+          "title": "Vista general",
+          "description": "Consultar estado diario: pais actual, presupuesto, catas, publicaciones."
+        },
+        "driving": {
+          "time": "En ruta",
+          "title": "Registrar gastos",
+          "description": "Registrar cada pago inmediatamente (diesel, peajes, comida)."
+        },
+        "tasting": {
+          "time": "En catas",
+          "title": "Documentar cata",
+          "description": "Registrar datos de la cata + enviar fotos del evento."
+        },
+        "translation": {
+          "time": "Prueba linguistica",
+          "title": "Evaluar traductor IA",
+          "description": "Despues de cada prueba de traduccion, registrar idioma, herramienta y puntuacion."
+        },
+        "evening": {
+          "time": "Noche",
+          "title": "Introducir datos de salud",
+          "description": "Documentar VFC, puntuacion de sueno, pasos y bienestar."
+        },
+        "weekly": {
+          "time": "Semanal",
+          "title": "Generar informe",
+          "description": "Obtener resumen de 30 dias de todos los datos de la expedicion."
+        }
+      }
+    },
     "common": {
       "loading": "Cargando..."
     }
@@ -1306,7 +1424,7 @@
         "f4": {
           "id": "F4",
           "category": "marketing",
-          "question": "Puede un enfoque basado en mascotas acelerar el reconocimiento de marca en nuevos mercados?"
+          "question": "Puede un enfoque basado en avatares acelerar el reconocimiento de marca en nuevos mercados?"
         },
         "f5": {
           "id": "F5",

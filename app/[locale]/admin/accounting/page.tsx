@@ -158,15 +158,17 @@ export default async function AccountingPage({
         />
         <KpiCard
           label={t('accounting.peter50')}
-          value={formatEurCents(m.peterShare)}
-          icon={Users}
-          accent="gold"
+          value={formatEurCents(m.grossProfit - m.auryxShare)}
+          sub={t('accounting.peter50Rest')}
+          icon={Building}
+          accent="green"
         />
         <KpiCard
           label={t('accounting.gottfried50')}
-          value={formatEurCents(m.aiggShare)}
-          icon={Building}
-          accent="green"
+          value={formatEurCents(m.auryxShare)}
+          sub="10% Nettoumsatz"
+          icon={Users}
+          accent="gold"
         />
       </div>
 
@@ -190,9 +192,8 @@ export default async function AccountingPage({
             <div className="border-t border-gold/20 my-2" />
             <CostRow label={t('accounting.grossProfit')} value={m.grossProfit} bold accent="gold" />
             <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={`→ ${t('accounting.auryxD2C')}`} value={m.auryxShare} accent="cream" />
-            <CostRow label={`→ ${t('accounting.peter50Rest')}`} value={m.peterShare} accent="gold" />
-            <CostRow label={`→ ${t('accounting.gottfried50Rest')}`} value={m.aiggShare} accent="emerald" />
+            <CostRow label={`→ ${t('accounting.auryxD2C')}`} value={-m.auryxShare} accent="cream" />
+            <CostRow label={`→ ${t('accounting.peter50Rest')}`} value={m.grossProfit - m.auryxShare} bold accent="emerald" />
           </div>
 
           <div className="mt-4 pt-3 border-t border-white/[0.04]">
@@ -211,9 +212,8 @@ export default async function AccountingPage({
             <CostRow label={t('accounting.totalRevenueYtd')} value={ytd.revenue} bold accent="cream" />
             <CostRow label={t('accounting.grossProfitYtd')} value={ytd.grossProfit} bold accent="gold" />
             <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={t('accounting.auryxYtd')} value={ytd.auryxShare} accent="cream" />
-            <CostRow label={t('accounting.peterYtd')} value={ytd.peterShare} accent="gold" />
-            <CostRow label={t('accounting.gottfriedYtd')} value={ytd.aiggShare} accent="emerald" />
+            <CostRow label={t('accounting.auryxYtd')} value={-ytd.auryxShare} accent="cream" />
+            <CostRow label={t('accounting.peterYtd')} value={ytd.grossProfit - ytd.auryxShare} bold accent="emerald" />
           </div>
 
           <div className="mt-8 flex gap-3">

@@ -379,7 +379,7 @@ export default async function AdminDashboard() {
         <KpiCard
           label={t('dashboard.grossProfit')}
           value={formatEurCents(data.monthGrossProfit)}
-          sub={`${t('dashboard.peter')}: ${formatEurCents(data.monthPeterShare)} · AIGG: ${formatEurCents(data.monthAiggShare)}`}
+          sub={`${t('dashboard.peter')}: ${formatEurCents(data.monthGrossProfit - data.monthAuryxShare)}`}
           icon={TrendingUp}
           accent="green"
         />
@@ -405,16 +405,10 @@ export default async function AdminDashboard() {
               </div>
             )}
             <div
-              className={`bg-gold/80 ${data.monthAuryxShare <= 0 ? 'rounded-l-lg' : ''} flex items-center justify-center text-[10px] font-semibold text-black`}
-              style={{ width: `${Math.max(20, (data.monthPeterShare / data.monthGrossProfit) * 100)}%` }}
+              className={`bg-emerald-600/80 ${data.monthAuryxShare <= 0 ? 'rounded-l-lg' : ''} rounded-r-lg flex items-center justify-center text-[10px] font-semibold text-white`}
+              style={{ width: `${Math.max(20, ((data.monthGrossProfit - data.monthAuryxShare) / data.monthGrossProfit) * 100)}%` }}
             >
-              {t('dashboard.peter')} · {formatEurCents(data.monthPeterShare)}
-            </div>
-            <div
-              className="bg-emerald-600/80 rounded-r-lg flex items-center justify-center text-[10px] font-semibold text-white"
-              style={{ width: `${Math.max(20, (data.monthAiggShare / data.monthGrossProfit) * 100)}%` }}
-            >
-              {t('dashboard.gottfried')} · {formatEurCents(data.monthAiggShare)}
+              {t('dashboard.peter')} · {formatEurCents(data.monthGrossProfit - data.monthAuryxShare)}
             </div>
           </div>
         </div>

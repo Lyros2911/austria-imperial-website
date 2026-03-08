@@ -144,9 +144,8 @@ export function generateDetailedCSV(data: ReportData): string {
     'Payment Fee (EUR)',
     'Customs (EUR)',
     'Gross Profit (EUR)',
-    'Auryx 10% D2C (EUR)',
-    'Peter 50% (EUR)',
-    'Gottfried 50% (EUR)',
+    'Auryx Dienstleistung (EUR)',
+    'Vereinsüberschuss (EUR)',
     'Notes',
   ].join(',');
 
@@ -163,8 +162,7 @@ export function generateDetailedCSV(data: ReportData): string {
       (e.customsCents / 100).toFixed(2),
       (e.grossProfitCents / 100).toFixed(2),
       ((e.auryxShareCents ?? 0) / 100).toFixed(2),
-      (e.peterShareCents / 100).toFixed(2),
-      (e.aiggShareCents / 100).toFixed(2),
+      ((e.peterShareCents + e.aiggShareCents) / 100).toFixed(2),
       `"${(e.notes || '').replace(/"/g, '""')}"`,
     ].join(',')
   );
@@ -182,8 +180,7 @@ export function generateDetailedCSV(data: ReportData): string {
     '',
     (data.totalGrossProfitCents / 100).toFixed(2),
     (data.totalAuryxCents / 100).toFixed(2),
-    (data.totalPeterCents / 100).toFixed(2),
-    (data.totalAiggCents / 100).toFixed(2),
+    ((data.totalPeterCents + data.totalAiggCents) / 100).toFixed(2),
     '',
   ].join(',');
 
@@ -212,10 +209,9 @@ export function generateSummaryCSV(data: ReportData, hash: string, generatedAt: 
     `Total Payment Fees,${(data.totalPaymentFeeCents / 100).toFixed(2)}`,
     `Total Gross Profit,${(data.totalGrossProfitCents / 100).toFixed(2)}`,
     '',
-    'Revenue Waterfall,Amount (EUR)',
-    `Auryx AI (10% D2C),${(data.totalAuryxCents / 100).toFixed(2)}`,
-    `Peter (50% Restgewinn),${(data.totalPeterCents / 100).toFixed(2)}`,
-    `Gottfried (50% Restgewinn),${(data.totalAiggCents / 100).toFixed(2)}`,
+    'Verteilung,Amount (EUR)',
+    `Auryx Dienstleistung (10% Nettoumsatz),${(data.totalAuryxCents / 100).toFixed(2)}`,
+    `Vereinsüberschuss (verbleibt im Verein),${((data.totalGrossProfitCents - data.totalAuryxCents) / 100).toFixed(2)}`,
     '',
     `Ledger Entries,${data.ledgerEntriesCount}`,
     `Report Hash (SHA256),${hash}`,

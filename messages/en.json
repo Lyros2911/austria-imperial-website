@@ -521,7 +521,8 @@
       "studien": "Studies",
       "studienReports": "Reports",
       "abTests": "A/B Tests",
-      "transactions": "Transactions"
+      "transactions": "Transactions",
+      "telegramBot": "Telegram Bot"
     },
     "role": {
       "admin": "Administrator",
@@ -557,8 +558,8 @@
       "total": "total",
       "revenueWaterfall": "Revenue Waterfall",
       "auryx10": "Auryx",
-      "peter": "Peter",
-      "gottfried": "Gottfried",
+      "peter": "Association Surplus",
+      "gottfried": "",
       "recentOrders": "Recent Orders",
       "viewAll": "View all",
       "noOrders": "No orders yet"
@@ -672,8 +673,8 @@
       "revenue": "Revenue",
       "grossProfit": "Gross Profit",
       "margin": "Margin",
-      "peter50": "Peter (50%)",
-      "gottfried50": "Gottfried (50%)",
+      "peter50": "Association Surplus",
+      "gottfried50": "AURYX Service Fee",
       "costBreakdown": "Cost Breakdown",
       "revenueBrutto": "Revenue (Gross)",
       "producerCosts": "Producer Costs",
@@ -683,8 +684,8 @@
       "customs": "Customs",
       "totalCosts": "Total Costs",
       "auryxD2C": "Auryx Service Fee",
-      "peter50Rest": "Peter (50% Remainder)",
-      "gottfried50Rest": "Gottfried (50% Remainder)",
+      "peter50Rest": "Association Surplus",
+      "gottfried50Rest": "",
       "sales": "Sales",
       "refunds": "Refunds",
       "entries": "Entries",
@@ -692,8 +693,8 @@
       "totalRevenueYtd": "Total Revenue YTD",
       "grossProfitYtd": "Gross Profit YTD",
       "auryxYtd": "Auryx Service Fee YTD",
-      "peterYtd": "Peter YTD",
-      "gottfriedYtd": "Gottfried YTD",
+      "peterYtd": "Association Surplus YTD",
+      "gottfriedYtd": "",
       "viewLedger": "View Ledger",
       "reports": "Reports"
     },
@@ -714,8 +715,8 @@
       "stripeFee": "Stripe Fee",
       "profit": "Profit",
       "auryx": "Auryx",
-      "peter": "Peter",
-      "gottfried": "Gottfried",
+      "peter": "Assoc. Surplus",
+      "gottfried": "",
       "page": "Page",
       "of": "of",
       "previous": "Previous",
@@ -741,7 +742,7 @@
       "current": "Current",
       "revenueLabel": "Revenue",
       "profitLabel": "Profit",
-      "peterLabel": "Peter",
+      "peterLabel": "Association Surplus",
       "entriesLabel": "entries",
       "by": "by",
       "summaryCsv": "Summary CSV",
@@ -979,6 +980,123 @@
       "checkoutStart": "Checkout Started",
       "purchases": "Purchases",
       "studyNotice": "Data is collected anonymously. The study is conducted by AIGG Verein for research on AI-powered marketing."
+    },
+    "telegramBot": {
+      "title": "Expedition Bot",
+      "subtitle": "Mobile Command Center for the AIGG Expedition",
+      "activation": {
+        "title": "Bot Connection",
+        "connected": "Connected",
+        "notConnected": "Not connected",
+        "connectedAs": "Bot is linked",
+        "step1": "Open Bot",
+        "step1Desc": "Open the AIGG Expedition Bot in Telegram.",
+        "step2": "Send /start",
+        "step2Desc": "Send /start in the chat. The bot will show your Chat ID.",
+        "step3": "Enter Chat ID",
+        "step3Desc": "Copy the Chat ID and paste it below.",
+        "openBot": "Open Bot",
+        "chatIdPlaceholder": "Enter Chat ID (e.g. 123456789)",
+        "invalidChatId": "Please enter a valid Chat ID (numbers only)",
+        "save": "Connect",
+        "disconnect": "Disconnect",
+        "saving": "Saving..."
+      },
+      "commands": {
+        "title": "Expedition Commands",
+        "subtitle": "8 commands for daily data collection during the expedition",
+        "exampleLabel": "Example",
+        "tasting": {
+          "description": "Log a tasting — city, location type, products, rating and notes.",
+          "syntax": "/tasting [City], [Location-Type], [Products], [Rating 1-5], [Note]",
+          "example": "/tasting Vienna, Restaurant, Pumpkin Seed Oil + Horseradish, 4, Great reaction"
+        },
+        "translation": {
+          "description": "Document AI translation test — language, tool, situation, accuracy score.",
+          "syntax": "/translation [Language], [Tool], [Situation], [Score 1-10], [Note]",
+          "example": "/translation Slovenian, DeepL, Tasting, 7, Works well offline"
+        },
+        "ausgabe": {
+          "description": "Log expense with automatic currency conversion (10 currencies supported).",
+          "syntax": "/ausgabe [Amount] [Currency] [Category], [Country]",
+          "example": "/ausgabe 45 EUR Diesel, Croatia"
+        },
+        "performance": {
+          "description": "Daily health data — HRV, sleep score, steps, training, wellbeing.",
+          "syntax": "/performance [HRV] [Sleep] [Steps] [Training Yes/No] [Wellbeing 1-5]",
+          "example": "/performance 65 82 8500 Yes 4"
+        },
+        "expStatus": {
+          "description": "Dashboard — current country, budget, recent tastings, posts this week.",
+          "syntax": "/exp_status",
+          "example": "/exp_status"
+        },
+        "content": {
+          "description": "Trigger content post manually — sends topic to the content pipeline.",
+          "syntax": "/content [Topic]",
+          "example": "/content Pumpkin seed oil tasting in Istanbul"
+        },
+        "report": {
+          "description": "30-day expedition report — tastings, budget, performance, content.",
+          "syntax": "/report",
+          "example": "/report"
+        },
+        "expHelp": {
+          "description": "Show all expedition commands with explanations.",
+          "syntax": "/exp_help",
+          "example": "/exp_help"
+        }
+      },
+      "multimedia": {
+        "title": "Multimedia Capabilities",
+        "subtitle": "Beyond text commands, the bot also processes photos, voice messages and documents.",
+        "photo": {
+          "title": "Photo Upload",
+          "description": "Send a photo — GPT-4o Vision automatically analyzes products, detects persons (GDPR check) and can be used as image post or video basis."
+        },
+        "voice": {
+          "title": "Voice Messages",
+          "description": "Send a voice message — Whisper automatically transcribes and interprets the instruction as a command or content description."
+        },
+        "documents": {
+          "title": "Documents",
+          "description": "Send PDFs, images or videos directly — automatically uploaded to the Media Library and available for content production."
+        }
+      },
+      "workflow": {
+        "title": "Daily Expedition Workflow",
+        "subtitle": "How to best use the bot in your daily expedition routine.",
+        "morning": {
+          "time": "Morning",
+          "title": "Get overview",
+          "description": "Check daily status: current country, budget, tastings, posts."
+        },
+        "driving": {
+          "time": "On the road",
+          "title": "Log expenses",
+          "description": "Log every payment immediately (diesel, tolls, food)."
+        },
+        "tasting": {
+          "time": "At tastings",
+          "title": "Document tasting",
+          "description": "Record tasting data + send photos from the event."
+        },
+        "translation": {
+          "time": "Language test",
+          "title": "Rate AI translator",
+          "description": "After each translation test, log language, tool and score."
+        },
+        "evening": {
+          "time": "Evening",
+          "title": "Enter health data",
+          "description": "Document HRV, sleep score, steps and wellbeing."
+        },
+        "weekly": {
+          "time": "Weekly",
+          "title": "Generate report",
+          "description": "Retrieve 30-day summary of all expedition data."
+        }
+      }
     }
   },
   "partner": {
@@ -1306,7 +1424,7 @@
         "f4": {
           "id": "F4",
           "category": "marketing",
-          "question": "Can a mascot-based approach accelerate brand awareness in new markets?"
+          "question": "Can an avatar-based approach accelerate brand awareness in new markets?"
         },
         "f5": {
           "id": "F5",

@@ -260,7 +260,7 @@ export default function ReportsPage() {
                       <div className="flex items-center gap-4 text-[10px] text-muted">
                         <span>{t('revenueLabel')}: {formatEur(report.totalRevenueCents)}</span>
                         <span>{t('profitLabel')}: {formatEur(report.totalGrossProfitCents)}</span>
-                        <span>{t('peterLabel')}: {formatEur(report.totalPeterCents)}</span>
+                        <span>{t('peterLabel')}: {formatEur(report.totalPeterCents + report.totalAiggCents)}</span>
                         <span>{report.ledgerEntriesCount} {t('entriesLabel')}</span>
                       </div>
                       <div className="flex items-center gap-3 mt-1.5 text-[9px] text-muted/50">

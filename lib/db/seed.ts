@@ -60,10 +60,10 @@ async function seed() {
       descriptionDe:
         'Getrockneter steirischer Kren (Meerrettich) in Premiumqualität. ' +
         'Natürlich scharf, ohne Konservierungsstoffe. ' +
-        'Mascot: Scharfer Rudi — der steirische Krieger unter den Gewürzen. Lange haltbar, vielseitig einsetzbar.',
+        'Avatar: Scharfer Rudi — der steirische Krieger unter den Gewürzen. Lange haltbar, vielseitig einsetzbar.',
       descriptionEn:
         'Premium dried Styrian horseradish. Naturally spicy, no preservatives. ' +
-        'Mascot: Scharfer Rudi — the Styrian warrior among spices. Long shelf life, versatile use.',
+        'Avatar: Scharfer Rudi — the Styrian warrior among spices. Long shelf life, versatile use.',
       category: 'kren',
       producer: 'hernach',
     })
