@@ -1,6 +1,6 @@
 -- Migration 0004: Auryx Revenue Share (Strukturvereinbarung 26.02.2026)
 --
--- Auryx AI LLC ist offizieller Technologiepartner der AIGG GmbH.
+-- Auryx AI LLC ist offizieller Technologiepartner von AIGG (gemeinnütziger Verein).
 -- Auryx erhält 10% vom D2C-Nettoumsatz (Revenue - Payment Fees).
 -- Revenue-Waterfall: Bruttogewinn → Auryx 10% → Rest 50/50 (Peter/Gottfried)
 --
