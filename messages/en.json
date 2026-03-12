@@ -2,10 +2,10 @@
   "meta": {
     "titleDefault": "Austria Imperial — Green Gold",
     "titleTemplate": "%s | Austria Imperial",
-    "description": "Premium Styrian Pumpkin Seed Oil PGI and Styrian Horseradish — authentic Austrian specialties direct from the producer.",
+    "description": "Premium Styrian Pumpkin Seed Oil PGI — authentic Austrian specialties direct from the producer.",
     "products": {
       "title": "Products",
-      "description": "Styrian Pumpkin Seed Oil PGI, Styrian Horseradish and natural animal nutrition — our premium specialties."
+      "description": "Styrian Pumpkin Seed Oil PGI — our premium specialty from Styria."
     },
     "about": {
       "title": "About Us",
@@ -49,7 +49,7 @@
     "tagline": "Styrian Specialties for Generations",
     "heading1": "Green Gold",
     "heading2": "from Styria",
-    "subheading": "Authentic Styrian Pumpkin Seed Oil PGI and fine Styrian Horseradish — direct from our producers to you.",
+    "subheading": "Authentic Styrian Pumpkin Seed Oil PGI — direct from our producers to you.",
     "ctaProducts": "Discover Products",
     "ctaStory": "Our Story",
     "imageAlt": "Styrian Pumpkin Seed Oil PGI — Austria Imperial Green Gold"
@@ -64,7 +64,7 @@
       },
       "directProducer": {
         "title": "Direct from the Producer",
-        "description": "No middlemen. From the oil mill and horseradish farm directly to you."
+        "description": "No middlemen. From the oil mill directly to you."
       },
       "securePayment": {
         "title": "Secure Payment",
@@ -83,7 +83,7 @@
     "title": "Our Products",
     "subtitle": "Carefully selected Austrian specialties — crafted by traditional producers in Styria.",
     "forHumans": "For People",
-    "forHumansDesc": "Premium food from Styria — pumpkin seed oil with PGI protection and naturally pungent horseradish.",
+    "forHumansDesc": "Premium food from Styria — pumpkin seed oil with PGI protection.",
     "forAnimals": "For Animals",
     "forAnimalsDesc": "Natural dietary supplements from Styrian horseradish — pelletized for horses and camels.",
     "from": "from",
@@ -165,7 +165,7 @@
     "heading": "Green Gold from Styria",
     "story": {
       "p1": "Styria is one of Europe's most fascinating gourmet regions. Gentle hills, fertile soils and a mild climate create ideal conditions for products of exceptional quality.",
-      "p2": "Austria Imperial — Green Gold brings this tradition directly to you: Styrian Pumpkin Seed Oil with Protected Geographical Indication (PGI) and hand-selected horseradish from traditional cultivation."
+      "p2": "Austria Imperial — Green Gold brings this tradition directly to you: Styrian Pumpkin Seed Oil with Protected Geographical Indication (PGI) direct from the producer."
     },
     "kernoel": {
       "title": "The Pumpkin Seed Oil",
@@ -246,7 +246,7 @@
     }
   },
   "footer": {
-    "description": "Authentic Austrian specialties direct from the producer. Styrian Pumpkin Seed Oil PGI and fine horseradish.",
+    "description": "Authentic Austrian specialties direct from the producer. Styrian Pumpkin Seed Oil PGI from Styria.",
     "navigation": "Navigation",
     "legal": "Legal",
     "impressum": "Legal Notice",

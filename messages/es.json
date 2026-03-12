@@ -2,10 +2,10 @@
   "meta": {
     "titleDefault": "Austria Imperial — Green Gold",
     "titleTemplate": "%s | Austria Imperial",
-    "description": "Steirisches Kürbiskernöl g.g.A. premium y Kren de Estiria — autenticas especialidades austriacas directamente del productor.",
+    "description": "Steirisches Kürbiskernöl g.g.A. premium — autenticas especialidades austriacas directamente del productor.",
     "products": {
       "title": "Productos",
-      "description": "Steirisches Kürbiskernöl g.g.A., Kren de Estiria y alimentacion animal natural — nuestras especialidades premium."
+      "description": "Steirisches Kürbiskernöl g.g.A. — nuestra especialidad premium de Estiria."
     },
     "about": {
       "title": "Sobre nosotros",
@@ -49,7 +49,7 @@
     "tagline": "Especialidades de Estiria desde generaciones",
     "heading1": "Oro verde",
     "heading2": "de Estiria",
-    "subheading": "Autentico Steirisches Kürbiskernöl g.g.A. y fino Kren de Estiria — directamente de nuestros productores a usted.",
+    "subheading": "Autentico Steirisches Kürbiskernöl g.g.A. — directamente de nuestros productores a usted.",
     "ctaProducts": "Descubrir productos",
     "ctaStory": "Nuestra historia",
     "imageAlt": "Steirisches Kürbiskernöl g.g.A. — Austria Imperial Green Gold"
@@ -64,7 +64,7 @@
       },
       "directProducer": {
         "title": "Directo del productor",
-        "description": "Sin intermediarios. Del molino de aceite y del cultivador de Kren directamente a usted."
+        "description": "Sin intermediarios. Del molino de aceite directamente a usted."
       },
       "securePayment": {
         "title": "Pago seguro",
@@ -83,7 +83,7 @@
     "title": "Nuestros productos",
     "subtitle": "Especialidades austriacas cuidadosamente seleccionadas — elaboradas por productores tradicionales en Estiria.",
     "forHumans": "Para personas",
-    "forHumansDesc": "Productos alimentarios premium de Estiria — Kürbiskernöl con proteccion g.g.A. y Kren naturalmente picante.",
+    "forHumansDesc": "Productos alimentarios premium de Estiria — Kürbiskernöl con proteccion g.g.A.",
     "forAnimals": "Para animales",
     "forAnimalsDesc": "Suplemento alimenticio natural a base de Kren de Estiria — en pellets para caballos y camellos.",
     "from": "desde",
@@ -165,7 +165,7 @@
     "heading": "Oro verde de Estiria",
     "story": {
       "p1": "Estiria es una de las regiones gastronomicas mas fascinantes de Europa. Suaves colinas, suelos fertiles y un clima templado crean las condiciones ideales para productos de calidad excepcional.",
-      "p2": "Austria Imperial — Green Gold le trae esta tradicion directamente: Steirisches Kürbiskernöl con indicacion geografica protegida (g.g.A.) y Kren cultivado de forma tradicional."
+      "p2": "Austria Imperial — Green Gold le trae esta tradicion directamente: Steirisches Kürbiskernöl con indicacion geografica protegida (g.g.A.) directamente del productor."
     },
     "kernoel": {
       "title": "El Kürbiskernöl",
@@ -246,7 +246,7 @@
     }
   },
   "footer": {
-    "description": "Autenticas especialidades austriacas directamente del productor. Steirisches Kürbiskernöl g.g.A. y fino Kren.",
+    "description": "Autenticas especialidades austriacas directamente del productor. Steirisches Kürbiskernöl g.g.A. de Estiria.",
     "navigation": "Navegacion",
     "legal": "Legal",
     "impressum": "Aviso legal",

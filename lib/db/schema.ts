@@ -434,6 +434,7 @@ export const adminUsers = pgTable('admin_users', {
   name: varchar('name', { length: 100 }),
   role: varchar('role', { length: 20 }).notNull().default('admin'),
   producer: producerEnum('producer'), // NULL = kein Producer (admin/viewer), 'kiendler' oder 'hernach'
+  telegramChatId: varchar('telegram_chat_id', { length: 50 }),
   createdAt: timestamp('created_at').notNull().defaultNow(),
   updatedAt: timestamp('updated_at').notNull().defaultNow(),
   deletedAt: timestamp('deleted_at'),

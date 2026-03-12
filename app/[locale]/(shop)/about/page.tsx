@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { Compass } from 'lucide-react';
+import { isCategoryDisabled } from '@/lib/disabled-products';
 
 interface Props {
   params: Promise<{ locale: string }>;
@@ -53,13 +54,15 @@ export default async function AboutPage({ params }: Props) {
             </p>
           </section>
 
-          {/* Kren */}
-          <section className="space-y-4">
-            <h2 className="font-[var(--font-heading)] text-2xl text-cream">
-              {t('kren.title')}
-            </h2>
-            <p>{t('kren.p1')}</p>
-          </section>
+          {/* Kren — DEACTIVATED: Hernach out of stock */}
+          {!isCategoryDisabled('kren') && (
+            <section className="space-y-4">
+              <h2 className="font-[var(--font-heading)] text-2xl text-cream">
+                {t('kren.title')}
+              </h2>
+              <p>{t('kren.p1')}</p>
+            </section>
+          )}
 
           <div className="gold-line" />
 

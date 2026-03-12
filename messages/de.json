@@ -2,10 +2,10 @@
   "meta": {
     "titleDefault": "Austria Imperial — Green Gold",
     "titleTemplate": "%s | Austria Imperial",
-    "description": "Premium Steirisches Kürbiskernöl g.g.A. und Steirischer Kren — authentische österreichische Spezialitäten direkt vom Erzeuger.",
+    "description": "Premium Steirisches Kürbiskernöl g.g.A. — authentische österreichische Spezialitäten direkt vom Erzeuger.",
     "products": {
       "title": "Produkte",
-      "description": "Steirisches Kürbiskernöl g.g.A., Steirischer Kren und natürliche Tiernahrung — unsere Premium-Spezialitäten."
+      "description": "Steirisches Kürbiskernöl g.g.A. — unsere Premium-Spezialität aus der Steiermark."
     },
     "about": {
       "title": "Über Uns",
@@ -49,7 +49,7 @@
     "tagline": "Steirische Spezialitäten seit Generationen",
     "heading1": "Grünes Gold",
     "heading2": "aus der Steiermark",
-    "subheading": "Authentisches Steirisches Kürbiskernöl g.g.A. und feiner Steirischer Kren — direkt von unseren Erzeugern zu Ihnen.",
+    "subheading": "Authentisches Steirisches Kürbiskernöl g.g.A. — direkt von unseren Erzeugern zu Ihnen.",
     "ctaProducts": "Produkte entdecken",
     "ctaStory": "Unsere Geschichte",
     "imageAlt": "Steirisches Kürbiskernöl g.g.A. — Austria Imperial Green Gold"
@@ -64,7 +64,7 @@
       },
       "directProducer": {
         "title": "Direkt vom Erzeuger",
-        "description": "Keine Zwischenhändler. Von der Ölmühle und dem Krenbauern direkt zu Ihnen."
+        "description": "Keine Zwischenhändler. Von der Ölmühle direkt zu Ihnen."
       },
       "securePayment": {
         "title": "Sichere Bezahlung",
@@ -83,7 +83,7 @@
     "title": "Unsere Produkte",
     "subtitle": "Sorgfältig ausgewählte österreichische Spezialitäten — von traditionellen Erzeugern in der Steiermark hergestellt.",
     "forHumans": "Für Menschen",
-    "forHumansDesc": "Premium-Lebensmittel aus der Steiermark — Kürbiskernöl mit g.g.A.-Schutz und natürlich scharfer Kren.",
+    "forHumansDesc": "Premium-Lebensmittel aus der Steiermark — Kürbiskernöl mit g.g.A.-Schutz.",
     "forAnimals": "Für Tiere",
     "forAnimalsDesc": "Natürliche Nahrungsergänzung aus steirischem Kren — pelletiert für Pferde und Kamele.",
     "from": "ab",
@@ -165,7 +165,7 @@
     "heading": "Grünes Gold aus der Steiermark",
     "story": {
       "p1": "Die Steiermark ist eine der faszinierendsten Genussregionen Europas. Sanfte Hügel, fruchtbare Böden und ein mildes Klima schaffen ideale Bedingungen für Produkte von außergewöhnlicher Qualität.",
-      "p2": "Austria Imperial — Green Gold bringt diese Tradition direkt zu Ihnen: Steirisches Kürbiskernöl mit geschützter geographischer Angabe (g.g.A.) und handverlesener Kren aus traditionellem Anbau."
+      "p2": "Austria Imperial — Green Gold bringt diese Tradition direkt zu Ihnen: Steirisches Kürbiskernöl mit geschützter geographischer Angabe (g.g.A.) direkt vom Erzeuger."
     },
     "kernoel": {
       "title": "Das Kürbiskernöl",
@@ -246,7 +246,7 @@
     }
   },
   "footer": {
-    "description": "Authentische österreichische Spezialitäten direkt vom Erzeuger. Steirisches Kürbiskernöl g.g.A. und feiner Kren.",
+    "description": "Authentische österreichische Spezialitäten direkt vom Erzeuger. Steirisches Kürbiskernöl g.g.A. aus der Steiermark.",
     "navigation": "Navigation",
     "legal": "Rechtliches",
     "impressum": "Impressum",

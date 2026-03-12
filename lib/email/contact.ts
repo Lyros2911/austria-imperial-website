@@ -54,22 +54,57 @@ export async function sendContactNotification(data: ContactFormData): Promise<bo
 
 /**
  * Send a confirmation email to the person who submitted the form.
+ * Locale-aware: DE, EN, or AR response based on the user's language.
  */
-export async function sendContactConfirmation(data: ContactFormData): Promise<boolean> {
+
+const CONFIRMATION_TEMPLATES: Record<string, { subject: string; body: (name: string) => string }> = {
+  de: {
+    subject: 'Ihre Anfrage bei Austria Imperial — Green Gold',
+    body: (name) => [
+      `Guten Tag ${name},`,
+      ``,
+      `vielen Dank fuer Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.`,
+      ``,
+      `Mit freundlichen Gruessen,`,
+      `Ihr Austria Imperial Team`,
+    ].join('\n'),
+  },
+  en: {
+    subject: 'Your Inquiry — Austria Imperial Green Gold',
+    body: (name) => [
+      `Dear ${name},`,
+      ``,
+      `Thank you for your message! We have received your inquiry and will get back to you within 24 hours.`,
+      ``,
+      `Kind regards,`,
+      `The Austria Imperial Team`,
+    ].join('\n'),
+  },
+  ar: {
+    subject: 'Austria Imperial Green Gold — استفسارك',
+    body: (name) => [
+      `${name} عزيزي`,
+      ``,
+      `شكرا لرسالتك! لقد تلقينا استفسارك وسنعود إليك في غضون 24 ساعة.`,
+      ``,
+      `مع أطيب التحيات`,
+      `فريق Austria Imperial`,
+    ].join('\n'),
+  },
+};
+
+export async function sendContactConfirmation(data: ContactFormData, locale: string = 'de'): Promise<boolean> {
+  const tpl = CONFIRMATION_TEMPLATES[locale] || CONFIRMATION_TEMPLATES.de;
+
   return sendEmail({
     to: data.email,
-    subject: 'Ihre Anfrage bei Austria Imperial — Green Gold',
+    subject: tpl.subject,
     text: [
-      `Guten Tag ${data.name},`,
-      ``,
-      `vielen Dank für Ihre Nachricht! Wir haben Ihre Anfrage erhalten und melden uns innerhalb von 24 Stunden bei Ihnen.`,
-      ``,
-      `Mit freundlichen Grüßen,`,
-      `Ihr Austria Imperial Team`,
+      tpl.body(data.name),
       ``,
       `---`,
       `Austria Imperial — Green Gold`,
-      `Premium Steirisches Kürbiskernöl & Kren`,
+      `Premium Steirisches Kuerbiskernoel & Kren`,
       `https://austriaimperial.com`,
     ].join('\n'),
   });

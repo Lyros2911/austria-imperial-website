@@ -28,10 +28,26 @@ const checkoutSchema = z.object({
     .max(20),
 });
 
+// Map site locale → Stripe checkout locale
+const LOCALE_TO_STRIPE: Record<string, string> = {
+  de: 'de',
+  en: 'en',
+  ar: 'ar',
+  fr: 'fr',
+  it: 'it',
+  es: 'es',
+};
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
     const parsed = checkoutSchema.safeParse(body);
+
+    // Detect locale from referer URL (e.g. /en/checkout) or Accept-Language
+    const referer = request.headers.get('referer') || '';
+    const localeMatch = referer.match(/\/(de|en|ar|fr|it|es)(\/|$)/);
+    const requestLocale = localeMatch?.[1] || 'de';
+    const stripeLocale = (LOCALE_TO_STRIPE[requestLocale] || 'de') as 'de' | 'en' | 'ar' | 'fr' | 'it' | 'es';
 
     if (!parsed.success) {
       return NextResponse.json(
@@ -150,9 +166,9 @@ export async function POST(request: NextRequest) {
         ],
       },
       billing_address_collection: 'required',
-      success_url: `${baseUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${baseUrl}/checkout`,
-      locale: 'de',
+      success_url: `${baseUrl}/${requestLocale}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${baseUrl}/${requestLocale}/checkout`,
+      locale: stripeLocale,
       metadata: {
         source: attribution?.source || 'direct',
         utm_source: attribution?.utm_source || '',

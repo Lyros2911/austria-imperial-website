@@ -58,7 +58,7 @@ export default async function ProductDetailPage({ params }: Props) {
     },
   });
 
-  if (!product) notFound();
+  if (!product || !product.isActive) notFound();
 
   const isKernoel = product.category === 'kernoel';
   const hasVariants = product.variants.length > 0;

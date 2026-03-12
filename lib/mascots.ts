@@ -95,7 +95,8 @@ export function getMascotForCategory(
     case 'kernoel':
       return KERNI;
     case 'kren':
-      return SCHARFER_RUDI;
+      // DEACTIVATED: Hernach/Kren out of stock
+      return null;
     default:
       return null;
   }

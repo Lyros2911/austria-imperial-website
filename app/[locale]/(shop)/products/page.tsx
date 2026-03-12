@@ -35,7 +35,7 @@ export default async function ProductsPage({ params }: Props) {
   });
 
   const menschenProdukte = allProducts.filter(
-    (p) => p.category === 'kernoel' || p.category === 'kren'
+    (p) => p.category === 'kernoel'
   );
   const tierProdukte = allProducts.filter(
     (p) => p.category === 'tiernahrung'

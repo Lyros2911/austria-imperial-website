@@ -45,7 +45,11 @@ async function airtableFetch<T>(
     return { success: false, error: 'AIRTABLE_PAT not set' };
   }
 
-  const url = `${AIRTABLE_API}/${getAirtableBaseId()}/${encodeURIComponent(path)}`;
+  // Split path at '?' to encode table name but preserve query string
+  const qIdx = path.indexOf('?');
+  const tablePart = qIdx >= 0 ? path.substring(0, qIdx) : path;
+  const queryPart = qIdx >= 0 ? path.substring(qIdx) : '';
+  const url = `${AIRTABLE_API}/${getAirtableBaseId()}/${encodeURIComponent(tablePart)}${queryPart}`;
 
   for (let attempt = 0; attempt <= MAX_RETRIES; attempt++) {
     try {
@@ -89,6 +93,40 @@ async function airtableFetch<T>(
 // ============================================================
 // PUBLIC API
 // ============================================================
+
+/**
+ * List records with optional filter, sort, and max.
+ * Returns an array of Airtable records.
+ */
+export async function listRecords<T = Record<string, unknown>>(
+  table: string,
+  options: {
+    filterByFormula?: string;
+    sort?: Array<{ field: string; direction: 'asc' | 'desc' }>;
+    maxRecords?: number;
+    fields?: string[];
+  } = {},
+): Promise<AirtableResult<AirtableRecord<T>[]>> {
+  const params = new URLSearchParams();
+  if (options.filterByFormula) params.set('filterByFormula', options.filterByFormula);
+  if (options.maxRecords) params.set('maxRecords', String(options.maxRecords));
+  if (options.fields) {
+    options.fields.forEach((f) => params.append('fields[]', f));
+  }
+  if (options.sort) {
+    options.sort.forEach((s, i) => {
+      params.set(`sort[${i}][field]`, s.field);
+      params.set(`sort[${i}][direction]`, s.direction);
+    });
+  }
+
+  const result = await airtableFetch<AirtableListResponse<T>>(
+    `${table}?${params.toString()}`,
+  );
+
+  if (!result.success) return { success: false, error: result.error };
+  return { success: true, data: result.data?.records ?? [] };
+}
 
 /**
  * Find a single record by Airtable formula.

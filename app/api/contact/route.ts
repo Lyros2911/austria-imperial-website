@@ -13,6 +13,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { sendContactNotification, sendContactConfirmation } from '@/lib/email/contact';
+import { createRecord } from '@/lib/airtable/client';
 
 export async function POST(request: NextRequest) {
   try {
@@ -42,10 +43,27 @@ export async function POST(request: NextRequest) {
       message: message.trim(),
     };
 
-    // Send both emails in parallel (non-blocking)
+    // Detect locale from referer (e.g. /en/contact, /ar/contact)
+    const referer = request.headers.get('referer') || '';
+    const localeMatch = referer.match(/\/(de|en|ar|fr|it|es)(\/|$)/);
+    const locale = localeMatch?.[1] || 'de';
+
+    // Send emails + sync to Airtable CRM in parallel (non-blocking)
     const [notifResult, confirmResult] = await Promise.allSettled([
       sendContactNotification(formData),
-      sendContactConfirmation(formData),
+      sendContactConfirmation(formData, locale),
+      // Sync lead to Airtable CRM (Kernoel CRM base)
+      createRecord('Kontakte', {
+        Name: formData.name,
+        Email: formData.email,
+        Betreff: formData.subject,
+        Nachricht: formData.message,
+        Quelle: 'website-kontakt',
+        Sprache: locale,
+        Datum: new Date().toISOString().split('T')[0],
+      }).catch((err: unknown) => {
+        console.warn('[Contact] Airtable CRM sync failed:', err);
+      }),
     ]);
 
     // Log results for monitoring

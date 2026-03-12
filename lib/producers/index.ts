@@ -14,6 +14,7 @@ import type { ProducerClient, ProducerConfig } from './types';
 import { KiendlerClient } from './kiendler';
 import { HernachClient } from './hernach';
 import { GenericProducerClient } from './generic';
+import { isProducerDisabled } from '@/lib/disabled-products';
 import { db } from '@/lib/db/drizzle';
 import { producers } from '@/lib/db/schema';
 import { eq } from 'drizzle-orm';
@@ -38,6 +39,11 @@ const CACHE_TTL = 5 * 60 * 1000;
  * Throws if producer is unknown or inactive.
  */
 export async function getProducer(name: string): Promise<ProducerClient> {
+  // 0. Check if producer is disabled (feature flag)
+  if (isProducerDisabled(name)) {
+    throw new Error(`Producer "${name}" is currently disabled (out of stock)`);
+  }
+
   // 1. Check legacy registry first
   const legacy = legacyRegistry.get(name);
   if (legacy) return legacy;

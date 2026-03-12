@@ -19,6 +19,7 @@ import {
   Factory,
   Wallet,
   GraduationCap,
+  Bot,
 } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
@@ -82,6 +83,9 @@ function buildNavigation(role: string, t: (key: string) => string): NavItem[] {
       { label: t('nav.abTests'), href: '/admin/studien/ab-tests' },
     ],
   });
+
+  // Telegram Bot (Expedition Command Center)
+  nav.push({ label: t('nav.telegramBot'), href: '/admin/telegram-bot', icon: Bot });
 
   // Benutzerverwaltung nur für Admins
   if (role === 'admin') {
