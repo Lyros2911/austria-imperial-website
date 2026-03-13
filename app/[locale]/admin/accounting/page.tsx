@@ -1,3 +1,10 @@
+/**
+ * AIGG Admin Accounting — Gemeinnütziger Verein
+ *
+ * Zeigt Vereinsüberschuss/Defizit. KEINE Gewinnbeteiligung,
+ * KEIN 50/50 Split, KEIN Peter-Share.
+ * Stand: 2026-03-13
+ */
 export const dynamic = 'force-dynamic';
 
 import { db } from '@/lib/db/drizzle';
@@ -34,9 +41,6 @@ async function getAccountingData(year: number, month: number) {
       paymentFee: sql<number>`COALESCE(SUM(payment_fee_cents), 0)::int`,
       customs: sql<number>`COALESCE(SUM(customs_cents), 0)::int`,
       grossProfit: sql<number>`COALESCE(SUM(gross_profit_cents), 0)::int`,
-      auryxShare: sql<number>`COALESCE(SUM(auryx_share_cents), 0)::int`,
-      peterShare: sql<number>`COALESCE(SUM(peter_share_cents), 0)::int`,
-      aiggShare: sql<number>`COALESCE(SUM(aigg_share_cents), 0)::int`,
       count: sql<number>`count(*)::int`,
       salesCount: sql<number>`count(*) FILTER (WHERE entry_type = 'sale')::int`,
       refundCount: sql<number>`count(*) FILTER (WHERE entry_type IN ('partial_refund', 'full_refund'))::int`,
@@ -55,9 +59,6 @@ async function getAccountingData(year: number, month: number) {
     .select({
       revenue: sql<number>`COALESCE(SUM(revenue_cents), 0)::int`,
       grossProfit: sql<number>`COALESCE(SUM(gross_profit_cents), 0)::int`,
-      auryxShare: sql<number>`COALESCE(SUM(auryx_share_cents), 0)::int`,
-      peterShare: sql<number>`COALESCE(SUM(peter_share_cents), 0)::int`,
-      aiggShare: sql<number>`COALESCE(SUM(aigg_share_cents), 0)::int`,
     })
     .from(financialLedger)
     .where(
@@ -103,9 +104,9 @@ export default async function AccountingPage({
       <div className="flex items-center justify-between mb-6 flex-wrap gap-4">
         <div>
           <h1 className="font-[var(--font-heading)] text-2xl text-cream font-semibold">
-            {t('accounting.title')}
+            Vereinsbuchhaltung
           </h1>
-          <p className="text-muted text-sm mt-1">{monthName}</p>
+          <p className="text-muted text-sm mt-1">{monthName} — Gemeinnütziger Verein</p>
         </div>
 
         {/* Period selector */}
@@ -136,39 +137,39 @@ export default async function AccountingPage({
             type="submit"
             className="bg-gold/10 border border-gold/20 text-gold rounded-lg px-4 py-2 text-sm hover:bg-gold/20 transition-colors"
           >
-            {t('accounting.show')}
+            Anzeigen
           </button>
         </form>
       </div>
 
-      {/* KPI Row */}
+      {/* KPI Row — Vereinsübersicht */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <KpiCard
-          label={t('accounting.revenue')}
+          label="Einnahmen"
           value={formatEurCents(m.revenue)}
           icon={DollarSign}
           accent="gold"
         />
         <KpiCard
-          label={t('accounting.grossProfit')}
+          label="Vereinsüberschuss"
           value={formatEurCents(m.grossProfit)}
-          sub={`${t('accounting.margin')}: ${margin}%`}
+          sub={`Marge: ${margin}%`}
           icon={TrendingUp}
           accent="green"
         />
         <KpiCard
-          label={t('accounting.peter50')}
-          value={formatEurCents(m.grossProfit - m.auryxShare)}
-          sub={t('accounting.peter50Rest')}
-          icon={Building}
-          accent="green"
+          label="Transaktionen"
+          value={String(m.salesCount)}
+          sub={`${m.refundCount} Rückerstattungen`}
+          icon={BarChart3}
+          accent="gold"
         />
         <KpiCard
-          label={t('accounting.gottfried50')}
-          value={formatEurCents(m.auryxShare)}
-          sub="10% Nettoumsatz"
-          icon={Users}
-          accent="gold"
+          label="Gesamtkosten"
+          value={formatEurCents(totalCosts)}
+          sub="Produzenten + Versand + Gebühren"
+          icon={ArrowDown}
+          accent="green"
         />
       </div>
 
@@ -177,28 +178,25 @@ export default async function AccountingPage({
         {/* Cost Breakdown */}
         <div className="bg-[#0e0e0e] border border-white/[0.06] rounded-xl p-6">
           <h3 className="text-sm text-muted tracking-wider uppercase mb-5">
-            {t('accounting.costBreakdown')} {monthName}
+            Kostenaufstellung {monthName}
           </h3>
           <div className="space-y-3">
-            <CostRow label={t('accounting.revenueBrutto')} value={m.revenue} bold accent="cream" />
+            <CostRow label="Einnahmen (brutto)" value={m.revenue} bold accent="cream" />
             <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={t('accounting.producerCosts')} value={-m.producerCost} />
-            <CostRow label={t('accounting.packaging')} value={-m.packaging} />
-            <CostRow label={t('accounting.shippingCost')} value={-m.shipping} />
-            <CostRow label={t('accounting.paymentFees')} value={-m.paymentFee} />
-            <CostRow label={t('accounting.customs')} value={-m.customs} />
+            <CostRow label="Produzentenkosten" value={-m.producerCost} />
+            <CostRow label="Verpackung" value={-m.packaging} />
+            <CostRow label="Versandkosten" value={-m.shipping} />
+            <CostRow label="Zahlungsgebühren" value={-m.paymentFee} />
+            <CostRow label="Zoll" value={-m.customs} />
             <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={t('accounting.totalCosts')} value={-totalCosts} bold />
+            <CostRow label="Gesamtkosten" value={-totalCosts} bold />
             <div className="border-t border-gold/20 my-2" />
-            <CostRow label={t('accounting.grossProfit')} value={m.grossProfit} bold accent="gold" />
-            <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={`→ ${t('accounting.auryxD2C')}`} value={-m.auryxShare} accent="cream" />
-            <CostRow label={`→ ${t('accounting.peter50Rest')}`} value={m.grossProfit - m.auryxShare} bold accent="emerald" />
+            <CostRow label="Vereinsüberschuss" value={m.grossProfit} bold accent="gold" />
           </div>
 
           <div className="mt-4 pt-3 border-t border-white/[0.04]">
             <p className="text-muted text-[10px]">
-              {m.salesCount} {t('accounting.sales')} · {m.refundCount} {t('accounting.refunds')} · {m.count} {t('accounting.entries')}
+              {m.salesCount} Verkäufe · {m.refundCount} Rückerstattungen · {m.count} Einträge
             </p>
           </div>
         </div>
@@ -206,28 +204,33 @@ export default async function AccountingPage({
         {/* YTD Summary */}
         <div className="bg-[#0e0e0e] border border-white/[0.06] rounded-xl p-6">
           <h3 className="text-sm text-muted tracking-wider uppercase mb-5">
-            {t('accounting.ytd')} ({year})
+            Jahresübersicht ({year})
           </h3>
           <div className="space-y-3">
-            <CostRow label={t('accounting.totalRevenueYtd')} value={ytd.revenue} bold accent="cream" />
-            <CostRow label={t('accounting.grossProfitYtd')} value={ytd.grossProfit} bold accent="gold" />
-            <div className="border-t border-white/[0.06] my-2" />
-            <CostRow label={t('accounting.auryxYtd')} value={-ytd.auryxShare} accent="cream" />
-            <CostRow label={t('accounting.peterYtd')} value={ytd.grossProfit - ytd.auryxShare} bold accent="emerald" />
+            <CostRow label="Gesamteinnahmen YTD" value={ytd.revenue} bold accent="cream" />
+            <CostRow label="Vereinsüberschuss YTD" value={ytd.grossProfit} bold accent="gold" />
           </div>
 
-          <div className="mt-8 flex gap-3">
+          <div className="mt-6 p-4 bg-gold/[0.04] border border-gold/10 rounded-lg">
+            <p className="text-[11px] text-muted leading-relaxed">
+              Austria Imperial Green Gold ist ein gemeinnütziger Verein nach
+              dem Vereinsgesetz 2002. Überschüsse werden ausschließlich für
+              den Vereinszweck (Forschung & Studie) verwendet.
+            </p>
+          </div>
+
+          <div className="mt-6 flex gap-3">
             <Link
               href="/admin/accounting/ledger"
               className="flex-1 text-center bg-gold/10 border border-gold/20 text-gold rounded-lg px-4 py-2.5 text-sm hover:bg-gold/20 transition-colors"
             >
-              {t('accounting.viewLedger')}
+              Buchungsjournal
             </Link>
             <Link
               href="/admin/accounting/reports"
               className="flex-1 text-center bg-white/[0.04] border border-white/[0.08] text-cream rounded-lg px-4 py-2.5 text-sm hover:bg-white/[0.06] transition-colors"
             >
-              {t('accounting.reports')}
+              Berichte
             </Link>
           </div>
         </div>

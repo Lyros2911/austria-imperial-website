@@ -1,12 +1,14 @@
 /**
  * Austria Imperial Green Gold – Complete Database Schema
  *
- * VERBINDLICHE REGELN:
- * 1. financial_ledger ist APPEND-ONLY. Keine Updates, keine Deletes.
- * 2. monthly_reports sind revisionssicher (SHA256-Hash).
- * 3. audit_log ist IMMUTABLE.
- * 4. Peter erhaelt 50% vom Bruttogewinn (berechnet in financial_ledger).
- * 5. Order Routing: Kiendler = Kernoel, Hernach = Kren.
+ * HINWEIS (2026-03-13): AIGG ist ein gemeinnuetziger Verein.
+ * Es gibt KEINE 50/50-Gewinnbeteiligung mehr.
+ * Tabellen wie financial_ledger, monthly_reports etc. sind LEGACY
+ * und werden nicht mehr aktiv genutzt.
+ *
+ * Aktive Tabellen: products, productVariants, studyReports,
+ * vereinsfinanzen, vereinsmitglieder, abExperiments, abEvents,
+ * newsletterSubscribers.
  */
 
 import {
@@ -313,19 +315,11 @@ export const fulfillmentEvents = pgTable('fulfillment_events', {
 });
 
 // ============================================================
-// 9. FINANCIAL LEDGER (APPEND-ONLY — PFLICHT)
+// 9. FINANCIAL LEDGER — LEGACY (nicht mehr aktiv genutzt)
 //
-// Reporting basiert AUSSCHLIESSLICH auf dieser Tabelle.
-// Keine Updates, keine Deletes. Nur INSERT.
-//
-// Revenue-Waterfall (Strukturvereinbarung 26.02.2026):
-//   Bruttogewinn = revenue - producer_cost - packaging - shipping - payment_fee - customs
-//   Auryx AI = 10% vom D2C-Nettoumsatz (revenue - payment_fee)
-//   Restgewinn = Bruttogewinn - Auryx-Anteil
-//   Peter = 50% vom Restgewinn
-//   Gottfried (AIGG) = 50% vom Restgewinn
-//
-// NICHT abziehbar vor der Gewinnverteilung: Marketing, Fixkosten, Hosting, Ads
+// AIGG ist seit Maerz 2026 ein gemeinnuetziger Verein.
+// Diese Tabelle existiert in der DB, wird aber nicht mehr beschrieben.
+// KEINE 50/50-Gewinnbeteiligung. KEIN Revenue Waterfall.
 // ============================================================
 
 export const financialLedger = pgTable('financial_ledger', {

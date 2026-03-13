@@ -1,8 +1,13 @@
+/**
+ * @deprecated ENTFERNT — 2026-03-13
+ *
+ * Austria Imperial Green Gold ist seit Maerz 2026 ein gemeinnuetziger Verein.
+ * Es gibt KEINEN Warenkorb / Shop.
+ * Diese Datei wird beim naechsten Cleanup geloescht.
+ */
 'use client';
 
-import { createContext, useContext, useEffect, useState, useCallback, type ReactNode } from 'react';
-
-// ─── Types ─────────────────────────────────────
+import { createContext, useContext, type ReactNode } from 'react';
 
 export interface CartItem {
   variantId: number;
@@ -30,87 +35,21 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | null>(null);
 
-const CART_KEY = 'aigg-cart';
-
-// ─── Provider ──────────────────────────────────
-
+/** Cart ist deaktiviert — gemeinnuetziger Verein */
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([]);
-  const [isOpen, setIsOpen] = useState(false);
-  const [hydrated, setHydrated] = useState(false);
-
-  // Hydrate from localStorage
-  useEffect(() => {
-    try {
-      const stored = localStorage.getItem(CART_KEY);
-      if (stored) {
-        setItems(JSON.parse(stored));
-      }
-    } catch {
-      // Ignore parse errors
-    }
-    setHydrated(true);
-  }, []);
-
-  // Persist to localStorage
-  useEffect(() => {
-    if (hydrated) {
-      localStorage.setItem(CART_KEY, JSON.stringify(items));
-    }
-  }, [items, hydrated]);
-
-  const addItem = useCallback(
-    (item: Omit<CartItem, 'quantity'>, quantity = 1) => {
-      setItems((prev) => {
-        const existing = prev.find((i) => i.variantId === item.variantId);
-        if (existing) {
-          return prev.map((i) =>
-            i.variantId === item.variantId
-              ? { ...i, quantity: i.quantity + quantity }
-              : i
-          );
-        }
-        return [...prev, { ...item, quantity }];
-      });
-      setIsOpen(true);
-    },
-    []
-  );
-
-  const removeItem = useCallback((variantId: number) => {
-    setItems((prev) => prev.filter((i) => i.variantId !== variantId));
-  }, []);
-
-  const updateQuantity = useCallback((variantId: number, quantity: number) => {
-    if (quantity <= 0) {
-      setItems((prev) => prev.filter((i) => i.variantId !== variantId));
-    } else {
-      setItems((prev) =>
-        prev.map((i) => (i.variantId === variantId ? { ...i, quantity } : i))
-      );
-    }
-  }, []);
-
-  const clearCart = useCallback(() => {
-    setItems([]);
-    localStorage.removeItem(CART_KEY);
-  }, []);
-
-  const totalItems = items.reduce((sum, i) => sum + i.quantity, 0);
-  const totalCents = items.reduce((sum, i) => sum + i.priceCents * i.quantity, 0);
-
+  const noop = () => {};
   return (
     <CartContext.Provider
       value={{
-        items,
-        totalItems,
-        totalCents,
-        addItem,
-        removeItem,
-        updateQuantity,
-        clearCart,
-        isOpen,
-        setIsOpen,
+        items: [],
+        totalItems: 0,
+        totalCents: 0,
+        addItem: noop,
+        removeItem: noop,
+        updateQuantity: noop,
+        clearCart: noop,
+        isOpen: false,
+        setIsOpen: noop,
       }}
     >
       {children}
