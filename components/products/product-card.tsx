@@ -7,7 +7,7 @@ import { getTranslations } from 'next-intl/server';
 
 interface ProductCardProps {
   product: Product & { variants: ProductVariant[] };
-  locale: string;
+  locale?: string;
 }
 
 const CATEGORY_IMAGES: Record<string, string> = {
@@ -16,7 +16,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
   tiernahrung: '/images/kren-produkte.jpg',
 };
 
-export async function ProductCard({ product, locale }: ProductCardProps) {
+export async function ProductCard({ product, locale = 'de' }: ProductCardProps) {
   const t = await getTranslations({ locale, namespace: 'products' });
   const cheapestVariant = product.variants[0];
   const hasActiveVariants = product.variants.length > 0;
