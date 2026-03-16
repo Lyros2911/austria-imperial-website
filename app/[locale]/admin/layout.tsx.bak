@@ -85,9 +85,6 @@ function buildNavigation(role: string, t: (key: string) => string): NavItem[] {
     ],
   });
 
-  // KI-Studie (AI Content Performance)
-  nav.push({ label: 'KI-Studie', href: '/admin/ki-studie', icon: BrainCircuit });
-
   // Telegram Bot (Expedition Command Center)
   nav.push({ label: t('nav.telegramBot'), href: '/admin/telegram-bot', icon: Bot });
 

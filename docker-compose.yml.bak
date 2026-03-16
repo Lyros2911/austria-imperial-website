@@ -1,0 +1,39 @@
+services:
+  austria-imperial:
+    build: .
+    container_name: austria-imperial
+    restart: unless-stopped
+    networks:
+      - n8n_default
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.aigg.rule=Host(`austriaimperial.com`)
+      - traefik.http.routers.aigg.entrypoints=websecure
+      - traefik.http.routers.aigg.tls=true
+      - traefik.http.routers.aigg.tls.certresolver=mytlschallenge
+      - traefik.http.services.aigg.loadbalancer.server.port=3000
+      - traefik.http.routers.aigg-www.rule=Host(`www.austriaimperial.com`)
+      - traefik.http.routers.aigg-www.entrypoints=websecure
+      - traefik.http.routers.aigg-www.tls=true
+      - traefik.http.routers.aigg-www.tls.certresolver=mytlschallenge
+      - traefik.http.middlewares.aigg-www-redirect.redirectregex.regex=^https://www\.austriaimperial\.com/(.*)
+      - traefik.http.middlewares.aigg-www-redirect.redirectregex.replacement=https://austriaimperial.com/$${1}
+      - traefik.http.middlewares.aigg-www-redirect.redirectregex.permanent=true
+      - traefik.http.routers.aigg-www.middlewares=aigg-www-redirect
+      - traefik.http.routers.aigg-at.rule=Host(`austriaimperial.at`)
+      - traefik.http.routers.aigg-at.entrypoints=websecure
+      - traefik.http.routers.aigg-at.tls=true
+      - traefik.http.routers.aigg-at.tls.certresolver=mytlschallenge
+      - traefik.http.middlewares.aigg-at-redirect.redirectregex.regex=^https://(?:www\.)?austriaimperial\.at/(.*)
+      - traefik.http.middlewares.aigg-at-redirect.redirectregex.replacement=https://austriaimperial.com/$${1}
+      - traefik.http.middlewares.aigg-at-redirect.redirectregex.permanent=true
+      - traefik.http.routers.aigg-at.middlewares=aigg-at-redirect
+      - traefik.http.routers.aigg-www-at.rule=Host(`www.austriaimperial.at`)
+      - traefik.http.routers.aigg-www-at.entrypoints=websecure
+      - traefik.http.routers.aigg-www-at.tls=true
+      - traefik.http.routers.aigg-www-at.tls.certresolver=mytlschallenge
+      - traefik.http.routers.aigg-www-at.middlewares=aigg-at-redirect
+
+networks:
+  n8n_default:
+    external: true
